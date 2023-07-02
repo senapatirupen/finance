@@ -1,7 +1,4 @@
-import { Component, EventEmitter } from '@angular/core';
-import { interval, Observable, Subscriber, Subscription } from 'rxjs';
-import { CalculationService } from './calculation.service';
-import { map, merge } from 'rxjs/operators';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
