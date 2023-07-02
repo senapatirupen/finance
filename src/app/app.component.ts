@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
+import { interval, Observable, Subscriber, Subscription } from 'rxjs';
+import { CalculationService } from './calculation.service';
+import { map, merge } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angularapp';
+  
 }
