@@ -1,0 +1,98 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                <svg class="bi me-2" width="30" height="24">
+                    <use xlink:href="#bootstrap" />
+                </svg>
+                <span class="fs-5 fw-semibold">Fundamental</span>
+            </a>
+            <ul class="list-unstyled ps-0">
+                <li class="mb-1">
+                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                        data-bs-target="#home-collapse" aria-expanded="true">
+                        Stock Market
+                    </button>
+                    <div class="collapse show" id="home-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">Public Company</a></li>
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">Share</a></li>
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">Stock</a></li>
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">NSE</a></li>
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">BSE</a></li>
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">Indexes</a></li>
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">Indexes Formation</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="mb-1">
+                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                        data-bs-target="#dashboard-collapse" aria-expanded="false">
+                        Broker
+                    </button>
+                    <div class="collapse" id="dashboard-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">Broker</a></li>
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">Brokers In India</a></li>
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">Brokerage Charges</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="mb-1">
+                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                        data-bs-target="#orders-collapse" aria-expanded="false">
+                        Mutual Fund
+                    </button>
+                    <div class="collapse" id="orders-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">Mutual Fund</a></li>
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">Mutual Fund Types</a></li>
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">Index Mutual Fund</a></li>
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">Mutual Fund Provider</a></li>
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">Mutual Fund Charges</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="border-top my-3"></li>
+                <li class="mb-1">
+                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                        data-bs-target="#account-collapse" aria-expanded="false">
+                        Tax
+                    </button>
+                    <div class="collapse" id="account-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">Tax On Stock</a></li>
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">Tax On Mutual Fund</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="mb-1">
+                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                        data-bs-target="#governing-collapse" aria-expanded="false">
+                        Governing
+                    </button>
+                    <div class="collapse" id="governing-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">SEBI</a></li>
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">NSDL</a></li>
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">CDSL</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="mb-1">
+                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                        data-bs-target="#investment-collapse" aria-expanded="false">
+                        Investment
+                    </button>
+                    <div class="collapse" id="investment-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a (click)="loadRightContent($event)" class="link-dark rounded">Types Of Investment</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-9" [innerHTML]="rightContent">
+        </div>
+    </div>
+</div>
