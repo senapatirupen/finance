@@ -1,0 +1,29 @@
+.accordion-header {
+    background-color: transparent;
+    color: inherit;
+}
+
+.accordion-body {
+    background-color: transparent;
+    color: inherit;
+}
+
+.accordion-header.active {
+    background-color: transparent;
+    color: inherit;
+}
+
+.accordion-body.active {
+    background-color: transparent;
+    color: inherit;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #052c65;
+    background-color: #ffff;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: #ffff;
+}

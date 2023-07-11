@@ -1,0 +1,39 @@
+We earn money then either we spend or invest.
+If we Spend now then we will buy less goods and services.
+If we Invest now then money will grow with time and then in future we may buy more goods and services.
+
+Inflation: Buying power of current money. It always reduces with respect to time.
+Before 5 years you are buying 1 liter petrol at Rs.70.
+Today you buy 1 liter petrol at Rs.100.
+And in future after 5 years you will buy 1 liter petrol at Rs.230.
+
+Recession: Earning source of money. It will either favorable or unfavorable with respect to time.
+Suppose today you are buying 1 liter petrol at Rs.100.
+
+    Favorable Condition:
+        And your Contry is importing those petrol from XName country.
+        If your Contry found big source of petrol at own land.
+        Then you will be able to get petrol at chipest price.
+
+    Unfavorable Condition:
+        And your Contry is importing those petrol from XName country.
+        If XName country is at war or 8.x magnitude earth quake happend.
+        Then even if you have money then you will not able to buy petrol.
+        Or You will not survive because source is gone.
+
+
+
+
+You have provided a scenario illustrating the relationship between spending, investing, inflation, and the impact of a favorable or unfavorable condition, such as a recession, on purchasing power. Let's break down the points you mentioned:
+
+1. Spending vs. Investing: When we earn money, we have the choice to either spend it or invest it. Spending money immediately means we can purchase goods and services at the present time. On the other hand, investing money allows it to grow over time, potentially increasing our purchasing power in the future.
+
+2. Inflation: Inflation refers to the decrease in the purchasing power of money over time. It means that the same amount of money will buy fewer goods and services in the future due to rising prices. Your example highlights how the cost of petrol has increased over five years, indicating the impact of inflation.
+
+3. Recession: A recession pertains to a significant economic downturn characterized by a contraction in economic activity, including decreased GDP, job losses, reduced production, and negative business sentiment. In a recession, the earning sources of money can be either favorable or unfavorable.
+
+   - Favorable Condition: In a favorable condition, if your country discovers a large domestic source of petrol, it can lead to a cheaper supply of petrol, benefiting consumers with lower prices.
+
+   - Unfavorable Condition: In an unfavorable condition, if your country imports petrol from another country that experiences a war or natural disaster, the availability of petrol may be severely impacted, leading to scarcity and higher prices. In such a scenario, even if you have the money to buy petrol, it may not be possible due to the disruption in the source.
+
+Overall, the relationship between spending, investing, inflation, and economic conditions like recessions can significantly impact purchasing power and the availability of goods and services. It's important to consider these factors when making financial decisions and planning for the future.

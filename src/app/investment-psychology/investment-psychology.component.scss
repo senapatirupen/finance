@@ -1,3 +1,10 @@
+h2 {
+    font-size: 24px;
+    margin-bottom: 0;
+    font-weight: 600;
+    color: #012970;
+}
+
 .btn-toggle {
     display: inline-flex;
     align-items: center;
@@ -6,7 +13,7 @@
     color: rgba(0, 0, 0, .65);
     background-color: transparent;
     border: 0;
-    
+
 }
 
 .btn-toggle:hover,
@@ -49,14 +56,14 @@
 section {
     padding: 60px 0;
     overflow: hidden;
-  }
-  
-  .section-title {
+}
+
+.section-title {
     text-align: center;
     padding-bottom: 30px;
-  }
-  
-  .section-title h4 {
+}
+
+.section-title h4 {
     font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
@@ -64,9 +71,9 @@ section {
     padding-bottom: 20px;
     position: relative;
     color: #052c65;
-  }
-  
-  .section-title h4::before {
+}
+
+.section-title h4::before {
     content: "";
     position: absolute;
     display: block;
@@ -75,9 +82,9 @@ section {
     background: #ddd;
     bottom: 1px;
     left: calc(50% - 60px);
-  }
-  
-  .section-title h4::after {
+}
+
+.section-title h4::after {
     content: "";
     position: absolute;
     display: block;
@@ -86,11 +93,11 @@ section {
     background: #052c65;
     bottom: 0;
     left: calc(50% - 20px);
-  }
-  
-  .section-title p {
+}
+
+.section-title p {
     margin-bottom: 0;
-  }
+}
 
 /*--------------------------------------------------------------
 # Resume
@@ -101,16 +108,16 @@ section {
     margin-top: 20px;
     margin-bottom: 20px;
     color: #052c65;
-  }
-  
-  .resume .resume-item {
+}
+
+.resume .resume-item {
     padding: 0 0 20px 20px;
     margin-top: -2px;
     border-left: 2px solid #052c65;
     position: relative;
-  }
-  
-  .resume .resume-item::before {
+}
+
+.resume .resume-item::before {
     content: "";
     position: absolute;
     width: 16px;
@@ -120,6 +127,4 @@ section {
     top: 0;
     background: #fff;
     border: 2px solid #052c65;
-  }
-
-  
+}

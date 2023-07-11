@@ -10,6 +10,12 @@ import { FooterComponent } from './footer/footer.component';
 import { InvestmentTypeComponent } from './finance/investment-type/investment-type.component';
 import { FundamentalsComponent } from './fundamentals/fundamentals.component';
 import { HttpClientModule } from '@angular/common/http';
+import { InvestmentPsychologyComponent } from './investment-psychology/investment-psychology.component';
+import { MutualFundComponent } from './mutual-fund/mutual-fund.component';
+import { GoldInvestmentComponent } from './investment-psychology/gold-investment/gold-investment.component';
+import { RealEstateInvestmentComponent } from './investment-psychology/real-estate-investment/real-estate-investment.component';
+import { ShareMarketInvestmentComponent } from './investment-psychology/share-market-investment/share-market-investment.component';
+import { SpendingVsInvestingComponent } from './investment-psychology/spending-vs-investing/spending-vs-investing.component';
 
 
 @NgModule({
@@ -20,7 +26,13 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     InvestmentTypeComponent,
-    FundamentalsComponent
+    FundamentalsComponent,
+    InvestmentPsychologyComponent,
+    MutualFundComponent,
+    GoldInvestmentComponent,
+    RealEstateInvestmentComponent,
+    ShareMarketInvestmentComponent,
+    SpendingVsInvestingComponent
   ],
   imports: [
     BrowserModule,
