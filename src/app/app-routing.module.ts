@@ -11,7 +11,8 @@ import { MutualFundComponent } from './mutual-fund/mutual-fund.component';
 import { NseComponent } from './nse/nse.component';
 
 const routes: Routes = [
-  { path: '', component: FinanceComponent },
+  { path: '', redirectTo: 'finance', pathMatch: 'full' },
+  { path: 'finance', component: FinanceComponent },
   { path: 'nse-bse', component: NseComponent },
   { path: 'fundamental', component: FundamentalsComponent },
   {
