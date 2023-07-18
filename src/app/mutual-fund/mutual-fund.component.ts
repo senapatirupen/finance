@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MutualFundComponent implements OnInit {
 
+  externalLink: string = ''
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  openLinkInNewTab(externalLink: string) {
+    this.externalLink = externalLink;
+    window.open(this.externalLink, '_blank');
   }
 
 }

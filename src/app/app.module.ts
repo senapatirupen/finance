@@ -37,7 +37,7 @@ import { SpendingVsInvestingComponent } from './investment-psychology/spending-v
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
