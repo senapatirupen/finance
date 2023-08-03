@@ -1,0 +1,87 @@
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.section-title h4 {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: #052c65;
+}
+
+.section-title h4::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #ddd;
+    bottom: 1px;
+    left: calc(50% - 60px);
+}
+
+.section-title h4::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #052c65;
+    bottom: 0;
+    left: calc(50% - 20px);
+}
+
+.section-title p {
+    margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Accordion
+--------------------------------------------------------------*/
+
+.accordion-header {
+    background-color: transparent;
+    color: inherit;
+}
+
+.accordion-body {
+    background-color: transparent;
+    color: inherit;
+}
+
+.accordion-header.active {
+    background-color: transparent;
+    color: inherit;
+}
+
+.accordion-body.active {
+    background-color: transparent;
+    color: inherit;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #ec0000;
+    background-color: #ffff;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: #ffff;
+}
+
+p {
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}

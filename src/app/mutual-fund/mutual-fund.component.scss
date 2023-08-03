@@ -50,6 +50,28 @@ h2 {
     border-bottom-color: #ec0000 !important;
 }
 
+.left-nav button {
+    font-size: 14px;
+    color: #052c65;
+    background: #ffff;
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 20px;
+    transition: 0.3s;
+    border-color: #ffff;
+}
+
+.left-nav button:hover {
+    font-size: 14px;
+    color: #052c65;
+    background: #ffff;
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 20px;
+    transition: 0.3s;
+    border-color: #FFD700;
+}
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -162,7 +184,7 @@ section {
     box-shadow: 0px 0 35px 0 #FFD700;
 }
 
-button {
+.services button {
     font-size: 14px;
     color: #052c65;
     background: #ffff;
@@ -173,7 +195,7 @@ button {
     border-color: #ffff;
 }
 
-button:hover {
+.services button:hover {
     font-size: 14px;
     color: #052c65;
     background: #ffff;
@@ -191,30 +213,62 @@ button:hover {
     font-weight: 700;
     font-size: 26px;
     color: #728394;
-  }
-  
-  .about .content ul {
+}
+
+.about .content ul {
     list-style: none;
     padding: 0;
-  }
-  
-  .about .content ul li {
+}
+
+.about .content ul li {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-  }
-  
-  .about .content ul strong {
+}
+
+.about .content ul strong {
     margin-right: 10px;
-  }
-  
-  .about .content ul i {
+}
+
+.about .content ul i {
     font-size: 16px;
     margin-right: 5px;
     color: #0563bb;
     line-height: 0;
-  }
-  
-  .about .content p:last-child {
+}
+
+.about .content p:last-child {
     margin-bottom: 0;
-  }
+}
+
+.about button {
+    font-size: 14px;
+    color: #052c65;
+    background: #ffff;
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 20px;
+    transition: 0.3s;
+    border-color: #ffff;
+}
+
+.about button:hover {
+    font-size: 14px;
+    color: #052c65;
+    background: #ffff;
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 20px;
+    transition: 0.3s;
+    border-color: #FFD700;
+}
+
+.label {
+    font-weight: 600;
+    color: rgba(1, 41, 112, 0.6);
+}
+
+p {
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}

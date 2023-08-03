@@ -16,6 +16,8 @@ import { GoldInvestmentComponent } from './investment-psychology/gold-investment
 import { RealEstateInvestmentComponent } from './investment-psychology/real-estate-investment/real-estate-investment.component';
 import { ShareMarketInvestmentComponent } from './investment-psychology/share-market-investment/share-market-investment.component';
 import { SpendingVsInvestingComponent } from './investment-psychology/spending-vs-investing/spending-vs-investing.component';
+import { MfKeyTermsComponent } from './mutual-fund/mf-key-terms/mf-key-terms.component';
+import { MfTypeComponent } from './mutual-fund/mf-type/mf-type.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { SpendingVsInvestingComponent } from './investment-psychology/spending-v
     GoldInvestmentComponent,
     RealEstateInvestmentComponent,
     ShareMarketInvestmentComponent,
-    SpendingVsInvestingComponent
+    SpendingVsInvestingComponent,
+    MfKeyTermsComponent,
+    MfTypeComponent
   ],
   imports: [
     BrowserModule,
