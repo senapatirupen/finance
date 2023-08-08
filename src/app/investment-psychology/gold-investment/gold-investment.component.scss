@@ -76,6 +76,7 @@ section {
     background: #fff;
     border: 2px solid #052c65;
 }
+
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
@@ -85,26 +86,26 @@ section {
     transition: all ease-in-out 0.3s;
     background: #fff;
     box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05);
-  }
-  
-  
-  .services .icon-box h5 {
+}
+
+
+.services .icon-box h5 {
     font-weight: 600;
     margin: 10px 0 15px 0;
     font-size: 18px;
-  }
-  
-  .services .icon-box h5 a {
+}
+
+.services .icon-box h5 a {
     color: #052c65;
     transition: ease-in-out 0.3s;
-  }
-  
-  .services .icon-box p {
+}
+
+.services .icon-box p {
     line-height: 24px;
     font-size: 14px;
     margin-bottom: 0;
-  }
-  
-  .services .icon-box:hover {
+}
+
+.services .icon-box:hover {
     box-shadow: 0px 0 35px 0 #FFD700;
-  }
+}

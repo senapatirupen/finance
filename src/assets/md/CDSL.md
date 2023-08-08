@@ -5,13 +5,13 @@ Similar to NSDL, CDSL is responsible for providing electronic depository service
 </p><p>
 Here are some key services provided by CDSL:
 </p><p>
-1. Dematerialization: CDSL allows investors to convert physical share certificates into electronic form, eliminating the need for physical handling and storage of securities.
+1. <em class="red">Dematerialization:</em> CDSL allows investors to convert physical share certificates into electronic form, eliminating the need for physical handling and storage of securities.
 </p><p>
-2. Depository Participant (DP): CDSL works with registered DP's who act as intermediaries between investors and the depository. Investors can open demat accounts with DP's to hold and transact in securities.
+2. <em class="red">Depository Participant (DP):</em> CDSL works with registered DP's who act as intermediaries between investors and the depository. Investors can open demat accounts with DP's to hold and transact in securities.
 </p><p>
-3. Settlement and Clearing: CDSL provides a robust settlement and clearing system for trades executed on various stock exchanges. It ensures smooth and timely transfer of securities and funds.
+3. <em class="red">Settlement and Clearing:</em> CDSL provides a robust settlement and clearing system for trades executed on various stock exchanges. It ensures smooth and timely transfer of securities and funds.
 </p><p>
-4. Investor Services: CDSL offers online access to investors, enabling them to view their holdings, transactions, and account statements. It also facilitates corporate actions such as dividends, bonus issues, and rights offerings.
+4. <em class="red">Investor Services:</em> CDSL offers online access to investors, enabling them to view their holdings, transactions, and account statements. It also facilitates corporate actions such as dividends, bonus issues, and rights offerings.
 </p><p>
 5. Pledging and Hypothecation: CDSL enables investors to pledge their securities as collateral for loans or margin requirements.
 </p><p>
