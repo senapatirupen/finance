@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EtfComponent } from './etf/etf.component';
 import { FinanceComponent } from './finance/finance.component';
 import { FundamentalsComponent } from './fundamentals/fundamentals.component';
 import { GoldInvestmentComponent } from './investment-psychology/gold-investment/gold-investment.component';
@@ -13,7 +14,7 @@ import { NseComponent } from './nse/nse.component';
 const routes: Routes = [
   { path: '', redirectTo: 'finance', pathMatch: 'full' },
   { path: 'finance', component: FinanceComponent },
-  { path: 'nse-bse', component: NseComponent },
+  { path: 'etf', component: EtfComponent },
   { path: 'fundamental', component: FundamentalsComponent },
   {
     path: 'psychology', component: InvestmentPsychologyComponent,

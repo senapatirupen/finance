@@ -18,6 +18,7 @@ import { ShareMarketInvestmentComponent } from './investment-psychology/share-ma
 import { SpendingVsInvestingComponent } from './investment-psychology/spending-vs-investing/spending-vs-investing.component';
 import { MfKeyTermsComponent } from './mutual-fund/mf-key-terms/mf-key-terms.component';
 import { MfTypeComponent } from './mutual-fund/mf-type/mf-type.component';
+import { EtfComponent } from './etf/etf.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { MfTypeComponent } from './mutual-fund/mf-type/mf-type.component';
     ShareMarketInvestmentComponent,
     SpendingVsInvestingComponent,
     MfKeyTermsComponent,
-    MfTypeComponent
+    MfTypeComponent,
+    EtfComponent
   ],
   imports: [
     BrowserModule,
