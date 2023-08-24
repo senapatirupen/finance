@@ -20,7 +20,7 @@ const routes: Routes = [
     path: 'psychology', component: InvestmentPsychologyComponent,
     children: [
       { path: 'gold-investment', component: GoldInvestmentComponent },
-      { path: 'spending-vs-investmenting', component: SpendingVsInvestingComponent },
+      { path: 'spending-vs-investment', component: SpendingVsInvestingComponent },
       { path: 'reale-state-investment', component: RealEstateInvestmentComponent },
       { path: 'share-market-investment', component: ShareMarketInvestmentComponent }
 

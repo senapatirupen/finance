@@ -19,6 +19,7 @@ import { SpendingVsInvestingComponent } from './investment-psychology/spending-v
 import { MfKeyTermsComponent } from './mutual-fund/mf-key-terms/mf-key-terms.component';
 import { MfTypeComponent } from './mutual-fund/mf-type/mf-type.component';
 import { EtfComponent } from './etf/etf.component';
+import { MfScreenerComponent } from './mf-screener/mf-screener.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { EtfComponent } from './etf/etf.component';
     SpendingVsInvestingComponent,
     MfKeyTermsComponent,
     MfTypeComponent,
-    EtfComponent
+    EtfComponent,
+    MfScreenerComponent
   ],
   imports: [
     BrowserModule,
