@@ -348,6 +348,21 @@
                     <h4 class="fst-italic">Last 15 Years Nifty 50, Midcap 100, Smallcap 100 CAGR</h4>
                     <img src="assets/images/nifty_allcap_15years_return.png" class="img-fluid" alt="">
                 </div>
+                <div class="p-1 mb-3 rounded border">
+                    <h4 class="fst-italic">Nifty 50 takes 27 years to reach from 1000 to 20000 points with 22.4%
+                        Volatility</h4>
+                    <img src="assets/images/nifty_50_27_years.png" class="img-fluid" alt="">
+                </div>
+                <div class="p-1 mb-3 rounded border">
+                    <h4 class="fst-italic">Nifty 50, NASDAQ 100, S&P 500, NYSE FANG+ Index Performance</h4>
+                    <img src="assets/images/fang.png" class="img-fluid" alt="">
+                </div>
+                <div class="p-1 mb-3 rounded border">
+                    <h6 class="fst-italic">How early investment is more important than spending through credit card or
+                        loan.</h6>
+                    <h4 class="fst-italic">SIP Calculator Vs EMI Calculator Money Flow</h4>
+                    <img src="assets/images/sip_emi.png" class="img-fluid" alt="">
+                </div>
                 <div class="p-4 mb-3 rounded border">
                     <h4 class="fst-italic">Where's your Ferrari?</h4>
                     <p><em class="heading">The story goes that a reporter was talking to a woman, who was smoking a
@@ -426,6 +441,12 @@
                             make 12% to 15% return annually.</p>
                     </div>
                     <div class="p-4 mb-3 rounded border">
+                        <h4 class="fst-italic">Nifty50 - from 1,000 to 20,000 mark</h4>
+                        <p class="mb-0">Nifty 50, started its voyage in November 1995 with a base value of 1000 and
+                            touched 20,000 on September 11th, 2023, <em class="heading">taking 27 years, 10 months and 8
+                                days.</em></p>
+                    </div>
+                    <div class="p-4 mb-3 rounded border">
                         <h4 class="fst-italic">Nifty 50 Index Return</h4>
                         <p class="mb-0">Nifty 50 Index has delivered an average annual return(CAGR) of 12% since
                             inception and has provided an average annual 2% Dividend return, then the final return on
@@ -441,7 +462,7 @@
                         <img src="assets/images/sensex.png" class="img-fluid" alt="">
                     </div>
                     <div class="p-4 mb-3 rounded border">
-                        <h4 class="fst-italic">Power Of Compounding</h4>
+                        <h4 class="fst-italic">Power Of Compounding with 15%</h4>
                         <p class="mb-1">Let assume you brought apartment for Rs 1,00,00,000 (One Crore / 10 Million /
                             100 Lakh). Is it going to be <em class="heading">2 Crore</em> after 5 years
                             and <em class="heading">4 Crore</em> in 10 years
@@ -681,6 +702,114 @@
                             investments are always taxed at lower rates than corporate profits, which in turn are taxed
                             at lower rates than consulting income, and salaries.
                         </p>
+                    </div>
+                    <div class="p-4 mb-3 rounded border">
+                        <h4 class="fst-italic">Sweep-in Fixed Deposits (FDs)</h4>
+                        <p>Sweep-in Fixed Deposits (FDs) are a financial product that allows you to link a
+                            savings or current account with a fixed deposit. <em class="heading">The concept is to maintain a higher balance
+                            in the savings or current account while earning higher interest on the surplus amount
+                            through an FD.</em> Here's how it typically works, illustrated with an example:
+                        </p>
+                        <p>
+                            Let's say you have a savings account with a linked sweep-in FD facility. The minimum
+                            threshold for auto-sweep is set at Rs 25,000. Any amount above this threshold in your
+                            savings account gets automatically transferred to an FD in multiples of Rs 1,000.
+                        </p>
+                        <p>
+                            The system automatically converts the surplus amount above to (Rs 25,000) into a fixed
+                            deposit. You
+                            now have an FD of surplus amount created with an interest rate of 6% per annum.
+                        </p>
+                        <p>
+                            <em class="heading">The sweep-in FD allows easy access to funds when needed, as it can be automatically broken
+                            to meet the requirements of the savings account.</em>
+                        </p>
+                        <p>
+                            It's important to note that the specific terms and conditions of sweep-in FDs may vary among
+                            banks, and individuals should carefully review the features and charges associated with the
+                            product.
+                        </p>
+                    </div>
+                    <div class="p-4 mb-3 rounded border">
+                        <h4 class="fst-italic">SIP Calculator</h4>
+                        <div class="p-1 form-group row">
+                            <label for="investmentAmount" class="col-sm-5 col-form-label">Investment Amount</label>
+                            <div class="col-sm-5">
+                                <input type="number" class="form-control" id="investmentAmount"
+                                    [(ngModel)]="investmentAmount">
+                            </div>
+                        </div>
+                        <div class="p-1 form-group row">
+                            <label for="expectedReturnRate" class="col-sm-5 col-form-label">Interest (%)</label>
+                            <div class="col-sm-5">
+                                <input type="number" class="form-control" id="expectedReturnRate"
+                                    [(ngModel)]="expectedReturnRate">
+                            </div>
+                        </div>
+                        <div class="p-1 form-group row">
+                            <label for="investmentTenure" class="col-sm-5 col-form-label">Tenure (Years)</label>
+                            <div class="col-sm-5">
+                                <input type="number" class="form-control" id="investmentTenure"
+                                    [(ngModel)]="investmentTenure">
+                            </div>
+                        </div>
+                        <div class="p-1"></div>
+                        <button (click)="calculateFutureValue()">Calculate</button>
+                        <button (click)="resetSipForm()">Reset</button>
+
+                        <div *ngIf="futureValue !== undefined" class="form-group row">
+                            <label for="futureValue" class="col-sm-5 col-form-label">Future Value </label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="form-control-plaintext" id="futureValue" value="{{ futureValue | currency: 'Rs ':true }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 mb-3 rounded border">
+                        <h4 class="fst-italic">EMI Calculator</h4>
+                        <div class="p-1 form-group row">
+                            <label for="loanAmount" class="col-sm-5 col-form-label">Loan Amount</label>
+                            <div class="col-sm-5">
+                                <input type="number" class="form-control" id="loanAmount"
+                                    [(ngModel)]="loanAmount">
+                            </div>
+                        </div>
+                        <div class="p-1 form-group row">
+                            <label for="interestRate" class="col-sm-5 col-form-label">Interest (%)</label>
+                            <div class="col-sm-5">
+                                <input type="number" class="form-control" id="interestRate"
+                                    [(ngModel)]="interestRate">
+                            </div>
+                        </div>
+                        <div class="p-1 form-group row">
+                            <label for="loanTenure" class="col-sm-5 col-form-label">Tenure (Years)</label>
+                            <div class="col-sm-5">
+                                <input type="number" class="form-control" id="loanTenure"
+                                    [(ngModel)]="loanTenure">
+                            </div>
+                        </div>
+                        <div class="p-1"></div>
+                        <button (click)="calculateEmi()">Calculate</button>
+                        <button (click)="resetEmiForm()">Reset</button>
+
+                        <div *ngIf="emi !== undefined" class="form-group row">
+                            <label for="emi" class="col-sm-5 col-form-label">EMI Value </label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="form-control-plaintext" id="emi" value="{{ emi | currency: 'Rs ':true }}">
+                            </div>
+                        </div>
+                        <div *ngIf="totalInterestPaid !== undefined" class="form-group row">
+                            <label for="totalInterestPaid" class="col-sm-5 col-form-label">Interest Paid </label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="form-control-plaintext" id="totalInterestPaid" value="{{ totalInterestPaid | currency: 'Rs ':true }}">
+                            </div>
+                        </div>
+                        <div *ngIf="totalAmountPaid !== undefined" class="form-group row">
+                            <label for="totalAmountPaid" class="col-sm-5 col-form-label">Amount Paid </label>
+                            <div class="col-sm-5">
+                                <input type="text" readonly class="form-control-plaintext" id="totalAmountPaid" value="{{ totalAmountPaid | currency: 'Rs ':true }}">
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
