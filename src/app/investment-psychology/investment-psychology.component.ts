@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class InvestmentPsychologyComponent implements OnInit {
 
+  externalLink: string = ''
+
   investmentType: string = 'Spending Vs Investing';
 
   constructor(private router: Router) { }
@@ -18,6 +20,11 @@ export class InvestmentPsychologyComponent implements OnInit {
 
   loadChildComponent(investmentType: string): void {
     this.router.navigate(['/psychology/'+investmentType]);
+  }
+
+  openLinkInNewTab(externalLink: string) {
+    this.externalLink = externalLink;
+    window.open(this.externalLink, '_blank');
   }
 
 }

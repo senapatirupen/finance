@@ -9,7 +9,6 @@ import { RealEstateInvestmentComponent } from './investment-psychology/real-esta
 import { ShareMarketInvestmentComponent } from './investment-psychology/share-market-investment/share-market-investment.component';
 import { SpendingVsInvestingComponent } from './investment-psychology/spending-vs-investing/spending-vs-investing.component';
 import { MutualFundComponent } from './mutual-fund/mutual-fund.component';
-import { NseComponent } from './nse/nse.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'finance', pathMatch: 'full' },
@@ -23,9 +22,6 @@ const routes: Routes = [
       { path: 'spending-vs-investment', component: SpendingVsInvestingComponent },
       { path: 'reale-state-investment', component: RealEstateInvestmentComponent },
       { path: 'share-market-investment', component: ShareMarketInvestmentComponent }
-
-
-
       // Add more child routes here if needed
     ]
   },
