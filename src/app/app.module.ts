@@ -20,7 +20,7 @@ import { MfKeyTermsComponent } from './mutual-fund/mf-key-terms/mf-key-terms.com
 import { MfTypeComponent } from './mutual-fund/mf-type/mf-type.component';
 import { EtfComponent } from './etf/etf.component';
 import { MfScreenerComponent } from './mf-screener/mf-screener.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 
 
@@ -49,7 +49,8 @@ import { Router, RouterModule } from '@angular/router';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
