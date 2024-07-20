@@ -1,1 +1,26 @@
-<p>mf-screener works!</p>
+<div class="container mt-5">
+    <h4 class="fst-italic">Search From ALL Available Mutual Funds</h4>
+    <input type="text" class="form-control mb-3" placeholder="Search by Name" [(ngModel)]="searchText">
+    <div class="table-responsive" style="max-height: 600px; overflow-y: auto;">
+        <table class="table table-sm table-hover border-danger">
+            <thead class="table-light">
+                <tr>
+                    <th>Name</th>
+                    <th>Option</th>
+                    <th>AUM</th>
+                    <th>3 Year Return</th>
+                    <th>Expense Ratio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let fund of filteredFunds()">
+                    <td>{{ fund.name }}</td>
+                    <td>{{ fund.option}}</td>
+                    <td>{{ fund.aum}}</td>
+                    <td>{{ fund.ret3y}}</td>
+                    <td>{{ fund.expRatio}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

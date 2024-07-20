@@ -22,6 +22,7 @@ import { EtfComponent } from './etf/etf.component';
 import { MfScreenerComponent } from './mf-screener/mf-screener.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
+import { MutualFundService } from './services/mutual-fund.service';
 
 
 @NgModule({
@@ -52,7 +53,7 @@ import { Router, RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [MutualFundService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
