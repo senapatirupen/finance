@@ -41,6 +41,37 @@ export class FinanceComponent implements OnInit {
   numberOfYears: number = 0;
   cagr: number = 0;
 
+  initialAmount: number = 0;
+  inflationRate: number = 0;
+  years: number = 0;
+  futureAmount: number | null = null;
+
+  principal: number = 0;
+  rateOfInterest: number = 0;
+  time: number = 0;
+  compoundingFrequency: number = 1;
+  maturityAmount: number | null = null;
+  interestEarned: number | null = null;
+
+  ls_principal: number = 0;
+  rateOfReturn: number = 0;
+  ls_time: number = 0;
+  ls_futureValue: number | null = null;
+  ls_interestEarned: number | null = null;
+
+  si_principal: number = 0;
+  rate: number = 0;
+  si_time: number = 0;
+  interest: number | null = null;
+  si_totalAmount: number | null = null;
+
+  ci_principal: number = 0;
+  ci_rate: number = 0;
+  ci_time: number = 0;
+  compoundings: number = 1;
+  ci_interest: number | null = null;
+  totalAmount: number | null = null;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -50,6 +81,43 @@ export class FinanceComponent implements OnInit {
 
   toggleHoverState() {
     this.hoverState1 = (this.hoverState1 === 'normal' ? 'enlarged' : 'normal');
+  }
+
+  calculateCompoundInterest() {
+    const r = this.ci_rate / 100;
+    const nt = this.compoundings * this.ci_time;
+    const amount = this.ci_principal * Math.pow((1 + r / this.compoundings), nt);
+    this.totalAmount = amount;
+    this.ci_interest = amount - this.ci_principal;
+  }
+
+  calculateInterest() {
+    this.interest = (this.si_principal * this.rate * this.si_time) / 100;
+    this.si_totalAmount = this.si_principal + this.interest;
+  }
+
+  calculateLumpSumFutureValue() {
+    if (this.ls_principal && this.rateOfReturn && this.ls_time) {
+      const rate = this.rateOfReturn / 100;
+      this.ls_futureValue = this.ls_principal * Math.pow((1 + rate), this.ls_time);
+      this.ls_interestEarned = this.ls_futureValue - this.ls_principal;
+    }
+  }
+
+  calculateMaturity() {
+    if (this.principal && this.rateOfInterest && this.time && this.compoundingFrequency) {
+      const ratePerPeriod = this.rateOfInterest / (this.compoundingFrequency * 100);
+      const periods = this.time * this.compoundingFrequency;
+      this.maturityAmount = this.principal * Math.pow((1 + ratePerPeriod), periods);
+      this.interestEarned = this.maturityAmount - this.principal;
+    }
+  }
+
+  calculateFutureAmount() {
+    if (this.initialAmount && this.inflationRate && this.years) {
+      const rate = this.inflationRate / 100;
+      this.futureAmount = this.initialAmount * Math.pow(1 + rate, this.years);
+    }
   }
 
   calculateFutureValue(): void {
@@ -86,6 +154,43 @@ export class FinanceComponent implements OnInit {
     const power = 1 / this.numberOfYears;
     this.cagr = Math.pow(numerator, power) - 1;
     this.cagr = this.cagr * 100; // Convert to percentage
+  }
+
+  resetCompoundInterestForm(): void {
+    this.ci_principal = 0;
+    this.ci_rate = 0;
+    this.ci_interest = 0;
+    this.ci_time = 0;
+    this.totalAmount = 0;
+  }
+
+  resetSimpleInterestForm(): void {
+    this.si_principal = 0;
+    this.rate = 0;
+    this.interest = 0;
+    this.si_time = 0;
+    this.si_totalAmount = 0;
+  }
+
+  resetLumpSumForm(): void {
+    this.ls_principal = 0;
+    this.rateOfReturn = 0;
+    this.ls_futureValue = 0;
+    this.ls_interestEarned = 0;
+    this.ls_time = 0;
+  }
+
+  resetFixedDepositForm(): void {
+    this.principal = 0;
+    this.rateOfInterest = 0;
+    this.maturityAmount = 0;
+    this.interestEarned = 0;
+  }
+
+  resetInflationForm(): void {
+    this.initialAmount = 0;
+    this.futureAmount = 0;
+    this.inflationRate = 0;
   }
 
   resetSipForm(): void {
