@@ -40,6 +40,12 @@ export class InvestmentPsychologyComponent implements OnInit {
   totalProjectedAnnualExpenses: number = 0;
   aTotalAmountSpent: number | null = 0;
 
+  goalAmount: number = 0;
+  annualRate: number = 0;
+  years: number = 0;
+  inflationRate: number = 0;
+  monthlySavings: number | null = 0;
+
   externalLink: string = ''
   investmentType: string = 'Spending Vs Investing';
 
@@ -324,6 +330,38 @@ export class InvestmentPsychologyComponent implements OnInit {
       this.totalProjectedAnnualExpenses += annualExpense.projectedAnnualExpense;
       this.aTotalAmountSpent += annualExpense.aTotalAmountSpent;
     });
+  }
+
+  // calculateSavings(): void {
+  //   const r = this.annualRate / 100 / 12; // Monthly interest rate
+  //   const n = this.years * 12; // Total number of months
+  //   if (r > 0) {
+  //     this.monthlySavings = (this.goalAmount * r) / (Math.pow(1 + r, n) - 1);
+  //   } else {
+  //     this.monthlySavings = this.goalAmount / n;
+  //   }
+  // }
+
+  calculateSavings(): void {
+    // Adjust the goal amount for inflation
+    const adjustedGoalAmount = this.goalAmount * Math.pow(1 + this.inflationRate / 100, this.years);
+
+    const r = this.annualRate / 100 / 12; // Monthly interest rate
+    const n = this.years * 12; // Total number of months
+
+    if (r > 0) {
+      this.monthlySavings = (adjustedGoalAmount * r) / (Math.pow(1 + r, n) - 1);
+    } else {
+      this.monthlySavings = adjustedGoalAmount / n;
+    }
+  }
+
+  resetSavings(): void {
+    this.annualRate = 0;
+    this.years = 0;
+    this.goalAmount = 0;
+    this.monthlySavings = 0;
+    this.inflationRate = 0;
   }
 
 }

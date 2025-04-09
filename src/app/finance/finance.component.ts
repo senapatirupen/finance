@@ -72,6 +72,23 @@ export class FinanceComponent implements OnInit {
   ci_interest: number | null = null;
   totalAmount: number | null = null;
 
+  goalAmount: number = 0;
+  annualRate: number = 0;
+  goalYears: number = 0;
+  monthlySavings: number | null = 0;
+
+  homeLoanAmount: number = 5000000; // Default ₹50 Lakhs
+  homeLoanInterestRate: number = 8; // Default 8% per annum
+  tenure: number = 20; // Default 20 years
+  partPaymentPerYear: number = 100000; // Default ₹1 Lakh per year
+
+  expectedInterestPaid: number = 0;
+  actualInterestPaid: number = 0;
+  expectedTenure: number = 0;
+  actualTenure: number = 0;
+  interestSaved: number = 0;
+  tenureReduced: number = 0;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -156,6 +173,47 @@ export class FinanceComponent implements OnInit {
     this.cagr = this.cagr * 100; // Convert to percentage
   }
 
+  calculateHomeLoan() {
+    let principal = this.homeLoanAmount;
+    let monthlyRate = this.homeLoanInterestRate / 100 / 12;
+    let totalMonths = this.tenure * 12;
+
+    // Calculate standard EMI (Equated Monthly Installment)
+    let emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) /
+      (Math.pow(1 + monthlyRate, totalMonths) - 1);
+
+    // Expected Interest Paid (Without Part Payment)
+    this.expectedInterestPaid = emi * totalMonths - principal;
+    this.expectedTenure = this.tenure;
+
+    // Calculate New Loan Details After Part Payment
+    let remainingPrincipal = principal;
+    let newTenureMonths = 0;
+    let totalInterestPaid = 0;
+
+    for (let i = 0; i < totalMonths; i++) {
+      let interestComponent = remainingPrincipal * monthlyRate;
+      let principalComponent = emi - interestComponent;
+      totalInterestPaid += interestComponent;
+
+      remainingPrincipal -= principalComponent;
+
+      // Apply yearly part payment at the end of every 12th month
+      if ((i + 1) % 12 === 0 && remainingPrincipal > 0) {
+        remainingPrincipal -= this.partPaymentPerYear;
+        if (remainingPrincipal < 0) remainingPrincipal = 0;
+      }
+
+      newTenureMonths++;
+      if (remainingPrincipal <= 0) break; // Loan is fully paid off
+    }
+
+    this.actualInterestPaid = totalInterestPaid;
+    this.actualTenure = Math.floor(newTenureMonths / 12);
+    this.tenureReduced = this.expectedTenure - this.actualTenure;
+    this.interestSaved = this.expectedInterestPaid - this.actualInterestPaid;
+  }
+
   resetCompoundInterestForm(): void {
     this.ci_principal = 0;
     this.ci_rate = 0;
@@ -215,6 +273,23 @@ export class FinanceComponent implements OnInit {
     this.finalAmount = 0;
     this.numberOfYears = 0;
     this.cagr = 0;
+  }
+
+  calculateSavings(): void {
+    const r = this.annualRate / 100 / 12; // Monthly interest rate
+    const n = this.goalYears * 12; // Total number of months
+    if (r > 0) {
+      this.monthlySavings = (this.goalAmount * r) / (Math.pow(1 + r, n) - 1);
+    } else {
+      this.monthlySavings = this.goalAmount / n;
+    }
+  }
+
+  resetSavings(): void {
+    this.annualRate = 0;
+    this.goalYears = 0;
+    this.goalAmount = 0;
+    this.monthlySavings = 0;
   }
 
   openLinkInNewTab(externalLink: string) {

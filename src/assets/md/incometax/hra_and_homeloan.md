@@ -65,3 +65,4 @@
 <p><span class="disclaimr">   Disclaimer: This article is for information purpose only. The views expressed in this article are personal and do not necessarily constitute the views of Axis Bank Ltd. and its employees. Axis Bank Ltd. and/or the author shall not be responsible for any direct / indirect loss or liability incurred by the reader for taking any financial decisions based on the contents and information. Please consult your financial advisor before making any financial decision.</span></p><p></p>
 </div>
   </div>
+
