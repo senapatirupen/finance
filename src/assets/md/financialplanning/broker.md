@@ -1908,3 +1908,295 @@ Want me to help with:
 - A script for **influencer or NRI clients**?
 
 Just say the word — I’ll draft it perfectly for you.
+
+Perfect! Here's an **enhanced version** of the **Real Estate Project Details & Progress Tracker** to include *builder*, *architect*, and *way of construction* (like conventional RCC, precast, modular, etc.).
+
+---
+
+### 🏗️ **Real Estate Project Details & Progress Tracker (Extended Version)**
+
+| Field Name                 | Description                                                                 |
+|---------------------------|-----------------------------------------------------------------------------|
+| Project ID                | Unique identifier for the project                                           |
+| Project Name              | Name of the real estate project                                             |
+| Location                  | City, Area, or Pin Code                                                     |
+| Start Date                | Project initiation date                                                     |
+| Estimated Completion Date | Planned project delivery date                                               |
+| Current Status            | e.g. Planning, In Progress, On Hold, Completed                              |
+| Phase                     | Current phase of construction (Land, Foundation, RCC, etc.)                 |
+| % Completed              | Work progress percentage                                                     |
+| Budget Allocated (₹)      | Planned total budget                                                        |
+| Budget Spent (₹)          | Amount spent so far                                                         |
+| Builder / Developer       | Company or person responsible for project development                       |
+| Architect / Design Firm   | Architect name or firm managing design and aesthetics                       |
+| Way of Construction       | Method used (e.g. RCC Frame, Precast Panels, Modular Units, Eco-Friendly)   |
+| Structural Engineer       | Name of the structural engineer or firm                                     |
+| RERA Registration No.     | Registered number under RERA (India-specific)                               |
+| Environmental Clearance   | Status of EC / Sustainability initiatives                                   |
+| Legal Compliance Status   | Any legal approvals (NA, Building plan, etc.)                               |
+| No. of Units / Towers     | Total flats or buildings in the project                                     |
+| Amenities Planned         | Pool, Gym, Garden, Community Hall, etc.                                     |
+| Sales Status              | e.g. 60% Booked, 40% Available                                               |
+| Last Updated              | Date of latest project update                                               |
+| Remarks / Issues          | Any bottlenecks, concerns, or next steps                                    |
+
+---
+
+### 📊 Sample Entry
+
+| Project ID | Project Name    | Location   | Start Date | Est. Completion | Status     | Phase      | % Completed | Budget (₹)   | Spent (₹)   | Builder          | Architect        | Way of Construction | Structural Engineer | RERA No.   | Legal Status | Towers | Amenities             | Sales   | Last Updated | Remarks                        |
+|------------|-----------------|------------|------------|------------------|-------------|------------|--------------|---------------|-------------|-------------------|-------------------|----------------------|---------------------|------------|--------------|--------|------------------------|---------|----------------|----------------------------------|
+| RE002      | Green Orchid    | Bangalore  | 2023-06-01 | 2025-03-31       | In Progress | RCC Frame  | 55%          | 18,00,00,000  | 10,20,00,000| Evergreen Infra   | UrbanSpace Studio | RCC + Brick Masonry   | StructX Consultants | RERA45678KA| Approved     | 3      | Gym, Pool, Kids Park  | 70% Sold | 2025-04-10     | Awaiting material delivery     |
+
+---
+
+Would you like this in:
+- Excel format (I can generate a file)?
+- Google Sheets format?
+- Web-based tracker with Angular or React?
+- Or a dashboard to share with stakeholders?
+
+Let me know how you want to use it!
+
+Here’s a **sample structure for a Building Project Progress Presentation**—ideal for sharing updates with stakeholders, clients, internal teams, or management. It balances clarity, technical depth, and visual appeal.
+
+---
+
+### 🏗️ **[Project Name] - Building Project Progress Presentation**
+
+#### 🖼️ Slide 1: Title Slide
+- **Project Name**: Green Orchid (Example)
+- **Location**: Bangalore, India
+- **Presented By**: [Your Name/Team]
+- **Date**: April 11, 2025
+- **Logo**: [Company/Builder Logo]
+
+---
+
+#### 📌 Slide 2: Project Overview
+- **Type**: Residential / Commercial
+- **Total Units/Towers**: 3 Residential Towers, 180 Units
+- **Start Date**: June 1, 2023
+- **Target Completion**: March 31, 2025
+- **Builder**: Evergreen Infra
+- **Architect**: UrbanSpace Studio
+- **Construction Type**: RCC Frame + Brick Masonry
+
+---
+
+#### 📅 Slide 3: Timeline & Milestones
+| Phase              | Planned Date | Actual Date | Status       |
+|--------------------|--------------|-------------|--------------|
+| Land Acquisition   | Jun 2023     | Jun 2023    | ✅ Completed |
+| Foundation         | Jul 2023     | Aug 2023    | ✅ Completed |
+| RCC Frame Structure| Aug 2023     | Oct 2023    | ✅ Completed |
+| Brickwork + Plaster| Nov 2023     | Jan 2024    | ⏳ Ongoing   |
+| Electrical & Plumbing | Feb 2024 | —           | 🔄 In Progress |
+| Finishing + Interiors| Nov 2024   | —           | 🚧 Pending   |
+
+---
+
+#### 🏗️ Slide 4: Construction Progress (Visuals)
+- Add *real site photos* or *drone images*
+- Use a **before vs now** layout
+- Optional: embed a short progress video or 3D walkthrough
+
+---
+
+#### 📊 Slide 5: Progress Snapshot (as of April 2025)
+| Metric                  | Value               |
+|--------------------------|----------------------|
+| Overall Completion       | 55%                 |
+| Budget Used              | ₹10.2 Cr / ₹18 Cr   |
+| Towers Completed (Structure) | 3/3              |
+| Flooring Started         | Tower A             |
+| Painting Started         | Not yet             |
+| % Flats Sold             | 70%                 |
+
+---
+
+#### 🧱 Slide 6: Construction Method
+- **Foundation**: Isolated Footing with RCC Columns
+- **Walls**: 9” Brick Masonry
+- **Slabs**: Conventional RCC
+- **Waterproofing**: Dr. Fixit-based system
+- **Green Initiatives**: Rainwater Harvesting, Solar Common Lighting
+
+---
+
+#### 🛠️ Slide 7: Challenges & Mitigation
+- **Material Delays**: Due to transport strikes – resolved by sourcing from local suppliers
+- **Monsoon Impact**: Delayed RCC work – adjusted the interior schedule accordingly
+- **Labor Shortage**: Mitigated by outsourcing to trusted partners
+
+---
+
+#### 📅 Slide 8: Upcoming Activities (Next 60 Days)
+- Electrical and plumbing line fitting
+- Window frame installation
+- Interior plastering
+- Show-flat setup
+
+---
+
+#### 📈 Slide 9: Sales & Marketing Update
+- **Total Units Sold**: 126 / 180
+- **Marketing Campaigns**: Social Media, Onsite Hoarding, Influencer Tours
+- **Next Launch**: Phase II (Open spaces, clubhouse)
+
+---
+
+#### 📝 Slide 10: Summary & Action Items
+- Project is **on track** with minor weather-related delays
+- Electrical & finishing work to begin across towers
+- RERA compliance and safety audits on schedule
+
+---
+
+#### 🙏 Slide 11: Q&A / Contact Info
+- Project Manager: [Your Name]
+- Email: [you@example.com]
+- Phone: [Your contact]
+- Thank you for your time!
+
+---
+
+Would you like me to generate:
+- A **PowerPoint** version (.pptx)?
+- A **Google Slides** version?
+- Or an editable **PDF presentation**?
+
+I can generate a clean visual deck with placeholders for your real content. Just say the word!
+
+Got it! Here's a clean and professional **Builder History Presentation** structure—perfect for presenting the background, credibility, and highlights of a real estate developer to investors, clients, banks, or stakeholders.
+
+---
+
+### 🧱 **[Builder Name] – Company Profile & History Presentation**
+
+#### 🖼️ Slide 1: Title Slide
+- **Builder Name**: Evergreen Infra (Example)
+- **Tagline**: “Building Trust, One Brick at a Time”
+- **Presented By**: [Your Name/Team]
+- **Date**: April 11, 2025
+- **Logo + Background image of a signature project**
+
+---
+
+#### 🏢 Slide 2: Company Overview
+- **Established**: 2005
+- **Headquarters**: Bangalore, India
+- **Founder / CEO**: Mr. Rajiv Khanna
+- **Core Business**: Residential, Commercial, and Mixed-Use Development
+- **Team Strength**: 250+ professionals
+- **Footprint**: Projects across Bangalore, Pune, Hyderabad, and Chennai
+
+---
+
+#### 📜 Slide 3: Timeline & Milestones
+| Year | Milestone                                |
+|------|------------------------------------------|
+| 2005 | Founded with first apartment project     |
+| 2008 | Launched 5 residential towers in Bangalore |
+| 2013 | Entered Pune market                      |
+| 2017 | ISO 9001 certified, 10M sq.ft. delivered |
+| 2020 | Won "Best Builder - South India" Award   |
+| 2023 | Crossed 20M sq.ft. construction mark     |
+
+---
+
+#### 🏗️ Slide 4: Signature Projects
+**1. Green Heights (Bangalore)**  
+- 450 Units, Clubhouse, Retail  
+- Delivered in 2018
+
+**2. Orchid Edge (Pune)**  
+- 3 Towers, LEED Gold Certified  
+- Delivered in 2021
+
+**3. Harmony Park (Hyderabad)**  
+- 120 Villas with solar power  
+- Delivered in 2023
+
+*(Add visuals & completion dates with RERA nos.)*
+
+---
+
+#### 🧱 Slide 5: Construction Quality & Methods
+- RCC Frame Structure with Mivan Shuttering
+- Use of branded materials: Ultratech, TATA Steel, Jaquar, etc.
+- Precast wall panels for speed and durability
+- In-house QA/QC team and third-party structural audits
+- 10-Year structural warranty provided
+
+---
+
+#### 🌱 Slide 6: Sustainability & Innovation
+- Rainwater harvesting, STP, Solar Lighting
+- Green building practices (LEED & IGBC certified)
+- Smart home integrations in recent projects
+- Community-focused designs with open spaces
+
+---
+
+#### 💼 Slide 7: Awards & Recognition
+- "Emerging Developer of the Year" – 2016
+- CREDAI Excellence Award – 2019
+- RERA Compliant since 2017
+- CRISIL 5-Star Developer Rating
+
+---
+
+#### 🧮 Slide 8: Financials & Delivery Record
+| Metric                   | Value                     |
+|--------------------------|---------------------------|
+| Projects Delivered       | 45+                       |
+| Total Sq. Ft. Delivered  | 22 Million sq. ft.        |
+| Ongoing Projects         | 9                         |
+| Average On-time Delivery | 95%+                      |
+| Customer Satisfaction    | 4.7 / 5                   |
+
+---
+
+#### 🧍 Slide 9: Leadership Team
+- **Rajiv Khanna – CEO & Founder**  
+  20+ years of real estate leadership  
+- **Meena Iyer – Director, Sales**  
+  Known for scaling sales pipelines  
+- **Ajay Mehra – Head of Construction**  
+  Civil Engineer with 25 years’ site experience  
+
+*(Include profile pictures if available)*
+
+---
+
+#### 🤝 Slide 10: Partnerships & Associations
+- CREDAI Member
+- Tie-ups with HDFC, ICICI, SBI, and LIC Housing
+- Long-term vendor network: L&T, Shapoorji, JMC, etc.
+- RERA Registered in all operating states
+
+---
+
+#### 📈 Slide 11: Upcoming Projects & Vision
+- Launching **Skyline Residency** (Bangalore, 2025)
+- Vision 2030: Deliver 50M sq.ft. across India
+- Expand into plotted development & retirement housing
+- Digitize all processes – CRM, ERP, Buyer Portals
+
+---
+
+#### 📞 Slide 12: Contact Info / Q&A
+- Website: www.evergreeninfra.com  
+- Email: contact@evergreeninfra.com  
+- Phone: +91-XXXX-XXXXXX  
+- Let’s build the future together.
+
+---
+
+Would you like this:
+- As a **ready-to-use PowerPoint file (.pptx)**?
+- Converted to a **Google Slides** presentation for sharing?
+- Or would you prefer a **PDF Company Profile brochure** version?
+
+Let me know what you'd like and I’ll create it for you!
