@@ -1,24 +1,59 @@
 <div class="future-projection-container">
-    <h4>Future Expense Projection</h4>
-    
-    <div class="form-group mb-3">
-      <label for="inflationRate" class="form-label">Inflation Rate (%)</label>
-      <input type="number" class="form-control" id="inflationRate" 
-             [(ngModel)]="inflationRate" (ngModelChange)="updateInflationRate()">
-    </div>
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">
+          {{ category ? category + ' ' : '' }}Future Projections
+          <span *ngIf="category" class="badge bg-light text-dark ms-2">
+            Custom Inflation: {{ inflationRate }}%
+          </span>
+        </h5>
+      </div>
+      <div class="card-body">
+        <div class="inflation-control mb-3">
+          <label for="inflationRate" class="form-label">Inflation Rate: {{ inflationRate }}%</label>
+          <input type="range" class="form-range" id="inflationRate" 
+                 min="0" max="20" step="0.5" [(ngModel)]="inflationRate"
+                 (ngModelChange)="updateInflationRate()">
+        </div>
   
-    <div class="projection-results">
-      <div class="projection-item">
-        <span>Current Monthly Expense:</span>
-        <span>${{ currentAmount | number:'1.2-2' }}</span>
-      </div>
-      <div class="projection-item">
-        <span>After 5 Years:</span>
-        <span>${{ fiveYearProjection | number:'1.2-2' }}</span>
-      </div>
-      <div class="projection-item">
-        <span>After 10 Years:</span>
-        <span>${{ tenYearProjection | number:'1.2-2' }}</span>
+        <div class="projection-summary">
+          <div class="projection-item">
+            <span>Current Amount:</span>
+            <span class="fw-bold">{{ currentAmount | currency:'INR':'symbol':'1.2-2' }}</span>
+          </div>
+          <div class="projection-item">
+            <span>After 5 Years:</span>
+            <span class="fw-bold">{{ fiveYearProjection | currency:'INR':'symbol':'1.2-2' }}</span>
+          </div>
+          <div class="projection-item">
+            <span>After 10 Years:</span>
+            <span class="fw-bold">{{ tenYearProjection | currency:'INR':'symbol':'1.2-2' }}</span>
+          </div>
+        </div>
+  
+        <div class="yearly-breakdown mt-4" *ngIf="yearlyBreakdown.length">
+          <h6>Year-by-Year Projection</h6>
+          <div class="table-responsive">
+            <table class="table table-sm">
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th class="text-end">Projected Amount</th>
+                  <th class="text-end">Increase</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of yearlyBreakdown">
+                  <td>{{ item.year }}</td>
+                  <td class="text-end">{{ item.amount | currency:'INR':'symbol':'1.2-2' }}</td>
+                  <td class="text-end">
+                    {{ ((item.amount - currentAmount) / currentAmount * 100) | number:'1.2-2' }}%
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>

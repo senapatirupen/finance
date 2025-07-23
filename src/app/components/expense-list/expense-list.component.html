@@ -1,9 +1,52 @@
-<div class="expense-list-container">
-    <div class="header">
-      <!-- <button class="btn btn-outline-secondary" routerLink="/planning/dashboard">
+<div class="expense-container">
+    <div class="summary-card mt-4">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Monthly Expense List</h5>
+            </div>
+            <div class="card-body">
+                <button class="btn btn-primary" (click)="addNewExpense()">
+                    <i class="bi bi-plus"></i> Add Expense
+                </button>
+                <div class="table-responsive mt-3">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th class="text-end">Amount</th>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Inflation Rate</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let expense of expenses">
+                                <td>{{ expense.category }}</td>
+                                <td class="text-end">{{ expense.amount | currency:'INR':'symbol':'1.2-2' }}</td>
+                                <td>{{ formatDate(expense.date) }}</td>
+                                <td>{{ expense.description }}</td>
+                                <td>{{ (expense.inflationRate || 0) }}%</td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary me-2" (click)="editExpense(expense)">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger" (click)="deleteExpense(expense.id)">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="header">
+        <button class="btn btn-outline-secondary" routerLink="/planning/dashboard">
         <i class="bi bi-arrow-left"></i> Back to Planning
-      </button> -->
-      <!-- <div class="month-navigation">
+      </button>
+      <div class="month-navigation">
         <button class="btn btn-outline-primary" (click)="changeMonth(-1)">
           <i class="bi bi-chevron-left"></i>
         </button>
@@ -11,46 +54,131 @@
         <button class="btn btn-outline-primary" (click)="changeMonth(1)">
           <i class="bi bi-chevron-right"></i>
         </button>
-      </div> -->
-      <button class="btn btn-primary" (click)="addNewExpense()">
-        <i class="bi bi-plus"></i> Add Expense
-      </button>
-    </div>
-  
-    <div class="table-responsive">
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th>Category</th>
-            <th>Amount</th>
-            <th>Date</th>
-            <th>Description</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let expense of expenses">
-            <td>{{ expense.category }}</td>
-            <td>${{ expense.amount | number:'1.2-2' }}</td>
-            <td>{{ formatDate(expense.date) }}</td>
-            <td>{{ expense.description }}</td>
-            <td>
-              <button class="btn btn-sm btn-outline-primary me-2" (click)="editExpense(expense)">
-                <i class="bi bi-pencil"></i>
-              </button>
-              <button class="btn btn-sm btn-outline-danger" (click)="expense.id ? deleteExpense(expense.id) : null">
-                <i class="bi bi-trash"></i>
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  
-    <div class="summary">
-      <div class="total-expenses">
-        <h4>Total Expenses: ${{ totalExpenses | number:'1.2-2' }}</h4>
       </div>
-      <app-future-projection [currentAmount]="totalExpenses"></app-future-projection>
+        <button class="btn btn-primary" (click)="addNewExpense()">
+            <i class="bi bi-plus"></i> Add Expense
+        </button>
+    </div> -->
+
+    <!-- Expense Table -->
+    <!-- <div class="table-responsive mt-3">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th class="text-end">Amount</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Inflation Rate</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let expense of expenses">
+                    <td>{{ expense.category }}</td>
+                    <td class="text-end">{{ expense.amount | currency:'INR':'symbol':'1.2-2' }}</td>
+                    <td>{{ formatDate(expense.date) }}</td>
+                    <td>{{ expense.description }}</td>
+                    <td>{{ (expense.inflationRate || 0) }}%</td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-primary me-2" (click)="editExpense(expense)">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button class="btn btn-sm btn-outline-danger" (click)="deleteExpense(expense.id)">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div> -->
+
+    <!-- Current Month Summary -->
+    <div class="summary-card mt-4">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Current Month Summary</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Total Expenses: {{ totalExpenses | currency:'INR':'symbol':'1.2-2' }}</h6>
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th class="text-end">Amount</th>
+                                        <th class="text-end">Inflation Rate</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let category of categoryTotals">
+                                        <td>{{ category.category }}</td>
+                                        <td class="text-end">{{ category.amount | currency:'INR':'symbol':'1.2-2' }}
+                                        </td>
+                                        <td class="text-end">{{ category.inflationRate }}%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="inflation-control mb-3">
+                            <label for="inflationRate" class="form-label">Summary Inflation Rate: {{ inflationRate
+                                }}%</label>
+                            <input type="range" class="form-range" id="inflationRate" min="0" max="20" step="0.5"
+                                [(ngModel)]="inflationRate" (ngModelChange)="updateInflationRate()">
+                        </div>
+                        <div class="projection-summary">
+                            <h6>Future Projections</h6>
+                            <div class="projection-item">
+                                <span>After 5 Years:</span>
+                                <span class="fw-bold">{{ summaryProjections.fiveYears | currency:'INR':'symbol':'1.2-2'
+                                    }}</span>
+                            </div>
+                            <div class="projection-item">
+                                <span>After 10 Years:</span>
+                                <span class="fw-bold">{{ summaryProjections.tenYears | currency:'INR':'symbol':'1.2-2'
+                                    }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+
+    <!-- Category-wise Projections -->
+    <div class="category-projections mt-4">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0">Category-wise Future Projections</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th class="text-end">Current</th>
+                                <th class="text-end">Inflation Rate</th>
+                                <th class="text-end">5 Years</th>
+                                <th class="text-end">10 Years</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let proj of categoryProjections">
+                                <td>{{ proj.category }}</td>
+                                <td class="text-end">{{ proj.currentAmount | currency:'INR':'symbol':'1.2-2' }}</td>
+                                <td class="text-end">{{ proj.inflationRate }}%</td>
+                                <td class="text-end">{{ proj.fiveYears | currency:'INR':'symbol':'1.2-2' }}</td>
+                                <td class="text-end">{{ proj.tenYears | currency:'INR':'symbol':'1.2-2' }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

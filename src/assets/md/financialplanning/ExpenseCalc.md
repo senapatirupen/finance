@@ -506,3 +506,379 @@ export class ExpenseFormComponent implements OnInit {
 6. **Better Data Visualization**: Clean tables and cards to display the information
 
 This enhanced expense calculator now provides valuable insights into how expenses might grow over time due to inflation, helping with better financial planning.
+
+# Enhanced Future Projection Component
+
+Here's the updated `FutureProjectionComponent` that aligns with the enhanced expense calculator features:
+
+```typescript
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ExpenseService } from '../../services/expense.service';
+
+@Component({
+  selector: 'app-future-projection',
+  templateUrl: './future-projection.component.html',
+  styleUrls: ['./future-projection.component.scss']
+})
+export class FutureProjectionComponent implements OnChanges {
+  @Input() currentAmount: number = 0;
+  @Input() category?: string; // Optional category for specific projections
+  @Input() customInflationRate?: number; // Allow parent to set inflation rate
+  
+  inflationRate: number = 6; // Default to 6% (updated from 3%)
+  fiveYearProjection: number = 0;
+  tenYearProjection: number = 0;
+  yearlyBreakdown: {year: number, amount: number}[] = [];
+
+  // Default inflation rates by category
+  private defaultInflationRates: {[key: string]: number} = {
+    'Housing': 5,
+    'Food': 6,
+    'Transportation': 7,
+    'Healthcare': 8,
+    'Entertainment': 4,
+    'Utilities': 5,
+    'Other': 5
+  };
+
+  constructor(private expenseService: ExpenseService) { }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['currentAmount'] || changes['inflationRate'] || changes['category'] || changes['customInflationRate']) {
+      this.updateInflationRateBasedOnInputs();
+      this.calculateProjections();
+      this.generateYearlyBreakdown();
+    }
+  }
+
+  private updateInflationRateBasedOnInputs(): void {
+    if (this.customInflationRate !== undefined) {
+      this.inflationRate = this.customInflationRate;
+    } else if (this.category && this.defaultInflationRates[this.category]) {
+      this.inflationRate = this.defaultInflationRates[this.category];
+    }
+    // Otherwise, keep the default 6%
+  }
+
+  calculateProjections(): void {
+    this.fiveYearProjection = this.expenseService.calculateFutureValue(
+      this.currentAmount, 
+      5, 
+      this.inflationRate / 100
+    );
+    
+    this.tenYearProjection = this.expenseService.calculateFutureValue(
+      this.currentAmount, 
+      10, 
+      this.inflationRate / 100
+    );
+  }
+
+  generateYearlyBreakdown(): void {
+    this.yearlyBreakdown = [];
+    for (let year = 1; year <= 10; year++) {
+      this.yearlyBreakdown.push({
+        year,
+        amount: this.expenseService.calculateFutureValue(
+          this.currentAmount,
+          year,
+          this.inflationRate / 100
+        )
+      });
+    }
+  }
+
+  updateInflationRate(): void {
+    this.calculateProjections();
+    this.generateYearlyBreakdown();
+  }
+}
+```
+
+## Updated Template (`future-projection.component.html`)
+
+```html
+<div class="future-projection-container">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h5 class="mb-0">
+        {{ category ? category + ' ' : '' }}Future Projections
+        <span *ngIf="category" class="badge bg-light text-dark ms-2">
+          Custom Inflation: {{ inflationRate }}%
+        </span>
+      </h5>
+    </div>
+    <div class="card-body">
+      <div class="inflation-control mb-3">
+        <label for="inflationRate" class="form-label">Inflation Rate: {{ inflationRate }}%</label>
+        <input type="range" class="form-range" id="inflationRate" 
+               min="0" max="20" step="0.5" [(ngModel)]="inflationRate"
+               (ngModelChange)="updateInflationRate()">
+      </div>
+
+      <div class="projection-summary">
+        <div class="projection-item">
+          <span>Current Amount:</span>
+          <span class="fw-bold">{{ currentAmount | currency:'INR':'symbol':'1.2-2' }}</span>
+        </div>
+        <div class="projection-item">
+          <span>After 5 Years:</span>
+          <span class="fw-bold">{{ fiveYearProjection | currency:'INR':'symbol':'1.2-2' }}</span>
+        </div>
+        <div class="projection-item">
+          <span>After 10 Years:</span>
+          <span class="fw-bold">{{ tenYearProjection | currency:'INR':'symbol':'1.2-2' }}</span>
+        </div>
+      </div>
+
+      <div class="yearly-breakdown mt-4" *ngIf="yearlyBreakdown.length">
+        <h6>Year-by-Year Projection</h6>
+        <div class="table-responsive">
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th class="text-end">Projected Amount</th>
+                <th class="text-end">Increase</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of yearlyBreakdown">
+                <td>{{ item.year }}</td>
+                <td class="text-end">{{ item.amount | currency:'INR':'symbol':'1.2-2' }}</td>
+                <td class="text-end">
+                  {{ ((item.amount - currentAmount) / currentAmount * 100) | number:'1.2-2' }}%
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+## Styles (`future-projection.component.scss`)
+
+```scss
+.future-projection-container {
+  .card {
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  }
+
+  .card-header {
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+  }
+
+  .inflation-control {
+    max-width: 400px;
+  }
+
+  .projection-summary {
+    .projection-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eee;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .yearly-breakdown {
+    h6 {
+      margin-bottom: 1rem;
+      color: #555;
+    }
+
+    table {
+      font-size: 0.9rem;
+    }
+  }
+}
+```
+
+## Key Enhancements:
+
+1. **Category-Specific Projections**: Automatically uses appropriate inflation rates based on expense category
+2. **Custom Inflation Rate**: Allows parent component to override default inflation rates
+3. **Detailed Yearly Breakdown**: Shows projection for each year up to 10 years
+4. **Interactive Controls**: Slider to adjust inflation rate and see immediate updates
+5. **Visual Improvements**: Better card layout and responsive design
+6. **Percentage Increase**: Shows how much the amount increases each year
+7. **Currency Formatting**: Consistent currency formatting throughout
+
+This enhanced component can now be used both for overall expense projections and for category-specific projections, with much more detailed information about how expenses will grow over time due to inflation.
+
+Here's a comprehensive sample JSON data structure for the enhanced expense calculator with inflation projections:
+
+```json
+{
+  "expenses": [
+    {
+      "id": 1,
+      "category": "Housing",
+      "amount": 25000,
+      "date": "2023-06-01",
+      "description": "Monthly rent payment",
+      "inflationRate": 5
+    },
+    {
+      "id": 2,
+      "category": "Food",
+      "amount": 8000,
+      "date": "2023-06-05",
+      "description": "Groceries for the week",
+      "inflationRate": 6
+    },
+    {
+      "id": 3,
+      "category": "Transportation",
+      "amount": 5000,
+      "date": "2023-06-10",
+      "description": "Fuel and metro card",
+      "inflationRate": 7
+    },
+    {
+      "id": 4,
+      "category": "Healthcare",
+      "amount": 3000,
+      "date": "2023-06-15",
+      "description": "Monthly medicines",
+      "inflationRate": 8
+    },
+    {
+      "id": 5,
+      "category": "Entertainment",
+      "amount": 4000,
+      "date": "2023-06-20",
+      "description": "Movie tickets and dining out",
+      "inflationRate": 4
+    },
+    {
+      "id": 6,
+      "category": "Utilities",
+      "amount": 3500,
+      "date": "2023-06-25",
+      "description": "Electricity and water bill",
+      "inflationRate": 5
+    },
+    {
+      "id": 7,
+      "category": "Other",
+      "amount": 2000,
+      "date": "2023-06-28",
+      "description": "Miscellaneous expenses",
+      "inflationRate": 5
+    },
+    {
+      "id": 8,
+      "category": "Housing",
+      "amount": 12000,
+      "date": "2023-07-01",
+      "description": "July rent payment",
+      "inflationRate": 5
+    },
+    {
+      "id": 9,
+      "category": "Food",
+      "amount": 8500,
+      "date": "2023-07-05",
+      "description": "July groceries",
+      "inflationRate": 6
+    },
+    {
+      "id": 10,
+      "category": "Transportation",
+      "amount": 5200,
+      "date": "2023-07-10",
+      "description": "July fuel costs",
+      "inflationRate": 7
+    }
+  ],
+  "categories": [
+    {
+      "name": "Housing",
+      "defaultInflationRate": 5,
+      "description": "Rent, mortgage, property taxes"
+    },
+    {
+      "name": "Food",
+      "defaultInflationRate": 6,
+      "description": "Groceries, dining out"
+    },
+    {
+      "name": "Transportation",
+      "defaultInflationRate": 7,
+      "description": "Fuel, public transport, vehicle maintenance"
+    },
+    {
+      "name": "Healthcare",
+      "defaultInflationRate": 8,
+      "description": "Medicines, insurance, doctor visits"
+    },
+    {
+      "name": "Entertainment",
+      "defaultInflationRate": 4,
+      "description": "Movies, subscriptions, hobbies"
+    },
+    {
+      "name": "Utilities",
+      "defaultInflationRate": 5,
+      "description": "Electricity, water, internet"
+    },
+    {
+      "name": "Other",
+      "defaultInflationRate": 5,
+      "description": "Miscellaneous expenses"
+    }
+  ],
+  "inflationSettings": {
+    "defaultRate": 6,
+    "lastUpdated": "2023-07-15",
+    "source": "Reserve Bank of India"
+  }
+}
+```
+
+### Key Features of the JSON Structure:
+
+1. **Expenses Array**:
+   - Contains individual expense records
+   - Each has category-specific inflation rates
+   - Includes date and description fields
+
+2. **Categories Reference**:
+   - Defines all available expense categories
+   - Specifies default inflation rates for each category
+   - Includes descriptions for better understanding
+
+3. **Inflation Settings**:
+   - Default inflation rate for calculations
+   - Metadata about when rates were updated
+   - Source of inflation data
+
+4. **Realistic Data**:
+   - Covers two months of expenses (June and July)
+   - Includes common expense categories
+   - Uses realistic amounts in INR
+
+5. **Relationships**:
+   - Expenses reference categories
+   - Inflation rates can be overridden per expense
+
+This JSON structure supports all the features of the enhanced expense calculator:
+- Category-specific inflation projections
+- Monthly expense tracking
+- Future value calculations
+- Detailed breakdowns by category
+- Flexible inflation rate adjustments
+
+You can use this with JSON Server by saving it to a `db.json` file and running:
+```bash
+json-server --watch db.json
+```

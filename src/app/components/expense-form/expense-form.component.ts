@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ExpenseService } from '../../services/expense.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,7 +12,16 @@ import { Expense } from 'src/app/model/expense.model';
 })
 export class ExpenseFormComponent implements OnInit {
   expenseForm: FormGroup;
-  categories = ['Housing', 'Transportation', 'Food', 'Utilities', 'Healthcare', 'Entertainment', 'Other'];
+  categories = ['Housing', 'Food', 'Transportation', 'Healthcare', 'Entertainment', 'Utilities', 'Other'];
+  defaultInflationRates: {[key: string]: number} = {
+    'Housing': 5,
+    'Food': 6,
+    'Transportation': 7,
+    'Healthcare': 8,
+    'Entertainment': 4,
+    'Utilities': 5,
+    'Other': 5
+  };
   isEditMode = false;
   expenseId: number | null = null;
 
@@ -27,7 +36,8 @@ export class ExpenseFormComponent implements OnInit {
       category: ['', Validators.required],
       amount: ['', [Validators.required, Validators.min(0.01)]],
       date: ['', Validators.required],
-      description: ['']
+      description: [''],
+      inflationRate: [null]
     });
   }
 
@@ -39,17 +49,25 @@ export class ExpenseFormComponent implements OnInit {
         this.loadExpense(this.expenseId);
       }
     });
+
+    // Set default inflation rate when category changes
+    this.expenseForm.get('category')?.valueChanges.subscribe(category => {
+      if (category && !this.expenseForm.get('inflationRate')?.value) {
+        this.expenseForm.get('inflationRate')?.setValue(this.defaultInflationRates[category]);
+      }
+    });
   }
 
   loadExpense(id: number): void {
     this.expenseService.getExpenses().subscribe(expenses => {
-      const expense = expenses.find(e => Number(e.id) === id);
+      const expense = expenses.find(e => e.id === id);
       if (expense) {
         this.expenseForm.patchValue({
           category: expense.category,
           amount: expense.amount,
           date: expense.date,
-          description: expense.description
+          description: expense.description,
+          inflationRate: expense.inflationRate || this.defaultInflationRates[expense.category] || 5
         });
       }
     });
@@ -61,16 +79,12 @@ export class ExpenseFormComponent implements OnInit {
 
       if (this.isEditMode && this.expenseId) {
         this.expenseService.updateExpense(this.expenseId, expenseData)
-          .subscribe(() => this.navigateToExpenseList());
+          .subscribe(() => this.router.navigate(['/planning/expenses']));
       } else {
         this.expenseService.addExpense(expenseData)
-          .subscribe(() => this.navigateToExpenseList());
+          .subscribe(() => this.router.navigate(['/planning/expenses']));
       }
     }
-  }
-
-  navigateToExpenseList(): void {
-    this.router.navigate(['/planning/expenses']);
   }
 
   onCancel(): void {

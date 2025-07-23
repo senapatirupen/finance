@@ -8,6 +8,15 @@ import { Expense } from '../model/expense.model';
 })
 export class ExpenseService {
   private apiUrl = 'http://localhost:3000/expenses';
+  private defaultInflationRates: {[key: string]: number} = {
+    'Housing': 5,
+    'Food': 6,
+    'Transportation': 7,
+    'Healthcare': 8,
+    'Entertainment': 4,
+    'Utilities': 5,
+    'Other': 5
+  };
 
   constructor(private http: HttpClient) { }
 
@@ -20,6 +29,10 @@ export class ExpenseService {
   }
 
   addExpense(expense: Expense): Observable<Expense> {
+    // Set default inflation rate if not provided
+    if (!expense.inflationRate) {
+      expense.inflationRate = this.defaultInflationRates[expense.category] || 5;
+    }
     return this.http.post<Expense>(this.apiUrl, expense);
   }
 
@@ -31,11 +44,31 @@ export class ExpenseService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 
-  calculateFutureExpense(currentAmount: number, years: number, inflationRate: number = 0.03): number {
-    return currentAmount * Math.pow(1 + inflationRate, years);
-  }
-
   getTotalExpenses(expenses: Expense[]): number {
     return expenses.reduce((sum, expense) => sum + expense.amount, 0);
+  }
+
+  calculateFutureValue(currentAmount: number, years: number, inflationRate: number): number {
+    return currentAmount * Math.pow(1 + (inflationRate / 100), years);
+  }
+
+  getCategoryTotals(expenses: Expense[]): {category: string, amount: number, inflationRate: number}[] {
+    const categories: {[key: string]: {amount: number, inflationRate: number}} = {};
+    
+    expenses.forEach(expense => {
+      if (!categories[expense.category]) {
+        categories[expense.category] = {
+          amount: 0,
+          inflationRate: expense.inflationRate || this.defaultInflationRates[expense.category] || 5
+        };
+      }
+      categories[expense.category].amount += expense.amount;
+    });
+
+    return Object.keys(categories).map(category => ({
+      category,
+      amount: categories[category].amount,
+      inflationRate: categories[category].inflationRate
+    }));
   }
 }
