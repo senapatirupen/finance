@@ -1,0 +1,121 @@
+<div class="container mt-4">
+    <div class="card shadow">
+      <div class="card-header bg-primary text-white">
+        <h3 class="mb-0">Lump Sum Investment Calculator</h3>
+      </div>
+      <div class="card-body">
+        <!-- Investment Form -->
+        <form [formGroup]="lumpSumForm" (ngSubmit)="saveInvestment()" class="mb-4">
+          <div class="row g-3">
+            <div class="col-md-3">
+              <label for="investmentName" class="form-label">Investment Name</label>
+              <input type="text" class="form-control" id="investmentName" 
+                     formControlName="investmentName" placeholder="e.g., Stock Investment">
+              <div *ngIf="lumpSumForm.get('investmentName')?.invalid && lumpSumForm.get('investmentName')?.touched" 
+                   class="text-danger">
+                Investment name is required
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label for="principalAmount" class="form-label">Principal Amount (₹)</label>
+              <input type="number" class="form-control" id="principalAmount" 
+                     formControlName="principalAmount" min="1" placeholder="e.g., 100000">
+              <div *ngIf="lumpSumForm.get('principalAmount')?.invalid && lumpSumForm.get('principalAmount')?.touched" 
+                   class="text-danger">
+                Valid amount is required
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label for="duration" class="form-label">Duration (Years)</label>
+              <input type="number" class="form-control" id="duration" 
+                     formControlName="duration" min="1" placeholder="e.g., 5">
+              <div *ngIf="lumpSumForm.get('duration')?.invalid && lumpSumForm.get('duration')?.touched" 
+                   class="text-danger">
+                Valid duration is required
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label for="expectedReturn" class="form-label">Expected Return (%)</label>
+              <input type="number" class="form-control" id="expectedReturn" 
+                     formControlName="expectedReturn" step="0.01" min="0.01" placeholder="e.g., 10">
+              <div *ngIf="lumpSumForm.get('expectedReturn')?.invalid && lumpSumForm.get('expectedReturn')?.touched" 
+                   class="text-danger">
+                Valid return rate is required
+              </div>
+            </div>
+            <div class="col-md-3 d-flex align-items-end">
+              <button type="submit" class="btn btn-primary me-2" [disabled]="!lumpSumForm.valid">
+                {{ isEditing ? 'Update' : 'Add' }} Investment
+              </button>
+              <button type="button" class="btn btn-outline-secondary" (click)="addInvestment()" *ngIf="isEditing">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </form>
+  
+        <!-- Investments Table -->
+        <div class="table-responsive">
+          <table class="table table-hover align-middle">
+            <thead class="table-light">
+              <tr>
+                <th>Investment Name</th>
+                <th class="text-end">Principal (₹)</th>
+                <th class="text-end">Duration (Yrs)</th>
+                <th class="text-end">Return (%)</th>
+                <th class="text-end">Future Value (₹)</th>
+                <th class="text-end">Total Interest (₹)</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let investment of investments">
+                <td>{{ investment.investmentName }}</td>
+                <td class="text-end">{{ investment.principalAmount | number:'1.2-2' }}</td>
+                <td class="text-end">{{ investment.duration }}</td>
+                <td class="text-end">{{ investment.expectedReturn | number:'1.2-2' }}</td>
+                <td class="text-end">{{ investment.futureValue | number:'1.2-2' }}</td>
+                <td class="text-end">{{ investment.totalInterest | number:'1.2-2' }}</td>
+                <td>
+                  <button class="btn btn-sm btn-outline-primary me-2" (click)="editInvestment(investment)">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger" (click)="deleteInvestment(investment.id!)" *ngIf="investment.id">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+        <!-- Totals -->
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <h5 class="card-title">Total Principal</h5>
+                <p class="card-text fs-4">{{ totalPrincipal | number:'1.2-2' }} ₹</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <h5 class="card-title">Total Interest</h5>
+                <p class="card-text fs-4">{{ totalInterest | number:'1.2-2' }} ₹</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <h5 class="card-title">Total Future Value</h5>
+                <p class="card-text fs-4">{{ totalFutureValue | number:'1.2-2' }} ₹</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

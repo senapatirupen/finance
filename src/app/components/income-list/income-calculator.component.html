@@ -1,0 +1,125 @@
+<div class="container mt-4">
+    <div class="card shadow">
+      <div class="card-header bg-primary text-white">
+        <h3 class="mb-0">Income Projection Calculator</h3>
+      </div>
+      <div class="card-body">
+        <!-- Income Form -->
+        <form [formGroup]="incomeForm" (ngSubmit)="saveIncomeSource()" class="mb-4">
+          <div class="row g-3">
+            <div class="col-md-3">
+              <label for="sourceName" class="form-label">Income Source</label>
+              <input type="text" class="form-control" id="sourceName" 
+                     formControlName="sourceName" placeholder="e.g., Salary, Rental">
+              <div *ngIf="incomeForm.get('sourceName')?.invalid && incomeForm.get('sourceName')?.touched" 
+                   class="text-danger">
+                Income source is required
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label for="initialMonthlyIncome" class="form-label">Monthly Income (₹)</label>
+              <input type="number" class="form-control" id="initialMonthlyIncome" 
+                     formControlName="initialMonthlyIncome" min="1" placeholder="e.g., 50000">
+              <div *ngIf="incomeForm.get('initialMonthlyIncome')?.invalid && incomeForm.get('initialMonthlyIncome')?.touched" 
+                   class="text-danger">
+                Valid amount is required
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label for="annualGrowthRate" class="form-label">Growth Rate (%)</label>
+              <input type="number" class="form-control" id="annualGrowthRate" 
+                     formControlName="annualGrowthRate" step="0.01" min="0" placeholder="e.g., 5">
+              <div *ngIf="incomeForm.get('annualGrowthRate')?.invalid && incomeForm.get('annualGrowthRate')?.touched" 
+                   class="text-danger">
+                Valid growth rate is required
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label for="years" class="form-label">Years</label>
+              <input type="number" class="form-control" id="years" 
+                     formControlName="years" min="1" placeholder="e.g., 10">
+              <div *ngIf="incomeForm.get('years')?.invalid && incomeForm.get('years')?.touched" 
+                   class="text-danger">
+                Valid number of years is required
+              </div>
+            </div>
+            <div class="col-md-3 d-flex align-items-end">
+              <button type="submit" class="btn btn-primary me-2" [disabled]="!incomeForm.valid">
+                {{ isEditing ? 'Update' : 'Add' }} Source
+              </button>
+              <button type="button" class="btn btn-outline-secondary" (click)="addIncomeSource()" *ngIf="isEditing">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </form>
+  
+        <!-- Income Sources Table -->
+        <div class="table-responsive">
+          <table class="table table-hover align-middle">
+            <thead class="table-light">
+              <tr>
+                <th>Income Source</th>
+                <th class="text-end">Initial Monthly (₹)</th>
+                <th class="text-end">Initial Annual (₹)</th>
+                <th class="text-end">Growth Rate (%)</th>
+                <th class="text-end">Years</th>
+                <th class="text-end">Projected Monthly (₹)</th>
+                <th class="text-end">Projected Annual (₹)</th>
+                <th class="text-end">Total Received (₹)</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let source of incomeSources">
+                <td>{{ source.sourceName }}</td>
+                <td class="text-end">{{ source.initialMonthlyIncome | number:'1.2-2' }}</td>
+                <td class="text-end">{{ (source.initialMonthlyIncome || 0) * 12 | number:'1.2-2' }}</td>
+                <td class="text-end">{{ source.annualGrowthRate | number:'1.2-2' }}</td>
+                <td class="text-end">{{ source.years }}</td>
+                <td class="text-end">{{ source.projectedMonthlyIncome | number:'1.2-2' }}</td>
+                <td class="text-end">{{ (source.projectedMonthlyIncome || 0) * 12 | number:'1.2-2' }}</td>
+                <td class="text-end">{{ source.totalAmountReceived | number:'1.2-2' }}</td>
+                <td>
+                  <button class="btn btn-sm btn-outline-primary me-2" (click)="editIncomeSource(source)">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger" (click)="deleteIncomeSource(source.id!)" *ngIf="source.id">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+        <!-- Totals -->
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <h5 class="card-title">Total Initial Annual Income</h5>
+                <p class="card-text fs-4">{{ totalInitialIncome | number:'1.2-2' }} ₹</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <h5 class="card-title">Total Projected Annual Income</h5>
+                <p class="card-text fs-4">{{ totalProjectedIncome | number:'1.2-2' }} ₹</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <h5 class="card-title">Total Amount Received</h5>
+                <p class="card-text fs-4">{{ totalAmountReceived | number:'1.2-2' }} ₹</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

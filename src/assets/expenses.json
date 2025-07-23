@@ -1,0 +1,23 @@
+[
+    {
+      "id": "1",
+      "category": "Housing",
+      "amount": 15000,
+      "date": "2023-11-01",
+      "description": "Monthly rent"
+    },
+    {
+      "id": "2",
+      "category": "Groceries",
+      "amount": 8000,
+      "date": "2023-11-05",
+      "description": "Monthly groceries"
+    },
+    {
+      "id": "3",
+      "category": "Transportation",
+      "amount": 3000,
+      "date": "2023-11-10",
+      "description": "Fuel and maintenance"
+    }
+  ]

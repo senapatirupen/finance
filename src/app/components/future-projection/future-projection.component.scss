@@ -1,0 +1,30 @@
+.future-projection-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h4 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .projection-results {
+    margin-top: 20px;
+  }
+  
+  .projection-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .projection-item:last-child {
+    border-bottom: none;
+  }
+  
+  .projection-item span:last-child {
+    font-weight: 500;
+  }

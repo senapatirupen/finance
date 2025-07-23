@@ -795,6 +795,343 @@
                     investments—perfect for financial independence!
                 </p>
             </div>
+            <div class="p-4 mb-3 rounded border">
+                <h4 class="fst-italic">Pro Rata Loan Partial Payment Calculator</h4>
+                <p>
+                    <em class="heading">Fair and simple method to reduce all loans proportionally.</em>
+                </p>
+                <p>
+                    A Pro Rata Debt List is a method of allocating a payment across multiple debts proportionally, based
+                    on each loan’s share of the total debt.
+                </p>
+                <p>
+                    It’s commonly used when:
+                    A borrower has multiple loans, and
+                    They want to distribute a lump-sum payment (say, a partial payment or a bonus) fairly across all
+                    loans.
+                </p>
+                <p><em class="heading">Example:</em></p>
+                <p>Home Loan Outstanding ₹5,00,000, Personal Loan Outstanding ₹3,00,000, Car Loan Outstanding ₹2,00,000
+                    so Total Outstanding ₹10,00,000</p>
+                <p>Borrower wants to pay ₹1,00,000 across all these loans pro rata.</p>
+                <p>1. Calculate total debt = ₹10,00,000 Total Outstanding Loans
+                </p>
+                <p>2. Calculate each loan’s share:</p>
+                <table class="table">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Loan Type</th>
+                            <th>Formula</th>
+                            <th>Share (%)</th>
+                            <th>Amount from ₹1L</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Home Loan</td>
+                            <td>₹5,00,000 / ₹10,00,000 = 0.50</td>
+                            <td>50%</td>
+                            <td>₹50,000</td>
+                        </tr>
+                        <tr>
+                            <td>Personal Loan</td>
+                            <td>₹3,00,000 / ₹10,00,000 = 0.30</td>
+                            <td>30%</td>
+                            <td>₹30,000</td>
+                        </tr>
+                        <tr>
+                            <td>Car Loan</td>
+                            <td>₹2,00,000 / ₹10,00,000 = 0.20</td>
+                            <td>20%</td>
+                            <td>₹20,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><em class="heading">Calculator:</em></p>
+                <div class="mb-3">
+                    <label for="amount" class="form-label">Lump Sum Amount to Pay Across Multiple Loans (₹)</label>
+                    <input type="number" id="amount" class="form-control" [(ngModel)]="lumpSumAmount">
+                </div>
+
+                <div class="mb-4">
+                    <h5>Add a Loan</h5>
+                    <div class="row">
+                        <div class="col-md-5 mb-2">
+                            <input type="text" class="form-control" placeholder="Loan Name" [(ngModel)]="newLoanName">
+                        </div>
+                        <div class="col-md-5 mb-2">
+                            <input type="number" class="form-control" placeholder="Loan Balance (₹)"
+                                [(ngModel)]="newLoanBalance">
+                        </div>
+                        <div class="col-md-5 mb-2">
+                            <button (click)="addLoan()">Add Loan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="table table-bordered" *ngIf="loans.length">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Loan Type</th>
+                            <th>Original Balance (₹)</th>
+                            <th>Pro Rata Payment (₹)</th>
+                            <th>New Balance (₹)</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let loan of loans; let i = index">
+                            <td>{{ loan.name }}</td>
+                            <td>{{ loan.balance }}</td>
+                            <td>{{ loan.payment || '-' }}</td>
+                            <td>{{ loan.newBalance || '-' }}</td>
+                            <td><button (click)="removeLoan(i)">Remove</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button (click)="calculateProRata()" [disabled]="!loans.length">Calculate Pro
+                    Rata</button>
+            </div>
+            <div class="p-4 mb-3 rounded border">
+                <h4 class="fst-italic">Investment Strategy by Financial Status</h4>
+                <!-- Poor or Middle Class -->
+                <div class="card mb-1 border-0">
+                    <div class="card-body">
+                        <p><em class="heading">Poor or Middle Class:</em> Focus on safe, consistent compounding options:</p>
+                        <table class="table">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Investment Type</th>
+                                    <th>Expected CAGR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Liquid Mutual Fund</td>
+                                    <td>6–7%</td>
+                                </tr>
+                                <tr>
+                                    <td>Gold Mutual Fund / ETF</td>
+                                    <td>9–10%</td>
+                                </tr>
+                                <tr>
+                                    <td>Nifty 50 Index Fund</td>
+                                    <td>12–15%</td>
+                                </tr>
+                                <tr>
+                                    <td>Land</td>
+                                    <td>10–12%</td>
+                                </tr>
+                                <tr>
+                                    <td>NPS / PPF</td>
+                                    <td>7–8%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Strategy: SIPs, save for land, build retirement corpus with PPF/NPS.</p>
+                    </div>
+                </div>
+
+                <!-- Born Rich -->
+                <div class="card mb-1 border-0">
+                    <div class="card-body">
+                        <p><em class="heading">Born Rich:</em> You already have a home, car, and no loan. Expand and diversify:</p>
+                        <table class="table">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Investment Type</th>
+                                    <th>Expected Return</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Direct Equity</td>
+                                    <td>9–17%</td>
+                                </tr>
+                                <tr>
+                                    <td>Buying Flat (Capital + Rent)</td>
+                                    <td>8–9% + 2%</td>
+                                </tr>
+                                <tr>
+                                    <td>Actively Managed Mutual Funds</td>
+                                    <td>15–17%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Strategy: Start direct equity, invest in rental flats, diversify mutual
+                            funds.</p>
+                    </div>
+                </div>
+
+                <!-- Ultra Rich -->
+                <div class="card mb-1 border-0">
+                    <div class="card-body">
+                        <p><em class="heading">Ultra Rich:</em> Preserve and grow wealth via global and alternative assets:</p>
+                        <table class="table">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Investment Type</th>
+                                    <th>Returns/Focus</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Your Own Business</td>
+                                    <td>Infinite Upside</td>
+                                </tr>
+                                <tr>
+                                    <td>REITs / InvIT</td>
+                                    <td>6–10% + dividends</td>
+                                </tr>
+                                <tr>
+                                    <td>International Mutual Funds / ETFs</td>
+                                    <td>10–15%</td>
+                                </tr>
+                                <tr>
+                                    <td>Blue-Chip US Stocks / Nasdaq Index</td>
+                                    <td>12–20%</td>
+                                </tr>
+                                <tr>
+                                    <td>Commodity (Gold, Silver, Diamond)</td>
+                                    <td>8–10%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Strategy: Build business assets, invest globally, hedge risks via
+                            commodities.</p>
+                    </div>
+                </div>
+
+                <!-- Common Advice -->
+                <div>
+                    <p>Common Advice for Everyone:</p>
+                    <ul>
+                        <li>Invest based on risk appetite and goals.</li>
+                        <li>Track CAGR vs. inflation yearly.</li>
+                        <li>Maintain 3–6 months emergency fund.</li>
+                        <li>Rebalance portfolio annually.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="p-4 mb-3 rounded border">
+                <h4 class="fst-italic">10 Powerful Steps to Achieve Goals Faster</h4>
+                <p>
+                    <em class="heading">Take sometime and read this.</em>
+                </p>
+                <ul class="list-unstyled">
+                    <!-- Step 1 -->
+                    <li>
+                        <div class="d-flex align-items-center">
+                            <p class="mb-0">Write Your Goal Twice a Day</p>
+                        </div>
+                        <ul class="mt-2">
+                            <li>Morning: Sets your subconscious mind for action</li>
+                            <li>Night: Reinforces it before your brain resets</li>
+                            <li class="text-muted">Example: "I will launch my side business by Dec 2025"</li>
+                        </ul>
+                    </li>
+
+                    <!-- Step 2 -->
+                    <li>
+                        <div class="d-flex align-items-center">
+                            <p class="mb-0 mt-2">Set SMART + EMOTIONAL Goals</p>
+                        </div>
+                        <ul class="mt-2">
+                            <li>Make goals Specific, Measurable, Achievable, Relevant, Time-bound</li>
+                            <li>Attach strong emotional reasons — why do you <em>really</em> want it?
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Step 3 -->
+                    <li>
+                        <div class="d-flex align-items-center">
+                            <p class="mb-0 mt-2">Break It into Daily Actions (Micro-goals)</p>
+                        </div>
+                        <ul class="mt-2">
+                            <li>Work backward: Break annual goals → monthly → weekly → daily</li>
+                            <li>Keep a daily tracker or Kanban board</li>
+                        </ul>
+                    </li>
+
+                    <!-- Step 4 -->
+                    <li>
+                        <div class="d-flex align-items-center">
+                            <p class="mb-0 mt-2">Visualize Daily (2–5 mins)</p>
+                        </div>
+                        <ul class="mt-2">
+                            <li>Close eyes and imagine achieving the goal</li>
+                            <li>Feel the emotion as if it's real. This programs your brain</li>
+                        </ul>
+                    </li>
+
+                    <!-- Step 5 -->
+                    <li>
+                        <div class="d-flex align-items-center">
+                            <p class="mb-0 mt-2">Create a "Non-Negotiable Hour"</p>
+                        </div>
+                        <ul class="mt-2">
+                            <li>Block 1 hour/day where you only work on your highest-priority goal (no
+                                distractions)</li>
+                        </ul>
+                    </li>
+
+                    <!-- Step 6 -->
+                    <li>
+                        <div class="d-flex align-items-center">
+                            <p class="mb-0 mt-2">Eliminate 1 Time-Waster Every Week</p>
+                        </div>
+                        <ul class="mt-2">
+                            <li>E.g., reduce mindless scrolling, toxic conversations, junk content</li>
+                        </ul>
+                    </li>
+
+                    <!-- Step 7 -->
+                    <li>
+                        <div class="d-flex align-items-center">
+                            <p class="mb-0 mt-2">Follow a 2x2 Rule</p>
+                        </div>
+                        <ul class="mt-2">
+                            <li>2 hours/week learning (books, podcasts, courses)</li>
+                            <li>2 hours/week applying that learning</li>
+                        </ul>
+                    </li>
+
+                    <!-- Step 8 -->
+                    <li>
+                        <div class="d-flex align-items-center">
+                            <p class="mb-0 mt-2">Use Accountability</p>
+                        </div>
+                        <ul class="mt-2">
+                            <li>Tell a friend, mentor, or even post it online</li>
+                            <li>Use habit-tracking apps or join a community (e.g., Notion, Habitica)</li>
+                        </ul>
+                    </li>
+
+                    <!-- Step 9 -->
+                    <li>
+                        <div class="d-flex align-items-center">
+                            <p class="mb-0 mt-2">Review Weekly — Adjust & Reflect</p>
+                        </div>
+                        <ul class="mt-2">
+                            <li>What worked? What didn't? What should change?</li>
+                            <li>Write 3 wins and 1 improvement each Sunday</li>
+                        </ul>
+                    </li>
+
+                    <!-- Step 10 -->
+                    <li>
+                        <div class="d-flex align-items-center">
+                            <p class="mb-0 mt-2">Say "No" Boldly</p>
+                        </div>
+                        <ul class="mt-2">
+                            <li>Say no to good things that are not aligned with your one big goal</li>
+                            <li>Your time is your greatest currency</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="col-md-5">
             <div style="top: 2rem;">
@@ -805,7 +1142,8 @@
                 </div>
                 <div class="p-4 mb-3 rounded border">
                     <h4 class="fst-italic">Finance Goal</h4>
-                    <p class="mb-0">Most people don't have clear life goals related to finance—not because they lack intelligence, but because they’ve never been taught to think that way.</p>
+                    <p class="mb-0">Most people don't have clear life goals related to finance—not because they lack
+                        intelligence, but because they’ve never been taught to think that way.</p>
                 </div>
                 <div class="p-4 mb-3 rounded border">
                     <h4 class="fst-italic">Financial Adviser</h4>
@@ -835,6 +1173,11 @@
                     <h4 class="fst-italic">Dave Rants... (Dave Ramsey)</h4>
                     <p class="mb-0">I am not against the enjoyment of money. What I am against is spending money when
                         you do not have money to begin with.</p>
+                </div>
+                <div class="p-4 mb-3 rounded border">
+                    <h4 class="fst-italic">20 Percent Down payment</h4>
+                    <p class="mb-0">Anything you want to buy on finance, you should pay 20% cash/liquid as down payment.
+                        Else you will be in trouble.</p>
                 </div>
                 <div class="p-4 mb-3 rounded border">
                     <h4 class="fst-italic">Delayed Gratification</h4>

@@ -1,0 +1,123 @@
+<div class="container mt-4">
+  <div class="card shadow">
+    <div class="card-header bg-primary text-white">
+      <h3 class="mb-0">SIP Calculator</h3>
+    </div>
+    <div class="card-body">
+      <!-- SIP Form -->
+      <form [formGroup]="sipForm" (ngSubmit)="saveSIP()" class="mb-4">
+        <div class="row g-3">
+          <div class="col-md-3">
+            <label for="investmentOnName" class="form-label">Investment Name</label>
+            <input type="text" class="form-control" id="investmentOnName" 
+                   formControlName="investmentOnName" placeholder="e.g., Mutual Fund">
+            <div *ngIf="sipForm.get('investmentOnName')?.invalid && sipForm.get('investmentOnName')?.touched" 
+                 class="text-danger">
+              Investment name is required
+            </div>
+          </div>
+          <div class="col-md-2">
+            <label for="monthlyInvestment" class="form-label">Monthly Investment (₹)</label>
+            <input type="number" class="form-control" id="monthlyInvestment" 
+                   formControlName="monthlyInvestment" min="1" placeholder="e.g., 5000">
+            <div *ngIf="sipForm.get('monthlyInvestment')?.invalid && sipForm.get('monthlyInvestment')?.touched" 
+                 class="text-danger">
+              Valid amount is required
+            </div>
+          </div>
+          <div class="col-md-2">
+            <label for="duration" class="form-label">Duration (Years)</label>
+            <input type="number" class="form-control" id="duration" 
+                   formControlName="duration" min="1" placeholder="e.g., 5">
+            <div *ngIf="sipForm.get('duration')?.invalid && sipForm.get('duration')?.touched" 
+                 class="text-danger">
+              Valid duration is required
+            </div>
+          </div>
+          <div class="col-md-2">
+            <label for="expectedReturn" class="form-label">Expected Return (%)</label>
+            <input type="number" class="form-control" id="expectedReturn" 
+                   formControlName="expectedReturn" step="0.01" min="0.01" placeholder="e.g., 12">
+            <div *ngIf="sipForm.get('expectedReturn')?.invalid && sipForm.get('expectedReturn')?.touched" 
+                 class="text-danger">
+              Valid return rate is required
+            </div>
+          </div>
+          <div class="col-md-3 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary me-2" [disabled]="!sipForm.valid">
+              {{ isEditing ? 'Update' : 'Add' }} SIP
+            </button>
+            <button type="button" class="btn btn-outline-secondary" (click)="addSIP()" *ngIf="isEditing">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <!-- SIP List Table -->
+      <div class="table-responsive">
+        <table class="table table-hover align-middle">
+          <thead class="table-light">
+            <tr>
+              <th>Investment Name</th>
+              <th class="text-end">Monthly (₹)</th>
+              <th class="text-end">Duration (Yrs)</th>
+              <th class="text-end">Return (%)</th>
+              <th class="text-end">Future Value (₹)</th>
+              <th class="text-end">Total Invested (₹)</th>
+              <th class="text-end">Interest Earned (₹)</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let sip of sipData">
+              <td>{{ sip.investmentOnName }}</td>
+              <td class="text-end">{{ sip.monthlyInvestment | number:'1.2-2' }}</td>
+              <td class="text-end">{{ sip.duration }}</td>
+              <td class="text-end">{{ sip.expectedReturn | number:'1.2-2' }}</td>
+              <td class="text-end">{{ sip.futureValue | number:'1.2-2' }}</td>
+              <td class="text-end">{{ sip.totalInvestment | number:'1.2-2' }}</td>
+              <td class="text-end">{{ sip.totalInterestPaid | number:'1.2-2' }}</td>
+              <td>
+                <button class="btn btn-sm btn-outline-primary me-2" (click)="editSIP(sip)">
+                  <i class="bi bi-pencil"></i>
+                </button>
+                <button class="btn btn-sm btn-outline-danger" (click)="deleteSIP(sip.id!)" *ngIf="sip.id">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Totals -->
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <div class="card bg-light">
+            <div class="card-body text-center">
+              <h5 class="card-title">Total Investment</h5>
+              <p class="card-text fs-4">{{ totalInvestment | number:'1.2-2' }} ₹</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-light">
+            <div class="card-body text-center">
+              <h5 class="card-title">Total Interest</h5>
+              <p class="card-text fs-4">{{ totalInterestPaid | number:'1.2-2' }} ₹</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-light">
+            <div class="card-body text-center">
+              <h5 class="card-title">Total Future Value</h5>
+              <p class="card-text fs-4">{{ totalFutureValue | number:'1.2-2' }} ₹</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,143 @@
+<div class="container mt-4">
+    <div class="card shadow">
+      <div class="card-header bg-success text-white">
+        <h3 class="mb-0">Future Goals Calculator</h3>
+      </div>
+      <div class="card-body">
+        <!-- Goal Form -->
+        <form [formGroup]="goalForm" (ngSubmit)="saveGoal()" class="mb-4">
+          <div class="row g-3">
+            <div class="col-md-3">
+              <label for="name" class="form-label">Goal Name</label>
+              <input type="text" class="form-control" id="name" 
+                     formControlName="name" placeholder="e.g., Buy a Car">
+              <div *ngIf="goalForm.get('name')?.invalid && goalForm.get('name')?.touched" 
+                   class="text-danger">
+                Goal name is required
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label for="category" class="form-label">Category</label>
+              <select class="form-select" id="category" formControlName="category">
+                <option *ngFor="let cat of categories" [value]="cat">
+                  {{ cat | titlecase }}
+                </option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label for="duration" class="form-label">Duration (Years)</label>
+              <input type="number" class="form-control" id="duration" 
+                     formControlName="duration" min="1" placeholder="e.g., 5">
+              <div *ngIf="goalForm.get('duration')?.invalid && goalForm.get('duration')?.touched" 
+                   class="text-danger">
+                Valid duration is required
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label for="targetAmount" class="form-label">Target Amount (₹)</label>
+              <input type="number" class="form-control" id="targetAmount" 
+                     formControlName="targetAmount" min="1" placeholder="e.g., 500000">
+              <div *ngIf="goalForm.get('targetAmount')?.invalid && goalForm.get('targetAmount')?.touched" 
+                   class="text-danger">
+                Valid amount is required
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label for="notes" class="form-label">Notes</label>
+              <input type="text" class="form-control" id="notes" 
+                     formControlName="notes" placeholder="Optional notes">
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-primary me-2" [disabled]="!goalForm.valid">
+                {{ isEditing ? 'Update' : 'Add' }} Goal
+              </button>
+              <button type="button" class="btn btn-outline-secondary" (click)="addGoal()" *ngIf="isEditing">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </form>
+  
+        <!-- Inflation Rate Control -->
+        <div class="row mb-4">
+          <div class="col-md-4">
+            <div class="input-group">
+              <span class="input-group-text">Inflation Rate (%)</span>
+              <input type="number" class="form-control" [(ngModel)]="inflationRate" 
+                     (ngModelChange)="updateInflationRate()" step="0.1" min="0">
+              <button class="btn btn-outline-secondary" type="button" (click)="updateInflationRate()">
+                Update
+              </button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Goals Table -->
+        <div class="table-responsive">
+          <table class="table table-hover align-middle">
+            <thead class="table-light">
+              <tr>
+                <th>Goal Name</th>
+                <th>Category</th>
+                <th class="text-end">Duration (Yrs)</th>
+                <th class="text-end">Target Amount (₹)</th>
+                <th class="text-end">Inflation Adjusted (₹)</th>
+                <th>Notes</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let goal of goals">
+                <td>{{ goal.name }}</td>
+                <td>
+                  <span class="badge rounded-pill" [ngClass]="getCategoryClass(goal.category)">
+                    {{ goal.category | titlecase }}
+                  </span>
+                </td>
+                <td class="text-end">{{ goal.duration }}</td>
+                <td class="text-end">{{ goal.targetAmount | number:'1.2-2' }}</td>
+                <td class="text-end">{{ goal.inflationAdjustedAmount | number:'1.2-2' }}</td>
+                <td>{{ goal.notes }}</td>
+                <td>
+                  <button class="btn btn-sm btn-outline-primary me-2" (click)="editGoal(goal)">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger" (click)="deleteGoal(goal.id!)" *ngIf="goal.id">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+        <!-- Totals -->
+        <div class="row mt-4">
+          <div class="col-md-12">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <h5 class="card-title">Total Inflation-Adjusted Amount Required</h5>
+                <p class="card-text fs-2">{{ totalAmount | number:'1.2-2' }} ₹</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Category Breakdown -->
+        <div class="row mt-4">
+          <div class="col-md-3" *ngFor="let cat of categories">
+            <div class="card">
+              <div class="card-body text-center">
+                <h6 class="card-title">{{ cat | titlecase }} Goals</h6>
+                <p class="card-text fs-5">
+                  {{ getCategoryTotal(cat) | number:'1.2-2' }} ₹
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -10,6 +10,15 @@ import { ShareMarketInvestmentComponent } from './investment-psychology/share-ma
 import { SpendingVsInvestingComponent } from './investment-psychology/spending-vs-investing/spending-vs-investing.component';
 import { MutualFundComponent } from './mutual-fund/mutual-fund.component';
 import { MfScreenerComponent } from './mf-screener/mf-screener.component';
+import { PlanningComponent } from './components/planning/planning.component';
+import { ExpenseListComponent } from './components/expense-list/expense-list.component';
+import { ExpenseFormComponent } from './components/expense-form/expense-form.component';
+import { SipCalculatorComponent } from './components/sip-list/sip-calculator.component';
+import { LumpSumCalculatorComponent } from './components/lump-sum-list/lump-sum-calculator.component';
+import { EmiCalculatorComponent } from './components/emi-list/emi-calculator.component';
+import { IncomeCalculatorComponent } from './components/income-list/income-calculator.component';
+import { GoalsCalculatorComponent } from './components/goal-list/goals-calculator.component';
+import { InvestmentOptionsComponent } from './components/investment-list/investment-options.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'finance', pathMatch: 'full' },
@@ -27,7 +36,28 @@ const routes: Routes = [
     ]
   },
   { path: 'mutual-fund', component: MutualFundComponent },
-  { path: 'mf-screener', component: MfScreenerComponent }
+  { path: 'mf-screener', component: MfScreenerComponent },
+  {
+    path: 'planning',
+    component: PlanningComponent,
+    children: [
+      { path: 'dashboard', component: InvestmentOptionsComponent }, // Using ExpenseList as dashboard for demo
+      { path: 'expenses', component: ExpenseListComponent },
+      { path: 'expenses/new', component: ExpenseFormComponent },
+      { path: 'expenses/edit/:id', component: ExpenseFormComponent },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'sip', component: SipCalculatorComponent },
+      { path: 'lump-sum', component: LumpSumCalculatorComponent },
+      { path: 'emi', component: EmiCalculatorComponent },
+      { path: 'income', component: IncomeCalculatorComponent },
+      { path: 'goal', component: GoalsCalculatorComponent }
+
+
+
+
+    ]
+  }
+
 
 ];
 

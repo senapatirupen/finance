@@ -1,0 +1,51 @@
+<div class="expense-form-container">
+    <h3>{{ isEditMode ? 'Edit Expense' : 'Add New Expense' }}</h3>
+    
+    <form [formGroup]="expenseForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="category" class="form-label">Category</label>
+        <select class="form-control" id="category" formControlName="category">
+          <option value="" disabled selected>Select a category</option>
+          <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+        </select>
+        <div *ngIf="expenseForm.get('category')?.invalid && expenseForm.get('category')?.touched" 
+             class="text-danger">
+          Category is required
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="amount" class="form-label">Amount</label>
+        <div class="input-group">
+          <span class="input-group-text">$</span>
+          <input type="number" class="form-control" id="amount" formControlName="amount" step="0.01">
+        </div>
+        <div *ngIf="expenseForm.get('amount')?.invalid && expenseForm.get('amount')?.touched" 
+             class="text-danger">
+          <div *ngIf="expenseForm.get('amount')?.hasError('required')">Amount is required</div>
+          <div *ngIf="expenseForm.get('amount')?.hasError('min')">Amount must be greater than 0</div>
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input type="date" class="form-control" id="date" formControlName="date">
+        <div *ngIf="expenseForm.get('date')?.invalid && expenseForm.get('date')?.touched" 
+             class="text-danger">
+          Date is required
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="description" formControlName="description" rows="3"></textarea>
+      </div>
+  
+      <div class="form-actions">
+        <button type="button" class="btn btn-outline-secondary" (click)="onCancel()">Cancel</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!expenseForm.valid">
+          {{ isEditMode ? 'Update' : 'Save' }}
+        </button>
+      </div>
+    </form>
+  </div>

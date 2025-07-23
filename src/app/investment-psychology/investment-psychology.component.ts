@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ProRata } from '../model/pro-rata.model';
 
 
 @Component({
@@ -9,6 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./investment-psychology.component.scss']
 })
 export class InvestmentPsychologyComponent implements OnInit {
+  
 
   incomeForm!: FormGroup;
 
@@ -362,6 +364,32 @@ export class InvestmentPsychologyComponent implements OnInit {
     this.goalAmount = 0;
     this.monthlySavings = 0;
     this.inflationRate = 0;
+  }
+
+  lumpSumAmount: number = 0;
+  newLoanName: string = '';
+  newLoanBalance: number = 0;
+
+  loans: ProRata[] = [];
+
+  addLoan() {
+    if (this.newLoanName && this.newLoanBalance > 0) {
+      this.loans.push({ name: this.newLoanName, balance: this.newLoanBalance });
+      this.newLoanName = '';
+      this.newLoanBalance = 0;
+    }
+  }
+
+  removeLoan(index: number) {
+    this.loans.splice(index, 1);
+  }
+
+  calculateProRata() {
+    const totalBalance = this.loans.reduce((sum, loan) => sum + loan.balance, 0);
+    this.loans.forEach(loan => {
+      loan.payment = parseFloat(((loan.balance / totalBalance) * this.lumpSumAmount).toFixed(2));
+      loan.newBalance = parseFloat((loan.balance - loan.payment).toFixed(2));
+    });
   }
 
 }

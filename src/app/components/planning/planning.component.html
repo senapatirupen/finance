@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <h5>Financial Planning</h5>
+        </div>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" [class.active]="isActive('/dashboard')" routerLink="/planning/dashboard"
+              (click)="setActive('dashboard')">
+              <i class="bi bi-speedometer2 me-2"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [class.active]="isActive('/expenses')" routerLink="/planning/expenses"
+              (click)="setActive('expenses')">
+              <i class="bi bi-calculator me-2"></i> Monthly Expenses
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [class.active]="isActive('/sip')" routerLink="/planning/sip"
+              (click)="setActive('sip')">
+              <i class="bi bi-calculator me-2"></i> SIP List
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [class.active]="isActive('/lump-sum')" routerLink="/planning/lump-sum"
+              (click)="setActive('lump-sum')">
+              <i class="bi bi-calculator me-2"></i> Lump Sum List
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [class.active]="isActive('/emi')" routerLink="/planning/emi"
+              (click)="setActive('emi')">
+              <i class="bi bi-calculator me-2"></i> EMI List
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [class.active]="isActive('/income')" routerLink="/planning/income"
+              (click)="setActive('income')">
+              <i class="bi bi-calculator me-2"></i> Income List
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [class.active]="isActive('/goal')" routerLink="/planning/goal"
+              (click)="setActive('goal')">
+              <i class="bi bi-bullseye me-2"></i> Goal List
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

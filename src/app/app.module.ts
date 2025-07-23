@@ -23,6 +23,17 @@ import { MfScreenerComponent } from './mf-screener/mf-screener.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { MutualFundService } from './services/mutual-fund.service';
+import { PlanningComponent } from './components/planning/planning.component';
+import { ExpenseListComponent } from './components/expense-list/expense-list.component';
+import { ExpenseFormComponent } from './components/expense-form/expense-form.component';
+import { FutureProjectionComponent } from './components/future-projection/future-projection.component';
+import { DatePipe } from '@angular/common';
+import { SipCalculatorComponent } from './components/sip-list/sip-calculator.component';
+import { LumpSumCalculatorComponent } from './components/lump-sum-list/lump-sum-calculator.component';
+import { EmiCalculatorComponent } from './components/emi-list/emi-calculator.component';
+import { IncomeCalculatorComponent } from './components/income-list/income-calculator.component';
+import { GoalsCalculatorComponent } from './components/goal-list/goals-calculator.component';
+import { InvestmentOptionsComponent } from './components/investment-list/investment-options.component';
 
 
 @NgModule({
@@ -43,7 +54,17 @@ import { MutualFundService } from './services/mutual-fund.service';
     MfKeyTermsComponent,
     MfTypeComponent,
     EtfComponent,
-    MfScreenerComponent
+    MfScreenerComponent,
+    PlanningComponent,
+    ExpenseListComponent,
+    ExpenseFormComponent,
+    FutureProjectionComponent,
+    SipCalculatorComponent,
+    LumpSumCalculatorComponent,
+    EmiCalculatorComponent,
+    IncomeCalculatorComponent,
+    GoalsCalculatorComponent,
+    InvestmentOptionsComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +74,7 @@ import { MutualFundService } from './services/mutual-fund.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [MutualFundService],
+  providers: [MutualFundService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

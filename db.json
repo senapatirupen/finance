@@ -1,0 +1,489 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "investmentOptions": [
+    {
+      "id": 1,
+      "name": "Liquid Mutual Fund",
+      "category": "fixed-income",
+      "minCAGR": 6,
+      "maxCAGR": 7,
+      "riskLevel": "low",
+      "liquidity": "high",
+      "taxEfficiency": "Taxed as per slab",
+      "notes": "Good for emergency funds, short-term parking"
+    },
+    {
+      "id": 2,
+      "name": "Nifty 50 Index Fund",
+      "category": "equity",
+      "minCAGR": 12,
+      "maxCAGR": 15,
+      "riskLevel": "medium",
+      "liquidity": "high",
+      "taxEfficiency": "LTCG 10% after 1L",
+      "notes": "Passive investing in top 50 companies"
+    },
+    {
+      "id": 3,
+      "name": "Actively Managed Mutual Funds",
+      "category": "equity",
+      "minCAGR": 15,
+      "maxCAGR": 17,
+      "riskLevel": "high",
+      "liquidity": "high",
+      "taxEfficiency": "LTCG 10% after 1L",
+      "notes": "Professional fund management"
+    },
+    {
+      "id": 4,
+      "name": "REITs / InvIT",
+      "category": "alternative",
+      "minCAGR": 6,
+      "maxCAGR": 10,
+      "riskLevel": "medium",
+      "liquidity": "medium",
+      "taxEfficiency": "Dividends taxed as per slab",
+      "notes": "Real estate investment trusts with regular dividends"
+    },
+    {
+      "id": 5,
+      "name": "Blue-Chip US Stocks / Nasdaq Index",
+      "category": "equity",
+      "minCAGR": 12,
+      "maxCAGR": 20,
+      "riskLevel": "high",
+      "liquidity": "high",
+      "taxEfficiency": "LTCG 20% with indexation",
+      "notes": "Diversify internationally with top US companies"
+    },
+    {
+      "id": 6,
+      "name": "Your Own Business",
+      "category": "alternative",
+      "minCAGR": 0,
+      "maxCAGR": 999,
+      "riskLevel": "very-high",
+      "liquidity": "low",
+      "notes": "Highest potential but requires active management"
+    }
+  ],
+  "goals": [
+    {
+      "id": 1,
+      "name": "Purchase Car",
+      "category": "short-term",
+      "duration": 2,
+      "targetAmount": 800000,
+      "inflationAdjustedAmount": 898880,
+      "notes": "Electric SUV"
+    },
+    {
+      "id": 2,
+      "name": "Children's Higher Education Fund",
+      "category": "long-term",
+      "duration": 15,
+      "targetAmount": 2000000,
+      "inflationAdjustedAmount": 4793116.18,
+      "notes": "For MBA abroad"
+    },
+    {
+      "id": 3,
+      "name": "Retirement Corpus",
+      "category": "retirement",
+      "duration": 20,
+      "targetAmount": 15000000,
+      "inflationAdjustedAmount": 48107061.48,
+      "notes": "For comfortable retirement"
+    },
+    {
+      "name": "Buying A Car",
+      "category": "medium-term",
+      "duration": 3,
+      "targetAmount": 1200000,
+      "notes": "",
+      "inflationAdjustedAmount": 1389150.0000000002,
+      "id": 4
+    }
+  ],
+  "incomeSources": [
+    {
+      "id": 1,
+      "sourceName": "Salary",
+      "initialMonthlyIncome": 75000,
+      "annualGrowthRate": 7,
+      "years": 5,
+      "projectedMonthlyIncome": 105187.65,
+      "totalAmountReceived": 5367865.8
+    },
+    {
+      "sourceName": "Rental Income",
+      "initialMonthlyIncome": 15000,
+      "annualGrowthRate": 3,
+      "years": 5,
+      "projectedMonthlyIncome": 17389.1111145,
+      "totalAmountReceived": 955644.4458,
+      "id": 2
+    },
+    {
+      "sourceName": "side business",
+      "initialMonthlyIncome": 12000,
+      "annualGrowthRate": 6,
+      "years": 12,
+      "projectedMonthlyIncome": 24146.357662026618,
+      "totalAmountReceived": 2429271.532405321,
+      "id": 3
+    }
+  ],
+  "emis": [
+    {
+      "id": 1,
+      "emiForName": "Home Loan",
+      "principal": 5000000,
+      "annualInterestRate": 8.5,
+      "totalTenure": 20,
+      "tenuresPaid": 24,
+      "emiAmount": 43438.42,
+      "principalPaidSoFar": 483932.58,
+      "interestPaidSoFar": 558989.46,
+      "remainingPrincipal": 4516067.42,
+      "interestToBePaid": 4666253.58,
+      "remainingTenure": 216
+    },
+    {
+      "id": 2,
+      "emiForName": "Car Loan",
+      "principal": 800000,
+      "annualInterestRate": 9.5,
+      "totalTenure": 5,
+      "tenuresPaid": 12,
+      "emiAmount": 16791.34,
+      "principalPaidSoFar": 107654.66,
+      "interestPaidSoFar": 93741.42,
+      "remainingPrincipal": 692345.34,
+      "interestToBePaid": 143136.66,
+      "remainingTenure": 48
+    },
+    {
+      "emiForName": "Personal Loan",
+      "principal": 400000,
+      "annualInterestRate": 12,
+      "totalTenure": 4,
+      "tenuresPaid": 5,
+      "emiAmount": 10533.5341727711,
+      "interestPaidSoFar": 19340.080315543913,
+      "principalPaidSoFar": 33327.590548311586,
+      "remainingPrincipal": 366672.4094516884,
+      "remainingTenure": 43,
+      "interestToBePaid": 86269.55997746938,
+      "id": 3
+    }
+  ],
+  "lumpSums": [
+    {
+      "id": 1,
+      "investmentName": "Stock Portfolio",
+      "principalAmount": 500000,
+      "duration": 5,
+      "expectedReturn": 12,
+      "futureValue": 881170.49,
+      "totalInterest": 381170.49
+    },
+    {
+      "id": 2,
+      "investmentName": "Bond Investment",
+      "principalAmount": 300000,
+      "duration": 3,
+      "expectedReturn": 7,
+      "futureValue": 367512.9,
+      "totalInterest": 67512.9
+    },
+    {
+      "investmentName": "Land",
+      "principalAmount": 3000000,
+      "duration": 20,
+      "expectedReturn": 8,
+      "futureValue": 13982871.431547925,
+      "totalInterest": 10982871.431547925,
+      "id": 3
+    }
+  ],
+  "sips": [
+    {
+      "id": 1,
+      "investmentOnName": "Large Cap Fund",
+      "monthlyInvestment": 10000,
+      "duration": 5,
+      "expectedReturn": 12,
+      "futureValue": 825152.92,
+      "totalInvestment": 600000,
+      "totalInterestPaid": 225152.92
+    },
+    {
+      "investmentOnName": "Index Fund",
+      "monthlyInvestment": 12000,
+      "duration": 6,
+      "expectedReturn": 17,
+      "futureValue": 1506287.9511358382,
+      "totalInvestment": 864000,
+      "totalInterestPaid": 642287.9511358382,
+      "id": 3
+    }
+  ],
+  "expenses": [
+    {
+      "category": "Food",
+      "amount": 1000,
+      "date": "2025-07-17",
+      "description": "food ok",
+      "id": 1
+    },
+    {
+      "category": "Transportation",
+      "amount": 1000,
+      "date": "2025-07-23",
+      "description": "fuel",
+      "id": 3
+    },
+    {
+      "category": "Housing",
+      "amount": 678,
+      "date": "2025-07-20",
+      "description": "hi",
+      "id": 4
+    },
+    {
+      "category": "Healthcare",
+      "amount": 7890,
+      "date": "2025-07-16",
+      "description": "health checkup",
+      "id": 5
+    }
+  ],
+  "investments": [
+    {
+      "id": "1752301609773",
+      "name": "mf",
+      "type": "SIP",
+      "assetClass": "Equity",
+      "amount": 10000,
+      "startDate": "2025-07-18T00:00:00.000Z",
+      "durationYears": 5,
+      "cagr": 12,
+      "frequency": "Monthly"
+    },
+    {
+      "id": "1752301670166",
+      "name": "gold",
+      "type": "Lumpsum",
+      "assetClass": "Gold",
+      "amount": 20000,
+      "startDate": "2025-07-18T00:00:00.000Z",
+      "durationYears": 5,
+      "cagr": 15,
+      "frequency": "Monthly"
+    }
+  ],
+  "loans": [],
+  "profiles": [
+    {
+      "id": "1",
+      "age": 35,
+      "salary": 1500000,
+      "monthlyExpenses": 75000,
+      "badLoans": 200000,
+      "goodLoans": 500000,
+      "totalAssets": 2500000,
+      "riskAppetite": "Medium",
+      "futureGoals": {
+        "retirementAge": 60,
+        "housePurchase": 5000000,
+        "childrenEducation": 2000000,
+        "otherGoals": 1000000
+      },
+      "createdAt": "2023-06-15T10:00:00Z"
+    },
+    {
+      "age": 30,
+      "salary": 1200000,
+      "monthlyExpenses": 50000,
+      "badLoans": 10000,
+      "goodLoans": 100000,
+      "totalAssets": 500000,
+      "riskAppetite": "Medium",
+      "futureGoals": {
+        "retirementAge": 60,
+        "housePurchase": 0,
+        "childrenEducation": 0,
+        "otherGoals": 0
+      },
+      "id": "Mr87m-Q"
+    },
+    {
+      "age": 30,
+      "salary": 1200000,
+      "monthlyExpenses": 50000,
+      "badLoans": 10000,
+      "goodLoans": 100000,
+      "totalAssets": 500000,
+      "riskAppetite": "Medium",
+      "futureGoals": {
+        "retirementAge": 60,
+        "housePurchase": 2000000,
+        "childrenEducation": 0,
+        "otherGoals": 0
+      },
+      "id": "wscPrAL"
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "1",
+      "userId": "current",
+      "recommendations": [
+        {
+          "assetClass": "Equity",
+          "percentage": 50,
+          "products": [
+            "Flexi Cap Funds",
+            "Sectoral Funds",
+            "NPS Equity"
+          ],
+          "rationale": "Balanced growth for medium risk profile"
+        },
+        {
+          "assetClass": "Fixed Income",
+          "percentage": 35,
+          "products": [
+            "Debt Funds",
+            "Corporate Bonds",
+            "FDs"
+          ],
+          "rationale": "Stable returns component"
+        },
+        {
+          "assetClass": "Gold",
+          "percentage": 10,
+          "products": [
+            "Gold ETFs",
+            "Sovereign Gold Bonds"
+          ],
+          "rationale": "Inflation hedge"
+        },
+        {
+          "assetClass": "Alternative",
+          "percentage": 5,
+          "products": [
+            "REITs",
+            "Infrastructure Bonds"
+          ],
+          "rationale": "Diversification"
+        }
+      ],
+      "createdAt": "2023-06-15T10:05:00Z"
+    },
+    {
+      "userId": "current",
+      "recommendations": [
+        {
+          "assetClass": "Equity",
+          "percentage": 50,
+          "products": [
+            "Flexi Cap Mutual Funds",
+            "Sectoral Funds (IT, Banking)",
+            "NPS Equity"
+          ],
+          "rationale": "Balance between growth and stability"
+        },
+        {
+          "assetClass": "Fixed Income",
+          "percentage": 35,
+          "products": [
+            "Debt Mutual Funds",
+            "Tax-free Bonds",
+            "FDs"
+          ],
+          "rationale": "Stable returns with lower volatility"
+        },
+        {
+          "assetClass": "Gold",
+          "percentage": 10,
+          "products": [
+            "Gold Mutual Funds",
+            "Digital Gold"
+          ],
+          "rationale": "Diversification and inflation hedge"
+        },
+        {
+          "assetClass": "Alternative",
+          "percentage": 5,
+          "products": [
+            "REITs",
+            "Infrastructure Bonds"
+          ],
+          "rationale": "Additional diversification"
+        }
+      ],
+      "id": "neZnJqh"
+    },
+    {
+      "userId": "current",
+      "recommendations": [
+        {
+          "assetClass": "Equity",
+          "percentage": 50,
+          "products": [
+            "Flexi Cap Mutual Funds",
+            "Sectoral Funds (IT, Banking)",
+            "NPS Equity"
+          ],
+          "rationale": "Balance between growth and stability"
+        },
+        {
+          "assetClass": "Fixed Income",
+          "percentage": 35,
+          "products": [
+            "Debt Mutual Funds",
+            "Tax-free Bonds",
+            "FDs"
+          ],
+          "rationale": "Stable returns with lower volatility"
+        },
+        {
+          "assetClass": "Gold",
+          "percentage": 10,
+          "products": [
+            "Gold Mutual Funds",
+            "Digital Gold"
+          ],
+          "rationale": "Diversification and inflation hedge"
+        },
+        {
+          "assetClass": "Alternative",
+          "percentage": 5,
+          "products": [
+            "REITs",
+            "Infrastructure Bonds"
+          ],
+          "rationale": "Additional diversification"
+        }
+      ],
+      "id": "lKM7uL6"
+    }
+  ]
+}
