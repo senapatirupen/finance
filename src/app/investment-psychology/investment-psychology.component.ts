@@ -10,7 +10,7 @@ import { ProRata } from '../model/pro-rata.model';
   styleUrls: ['./investment-psychology.component.scss']
 })
 export class InvestmentPsychologyComponent implements OnInit {
-  
+
 
   incomeForm!: FormGroup;
 
@@ -50,6 +50,13 @@ export class InvestmentPsychologyComponent implements OnInit {
 
   externalLink: string = ''
   investmentType: string = 'Spending Vs Investing';
+
+  loanAmount: number = 0;
+  interestRate: number = 0;
+  tenureYears: number = 0;
+  partPayment: number = 0;
+
+  emiResults: any = null;
 
   constructor(private router: Router, private formBuilder: FormBuilder) {
   }
@@ -390,6 +397,61 @@ export class InvestmentPsychologyComponent implements OnInit {
       loan.payment = parseFloat(((loan.balance / totalBalance) * this.lumpSumAmount).toFixed(2));
       loan.newBalance = parseFloat((loan.balance - loan.payment).toFixed(2));
     });
+  }
+
+  calculate() {
+    const principal = this.loanAmount;
+    const annualInterest = this.interestRate;
+    const tenureMonths = this.tenureYears * 12;
+    const partPaymentAmount = this.partPayment;
+    const monthlyInterestRate = annualInterest / 12 / 100;
+
+    // Original EMI
+    const emi = this.calculateLoanEMI(principal, monthlyInterestRate, tenureMonths);
+    const totalPayment = emi * tenureMonths;
+    const totalInterest = totalPayment - principal;
+
+    // EMI Reduced Scenario
+    const newPrincipal1 = principal - partPaymentAmount;
+    const emiReduced = this.calculateLoanEMI(newPrincipal1, monthlyInterestRate, tenureMonths);
+    const totalPaymentReduced = emiReduced * tenureMonths;
+    const totalInterestReduced = totalPaymentReduced - newPrincipal1;
+
+    // Tenure Reduced Scenario
+    const newPrincipal2 = principal - partPaymentAmount;
+    const emiSame = emi;
+    const newTenure = this.calculateNewTenure(newPrincipal2, monthlyInterestRate, emiSame);
+    const totalPaymentTenureReduced = newTenure * emiSame;
+    const totalInterestTenureReduced = totalPaymentTenureReduced - newPrincipal2;
+
+    this.emiResults = {
+      original: {
+        emi,
+        tenure: tenureMonths,
+        totalInterest
+      },
+      emiReduced: {
+        emi: emiReduced,
+        tenure: tenureMonths,
+        totalInterest: totalInterestReduced
+      },
+      tenureReduced: {
+        emi: emiSame,
+        tenure: newTenure,
+        totalInterest: totalInterestTenureReduced
+      }
+    };
+  }
+
+  calculateLoanEMI(principal: number, monthlyInterestRate: number, months: number): number {
+    return (principal * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, months)) /
+           (Math.pow(1 + monthlyInterestRate, months) - 1);
+  }
+
+  calculateNewTenure(principal: number, monthlyInterestRate: number, emi: number): number {
+    return Math.round(
+      Math.log(emi / (emi - principal * monthlyInterestRate)) / Math.log(1 + monthlyInterestRate)
+    );
   }
 
 }

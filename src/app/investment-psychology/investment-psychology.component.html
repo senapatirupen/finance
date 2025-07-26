@@ -23,6 +23,9 @@
                 <li>
                     Rule No 6 : Setting Goals and Saving for Them
                 </li>
+                <li>
+                    Rule No 7 : Close All the Bad Debts first
+                </li>
             </ul>
             <strong class="d-inline-block mb-2 text-primary-emphasis">Inflation, Recession & Investment
             </strong>
@@ -898,7 +901,8 @@
                 <!-- Poor or Middle Class -->
                 <div class="card mb-1 border-0">
                     <div class="card-body">
-                        <p><em class="heading">Poor or Middle Class:</em> Focus on safe, consistent compounding options:</p>
+                        <p><em class="heading">Poor or Middle Class:</em> Focus on safe, consistent compounding options:
+                        </p>
                         <table class="table">
                             <thead class="thead-light">
                                 <tr>
@@ -936,7 +940,8 @@
                 <!-- Born Rich -->
                 <div class="card mb-1 border-0">
                     <div class="card-body">
-                        <p><em class="heading">Born Rich:</em> You already have a home, car, and no loan. Expand and diversify:</p>
+                        <p><em class="heading">Born Rich:</em> You already have a home, car, and no loan. Expand and
+                            diversify:</p>
                         <table class="table">
                             <thead class="thead-light">
                                 <tr>
@@ -967,7 +972,8 @@
                 <!-- Ultra Rich -->
                 <div class="card mb-1 border-0">
                     <div class="card-body">
-                        <p><em class="heading">Ultra Rich:</em> Preserve and grow wealth via global and alternative assets:</p>
+                        <p><em class="heading">Ultra Rich:</em> Preserve and grow wealth via global and alternative
+                            assets:</p>
                         <table class="table">
                             <thead class="thead-light">
                                 <tr>
@@ -1131,6 +1137,125 @@
                         </ul>
                     </li>
                 </ul>
+            </div>
+            <div class="p-4 mb-3 rounded border">
+                <h4 class="fst-italic">Loan Part Payment for Reduce EMI Vs Reduce Tenure</h4>
+                <p>
+                    <em class="heading">If you can manage the EMI, always reduce the tenure. It saves the most
+                        interest.</em>
+                </p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="text-center">Example Original Loan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Loan Amount</td>
+                            <td>₹80,00,000</td>
+                        </tr>
+                        <tr>
+                            <td>Tenure</td>
+                            <td>20 years</td>
+                        </tr>
+                        <tr>
+                            <td>Interest Rate</td>
+                            <td>8%</td>
+                        </tr>
+                        <tr>
+                            <td>EMI</td>
+                            <td>₹66,880</td>
+                        </tr>
+                        <tr>
+                            <td>Total Interest</td>
+                            <td>₹80.5 Lakhs</td>
+                        </tr>
+                        <tr>
+                            <td>Total Outgo</td>
+                            <td>₹1.6 Cr</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h6>Case 1: ₹5,00,000 Part-Payment — Reduce EMI</h6>
+                <ul>
+                    <li>New EMI: ₹62,710 (approx)</li>
+                    <li>Tenure: 20 years (unchanged)</li>
+                    <li>New Total Interest: ₹74.5 Lakhs</li>
+                    <li>💰 Interest Saved: ₹6 Lakhs</li>
+                </ul>
+
+                <h6>Case 2: ₹5,00,000 Part-Payment — Reduce Tenure</h6>
+                <ul>
+                    <li>EMI: ₹66,880 (unchanged)</li>
+                    <li>New Tenure: ~17.5 years</li>
+                    <li>New Total Interest: ₹68.5 Lakhs</li>
+                    <li>💰 Interest Saved: ₹12 Lakhs</li>
+                    <li>🕒 Loan Closed: ~2.5 years early</li>
+                </ul>
+                <p><em class="heading">Calculator:</em></p>
+                <form (ngSubmit)="calculate()" #loanForm="ngForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group mb-3">
+                                <label>Loan Amount (₹)</label>
+                                <input type="number" class="form-control" [(ngModel)]="loanAmount" name="loanAmount"
+                                    required />
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Interest Rate (% per annum)</label>
+                                <input type="number" step="0.01" class="form-control" [(ngModel)]="interestRate"
+                                    name="interestRate" required />
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Loan Tenure (in years)</label>
+                                <input type="number" class="form-control" [(ngModel)]="tenureYears" name="tenureYears"
+                                    required />
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Part Payment Amount (₹)</label>
+                                <input type="number" class="form-control" [(ngModel)]="partPayment" name="partPayment"
+                                    required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Calculate</button>
+                </form>
+
+                <div *ngIf="emiResults" class="mt-4">
+                    <h4>Results</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>EMI (₹)</th>
+                                <th>Tenure (months)</th>
+                                <th>Total Interest Paid (₹)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Original</td>
+                                <td>{{ emiResults.original.emi | number:'1.2-2' }}</td>
+                                <td>{{ emiResults.original.tenure }}</td>
+                                <td>{{ emiResults.original.totalInterest | number:'1.2-2' }}</td>
+                            </tr>
+                            <tr>
+                                <td>After Part Payment - EMI Reduced</td>
+                                <td>{{ emiResults.emiReduced.emi | number:'1.2-2' }}</td>
+                                <td>{{ emiResults.emiReduced.tenure }}</td>
+                                <td>{{ emiResults.emiReduced.totalInterest | number:'1.2-2' }}</td>
+                            </tr>
+                            <tr>
+                                <td>After Part Payment - Tenure Reduced</td>
+                                <td>{{ emiResults.tenureReduced.emi | number:'1.2-2' }}</td>
+                                <td>{{ emiResults.tenureReduced.tenure }}</td>
+                                <td>{{ emiResults.tenureReduced.totalInterest | number:'1.2-2' }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         <div class="col-md-5">
