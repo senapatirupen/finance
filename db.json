@@ -30,7 +30,7 @@
     },
     {
       "id": 2,
-      "name": "Nifty 50 Index Fund",
+      "name": "Nifty 50/100 Index Fund",
       "category": "equity",
       "minCAGR": 12,
       "maxCAGR": 15,
@@ -298,11 +298,31 @@
       "investmentOnName": "Index Fund",
       "monthlyInvestment": 12000,
       "duration": 6,
-      "expectedReturn": 17,
-      "futureValue": 1506287.9511358382,
+      "expectedReturn": 19,
+      "futureValue": 1615984.401523051,
       "totalInvestment": 864000,
-      "totalInterestPaid": 642287.9511358382,
+      "totalInterestPaid": 751984.4015230511,
       "id": 3
+    },
+    {
+      "investmentOnName": "Land",
+      "monthlyInvestment": 23000,
+      "duration": 7,
+      "expectedReturn": 10,
+      "futureValue": 2805041.784892397,
+      "totalInvestment": 1932000,
+      "totalInterestPaid": 873041.784892397,
+      "id": 4
+    },
+    {
+      "investmentOnName": "home",
+      "monthlyInvestment": 34000,
+      "duration": 2,
+      "expectedReturn": 12,
+      "futureValue": 926268.7830585954,
+      "totalInvestment": 816000,
+      "totalInterestPaid": 110268.78305859538,
+      "id": 5
     }
   ],
   "expenses": [
@@ -404,7 +424,7 @@
     },
     {
       "category": "Other",
-      "amount": 78960,
+      "amount": 7896,
       "date": "2025-07-09",
       "description": "for college",
       "inflationRate": 5,

@@ -1,7 +1,7 @@
 <div class="container mt-4">
   <div class="card shadow">
-    <div class="card-header bg-primary text-white">
-      <h3 class="mb-0">SIP Calculator</h3>
+    <div class="card-header" style="border-bottom: 1px solid #ec0000;">
+      <h5 class="mb-0">SIP Calculator</h5>
     </div>
     <div class="card-body">
       <!-- SIP Form -->
@@ -9,48 +9,47 @@
         <div class="row g-3">
           <div class="col-md-3">
             <label for="investmentOnName" class="form-label">Investment Name</label>
-            <input type="text" class="form-control" id="investmentOnName" 
-                   formControlName="investmentOnName" placeholder="e.g., Mutual Fund">
-            <div *ngIf="sipForm.get('investmentOnName')?.invalid && sipForm.get('investmentOnName')?.touched" 
-                 class="text-danger">
+            <input type="text" class="form-control" id="investmentOnName" formControlName="investmentOnName"
+              placeholder="e.g., Mutual Fund">
+            <div *ngIf="sipForm.get('investmentOnName')?.invalid && sipForm.get('investmentOnName')?.touched"
+              class="text-danger">
               Investment name is required
             </div>
           </div>
-          <div class="col-md-2">
+          <div class="col-md-3">
             <label for="monthlyInvestment" class="form-label">Monthly Investment (₹)</label>
-            <input type="number" class="form-control" id="monthlyInvestment" 
-                   formControlName="monthlyInvestment" min="1" placeholder="e.g., 5000">
-            <div *ngIf="sipForm.get('monthlyInvestment')?.invalid && sipForm.get('monthlyInvestment')?.touched" 
-                 class="text-danger">
+            <input type="number" class="form-control" id="monthlyInvestment" formControlName="monthlyInvestment" min="1"
+              placeholder="e.g., 5000">
+            <div *ngIf="sipForm.get('monthlyInvestment')?.invalid && sipForm.get('monthlyInvestment')?.touched"
+              class="text-danger">
               Valid amount is required
             </div>
           </div>
-          <div class="col-md-2">
+          <div class="col-md-3">
             <label for="duration" class="form-label">Duration (Years)</label>
-            <input type="number" class="form-control" id="duration" 
-                   formControlName="duration" min="1" placeholder="e.g., 5">
-            <div *ngIf="sipForm.get('duration')?.invalid && sipForm.get('duration')?.touched" 
-                 class="text-danger">
+            <input type="number" class="form-control" id="duration" formControlName="duration" min="1"
+              placeholder="e.g., 5">
+            <div *ngIf="sipForm.get('duration')?.invalid && sipForm.get('duration')?.touched" class="text-danger">
               Valid duration is required
             </div>
           </div>
-          <div class="col-md-2">
+          <div class="col-md-3">
             <label for="expectedReturn" class="form-label">Expected Return (%)</label>
-            <input type="number" class="form-control" id="expectedReturn" 
-                   formControlName="expectedReturn" step="0.01" min="0.01" placeholder="e.g., 12">
-            <div *ngIf="sipForm.get('expectedReturn')?.invalid && sipForm.get('expectedReturn')?.touched" 
-                 class="text-danger">
+            <input type="number" class="form-control" id="expectedReturn" formControlName="expectedReturn" step="0.01"
+              min="0.01" placeholder="e.g., 12">
+            <div *ngIf="sipForm.get('expectedReturn')?.invalid && sipForm.get('expectedReturn')?.touched"
+              class="text-danger">
               Valid return rate is required
             </div>
           </div>
-          <div class="col-md-3 d-flex align-items-end">
-            <button type="submit" class="btn btn-primary me-2" [disabled]="!sipForm.valid">
-              {{ isEditing ? 'Update' : 'Add' }} SIP
-            </button>
-            <button type="button" class="btn btn-outline-secondary" (click)="addSIP()" *ngIf="isEditing">
-              Cancel
-            </button>
-          </div>
+        </div>
+        <div class="col-md-3 d-flex align-items-end mt-2">
+          <button type="submit" [disabled]="!sipForm.valid">
+            {{ isEditing ? 'Update' : 'Add' }} SIP
+          </button>
+          <button type="button" (click)="addSIP()" *ngIf="isEditing">
+            Cancel
+          </button>
         </div>
       </form>
 
@@ -96,24 +95,24 @@
         <div class="col-md-4">
           <div class="card bg-light">
             <div class="card-body text-center">
-              <h5 class="card-title">Total Investment</h5>
-              <p class="card-text fs-4">{{ totalInvestment | number:'1.2-2' }} ₹</p>
+              <h6 class="card-title">Total Investment</h6>
+              <p class="card-text">{{ totalInvestment | number:'1.2-2' }} ₹</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card bg-light">
             <div class="card-body text-center">
-              <h5 class="card-title">Total Interest</h5>
-              <p class="card-text fs-4">{{ totalInterestPaid | number:'1.2-2' }} ₹</p>
+              <h6 class="card-title">Total Interest</h6>
+              <p class="card-text">{{ totalInterestPaid | number:'1.2-2' }} ₹</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card bg-light">
             <div class="card-body text-center">
-              <h5 class="card-title">Total Future Value</h5>
-              <p class="card-text fs-4">{{ totalFutureValue | number:'1.2-2' }} ₹</p>
+              <h6 class="card-title">Total Future Value</h6>
+              <p class="card-text">{{ totalFutureValue | number:'1.2-2' }} ₹</p>
             </div>
           </div>
         </div>

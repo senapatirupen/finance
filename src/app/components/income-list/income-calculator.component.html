@@ -1,7 +1,7 @@
 <div class="container mt-4">
     <div class="card shadow">
-      <div class="card-header bg-primary text-white">
-        <h3 class="mb-0">Income Projection Calculator</h3>
+      <div class="card-header" style="border-bottom: 1px solid #ec0000;">
+        <h5 class="mb-0">Income Projection Calculator</h5>
       </div>
       <div class="card-body">
         <!-- Income Form -->
@@ -16,7 +16,7 @@
                 Income source is required
               </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
               <label for="initialMonthlyIncome" class="form-label">Monthly Income (₹)</label>
               <input type="number" class="form-control" id="initialMonthlyIncome" 
                      formControlName="initialMonthlyIncome" min="1" placeholder="e.g., 50000">
@@ -25,7 +25,7 @@
                 Valid amount is required
               </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
               <label for="annualGrowthRate" class="form-label">Growth Rate (%)</label>
               <input type="number" class="form-control" id="annualGrowthRate" 
                      formControlName="annualGrowthRate" step="0.01" min="0" placeholder="e.g., 5">
@@ -34,7 +34,7 @@
                 Valid growth rate is required
               </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
               <label for="years" class="form-label">Years</label>
               <input type="number" class="form-control" id="years" 
                      formControlName="years" min="1" placeholder="e.g., 10">
@@ -43,14 +43,14 @@
                 Valid number of years is required
               </div>
             </div>
-            <div class="col-md-3 d-flex align-items-end">
-              <button type="submit" class="btn btn-primary me-2" [disabled]="!incomeForm.valid">
-                {{ isEditing ? 'Update' : 'Add' }} Source
-              </button>
-              <button type="button" class="btn btn-outline-secondary" (click)="addIncomeSource()" *ngIf="isEditing">
-                Cancel
-              </button>
-            </div>
+          </div>
+          <div class="col-md-3 d-flex align-items-end mt-2">
+            <button type="submit" [disabled]="!incomeForm.valid">
+              {{ isEditing ? 'Update' : 'Add' }} Source
+            </button>
+            <button type="button" (click)="addIncomeSource()" *ngIf="isEditing">
+              Cancel
+            </button>
           </div>
         </form>
   
@@ -98,24 +98,24 @@
           <div class="col-md-4">
             <div class="card bg-light">
               <div class="card-body text-center">
-                <h5 class="card-title">Total Initial Annual Income</h5>
-                <p class="card-text fs-4">{{ totalInitialIncome | number:'1.2-2' }} ₹</p>
+                <h6 class="card-title">Total Initial Annual Income</h6>
+                <p class="card-text">{{ totalInitialIncome | number:'1.2-2' }} ₹</p>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card bg-light">
               <div class="card-body text-center">
-                <h5 class="card-title">Total Projected Annual Income</h5>
-                <p class="card-text fs-4">{{ totalProjectedIncome | number:'1.2-2' }} ₹</p>
+                <h6 class="card-title">Total Projected Annual Income</h6>
+                <p class="card-text">{{ totalProjectedIncome | number:'1.2-2' }} ₹</p>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card bg-light">
               <div class="card-body text-center">
-                <h5 class="card-title">Total Amount Received</h5>
-                <p class="card-text fs-4">{{ totalAmountReceived | number:'1.2-2' }} ₹</p>
+                <h6 class="card-title">Total Amount Received</h6>
+                <p class="card-text">{{ totalAmountReceived | number:'1.2-2' }} ₹</p>
               </div>
             </div>
           </div>

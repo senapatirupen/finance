@@ -19,7 +19,7 @@
 }
 
 .nav-link {
-  color: #495057;
+  color: #052c65;
   padding: 10px 15px;
   border-radius: 4px;
   margin-bottom: 5px;
@@ -28,11 +28,20 @@
 }
 
 .nav-link:hover {
-  color: #0d6efd;
+  color: #ec0000;
 }
 
 .nav-link.active {
-  background-color: #e7f1ff;
-  color: #0d6efd;
+  // background-color: #e7f1ff;
+  color: #ec0000;
   font-weight: 500;
+  // border-bottom-color: #ec0000;
+}
+
+h5, h6 {
+  color: #052c65;
+}
+
+.heading {
+  color: #ec0000;
 }

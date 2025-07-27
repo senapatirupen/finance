@@ -1,7 +1,7 @@
 <div class="container mt-4">
     <div class="card shadow">
-      <div class="card-header bg-primary text-white">
-        <h3 class="mb-0">Investment Options & Expected Returns</h3>
+      <div class="card-header" style="border-bottom: 1px solid #ec0000;">
+        <h5 class="mb-0">Investment Options & Expected Returns</h5>
       </div>
       <div class="card-body">
         <!-- Filters -->
@@ -49,20 +49,22 @@
               <tr *ngFor="let option of filteredOptions">
                 <td>{{ option.name }}</td>
                 <td class="text-center">
-                  <span class="badge bg-light text-dark">
+                  <span class="badge rounded-pill bg-light text-dark">
                     {{ option.minCAGR }}% – {{ option.maxCAGR }}%
                   </span>
                 </td>
                 <td class="text-center">
-                  <span class="badge rounded-pill" [ngClass]="getRiskClass(option.riskLevel)">
+                  <span class="badge rounded-pill bg-light text-dark">
                     {{ option.riskLevel | titlecase }}
                   </span>
                 </td>
-                <td class="text-center" [ngClass]="getLiquidityClass(option.liquidity)">
-                  {{ option.liquidity | titlecase }}
+                <td class="text-center">
+                  <span class="badge rounded-pill bg-light text-dark">
+                    {{ option.liquidity | titlecase }}
+                  </span>
                 </td>
                 <td class="text-center">
-                  <span *ngIf="option.taxEfficiency" class="badge bg-light text-dark">
+                  <span *ngIf="option.taxEfficiency" class="badge rounded-pill bg-light text-dark">
                     {{ option.taxEfficiency }}
                   </span>
                   <span *ngIf="!option.taxEfficiency">-</span>
@@ -78,8 +80,8 @@
           <div class="col-md-4">
             <div class="card bg-light">
               <div class="card-body text-center">
-                <h5 class="card-title">Low Risk Options</h5>
-                <p class="card-text fs-4">
+                <h6 class="card-title">Low Risk Options</h6>
+                <p class="card-text">
                   {{ getOptionsByRisk('low').length }}
                 </p>
               </div>
@@ -88,8 +90,8 @@
           <div class="col-md-4">
             <div class="card bg-light">
               <div class="card-body text-center">
-                <h5 class="card-title">Medium Risk Options</h5>
-                <p class="card-text fs-4">
+                <h6 class="card-title">Medium Risk Options</h6>
+                <p class="card-text">
                   {{ getOptionsByRisk('medium').length }}
                 </p>
               </div>
@@ -98,8 +100,8 @@
           <div class="col-md-4">
             <div class="card bg-light">
               <div class="card-body text-center">
-                <h5 class="card-title">High Risk Options</h5>
-                <p class="card-text fs-4">
+                <h6 class="card-title">High Risk Options</h6>
+                <p class="card-text">
                   {{ getOptionsByRisk('high').length + getOptionsByRisk('very-high').length }}
                 </p>
               </div>

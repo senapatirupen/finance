@@ -1,152 +1,147 @@
 <div class="container mt-4">
-    <div class="card shadow">
-      <div class="card-header bg-primary text-white">
-        <h3 class="mb-0">EMI Calculator</h3>
-      </div>
-      <div class="card-body">
-        <!-- EMI Form -->
-        <form [formGroup]="emiForm" (ngSubmit)="saveEMI()" class="mb-4">
-          <div class="row g-3">
-            <div class="col-md-3">
-              <label for="emiForName" class="form-label">Loan For</label>
-              <input type="text" class="form-control" id="emiForName" 
-                     formControlName="emiForName" placeholder="e.g., Home Loan">
-              <div *ngIf="emiForm.get('emiForName')?.invalid && emiForm.get('emiForName')?.touched" 
-                   class="text-danger">
-                Loan purpose is required
-              </div>
-            </div>
-            <div class="col-md-2">
-              <label for="principal" class="form-label">Principal (₹)</label>
-              <input type="number" class="form-control" id="principal" 
-                     formControlName="principal" min="1" placeholder="e.g., 500000">
-              <div *ngIf="emiForm.get('principal')?.invalid && emiForm.get('principal')?.touched" 
-                   class="text-danger">
-                Valid amount is required
-              </div>
-            </div>
-            <div class="col-md-2">
-              <label for="annualInterestRate" class="form-label">Interest Rate (%)</label>
-              <input type="number" class="form-control" id="annualInterestRate" 
-                     formControlName="annualInterestRate" step="0.01" min="0.01" placeholder="e.g., 8.5">
-              <div *ngIf="emiForm.get('annualInterestRate')?.invalid && emiForm.get('annualInterestRate')?.touched" 
-                   class="text-danger">
-                Valid interest rate is required
-              </div>
-            </div>
-            <div class="col-md-2">
-              <label for="totalTenure" class="form-label">Tenure (Years)</label>
-              <input type="number" class="form-control" id="totalTenure" 
-                     formControlName="totalTenure" min="1" placeholder="e.g., 20">
-              <div *ngIf="emiForm.get('totalTenure')?.invalid && emiForm.get('totalTenure')?.touched" 
-                   class="text-danger">
-                Valid tenure is required
-              </div>
-            </div>
-            <div class="col-md-2">
-              <label for="tenuresPaid" class="form-label">Paid (Months)</label>
-              <input type="number" class="form-control" id="tenuresPaid" 
-                     formControlName="tenuresPaid" min="0" placeholder="e.g., 24">
-              <div *ngIf="emiForm.get('tenuresPaid')?.invalid && emiForm.get('tenuresPaid')?.touched" 
-                   class="text-danger">
-                Valid number is required
-              </div>
-            </div>
-            <div class="col-md-1 d-flex align-items-end">
-              <button type="submit" class="btn btn-primary me-2" [disabled]="!emiForm.valid">
-                {{ isEditing ? 'Update' : 'Add' }}
-              </button>
+  <div class="card shadow">
+    <div class="card-header" style="border-bottom: 1px solid #ec0000;">
+      <h5 class="mb-0">EMI Calculator</h5>
+    </div>
+    <div class="card-body">
+      <!-- EMI Form -->
+      <form [formGroup]="emiForm" (ngSubmit)="saveEMI()" class="mb-4">
+        <div class="row g-3">
+          <div class="col-md-3">
+            <label for="emiForName" class="form-label">Loan For</label>
+            <input type="text" class="form-control" id="emiForName" formControlName="emiForName"
+              placeholder="e.g., Home Loan">
+            <div *ngIf="emiForm.get('emiForName')?.invalid && emiForm.get('emiForName')?.touched" class="text-danger">
+              Loan purpose is required
             </div>
           </div>
-          <div class="row mt-2">
-            <div class="col-md-12">
-              <button type="button" class="btn btn-outline-secondary" (click)="addEMI()" *ngIf="isEditing">
-                Cancel
-              </button>
+          <div class="col-md-3">
+            <label for="principal" class="form-label">Principal (₹)</label>
+            <input type="number" class="form-control" id="principal" formControlName="principal" min="1"
+              placeholder="e.g., 500000">
+            <div *ngIf="emiForm.get('principal')?.invalid && emiForm.get('principal')?.touched" class="text-danger">
+              Valid amount is required
             </div>
           </div>
-        </form>
-  
-        <!-- EMI List Table -->
-        <div class="table-responsive">
-          <table class="table table-hover align-middle">
-            <thead class="table-light">
-              <tr>
-                <th>Loan For</th>
-                <th class="text-end">Principal (₹)</th>
-                <th class="text-end">Rate (%)</th>
-                <th class="text-end">Tenure (Yrs)</th>
-                <th class="text-end">Paid (Mons)</th>
-                <th class="text-end">EMI (₹)</th>
-                <th class="text-end">Principal Paid (₹)</th>
-                <th class="text-end">Interest Paid (₹)</th>
-                <th class="text-end">Remaining (₹)</th>
-                <th class="text-end">Future Interest (₹)</th>
-                <th class="text-end">Remaining (Mons)</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let emi of emiData">
-                <td>{{ emi.emiForName }}</td>
-                <td class="text-end">{{ emi.principal | number:'1.2-2' }}</td>
-                <td class="text-end">{{ emi.annualInterestRate | number:'1.2-2' }}</td>
-                <td class="text-end">{{ emi.totalTenure }}</td>
-                <td class="text-end">{{ emi.tenuresPaid }}</td>
-                <td class="text-end">{{ emi.emiAmount | number:'1.2-2' }}</td>
-                <td class="text-end">{{ emi.principalPaidSoFar | number:'1.2-2' }}</td>
-                <td class="text-end">{{ emi.interestPaidSoFar | number:'1.2-2' }}</td>
-                <td class="text-end">{{ emi.remainingPrincipal | number:'1.2-2' }}</td>
-                <td class="text-end">{{ emi.interestToBePaid | number:'1.2-2' }}</td>
-                <td class="text-end">{{ emi.remainingTenure }}</td>
-                <td>
-                  <button class="btn btn-sm btn-outline-primary me-2" (click)="editEMI(emi)">
-                    <i class="bi bi-pencil"></i>
-                  </button>
-                  <button class="btn btn-sm btn-outline-danger" (click)="deleteEMI(emi.id!)" *ngIf="emi.id">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="col-md-3">
+            <label for="annualInterestRate" class="form-label">Interest Rate (%)</label>
+            <input type="number" class="form-control" id="annualInterestRate" formControlName="annualInterestRate"
+              step="0.01" min="0.01" placeholder="e.g., 8.5">
+            <div *ngIf="emiForm.get('annualInterestRate')?.invalid && emiForm.get('annualInterestRate')?.touched"
+              class="text-danger">
+              Valid interest rate is required
+            </div>
+          </div>
+
         </div>
-  
-        <!-- Totals -->
-        <div class="row mt-4">
+        <div class="row g-3">
           <div class="col-md-3">
-            <div class="card bg-light">
-              <div class="card-body text-center">
-                <h5 class="card-title">Total Principal Paid</h5>
-                <p class="card-text fs-4">{{ totalPrincipalPaid | number:'1.2-2' }} ₹</p>
-              </div>
+            <label for="totalTenure" class="form-label">Tenure (Years)</label>
+            <input type="number" class="form-control" id="totalTenure" formControlName="totalTenure" min="1"
+              placeholder="e.g., 20">
+            <div *ngIf="emiForm.get('totalTenure')?.invalid && emiForm.get('totalTenure')?.touched" class="text-danger">
+              Valid tenure is required
             </div>
           </div>
           <div class="col-md-3">
-            <div class="card bg-light">
-              <div class="card-body text-center">
-                <h5 class="card-title">Total Interest Paid</h5>
-                <p class="card-text fs-4">{{ totalEmiInterestPaid | number:'1.2-2' }} ₹</p>
-              </div>
+            <label for="tenuresPaid" class="form-label">Paid (Months)</label>
+            <input type="number" class="form-control" id="tenuresPaid" formControlName="tenuresPaid" min="0"
+              placeholder="e.g., 24">
+            <div *ngIf="emiForm.get('tenuresPaid')?.invalid && emiForm.get('tenuresPaid')?.touched" class="text-danger">
+              Valid number is required
             </div>
           </div>
-          <div class="col-md-3">
-            <div class="card bg-light">
-              <div class="card-body text-center">
-                <h5 class="card-title">Total Remaining Principal</h5>
-                <p class="card-text fs-4">{{ totalRemainingPrincipal | number:'1.2-2' }} ₹</p>
-              </div>
+          <div class="col-md-3 d-flex align-items-end">
+            <button type="submit" [disabled]="!emiForm.valid">
+              {{ isEditing ? 'Update' : 'Add EMI' }}
+            </button>
+            <button type="button" (click)="addEMI()" *ngIf="isEditing">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <!-- EMI List Table -->
+      <div class="table-responsive">
+        <table class="table table-hover align-middle">
+          <thead class="table-light">
+            <tr>
+              <th>Loan For</th>
+              <th class="text-end">Principal (₹)</th>
+              <th class="text-end">Rate (%)</th>
+              <th class="text-end">Tenure (Yrs)</th>
+              <th class="text-end">Paid (Mons)</th>
+              <th class="text-end">EMI (₹)</th>
+              <th class="text-end">Principal Paid (₹)</th>
+              <th class="text-end">Interest Paid (₹)</th>
+              <th class="text-end">Remaining (₹)</th>
+              <th class="text-end">Future Interest (₹)</th>
+              <th class="text-end">Remaining (Mons)</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let emi of emiData">
+              <td>{{ emi.emiForName }}</td>
+              <td class="text-end">{{ emi.principal | number:'1.2-2' }}</td>
+              <td class="text-end">{{ emi.annualInterestRate | number:'1.2-2' }}</td>
+              <td class="text-end">{{ emi.totalTenure }}</td>
+              <td class="text-end">{{ emi.tenuresPaid }}</td>
+              <td class="text-end">{{ emi.emiAmount | number:'1.2-2' }}</td>
+              <td class="text-end">{{ emi.principalPaidSoFar | number:'1.2-2' }}</td>
+              <td class="text-end">{{ emi.interestPaidSoFar | number:'1.2-2' }}</td>
+              <td class="text-end">{{ emi.remainingPrincipal | number:'1.2-2' }}</td>
+              <td class="text-end">{{ emi.interestToBePaid | number:'1.2-2' }}</td>
+              <td class="text-end">{{ emi.remainingTenure }}</td>
+              <td>
+                <button class="btn btn-sm btn-outline-primary me-2" (click)="editEMI(emi)">
+                  <i class="bi bi-pencil"></i>
+                </button>
+                <button class="btn btn-sm btn-outline-danger" (click)="deleteEMI(emi.id!)" *ngIf="emi.id">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Totals -->
+      <div class="row mt-4">
+        <div class="col-md-3">
+          <div class="card bg-light">
+            <div class="card-body text-center">
+              <h6 class="card-title">Total Principal Paid</h6>
+              <p class="card-text">{{ totalPrincipalPaid | number:'1.2-2' }} ₹</p>
             </div>
           </div>
-          <div class="col-md-3">
-            <div class="card bg-light">
-              <div class="card-body text-center">
-                <h5 class="card-title">Future Interest</h5>
-                <p class="card-text fs-4">{{ totalInterestToBePaid | number:'1.2-2' }} ₹</p>
-              </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card bg-light">
+            <div class="card-body text-center">
+              <h6 class="card-title">Total Interest Paid</h6>
+              <p class="card-text">{{ totalEmiInterestPaid | number:'1.2-2' }} ₹</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card bg-light">
+            <div class="card-body text-center">
+              <h6 class="card-title">Total Remaining Principal</h6>
+              <p class="card-text">{{ totalRemainingPrincipal | number:'1.2-2' }} ₹</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card bg-light">
+            <div class="card-body text-center">
+              <h6 class="card-title">Future Interest</h6>
+              <p class="card-text">{{ totalInterestToBePaid | number:'1.2-2' }} ₹</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
