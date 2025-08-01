@@ -19,71 +19,17 @@
   "investmentOptions": [
     {
       "id": 1,
-      "name": "Liquid Mutual Fund",
+      "name": "Liquid MF / FD",
       "category": "fixed-income",
       "minCAGR": 6,
       "maxCAGR": 7,
       "riskLevel": "low",
       "liquidity": "high",
       "taxEfficiency": "Taxed as per slab",
-      "notes": "Good for emergency funds, short-term parking"
+      "notes": "Good for 6 months emergency funds, short-term parking"
     },
     {
       "id": 2,
-      "name": "Nifty 50/100 Index Fund",
-      "category": "equity",
-      "minCAGR": 12,
-      "maxCAGR": 15,
-      "riskLevel": "medium",
-      "liquidity": "high",
-      "taxEfficiency": "LTCG 10% after 1L",
-      "notes": "Passive investing in top 50 companies"
-    },
-    {
-      "id": 3,
-      "name": "Actively Managed Mutual Funds",
-      "category": "equity",
-      "minCAGR": 15,
-      "maxCAGR": 17,
-      "riskLevel": "high",
-      "liquidity": "high",
-      "taxEfficiency": "LTCG 10% after 1L",
-      "notes": "Professional fund management"
-    },
-    {
-      "id": 4,
-      "name": "REITs / InvIT",
-      "category": "alternative",
-      "minCAGR": 6,
-      "maxCAGR": 10,
-      "riskLevel": "medium",
-      "liquidity": "medium",
-      "taxEfficiency": "Dividends taxed as per slab",
-      "notes": "Real estate investment trusts with regular dividends"
-    },
-    {
-      "id": 5,
-      "name": "Blue-Chip US Stocks / Nasdaq Index",
-      "category": "equity",
-      "minCAGR": 12,
-      "maxCAGR": 20,
-      "riskLevel": "high",
-      "liquidity": "high",
-      "taxEfficiency": "LTCG 20% with indexation",
-      "notes": "Diversify internationally with top US companies"
-    },
-    {
-      "id": 6,
-      "name": "Your Own Business",
-      "category": "alternative",
-      "minCAGR": 0,
-      "maxCAGR": 999,
-      "riskLevel": "very-high",
-      "liquidity": "low",
-      "notes": "Highest potential but requires active management"
-    },
-    {
-      "id": 7,
       "name": "Gold Mutual Fund / ETF",
       "category": "gold",
       "minCAGR": 9,
@@ -93,28 +39,40 @@
       "notes": "Good for long term goal, Low Risk, Hedge against inflation"
     },
     {
-      "id": 8,
-      "name": "Land",
-      "category": "real-estate",
+      "id": 3,
+      "name": "Nifty 50/100/500 Index MF",
+      "category": "equity",
+      "minCAGR": 12,
+      "maxCAGR": 15,
+      "riskLevel": "medium",
+      "liquidity": "high",
+      "taxEfficiency": "LTCG 12.5% after 1.25L",
+      "notes": "Passive investing in top 50/100/500 companies"
+    },
+    {
+      "id": 4,
+      "name": "Purchase Land",
+      "category": "equity",
       "minCAGR": 9,
       "maxCAGR": 12,
       "riskLevel": "medium",
-      "liquidity": "low",
-      "notes": "Good for long term goal, Low Risk, Hedge against inflation"
+      "liquidity": "high",
+      "taxEfficiency": "LTCG 12.5% after 1.25L",
+      "notes": "Passive investing in top 50/100/500 companies"
     },
     {
-      "id": 9,
+      "id": 5,
       "name": "NPS / PPF / EPF",
       "category": "retirement",
       "minCAGR": 7,
-      "maxCAGR": 8,
+      "maxCAGR": 10,
       "riskLevel": "low",
       "liquidity": "low",
       "notes": "Good for long term goal, Low Risk, Tax benefits and retirement corpus"
     },
     {
-      "id": 10,
-      "name": "Residential Flats",
+      "id": 6,
+      "name": "Residential Flats / Build Retirement Home",
       "category": "real-estate",
       "minCAGR": 7,
       "maxCAGR": 9,
@@ -123,7 +81,61 @@
       "notes": "Rent income, capital appreciation, long-term investment"
     },
     {
+      "id": 7,
+      "name": "Direct Equity / Stocks",
+      "category": "equity",
+      "minCAGR": 10,
+      "maxCAGR": 20,
+      "riskLevel": "high",
+      "liquidity": "high",
+      "taxEfficiency": "LTCG 12.5% after 1.25L",
+      "notes": "Requires research, high potential returns, high risk"
+    },
+    {
+      "id": 8,
+      "name": "Actively Managed Mutual Funds / ETFs",
+      "category": "equity",
+      "minCAGR": 15,
+      "maxCAGR": 17,
+      "riskLevel": "high",
+      "liquidity": "high",
+      "taxEfficiency": "LTCG 12.5% after 1.25L",
+      "notes": "Professional fund management"
+    },
+    {
+      "id": 9,
+      "name": "REITs / InvITs",
+      "category": "alternative",
+      "minCAGR": 6,
+      "maxCAGR": 10,
+      "riskLevel": "medium",
+      "liquidity": "medium",
+      "taxEfficiency": "Dividends taxed as per slab",
+      "notes": "Real estate investment trusts with regular dividends"
+    },
+    {
+      "id": 10,
+      "name": "Blue-Chip US Stocks / Nasdaq 100 / S&P 500 Index",
+      "category": "equity",
+      "minCAGR": 12,
+      "maxCAGR": 20,
+      "riskLevel": "high",
+      "liquidity": "high",
+      "taxEfficiency": "LTCG 20% with indexation",
+      "notes": "Diversify internationally with top US companies"
+    },
+    {
       "id": 11,
+      "name": "Your Own Business",
+      "category": "alternative",
+      "minCAGR": 0,
+      "maxCAGR": 999,
+      "riskLevel": "very-high",
+      "liquidity": "low",
+      "notes": "Highest potential but requires active management"
+    },
+    {
+      "id": 12,
       "name": "Commodity Investment",
       "category": "commodities",
       "minCAGR": 7,
@@ -133,14 +145,34 @@
       "notes": "Gold, Silver, Diamond, Crude Oil, etc. Diversification and inflation hedge"
     },
     {
-      "id": 12,
-      "name": "Direct Equity",
-      "category": "equity",
-      "minCAGR": 10,
-      "maxCAGR": 20,
-      "riskLevel": "high",
+      "id": 13,
+      "name": "6 Months Emergency Fund",
+      "category": "commodities",
+      "minCAGR": 3,
+      "maxCAGR": 4,
+      "riskLevel": "low",
       "liquidity": "high",
-      "notes": "Requires research, high potential returns, high risk"
+      "notes": "For unexpected expenses, emergencies, job loss, etc. Keep in savings account or liquid fund"
+    },
+    {
+      "id": 14,
+      "name": "Health Insurance",
+      "category": "commodities",
+      "minCAGR": 0,
+      "maxCAGR": 0,
+      "riskLevel": "low",
+      "liquidity": "high",
+      "notes": "Protect against medical emergencies, hospitalizations, surgeries, etc. Buy comprehensive health insurance with adequate coverage"
+    },
+    {
+      "id": 15,
+      "name": "Term Insurance",
+      "category": "commodities",
+      "minCAGR": 0,
+      "maxCAGR": 0,
+      "riskLevel": "low",
+      "liquidity": "high",
+      "notes": "Protect family financially in case of untimely death. Buy term insurance with adequate coverage and low premium"
     }
   ],
   "goals": [
@@ -201,7 +233,7 @@
       "id": 2
     },
     {
-      "sourceName": "side business",
+      "sourceName": "Side Business",
       "initialMonthlyIncome": 12000,
       "annualGrowthRate": 6,
       "years": 12,
@@ -305,7 +337,7 @@
       "id": 3
     },
     {
-      "investmentOnName": "Land",
+      "investmentOnName": "NPS",
       "monthlyInvestment": 23000,
       "duration": 7,
       "expectedReturn": 10,
@@ -315,7 +347,7 @@
       "id": 4
     },
     {
-      "investmentOnName": "home",
+      "investmentOnName": "Gold MF",
       "monthlyInvestment": 34000,
       "duration": 2,
       "expectedReturn": 12,
@@ -408,19 +440,11 @@
     },
     {
       "category": "Housing",
-      "amount": 456,
+      "amount": 4560,
       "date": "2025-07-01",
-      "description": "gklhlkh",
+      "description": "Maintenance",
       "inflationRate": 5,
       "id": 11
-    },
-    {
-      "category": "Transportation",
-      "amount": 123,
-      "date": "2025-07-01",
-      "description": "3rwer",
-      "inflationRate": 7,
-      "id": 12
     },
     {
       "category": "Other",
@@ -434,7 +458,7 @@
       "category": "Utilities",
       "amount": 10000,
       "date": "2025-07-09",
-      "description": "electricity",
+      "description": "Maid Payment ",
       "inflationRate": 5,
       "id": 14
     }
