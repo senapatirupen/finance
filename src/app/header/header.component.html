@@ -7,6 +7,11 @@
             <div class="col-4">
             </div>
             <div class="col-4">
+                <nav class="nav justify-content-end">
+                    <a class="nav-link link-body-emphasis text-primary-emphasis" style="margin-right: 10px;" *ngIf="!auth.currentUser" routerLink="/login" routerLinkActive="active">Login</a>
+                    <a class="nav-link link-body-emphasis text-primary-emphasis" *ngIf="!auth.currentUser" routerLink="/signup" routerLinkActive="active">Sign-up</a>
+                    <a class="nav-link link-body-emphasis text-primary-emphasis"  *ngIf="auth.currentUser" routerLink="/user" routerLinkActive="active">{{auth.currentUser.name}}</a>
+                </nav>
             </div>
         </div>
     </header>

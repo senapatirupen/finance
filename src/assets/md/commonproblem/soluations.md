@@ -42,3 +42,22 @@ Project:
     Website for selling indoor plants online. 
     Not only selling but also send person to taught about plants, how to take care and grow.
     Also to educate people about various type of indoor plants effect.
+    On call support and visiting request.
+
+Create Forest:
+    Create forest and in center create forest for indoor plants.
+
+Teach Everyone:
+    Teach everyone means all ages and all profession about Personal Finance, Tax Management, Investment Option, Wealth Management while Prepare for the worst.
+
+Read Books:
+    Pay to read books, if you complete 5 books then Rs 2000 if complete 10 books then Rs 5000
+    if complete 20 books then Rs 10000
+
+Go to a Village:
+    And Teach everyone about money and technology. Building Computer Center all free.
+    One hour laptop, then two hour reading.
+    Read -> Write -> Explain -> Present -> Convince -> Review -> Iterate.
+    Teach them to read  
+
+ 

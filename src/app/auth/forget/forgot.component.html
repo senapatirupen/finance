@@ -1,0 +1,23 @@
+<div class="container mt-4">
+    <h3>Forgot Password</h3>
+    <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+    <div *ngIf="msg" class="alert alert-success">{{msg}}</div>
+
+    <div *ngIf="step===1">
+        <form (submit)="$event.preventDefault(); findEmail()">
+            <div class="mb-3"><input [(ngModel)]="email" name="email" class="form-control"
+                    placeholder="Enter your email"></div>
+            <button class="btn btn-primary">Find</button>
+        </form>
+    </div>
+
+    <div *ngIf="step===2">
+        <form (submit)="$event.preventDefault(); reset()">
+            <div class="mb-3"><input [(ngModel)]="newPass" name="newPass" class="form-control"
+                    placeholder="New password" type="password"></div>
+            <div class="mb-3"><input [(ngModel)]="confirm" name="confirm" class="form-control"
+                    placeholder="Confirm password" type="password"></div>
+            <button class="btn btn-primary">Reset</button>
+        </form>
+    </div>
+</div>

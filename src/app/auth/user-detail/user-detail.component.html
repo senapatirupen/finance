@@ -1,0 +1,11 @@
+<div class="container mt-4">
+    <h3>User Detail</h3>
+    <div *ngIf="auth.currentUser; else noUser">
+        <p><strong>Name:</strong> {{auth.currentUser.name}}</p>
+        <p><strong>Email:</strong> {{auth.currentUser.email}}</p>
+        <button class="btn btn-danger" (click)="auth.logout()">Logout</button>
+    </div>
+    <ng-template #noUser>
+        <p>You are not logged in.</p>
+    </ng-template>
+</div>

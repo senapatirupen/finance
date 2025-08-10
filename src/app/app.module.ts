@@ -34,6 +34,10 @@ import { IncomeCalculatorComponent } from './components/income-list/income-calcu
 import { GoalsCalculatorComponent } from './components/goal-list/goals-calculator.component';
 import { InvestmentOptionsComponent } from './components/investment-list/investment-options.component';
 import { FutureProjectionComponent } from './components/future-projection/future-projection.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import { ForgotComponent } from './auth/forget/forgot.component';
+import { UserDetailComponent } from './auth/user-detail/user-detail.component';
 
 
 @NgModule({
@@ -64,7 +68,11 @@ import { FutureProjectionComponent } from './components/future-projection/future
     EmiCalculatorComponent,
     IncomeCalculatorComponent,
     GoalsCalculatorComponent,
-    InvestmentOptionsComponent
+    InvestmentOptionsComponent,
+    SignupComponent,
+    LoginComponent,
+    ForgotComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,

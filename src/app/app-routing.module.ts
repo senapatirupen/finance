@@ -19,6 +19,11 @@ import { EmiCalculatorComponent } from './components/emi-list/emi-calculator.com
 import { IncomeCalculatorComponent } from './components/income-list/income-calculator.component';
 import { GoalsCalculatorComponent } from './components/goal-list/goals-calculator.component';
 import { InvestmentOptionsComponent } from './components/investment-list/investment-options.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import { ForgotComponent } from './auth/forget/forgot.component';
+import { UserDetailComponent } from './auth/user-detail/user-detail.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'finance', pathMatch: 'full' },
@@ -51,14 +56,12 @@ const routes: Routes = [
       { path: 'emi', component: EmiCalculatorComponent },
       { path: 'income', component: IncomeCalculatorComponent },
       { path: 'goal', component: GoalsCalculatorComponent }
-
-
-
-
-    ]
-  }
-
-
+    ], canActivate: [AuthGuard]
+  },
+  { path: 'signup', component: SignupComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'forgot', component: ForgotComponent },
+  { path: 'user', component: UserDetailComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

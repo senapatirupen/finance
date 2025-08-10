@@ -1,4 +1,18 @@
 {
+  "users": [
+    {
+      "name": "hi me",
+      "email": "ok@gmail.com",
+      "password": "$2b$10$dJsyoNqHzgJismF9bf3ZqeuzbrwXPC/RhXrey1v6MZZRTcr8xD32G",
+      "id": 1
+    },
+    {
+      "name": "hjkkk",
+      "email": "hi@gmail.com",
+      "password": "$2b$10$bAOfhoZU3kinZJGK9RRLFOe3D5r7rmI8jYuRhLcSdUQ3cIo/xia0S",
+      "id": 2
+    }
+  ],
   "posts": [
     {
       "id": 1,
@@ -215,13 +229,13 @@
   ],
   "incomeSources": [
     {
-      "id": 1,
       "sourceName": "Salary",
       "initialMonthlyIncome": 75000,
       "annualGrowthRate": 7,
-      "years": 5,
-      "projectedMonthlyIncome": 105187.65,
-      "totalAmountReceived": 5367865.8
+      "years": 4,
+      "projectedMonthlyIncome": 98309.70075000002,
+      "totalAmountReceived": 3995948.7,
+      "id": 1
     },
     {
       "sourceName": "Rental Income",
