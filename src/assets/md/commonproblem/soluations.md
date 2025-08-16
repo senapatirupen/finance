@@ -5,6 +5,7 @@ Footpath Problem:
 
 Traffic Problem:
     1: Make dedicated path for two wheeler, auto and cycle which drastically reduce the traffic problem.
+    2: Extreme use of electric cycle. Provide free e-cycle, charging station and parking.
 
 Global warming:
     1: Ask for growing Indoor Plants in homes, shops, buildings, factory etc. Which will reduce the global warming drastically.
@@ -58,6 +59,21 @@ Go to a Village:
     And Teach everyone about money and technology. Building Computer Center all free.
     One hour laptop, then two hour reading.
     Read -> Write -> Explain -> Present -> Convince -> Review -> Iterate.
-    Teach them to read  
+    Teach them to read 
 
- 
+Before AI Take the Job:
+    Personal:
+        Create a mindset to go village and teach kids, youngs about AI their usage. Spread AI related education every where. (Applied to city as well)
+
+        Start putting money on Gold, FD, Bonds and Nifty 100 index fund.
+        Close all bad debt's.
+        Nifty Top 10/20 equal weight Index.
+
+        Completely avoid eating outside Food, Read best selling books, Build website on selling old books.
+    
+    Government/Private ORG: 
+        Construct big warehouse and cold storage to store excess food and good supply.
+        Construct big water reserver to store and supply fresh water and fish cultivation.
+        Construct Thermal Power plant/ Hydro Power plant (Dam) for future ready infra.
+        Use AI to build everything online (Government Office Works)
+        Higher people to create planned forest which will have all the big fruit trees like Jackfruit, Mango, Tamarind, Breadfruit, Avocado, Jamun, Lychee, Sapodilla, Cashew, Amla, Durian etc.

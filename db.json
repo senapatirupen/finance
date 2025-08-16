@@ -3,7 +3,7 @@
     {
       "name": "hi me",
       "email": "ok@gmail.com",
-      "password": "$2b$10$dJsyoNqHzgJismF9bf3ZqeuzbrwXPC/RhXrey1v6MZZRTcr8xD32G",
+      "password": "$2b$10$5WmfKdd0roRd1gEY5m.eU.tDqf/y19m9OLvSGoSIGI6giAZHvRkYO",
       "id": 1
     },
     {
@@ -473,7 +473,7 @@
       "amount": 10000,
       "date": "2025-07-09",
       "description": "Maid Payment ",
-      "inflationRate": 5,
+      "inflationRate": 9,
       "id": 14
     }
   ],

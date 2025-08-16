@@ -2,7 +2,11 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
-@Component({selector: 'app-signup', templateUrl: './signup.component.html'})
+@Component({
+    selector: 'app-signup', 
+    templateUrl: './signup.component.html',
+    styleUrls: ['./signup.component.scss']
+})
 export class SignupComponent {
   name=''; email=''; password=''; confirm=''; error=''; loading=false;
   constructor(private auth: AuthService, private router: Router) {}

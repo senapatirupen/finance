@@ -3,7 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import * as bcrypt from 'bcryptjs';
 import { AuthService } from 'src/app/services/auth.service';
 
-@Component({selector:'app-forgot', templateUrl:'./forgot.component.html'})
+@Component({
+    selector:'app-forgot', 
+    templateUrl:'./forgot.component.html',
+    styleUrls: ['./forgot.component.scss']
+})
 export class ForgotComponent{
   step=1; email=''; error=''; msg=''; newPass=''; confirm=''; userId: number|undefined;
   api='http://localhost:3000';

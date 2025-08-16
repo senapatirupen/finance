@@ -1,11 +1,15 @@
 <div class="container mt-4">
-    <h3>User Detail</h3>
-    <div *ngIf="auth.currentUser; else noUser">
-        <p><strong>Name:</strong> {{auth.currentUser.name}}</p>
-        <p><strong>Email:</strong> {{auth.currentUser.email}}</p>
-        <button class="btn btn-danger" (click)="auth.logout()">Logout</button>
+    <div class="card shadow p-4" style="max-width: 400px; width: 100%;">
+        <div class="card-body">
+            <h4 class="card-title text-center mb-4 fst-italic">User Detail</h4>
+            <div *ngIf="auth.currentUser; else noUser">
+                <p><strong>Name:</strong> {{auth.currentUser.name}}</p>
+                <p><strong>Email:</strong> {{auth.currentUser.email}}</p>
+                <button (click)="auth.logout()">Logout</button>
+            </div>
+            <ng-template #noUser>
+                <p>You are not logged in.</p>
+            </ng-template>
+        </div>
     </div>
-    <ng-template #noUser>
-        <p>You are not logged in.</p>
-    </ng-template>
 </div>

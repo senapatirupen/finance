@@ -1,4 +1,4 @@
-<div class="container mt-4">
+<!-- <div class="container mt-4">
     <h3>Login</h3>
     <div *ngIf="error" class="alert alert-danger">{{error}}</div>
     <form (submit)="$event.preventDefault(); submit()">
@@ -9,28 +9,29 @@
         <button class="btn btn-primary" [disabled]="loading">Login</button>
         <a class="btn btn-link" routerLink="/forgot">Forgot?</a>
     </form>
-</div>
+</div> -->
 
-<!-- <div class="container mt-4">
+<div class="container mt-4 center">
     <div class="card shadow p-4" style="max-width: 400px; width: 100%;">
         <div class="card-body">
-            <h3 class="card-title text-center mb-4">Login</h3>
-            <form>
+            <h4 class="card-title text-center mb-4 fst-italic">Login</h4>
+            <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+            <form (submit)="$event.preventDefault(); submit()">
                 <div class="mb-3 input-group">
                     <span class="input-group-text"><i class="fas fa-user"></i></span>
-                    <input type="text" class="form-control" id="username" placeholder="Username" required>
+                    <input [(ngModel)]="email" name="email" class="form-control" placeholder="Email" type="email"
+                        required>
                 </div>
                 <div class="mb-3 input-group">
                     <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                    <input type="password" class="form-control" id="password" placeholder="Password" required>
+                    <input [(ngModel)]="password" name="password" class="form-control" placeholder="Password"
+                        type="password" required>
                 </div>
-                <div class="d-grid mt-4">
-                    <button type="submit" class="btn btn-primary">Login</button>
-                </div>
+                <button [disabled]="loading">Login</button>
             </form>
             <div class="text-center mt-3">
-                <a href="#" class="text-muted">Forgot password?</a>
+                <a class="btn btn-link text-muted" routerLink="/forgot">Forgot?</a>
             </div>
         </div>
     </div>
-</div> -->
+</div>
