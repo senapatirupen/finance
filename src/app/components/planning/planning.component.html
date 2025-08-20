@@ -26,17 +26,21 @@
         </li>
       </ul>
       <p>
-        <em class="heading">Liquid MF/FD
-          -> Gold Physical/MF/ETF -> Nifty 50/100/500 Index MF -> Buy Land -> Direct Equity/Stock -> NPS/PPF/PF -> Buy Residential Flat / Build Retirement Home -> Other Active MF -> 
-        International Stock Market (Nasdaq 100 / S&P 500 Index MF/ETF) -> Commodity Investment (Gold/Silver/Diamond) -> REITs/InvITs. (6 Months Emergency Fund, Term Insurance, Health Insurance)</em>
+        <em class="heading">6 Months Emergency Fund -> Term Insurance -> Health Insurance -> Learn Professional Courses
+          Or Up Skill Yourself -> Liquid MF/FD
+          -> Gold Physical/MF/ETF -> Nifty 50/100/500 Index MF -> Buy Land -> NPS/PPF/PF -> Buy
+          Residential Flat / Build Retirement Home -> Direct Equity/Stock ->
+          International Stock Market (Nasdaq 100 / S&P 500 Index MF/ETF) -> Commodity Investment (Gold/Silver/Diamond)
+          -> REITs/InvITs. (Close All The Bad Debt's
+          First)</em>
       </p>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-2">
       <div class="sidebar">
         <div class="sidebar-header">
-          <h5>Financial Planning</h5>
+          <h5>Budget Plan</h5>
         </div>
         <ul class="nav flex-column">
           <li class="nav-item">
@@ -48,41 +52,41 @@
           <li class="nav-item">
             <a class="nav-link" [class.active]="isActive('/expenses')" routerLink="/planning/expenses"
               (click)="setActive('expenses')">
-              <i class="bi bi-calculator me-2"></i> Monthly Expenses
+              <i class="bi bi-calculator me-2"></i>Expenses
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [class.active]="isActive('/sip')" routerLink="/planning/sip" (click)="setActive('sip')">
-              <i class="bi bi-calculator me-2"></i> SIP List
+              <i class="bi bi-calculator me-2"></i> SIP
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [class.active]="isActive('/lump-sum')" routerLink="/planning/lump-sum"
               (click)="setActive('lump-sum')">
-              <i class="bi bi-calculator me-2"></i> Lump Sum List
+              <i class="bi bi-calculator me-2"></i> Lump Sum
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [class.active]="isActive('/emi')" routerLink="/planning/emi" (click)="setActive('emi')">
-              <i class="bi bi-calculator me-2"></i> EMI List
+              <i class="bi bi-calculator me-2"></i> EMI
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [class.active]="isActive('/income')" routerLink="/planning/income"
               (click)="setActive('income')">
-              <i class="bi bi-calculator me-2"></i> Income List
+              <i class="bi bi-calculator me-2"></i> Income
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [class.active]="isActive('/goal')" routerLink="/planning/goal"
               (click)="setActive('goal')">
-              <i class="bi bi-bullseye me-2"></i> Goal List
+              <i class="bi bi-bullseye me-2"></i> Goal
             </a>
           </li>
         </ul>
       </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-10">
       <router-outlet></router-outlet>
     </div>
   </div>

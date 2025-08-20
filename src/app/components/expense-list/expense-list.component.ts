@@ -22,7 +22,7 @@ export class ExpenseListComponent implements OnInit {
     tenYears: 0
   };
   categoryProjections: {
-    category: string, 
+    category: string,
     currentAmount: number,
     fiveYears: number,
     tenYears: number,
@@ -95,7 +95,7 @@ export class ExpenseListComponent implements OnInit {
 
   deleteExpense(id?: number): void {
     if (id === undefined) return;
-    
+
     if (confirm('Are you sure you want to delete this expense?')) {
       this.expenseService.deleteExpense(id).subscribe(() => {
         this.loadExpenses();

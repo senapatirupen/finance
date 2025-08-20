@@ -54,7 +54,7 @@ export class ExpenseService {
 
   getCategoryTotals(expenses: Expense[]): {category: string, amount: number, inflationRate: number}[] {
     const categories: {[key: string]: {amount: number, inflationRate: number}} = {};
-    
+
     expenses.forEach(expense => {
       if (!categories[expense.category]) {
         categories[expense.category] = {
