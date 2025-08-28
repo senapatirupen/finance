@@ -42,3 +42,28 @@ button:hover {
     transition: 0.3s;
     border-color: #FFD700;
 }
+
+.sub-header .divider {
+    border-left: 1px solid #ec0000;
+    /* vertical line */
+    height: 10px;
+    /* line height */
+}
+
+.sub-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    gap: 5px;
+    padding: 0px 12px;
+    font-size: 14px;
+    /* smaller text */
+    font-weight: 500;
+    color: #052c65;
+}
