@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProRata } from '../model/pro-rata.model';
+import { DownloadService } from '../services/download.service';
 
 
 @Component({
@@ -58,7 +59,10 @@ export class InvestmentPsychologyComponent implements OnInit {
 
   emiResults: any = null;
 
-  constructor(private router: Router, private formBuilder: FormBuilder) {
+  downloading = false;
+  error: string | null = null;
+
+  constructor(private router: Router, private formBuilder: FormBuilder, private downloadService: DownloadService) {
   }
 
   ngOnInit(): void {
@@ -445,13 +449,43 @@ export class InvestmentPsychologyComponent implements OnInit {
 
   calculateLoanEMI(principal: number, monthlyInterestRate: number, months: number): number {
     return (principal * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, months)) /
-           (Math.pow(1 + monthlyInterestRate, months) - 1);
+      (Math.pow(1 + monthlyInterestRate, months) - 1);
   }
 
   calculateNewTenure(principal: number, monthlyInterestRate: number, emi: number): number {
     return Math.round(
       Math.log(emi / (emi - principal * monthlyInterestRate)) / Math.log(1 + monthlyInterestRate)
     );
+  }
+
+  // Method to download file
+  downloadFile(filename: string): void {
+    this.downloading = true;
+    this.error = null;
+
+    this.downloadService.downloadFile(filename).subscribe({
+      next: (blob) => {
+        this.downloading = false;
+        this.triggerDownload(blob, filename);
+      },
+      error: (err) => {
+        this.downloading = false;
+        this.error = `Failed to download file: ${err.message}`;
+        console.error('Download error:', err);
+      }
+    });
+  }
+
+  // Helper method to trigger download
+  private triggerDownload(blob: Blob, filename: string): void {
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
   }
 
 }

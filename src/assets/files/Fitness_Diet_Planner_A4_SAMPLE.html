@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fitness & Diet Planner (Sample Filled) — A4 Printable</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,"Noto Sans","Helvetica Neue",Arial,sans-serif; color:var(--ink); line-height:1.2; }
+  h1 { font-size:22px; margin:0 0 8px; letter-spacing:.2px; }
+  h2 { font-size:16px; margin:0 0 6px; }
+  h3 { font-size:13px; margin:6px 0 4px; color:var(--muted); }
+  .meta { display:grid; grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr; gap:8px; margin-bottom:8px; }
+  .field { border:1px solid var(--rule); padding:6px 8px; height:34px; display:flex; align-items:center; }
+  .label { font-size:12px; color:var(--muted); margin-right:8px; }
+  .bar { height:4px; background:#000; margin: 8px 0 10px; }
+  .section { break-inside: avoid; margin-bottom: 10px; }
+  .section .head { display:flex; justify-content:space-between; align-items:baseline; }
+  .section .desc { font-size: 11px; color: var(--muted); }
+  table { width:100%; border-collapse: collapse; table-layout: fixed; }
+  th, td { border: 1px solid var(--rule); padding: 6px 6px; font-size: 12px; height: 22px; vertical-align: top; }
+  th { background:#f2f2f2; text-align:left; }
+  td.amount { text-align:right; }
+  .two-col { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .note { border:1px solid var(--rule); margin-top: 4px; background: repeating-linear-gradient(180deg,#fff,#fff 21px,#000 22px); white-space: pre-line; }
+  .note.s { height: 120px; } .note.m { height: 220px; } .note.l { height: 420px; }
+  .footer { display:flex; justify-content:space-between; font-size:11px; margin-top:6px; color:var(--muted); }
+  .page { page-break-after: always; }
+  .mini { font-size:11px; color:var(--muted); }
+</style>
+</head>
+<body>
+
+<section class="page">
+  <h1>Fitness & Diet Planner — Daily Tracker (Sample)</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">Name:</span> Rohan Mehta</div>
+    <div class="field"><span class="label">Date:</span> 2025-09-13</div>
+    <div class="field"><span class="label">Bodyweight (kg):</span> 72.3</div>
+    <div class="field"><span class="label">Sleep (hrs):</span> 7.2</div>
+    <div class="field"><span class="label">Energy:</span> ☑ High</div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Macro Targets</h2><span class="desc">Calories & macros for the day</span></div>
+      <table>
+        <thead><tr><th>Calories</th><th>Protein (g)</th><th>Carbs (g)</th><th>Fat (g)</th><th>Water (glasses)</th><th>Steps</th></tr></thead>
+        <tbody>
+          <tr><td class="amount">2,050</td><td class="amount">145</td><td class="amount">210</td><td class="amount">65</td><td>☑☑☑☑☑☑☐☐</td><td class="amount">8,400</td></tr>
+        </tbody>
+      </table>
+      <h3>Meals & Macros</h3>
+      <table>
+        <thead><tr><th>Meal</th><th>Food / Recipe</th><th>Cal</th><th>P</th><th>C</th><th>F</th></tr></thead>
+        <tbody>
+          <tr><td>Breakfast</td><td>Masala oats + 3 egg whites + 1 whole egg</td><td class="amount">480</td><td class="amount">36</td><td class="amount">55</td><td class="amount">14</td></tr>
+          <tr><td>Snack</td><td>Greek yogurt + banana</td><td class="amount">250</td><td class="amount">16</td><td class="amount">38</td><td class="amount">3</td></tr>
+          <tr><td>Lunch</td><td>Grilled chicken, brown rice, salad</td><td class="amount">620</td><td class="amount">45</td><td class="amount">70</td><td class="amount">14</td></tr>
+          <tr><td>Snack</td><td>Roasted chana + tea (no sugar)</td><td class="amount">180</td><td class="amount">10</td><td class="amount">24</td><td class="amount">4</td></tr>
+          <tr><td>Dinner</td><td>Paneer bhurji + 2 rotis + veggies</td><td class="amount">520</td><td class="amount">38</td><td class="amount">23</td><td class="amount">30</td></tr>
+          <tr><th>Total</th><th></th><th class="amount">2,050</th><th class="amount">145</th><th class="amount">210</th><th class="amount">65</th></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Workout Log</h2><span class="desc">Strength & cardio</span></div>
+      <table>
+        <thead><tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Weight</th><th>RPE</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Back Squat</td><td class="amount">4</td><td class="amount">6</td><td class="amount">80 kg</td><td class="amount">8</td><td>Last set tough</td></tr>
+          <tr><td>RDL</td><td class="amount">3</td><td class="amount">8</td><td class="amount">70 kg</td><td class="amount">7</td><td>Good hinge</td></tr>
+          <tr><td>Walking Lunge</td><td class="amount">3</td><td class="amount">10/leg</td><td class="amount">16 kg</td><td class="amount">7</td><td>Stable</td></tr>
+          <tr><td>Plank</td><td class="amount">3</td><td class="amount">60s</td><td class="amount">—</td><td class="amount">6</td><td>Core felt solid</td></tr>
+        </tbody>
+      </table>
+      <h3>Cardio / Mobility</h3>
+      <table>
+        <thead><tr><th>Type</th><th>Time</th><th>Intensity</th><th>Distance</th><th>Done?</th></tr></thead>
+        <tbody>
+          <tr><td>Walking</td><td class="amount">30 min</td><td>Easy</td><td class="amount">2.5 km</td><td>☑</td></tr>
+          <tr><td>Hip mobility flow</td><td class="amount">10 min</td><td>—</td><td class="amount">—</td><td>☑</td></tr>
+        </tbody>
+      </table>
+      <h3>Supplements / Notes</h3>
+      <div class="note s">• Whey (1 scoop post-workout)
+• Fish oil (1)
+• Felt energized; slight knee stiffness AM — warmed up longer</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Protein each meal • Hydrate • Progressive overload • Sleep</span>
+    <span>Page 1 of 3</span>
+  </div>
+</section>
+
+<section class="page">
+  <h1>Weekly Plan • Meal Prep (Sample)</h1>
+  <div class="bar"></div>
+
+  <div class="section">
+    <div class="head"><h2>Weekly Training Plan</h2><span class="desc">Plan sessions across the week</span></div>
+    <table>
+      <thead><tr><th>Day</th><th>Session</th><th>Focus</th><th>Accessory / Mobility</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Mon</td><td>Lower A</td><td>Squat strength</td><td>Hip openers</td><td>—</td></tr>
+        <tr><td>Tue</td><td>Upper A</td><td>Push/Pull</td><td>Shoulder CARs</td><td>—</td></tr>
+        <tr><td>Wed</td><td>Cardio</td><td>Zone 2 walk</td><td>Ankle mobility</td><td>Steps 8k+</td></tr>
+        <tr><td>Thu</td><td>Lower B</td><td>Hinge & lunge</td><td>Hamstring floss</td><td>—</td></tr>
+        <tr><td>Fri</td><td>Upper B</td><td>Row/Press</td><td>Thoracic</td><td>—</td></tr>
+        <tr><td>Sat</td><td>Active</td><td>Sports / hike</td><td>Stretch 10m</td><td>Fun day</td></tr>
+        <tr><td>Sun</td><td>Rest</td><td>Recovery</td><td>Breathing 5m</td><td>Plan next week</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Meal Plan (Mon–Sun)</h2><span class="desc">Sketch dishes for each meal</span></div>
+      <table>
+        <thead><tr><th>Day</th><th>Breakfast</th><th>Lunch</th><th>Dinner</th><th>Snack(s)</th></tr></thead>
+        <tbody>
+          <tr><td>Mon</td><td>Oats + eggs</td><td>Chicken + rice</td><td>Paneer bhurji + roti</td><td>Yogurt, chana</td></tr>
+          <tr><td>Tue</td><td>Poha + whey</td><td>Fish + quinoa</td><td>Dal + rice + veg</td><td>Apple, nuts</td></tr>
+          <tr><td>Wed</td><td>Upma + eggs</td><td>Rajma + rice</td><td>Chicken wrap</td><td>Banana, yogurt</td></tr>
+          <tr><td>Thu</td><td>Paratha + curd</td><td>Paneer bowl</td><td>Egg curry + roti</td><td>Nuts, chana</td></tr>
+          <tr><td>Fri</td><td>Idli + sambar</td><td>Chicken + rice</td><td>Fish curry + rice</td><td>Fruit, yogurt</td></tr>
+          <tr><td>Sat</td><td>Omelette + toast</td><td>Dal khichdi</td><td>Paneer tikka</td><td>Makhana</td></tr>
+          <tr><td>Sun</td><td>Cheat breakfast</td><td>Out with family</td><td>Light dinner</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Grocery List</h2><span class="desc">By category</span></div>
+      <table>
+        <thead><tr><th>Category</th><th>Items</th></tr></thead>
+        <tbody>
+          <tr><td>Protein</td><td>Chicken breast, eggs, paneer, Greek yogurt, fish</td></tr>
+          <tr><td>Produce</td><td>Spinach, tomatoes, onions, peppers, bananas, apples</td></tr>
+          <tr><td>Carbs/Grains</td><td>Brown rice, roti flour, oats, quinoa</td></tr>
+          <tr><td>Dairy/Alt</td><td>Milk, curd</td></tr>
+          <tr><td>Fats/Seeds</td><td>Olive oil, peanuts, almonds, chia</td></tr>
+          <tr><td>Other</td><td>Spices, tea, coffee, whey</td></tr>
+        </tbody>
+      </table>
+      <h3>Meal Prep Notes</h3>
+      <div class="note s">Sun: batch-cook chicken, rajma; chop salad veggies; portion yogurt.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="head"><h2>Weekly Habit Tracker</h2><span class="desc">Small wins compound</span></div>
+    <table>
+      <thead><tr><th>Habit</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead>
+      <tbody>
+        <tr><td>7+ hrs sleep</td><td>✓</td><td>✓</td><td>—</td><td>✓</td><td>✓</td><td>—</td><td>—</td></tr>
+        <tr><td>8k+ steps</td><td>✓</td><td>—</td><td>✓</td><td>✓</td><td>—</td><td>✓</td><td>—</td></tr>
+        <tr><td>Protein at each meal</td><td>✓</td><td>✓</td><td>✓</td><td>—</td><td>✓</td><td>—</td><td>—</td></tr>
+        <tr><td>5+ servings fruit/veg</td><td>✓</td><td>—</td><td>✓</td><td>—</td><td>✓</td><td>✓</td><td>—</td></tr>
+        <tr><td>10 min mobility</td><td>✓</td><td>—</td><td>✓</td><td>✓</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td>Mindfulness 5 min</td><td>✓</td><td>✓</td><td>—</td><td>—</td><td>✓</td><td>—</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Plan training • Plan meals • Shop once • Prep twice</span>
+    <span>Page 2 of 3</span>
+  </div>
+</section>
+
+<section class="page">
+  <h1>Progress & Check‑Ins (Sample)</h1>
+  <div class="bar"></div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Body Metrics (Weekly)</h2><span class="desc">Track trends, not days</span></div>
+      <table>
+        <thead><tr><th>Date</th><th>Weight</th><th>Waist</th><th>Hips</th><th>Chest</th><th>Thigh</th><th>Arm</th></tr></thead>
+        <tbody>
+          <tr><td>2025-09-08</td><td class="amount">72.9 kg</td><td class="amount">84 cm</td><td class="amount">95 cm</td><td class="amount">95 cm</td><td class="amount">54 cm</td><td class="amount">32 cm</td></tr>
+          <tr><td>2025-09-15</td><td class="amount">72.5 kg</td><td class="amount">83.5 cm</td><td class="amount">94.8 cm</td><td class="amount">95 cm</td><td class="amount">54 cm</td><td class="amount">32 cm</td></tr>
+          <tr><td>2025-09-22</td><td class="amount">72.3 kg</td><td class="amount">83.2 cm</td><td class="amount">94.5 cm</td><td class="amount">95 cm</td><td class="amount">53.8 cm</td><td class="amount">32 cm</td></tr>
+        </tbody>
+      </table>
+      <h3>Non‑Scale Victories (NSV)</h3>
+      <div class="note s">• Jeans fit better • Morning energy up • Resting HR down 2 bpm</div>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>PRs & Performance</h2><span class="desc">Celebrate strength & pace</span></div>
+      <table>
+        <thead><tr><th>Exercise</th><th>Prev Best</th><th>New Best</th><th>Date</th></tr></thead>
+        <tbody>
+          <tr><td>Back Squat</td><td class="amount">80 × 6</td><td class="amount">85 × 6</td><td>2025-09-12</td></tr>
+          <tr><td>5K Walk Pace</td><td class="amount">9:40 / km</td><td class="amount">9:20 / km</td><td>2025-09-10</td></tr>
+          <tr><td>Plank</td><td class="amount">60 s</td><td class="amount">75 s</td><td>2025-09-13</td></tr>
+        </tbody>
+      </table>
+      <h3>Recovery & Readiness (Daily)</h3>
+      <table>
+        <thead><tr><th>Date</th><th>Resting HR</th><th>Soreness</th><th>Stress</th><th>HRV/Notes</th><th>Ready?</th></tr></thead>
+        <tbody>
+          <tr><td>2025-09-13</td><td class="amount">58</td><td class="amount">3</td><td class="amount">2</td><td>Good sleep</td><td>☑</td></tr>
+          <tr><td>2025-09-12</td><td class="amount">60</td><td class="amount">4</td><td class="amount">3</td><td>Late dinner</td><td>☑</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="head"><h2>Macro Planner (Optional)</h2><span class="desc">Sketch targets; confirm with a professional if needed</span></div>
+    <table>
+      <thead><tr><th>BW (kg)</th><th>Protein g/kg</th><th>Protein g</th><th>Carbs g</th><th>Fat g</th><th>Cals (4P+4C+9F)</th></tr></thead>
+      <tbody>
+        <tr><td class="amount">72</td><td class="amount">2.0</td><td class="amount">144</td><td class="amount">200</td><td class="amount">65</td><td class="amount">2,041</td></tr>
+      </tbody>
+    </table>
+    <p class="mini">General information only — not medical advice.</p>
+  </div>
+
+  <div class="footer">
+    <span>Consistency beats intensity — track, adjust, repeat</span>
+    <span>Page 3 of 3</span>
+  </div>
+</section>
+
+</body>
+</html>

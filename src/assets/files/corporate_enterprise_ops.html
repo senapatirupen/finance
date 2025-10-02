@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Corporate Enterprise Ops Notepad (A4 Printable)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,"Noto Sans","Helvetica Neue",Arial,sans-serif; color:var(--ink); line-height:1.2; }
+  h1 { font-size:22px; margin:0 0 8px; letter-spacing:.2px; }
+  h2 { font-size:16px; margin:0 0 6px; }
+  h3 { font-size:13px; margin:6px 0 4px; color:var(--muted); }
+  .meta { display:grid; grid-template-columns: 2fr 1fr 1fr; gap:8px; margin-bottom:8px; }
+  .field { border:1px solid var(--rule); padding:6px 8px; height:34px; display:flex; align-items:center; }
+  .label { font-size:12px; color:var(--muted); margin-right:8px; }
+  .bar { height:4px; background:#000; margin: 8px 0 10px; }
+  .section { break-inside: avoid; margin-bottom: 10px; }
+  .section .head { display:flex; justify-content:space-between; align-items:baseline; }
+  .section .desc { font-size: 11px; color: var(--muted); }
+  table { width:100%; border-collapse: collapse; table-layout: fixed; }
+  th, td { border: 1px solid var(--rule); padding: 6px 6px; font-size: 12px; height: 22px; }
+  th { background:#f2f2f2; text-align:left; }
+  td.amount { text-align:right; }
+  .sumrow td { font-weight:bold; }
+  .two-col { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .three-col { display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .note { border:1px solid var(--rule); height:180px; margin-top:4px; background:repeating-linear-gradient(180deg,#fff,#fff 21px,#000 22px); }
+  .footer { display:flex; justify-content:space-between; font-size:11px; margin-top:6px; color:var(--muted); }
+  .page { page-break-after: always; }
+  .checkbox { display:inline-block; width:12px; height:12px; border:1px solid #000; margin-right:6px; vertical-align:middle; }
+  .sigline { border-bottom:1px solid #000; width:220px; height:16px; display:inline-block; }
+  .pill { border:1px solid #000; padding:2px 6px; font-size:11px; border-radius:10px; }
+  .rag { text-transform:uppercase; font-size:11px; }
+</style>
+</head>
+<body>
+
+<!-- COVER: Org Snapshot -->
+<section class="page">
+  <h1>Corporate Enterprise Ops Notepad</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">Company / BU:</span> _______________________________</div>
+    <div class="field"><span class="label">Quarter (FY):</span> _________</div>
+    <div class="field"><span class="label">Location:</span> __________</div>
+  </div>
+  <div class="meta">
+    <div class="field"><span class="label">Business Head:</span> __________________</div>
+    <div class="field"><span class="label">Ops Head:</span> __________________</div>
+    <div class="field"><span class="label">Finance BP:</span> __________________</div>
+  </div>
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Top 5 Priorities (This Quarter)</h2><span class="desc">Outcomes, not tasks.</span></div>
+      <table>
+        <thead><tr><th style="width:8%">#</th><th>Outcome</th><th style="width:22%">Owner</th><th style="width:18%">Due</th><th style="width:14%">RAG</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td></td><td></td><td></td><td class='rag'>G/A/R</td></tr>
+<tr><td>2</td><td></td><td></td><td></td><td class='rag'>G/A/R</td></tr>
+<tr><td>3</td><td></td><td></td><td></td><td class='rag'>G/A/R</td></tr>
+<tr><td>4</td><td></td><td></td><td></td><td class='rag'>G/A/R</td></tr>
+<tr><td>5</td><td></td><td></td><td></td><td class='rag'>G/A/R</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Leadership Contacts</h2><span class="desc">Directors / CXOs / PMO.</span></div>
+      <table>
+        <thead><tr><th style="width:36%">Name</th><th style="width:22%">Role</th><th style="width:22%">Phone</th><th style="width:20%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="footer"><span>Prepared by: <span class="sigline"></span></span><span>Reviewed by: <span class="sigline"></span></span></div>
+</section>
+
+<!-- PAGE 2: OKRs & KPI Scorecard -->
+<section class="page">
+  <div class="section">
+    <div class="head"><h2>OKRs & KPI Scorecard</h2><span class="desc">Targets vs actuals; mark RAG.</span></div>
+    <table>
+      <thead><tr><th style="width:26%">Objective / KPI</th><th style="width:14%">Target</th><th style="width:14%">Actual</th><th style="width:14%">Var</th><th style="width:16%">Owner</th><th style="width:16%">RAG</th></tr></thead>
+      <tbody>
+        <tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td class='rag'>G/A/R</td></tr>
+        <tr class="sumrow"><td>Total / Index</td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PAGE 3: Governance Calendar -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Governance Calendar</h2><span class="desc">Board / ExCo / MBR / QBR / Audit / CAB / SteerCo.</span></div>
+      <table>
+        <thead><tr><th style="width:28%">Meeting</th><th style="width:18%">Date</th><th style="width:18%">Owner</th><th style="width:18%">Deck Ready?</th><th style="width:18%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Board / Committee</td><td></td><td></td><td>☐</td><td></td></tr>
+<tr><td>Board / Committee</td><td></td><td></td><td>☐</td><td></td></tr>
+<tr><td>Board / Committee</td><td></td><td></td><td>☐</td><td></td></tr>
+          <tr><td>ExCo / SteerCo</td><td></td><td></td><td>☐</td><td></td></tr>
+<tr><td>ExCo / SteerCo</td><td></td><td></td><td>☐</td><td></td></tr>
+<tr><td>ExCo / SteerCo</td><td></td><td></td><td>☐</td><td></td></tr>
+          <tr><td>MBR / QBR</td><td></td><td></td><td>☐</td><td></td></tr>
+<tr><td>MBR / QBR</td><td></td><td></td><td>☐</td><td></td></tr>
+<tr><td>MBR / QBR</td><td></td><td></td><td>☐</td><td></td></tr>
+<tr><td>MBR / QBR</td><td></td><td></td><td>☐</td><td></td></tr>
+          <tr><td>Audit / Compliance</td><td></td><td></td><td>☐</td><td></td></tr>
+<tr><td>Audit / Compliance</td><td></td><td></td><td>☐</td><td></td></tr>
+<tr><td>Audit / Compliance</td><td></td><td></td><td>☐</td><td></td></tr>
+<tr><td>Audit / Compliance</td><td></td><td></td><td>☐</td><td></td></tr>
+          <tr><td>CAB / Change</td><td></td><td></td><td>☐</td><td></td></tr>
+<tr><td>CAB / Change</td><td></td><td></td><td>☐</td><td></td></tr>
+<tr><td>CAB / Change</td><td></td><td></td><td>☐</td><td></td></tr>
+<tr><td>CAB / Change</td><td></td><td></td><td>☐</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Regulatory & Filings</h2><span class="desc">Quarterly/annual disclosures, returns.</span></div>
+      <table>
+        <thead><tr><th style="width:34%">Requirement</th><th style="width:18%">Due</th><th style="width:14%">Owner</th><th style="width:14%">Status</th><th style="width:20%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td>Planned/In Progress/Done</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Planned/In Progress/Done</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Planned/In Progress/Done</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Planned/In Progress/Done</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Planned/In Progress/Done</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Planned/In Progress/Done</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Planned/In Progress/Done</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Planned/In Progress/Done</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Planned/In Progress/Done</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Planned/In Progress/Done</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Planned/In Progress/Done</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Planned/In Progress/Done</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Planned/In Progress/Done</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Planned/In Progress/Done</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 4: Financials -->
+<section class="page">
+  <div class="section">
+    <div class="head"><h2>Financials — P&L Snapshot</h2><span class="desc">Budget vs Actual; QoQ/YoY notes.</span></div>
+    <table>
+      <thead><tr><th style="width:22%">Line Item</th><th style="width:14%">Budget</th><th style="width:14%">Actual</th><th style="width:14%">Variance</th><th style="width:18%">QoQ/YoY</th><th style="width:18%">Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Revenue</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>COGS / Direct Cost</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Gross Margin</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Opex (HR/S&M/G&A)</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>EBITDA</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Depreciation</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>EBIT</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Interest</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>PBT</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Tax</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>PAT</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+        <tr class="sumrow"><td>Cash (Ops)</td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Working Capital</h2><span class="desc">AR/AP ageing, DSO/DPO/Inventory days.</span></div>
+      <table>
+        <thead><tr><th>Metric</th><th style="width:20%">Value</th><th style="width:40%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>AR Ageing (0/30/60/90+)</td><td class="amount"></td><td></td></tr>
+          <tr><td>AP Ageing</td><td class="amount"></td><td></td></tr>
+          <tr><td>DSO / DPO / DIH</td><td class="amount"></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Capex / Opex</h2><span class="desc">Approvals, spends, capitalization.</span></div>
+      <table>
+        <thead><tr><th style="width:36%">Programme</th><th style="width:16%">Budget</th><th style="width:16%">Spent</th><th style="width:16%">Balance</th><th style="width:16%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 5: Sales & Pipeline -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Bookings & Pipeline</h2><span class="desc">Stages, probability, quarter closes.</span></div>
+      <table>
+        <thead><tr><th style="width:26%">Deal / Account</th><th style="width:12%">Stage</th><th style="width:12%">Value</th><th style="width:12%">Prob%</th><th style="width:16%">Close</th><th style="width:22%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td>MQL/SQL/Prop/Neg/Win</td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>MQL/SQL/Prop/Neg/Win</td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>MQL/SQL/Prop/Neg/Win</td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>MQL/SQL/Prop/Neg/Win</td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>MQL/SQL/Prop/Neg/Win</td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>MQL/SQL/Prop/Neg/Win</td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>MQL/SQL/Prop/Neg/Win</td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>MQL/SQL/Prop/Neg/Win</td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>MQL/SQL/Prop/Neg/Win</td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>MQL/SQL/Prop/Neg/Win</td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>MQL/SQL/Prop/Neg/Win</td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>MQL/SQL/Prop/Neg/Win</td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>MQL/SQL/Prop/Neg/Win</td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>MQL/SQL/Prop/Neg/Win</td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>MQL/SQL/Prop/Neg/Win</td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>MQL/SQL/Prop/Neg/Win</td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Top Accounts — Health</h2><span class="desc">NPS/CSAT, revenue, risk.</span></div>
+      <table>
+        <thead><tr><th style="width:30%">Account</th><th style="width:16%">Revenue</th><th style="width:16%">Growth%</th><th style="width:16%">NPS/CSAT</th><th style="width:22%">Risks / Actions</th></tr></thead>
+        <tbody>
+          <tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 6: Delivery / Operations -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Operations & Quality</h2><span class="desc">SLA, throughput, defects, uptime.</span></div>
+      <table>
+        <thead><tr><th style="width:30%">Metric</th><th style="width:20%">Target</th><th style="width:20%">Actual</th><th style="width:30%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>SLA Compliance %</td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Throughput / Capacity</td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Defect Rate / FPY</td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>On-time Delivery / OTIF</td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Uptime / Availability</td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Cost per Unit/Txn</td><td class='amount'></td><td class='amount'></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Projects / Programmes</h2><span class="desc">Stage-gates, benefits, risks.</span></div>
+      <table>
+        <thead><tr><th style="width:28%">Initiative</th><th style="width:14%">Stage</th><th style="width:14%">Budget</th><th style="width:14%">Spent</th><th style="width:14%">Benefit</th><th style="width:16%">RAG</th></tr></thead>
+        <tbody>
+          <tr><td></td><td>Init/Plan/Exec/Close</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td>Init/Plan/Exec/Close</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td>Init/Plan/Exec/Close</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td>Init/Plan/Exec/Close</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td>Init/Plan/Exec/Close</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td>Init/Plan/Exec/Close</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td>Init/Plan/Exec/Close</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td>Init/Plan/Exec/Close</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td>Init/Plan/Exec/Close</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td>Init/Plan/Exec/Close</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td>Init/Plan/Exec/Close</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td>Init/Plan/Exec/Close</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td>Init/Plan/Exec/Close</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='rag'>G/A/R</td></tr>
+<tr><td></td><td>Init/Plan/Exec/Close</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='rag'>G/A/R</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 7: Risk, Audit & Compliance -->
+<section class="page">
+  <div class="section">
+    <div class="head"><h2>Risk Register</h2><span class="desc">Inherent vs residual; controls; due dates.</span></div>
+    <table>
+      <thead><tr><th style="width:24%">Risk</th><th style="width:12%">Owner</th><th style="width:12%">Impact</th><th style="width:12%">Likelihood</th><th style="width:16%">Mitigation / Control</th><th style="width:12%">Residual</th><th style="width:12%">Due</th></tr></thead>
+      <tbody>
+        <tr><td></td><td></td><td>H/M/L</td><td>H/M/L</td><td></td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td>H/M/L</td><td></td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td>H/M/L</td><td></td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td>H/M/L</td><td></td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td>H/M/L</td><td></td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td>H/M/L</td><td></td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td>H/M/L</td><td></td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td>H/M/L</td><td></td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td>H/M/L</td><td></td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td>H/M/L</td><td></td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td>H/M/L</td><td></td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td>H/M/L</td><td></td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td>H/M/L</td><td></td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td>H/M/L</td><td></td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td>H/M/L</td><td></td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td>H/M/L</td><td></td><td>H/M/L</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Audit / Issues</h2><span class="desc">Findings, severity, remediation.</span></div>
+      <table>
+        <thead><tr><th style="width:36%">Finding</th><th style="width:16%">Severity</th><th style="width:18%">Owner</th><th style="width:14%">Due</th><th style="width:16%">Status</th></tr></thead>
+        <tbody>
+          <tr><td></td><td>H/M/L</td><td></td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td>H/M/L</td><td></td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td>H/M/L</td><td></td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td>H/M/L</td><td></td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td>H/M/L</td><td></td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td>H/M/L</td><td></td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td>H/M/L</td><td></td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td>H/M/L</td><td></td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td>H/M/L</td><td></td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td>H/M/L</td><td></td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td>H/M/L</td><td></td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td>H/M/L</td><td></td><td></td><td>Open/WIP/Closed</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Compliance Checklist</h2><span class="desc">Policies, training, certifications.</span></div>
+      <table>
+        <thead><tr><th style="width:44%">Item</th><th style="width:18%">Owner</th><th style="width:18%">Due</th><th style="width:20%">Done?</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 8: IT Change, Incidents & RCA -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Change / Release Register</h2><span class="desc">CAB approvals, scope, impact.</span></div>
+      <table>
+        <thead><tr><th style="width:28%">Change</th><th style="width:14%">Env</th><th style="width:14%">Release</th><th style="width:14%">CAB</th><th style="width:14%">Planned</th><th style="width:16%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td>Dev/Test/Prod</td><td></td><td>Yes/No</td><td></td><td></td></tr>
+<tr><td></td><td>Dev/Test/Prod</td><td></td><td>Yes/No</td><td></td><td></td></tr>
+<tr><td></td><td>Dev/Test/Prod</td><td></td><td>Yes/No</td><td></td><td></td></tr>
+<tr><td></td><td>Dev/Test/Prod</td><td></td><td>Yes/No</td><td></td><td></td></tr>
+<tr><td></td><td>Dev/Test/Prod</td><td></td><td>Yes/No</td><td></td><td></td></tr>
+<tr><td></td><td>Dev/Test/Prod</td><td></td><td>Yes/No</td><td></td><td></td></tr>
+<tr><td></td><td>Dev/Test/Prod</td><td></td><td>Yes/No</td><td></td><td></td></tr>
+<tr><td></td><td>Dev/Test/Prod</td><td></td><td>Yes/No</td><td></td><td></td></tr>
+<tr><td></td><td>Dev/Test/Prod</td><td></td><td>Yes/No</td><td></td><td></td></tr>
+<tr><td></td><td>Dev/Test/Prod</td><td></td><td>Yes/No</td><td></td><td></td></tr>
+<tr><td></td><td>Dev/Test/Prod</td><td></td><td>Yes/No</td><td></td><td></td></tr>
+<tr><td></td><td>Dev/Test/Prod</td><td></td><td>Yes/No</td><td></td><td></td></tr>
+<tr><td></td><td>Dev/Test/Prod</td><td></td><td>Yes/No</td><td></td><td></td></tr>
+<tr><td></td><td>Dev/Test/Prod</td><td></td><td>Yes/No</td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Incidents & RCA</h2><span class="desc">P0–P3, MTTR, corrective actions.</span></div>
+      <table>
+        <thead><tr><th style="width:26%">Incident</th><th style="width:14%">Sev</th><th style="width:14%">MTTR</th><th style="width:14%">Owner</th><th style="width:32%">RCA / Action</th></tr></thead>
+        <tbody>
+          <tr><td></td><td>P0/P1/P2/P3</td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>P0/P1/P2/P3</td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>P0/P1/P2/P3</td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>P0/P1/P2/P3</td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>P0/P1/P2/P3</td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>P0/P1/P2/P3</td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>P0/P1/P2/P3</td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>P0/P1/P2/P3</td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>P0/P1/P2/P3</td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>P0/P1/P2/P3</td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>P0/P1/P2/P3</td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>P0/P1/P2/P3</td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>P0/P1/P2/P3</td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td>P0/P1/P2/P3</td><td class='amount'></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 9: People & Talent -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Headcount & Hiring</h2><span class="desc">Plan vs actual; critical roles.</span></div>
+      <table>
+        <thead><tr><th style="width:26%">Function</th><th style="width:14%">Plan</th><th style="width:14%">Actual</th><th style="width:14%">Open</th><th style="width:16%">Aging</th><th style="width:16%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Engagement & Capability</h2><span class="desc">Attrition, L&D, certifications, bench.</span></div>
+      <table>
+        <thead><tr><th style="width:30%">Metric</th><th style="width:20%">Target</th><th style="width:20%">Actual</th><th style="width:30%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Voluntary Attrition %</td><td class="amount"></td><td class="amount"></td><td></td></tr>
+          <tr><td>L&D Hours / Person</td><td class="amount"></td><td class="amount"></td><td></td></tr>
+          <tr><td>Certifications Gained</td><td class="amount"></td><td class="amount"></td><td></td></tr>
+          <tr><td>Bench % (IT services)</td><td class="amount"></td><td class="amount"></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 10: Procurement & Vendors -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Vendor / Contract Register</h2><span class="desc">Renewals, SLAs, risk.</span></div>
+      <table>
+        <thead><tr><th style="width:26%">Vendor</th><th style="width:18%">Contract #</th><th style="width:16%">Value</th><th style="width:16%">Renewal</th><th style="width:24%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Procure-to-Pay Status</h2><span class="desc">POs, GRNs, pending invoices.</span></div>
+      <table>
+        <thead><tr><th style="width:30%">Item / PO</th><th style="width:16%">PO (₹)</th><th style="width:16%">Recv (₹)</th><th style="width:16%">Pending (₹)</th><th style="width:22%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 11: Customer Success -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Customer Escalations</h2><span class="desc">SLA breach, root causes, actions.</span></div>
+      <table>
+        <thead><tr><th style="width:28%">Customer</th><th style="width:18%">Issue</th><th style="width:16%">Severity</th><th style="width:18%">Owner</th><th style="width:20%">Status</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td>H/M/L</td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td></td><td>Open/WIP/Closed</td></tr>
+<tr><td></td><td></td><td>H/M/L</td><td></td><td>Open/WIP/Closed</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Renewals & Expansion</h2><span class="desc">ARR/MRR, risk, next actions.</span></div>
+      <table>
+        <thead><tr><th style="width:32%">Account</th><th style="width:18%">Renewal</th><th style="width:18%">Value</th><th style="width:14%">Risk</th><th style="width:18%">Next Step</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td class='amount'></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td>G/A/R</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 12: Industry Add-on — Banking (SBI-type) -->
+<section class="page">
+  <div class="section">
+    <div class="head"><h2>Banking KPIs</h2><span class="desc">Retail/Corporate; risk & ops.</span></div>
+    <table>
+      <thead><tr><th style="width:28%">Metric</th><th style="width:18%">Target</th><th style="width:18%">Actual</th><th style="width:18%">Variance</th><th style="width:18%">Notes</th></tr></thead>
+      <tbody>
+        <tr><td>CASA %</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>NIM %</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Advances Growth %</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Deposits Growth %</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>GNPA / NNPA %</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Provision Coverage %</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Slippage Ratio %</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Credit Cost bps</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Fee Income (₹)</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Digital Txn %</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Branch Productivity</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Fraud/Dispute TAT</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>ALM & Liquidity</h2><span class="desc">Gaps, LCR/NSFR, duration.</span></div>
+      <table>
+        <thead><tr><th style="width:36%">Item</th><th style="width:24%">Value</th><th style="width:40%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>ALM Gap (Buckets)</td><td class="amount"></td><td></td></tr>
+          <tr><td>LCR / NSFR</td><td class="amount"></td><td></td></tr>
+          <tr><td>Interest Rate Sensitivity</td><td class="amount"></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Regulatory & Compliance (Banking)</h2><span class="desc">Inspections, returns, KYC/AML.</span></div>
+      <table>
+        <thead><tr><th>Area</th><th style="width:26%">Owner</th><th style="width:24%">Due</th><th style="width:20%">Status</th></tr></thead>
+        <tbody>
+          <tr><td>KYC/AML Alerts</td><td></td><td></td><td>☐</td></tr>
+          <tr><td>Regulatory Returns</td><td></td><td></td><td>☐</td></tr>
+          <tr><td>Inspection Observations</td><td></td><td></td><td>☐</td></tr>
+          <tr><td>Audit Closure</td><td></td><td></td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 13: Industry Add-on — Manufacturing/Auto (Tata Motors-type) -->
+<section class="page">
+  <div class="section">
+    <div class="head"><h2>Manufacturing & Plant KPIs</h2><span class="desc">OEE, throughput, quality, safety.</span></div>
+    <table>
+      <thead><tr><th style="width:26%">Metric</th><th style="width:18%">Target</th><th style="width:18%">Actual</th><th style="width:18%">Variance</th><th style="width:20%">Notes</th></tr></thead>
+      <tbody>
+        <tr><td>OEE %</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Throughput (Units/Day)</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>First Pass Yield %</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Scrap / Rework %</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>OTIF %</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Supplier PPM</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Warranty Claims %</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>TRIR / LTIR</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Supply Chain</h2><span class="desc">Inventory, DOS, supplier risk.</span></div>
+      <table>
+        <thead><tr><th>Metric</th><th style="width:20%">Value</th><th style="width:40%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Inventory (RM/WIP/FG)</td><td class="amount"></td><td></td></tr>
+          <tr><td>Days of Supply</td><td class="amount"></td><td></td></tr>
+          <tr><td>Critical Suppliers (Risk)</td><td class="amount"></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>New Product Programmes</h2><span class="desc">Gate, tooling, SOP dates.</span></div>
+      <table>
+        <thead><tr><th style="width:36%">Programme</th><th style="width:16%">Gate</th><th style="width:16%">Capex</th><th style="width:16%">SOP</th><th style="width:16%">RAG</th></tr></thead>
+        <tbody>
+          <tr><td></td><td>G1–G5</td><td class='amount'></td><td></td><td>G/A/R</td></tr>
+<tr><td></td><td>G1–G5</td><td class='amount'></td><td></td><td>G/A/R</td></tr>
+<tr><td></td><td>G1–G5</td><td class='amount'></td><td></td><td>G/A/R</td></tr>
+<tr><td></td><td>G1–G5</td><td class='amount'></td><td></td><td>G/A/R</td></tr>
+<tr><td></td><td>G1–G5</td><td class='amount'></td><td></td><td>G/A/R</td></tr>
+<tr><td></td><td>G1–G5</td><td class='amount'></td><td></td><td>G/A/R</td></tr>
+<tr><td></td><td>G1–G5</td><td class='amount'></td><td></td><td>G/A/R</td></tr>
+<tr><td></td><td>G1–G5</td><td class='amount'></td><td></td><td>G/A/R</td></tr>
+<tr><td></td><td>G1–G5</td><td class='amount'></td><td></td><td>G/A/R</td></tr>
+<tr><td></td><td>G1–G5</td><td class='amount'></td><td></td><td>G/A/R</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 14: Industry Add-on — IT Services (Infosys-type) -->
+<section class="page">
+  <div class="section">
+    <div class="head"><h2>IT Services KPIs</h2><span class="desc">Utilization, rate, margin, delivery.</span></div>
+    <table>
+      <thead><tr><th style="width:30%">Metric</th><th style="width:18%">Target</th><th style="width:18%">Actual</th><th style="width:18%">Variance</th><th style="width:16%">Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Utilization % (Billable)</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Realization Rate (₹/hr)</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Onshore/Offshore Mix %</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Revenue / HC</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Gross Margin %</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Bench %</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>T&M vs Fixed-Bid %</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>Delivery SLA %</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Account Portfolio</h2><span class="desc">Top-20 revenue & risk.</span></div>
+      <table>
+        <thead><tr><th style="width:36%">Account</th><th style="width:16%">Rev (₹)</th><th style="width:14%">Growth%</th><th style="width:16%">Margin%</th><th style="width:18%">Risk (G/A/R)</th></tr></thead>
+        <tbody>
+          <tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td>G/A/R</td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td>G/A/R</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Delivery Health</h2><span class="desc">Defects, rework, customer sat.</span></div>
+      <table>
+        <thead><tr><th style="width:34%">Project</th><th style="width:16%">SLA%</th><th style="width:16%">Defects</th><th style="width:16%">Rework%</th><th style="width:18%">CSAT</th></tr></thead>
+        <tbody>
+          <tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 15: Communications & Stakeholders -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Stakeholder Map</h2><span class="desc">Influence vs interest; owners & cadence.</span></div>
+      <table>
+        <thead><tr><th style="width:30%">Stakeholder</th><th style="width:18%">Influence</th><th style="width:18%">Interest</th><th style="width:34%">Engagement Plan</th></tr></thead>
+        <tbody>
+          <tr><td></td><td>H/M/L</td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td>H/M/L</td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td>H/M/L</td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td>H/M/L</td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td>H/M/L</td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td>H/M/L</td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td>H/M/L</td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td>H/M/L</td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td>H/M/L</td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td>H/M/L</td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td>H/M/L</td><td>H/M/L</td><td></td></tr>
+<tr><td></td><td>H/M/L</td><td>H/M/L</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Comms Calendar</h2><span class="desc">MBR/QBR decks, newsletters, townhalls.</span></div>
+      <table>
+        <thead><tr><th style="width:24%">Date</th><th style="width:36%">Message / Deliverable</th><th style="width:20%">Owner</th><th style="width:20%">Status</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td>Draft/Review/Sent</td></tr>
+<tr><td></td><td></td><td></td><td>Draft/Review/Sent</td></tr>
+<tr><td></td><td></td><td></td><td>Draft/Review/Sent</td></tr>
+<tr><td></td><td></td><td></td><td>Draft/Review/Sent</td></tr>
+<tr><td></td><td></td><td></td><td>Draft/Review/Sent</td></tr>
+<tr><td></td><td></td><td></td><td>Draft/Review/Sent</td></tr>
+<tr><td></td><td></td><td></td><td>Draft/Review/Sent</td></tr>
+<tr><td></td><td></td><td></td><td>Draft/Review/Sent</td></tr>
+<tr><td></td><td></td><td></td><td>Draft/Review/Sent</td></tr>
+<tr><td></td><td></td><td></td><td>Draft/Review/Sent</td></tr>
+<tr><td></td><td></td><td></td><td>Draft/Review/Sent</td></tr>
+<tr><td></td><td></td><td></td><td>Draft/Review/Sent</td></tr>
+<tr><td></td><td></td><td></td><td>Draft/Review/Sent</td></tr>
+<tr><td></td><td></td><td></td><td>Draft/Review/Sent</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 16: QBR/MBR Pack -->
+<section class="page">
+  <div class="section">
+    <div class="head"><h2>QBR / MBR Agenda & Minutes</h2><span class="desc">Capture decisions and actions.</span></div>
+    <table>
+      <thead><tr><th style="width:38%">Agenda Item</th><th style="width:18%">Presenter</th><th style="width:24%">Decision</th><th style="width:20%">Follow-up</th></tr></thead>
+      <tbody>
+        <tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+    <h3>Action Register</h3>
+    <table>
+      <thead><tr><th style="width:34%">Action</th><th style="width:18%">Owner</th><th style="width:18%">Due</th><th style="width:14%">RAG</th><th style="width:16%">Notes</th></tr></thead>
+      <tbody>
+        <tr><td></td><td></td><td></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>G/A/R</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>G/A/R</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PAGE 17: Heatmap & Score Summary -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Portfolio Heatmap (Manual)</h2><span class="desc">Color by hand: G/A/R.</span></div>
+      <table>
+        <thead><tr><th style="width:34%">Area</th><th style="width:22%">Status</th><th style="width:44%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Financials</td><td>G/A/R</td><td></td></tr>
+<tr><td>Sales & Pipeline</td><td>G/A/R</td><td></td></tr>
+<tr><td>Operations</td><td>G/A/R</td><td></td></tr>
+<tr><td>Risk/Audit</td><td>G/A/R</td><td></td></tr>
+<tr><td>People</td><td>G/A/R</td><td></td></tr>
+<tr><td>Vendors</td><td>G/A/R</td><td></td></tr>
+<tr><td>Customers</td><td>G/A/R</td><td></td></tr>
+<tr><td>IT & Security</td><td>G/A/R</td><td></td></tr>
+<tr><td>Compliance</td><td>G/A/R</td><td></td></tr>
+<tr><td>Projects</td><td>G/A/R</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Scorecard — At a Glance</h2><span class="desc">Key numbers to surface quickly.</span></div>
+      <table>
+        <thead><tr><th style="width:36%">Metric</th><th style="width:18%">Target</th><th style="width:18%">Actual</th><th style="width:28%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 18: Decisions & Risks Log -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Decisions Log</h2><span class="desc">Who decided what, when, and why.</span></div>
+      <table>
+        <thead><tr><th style="width:30%">Decision</th><th style="width:18%">Owner</th><th style="width:22%">Date</th><th style="width:30%">Context / Impact</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Risks & Dependencies</h2><span class="desc">Cross-team blockers.</span></div>
+      <table>
+        <thead><tr><th style="width:34%">Risk / Dependency</th><th style="width:18%">Owner</th><th style="width:18%">Due</th><th style="width:30%">Mitigation</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 19: Templates — Minutes & Notes -->
+<section class="page">
+  <div class="section">
+    <div class="head"><h2>Meeting Minutes Template</h2><span class="desc">Use across leadership meetings.</span></div>
+    <table>
+      <thead><tr><th style="width:24%">Date</th><th style="width:24%">Meeting</th><th style="width:24%">Attendees</th><th style="width:28%">Key Points / Actions</th></tr></thead>
+      <tbody>
+        <tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+    <h3>Notes</h3>
+    <div class="note" style="height:220px;"></div>
+  </div>
+</section>
+
+<!-- PAGE 20: Free Notes -->
+<section class="page">
+  <div class="section">
+    <div class="head"><h2>Free Notes / Whiteboard</h2><span class="desc">Strategy, ideas, whiteboarding.</span></div>
+    <div class="note" style="height:650px;"></div>
+  </div>
+  <div class="footer">
+    <span>Designed for large enterprises — banking, auto, and IT services.</span>
+    <span>Page ______ of ______</span>
+  </div>
+</section>
+
+</body>
+</html>

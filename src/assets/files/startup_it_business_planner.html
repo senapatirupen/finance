@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Startup IT Business Planner — A4 Printable</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,"Noto Sans","Helvetica Neue",Arial,sans-serif; color:var(--ink); line-height:1.2; }
+  h1 { font-size:22px; margin:0 0 8px; letter-spacing:.2px; }
+  h2 { font-size:16px; margin:0 0 6px; }
+  h3 { font-size:13px; margin:6px 0 4px; color:var(--muted); }
+  .meta { display:grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap:8px; margin-bottom:8px; }
+  .field { border:1px solid var(--rule); padding:6px 8px; height:34px; display:flex; align-items:center; }
+  .label { font-size:12px; color:var(--muted); margin-right:8px; }
+  .bar { height:4px; background:#000; margin: 8px 0 10px; }
+  .section { break-inside: avoid; margin-bottom: 10px; }
+  .section .head { display:flex; justify-content:space-between; align-items:baseline; }
+  .section .desc { font-size: 11px; color: var(--muted); }
+  table { width:100%; border-collapse: collapse; table-layout: fixed; }
+  th, td { border: 1px solid var(--rule); padding: 6px 6px; font-size: 12px; height: 22px; vertical-align: top; }
+  th { background:#f2f2f2; text-align:left; }
+  td.amount { text-align:right; }
+  .two-col { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .three-col { display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .note { border:1px solid var(--rule); margin-top: 4px; background: repeating-linear-gradient(180deg,#fff,#fff 21px,#000 22px); white-space: pre-line; }
+  .note.s { height: 120px; } .note.m { height: 220px; } .note.l { height: 420px; }
+  .footer { display:flex; justify-content:space-between; font-size:11px; margin-top:6px; color:var(--muted); }
+  .page { page-break-after: always; }
+  .mini { font-size:11px; color:var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: Venture Snapshot & Customer -->
+<section class="page">
+  <h1>Startup IT Business Planner — Venture Snapshot</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">Venture / Project:</span> __________________</div>
+    <div class="field"><span class="label">Owner:</span> ____________</div>
+    <div class="field"><span class="label">Date:</span> ____________</div>
+    <div class="field"><span class="label">Version:</span> v__</div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Vision • One‑liner</h2><span class="desc">What value, for whom, by how</span></div>
+      <div class="note s"></div>
+      <h3>Problem → Solution → UVP</h3>
+      <table>
+        <thead><tr><th style="width:30%">Problem (Top 3)</th><th style="width:40%">Solution</th><th style="width:30%">Unique Value Proposition</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Customer Segments & Personas</h2><span class="desc">Who pays; who uses</span></div>
+      <table>
+        <thead><tr><th style="width:24%">Segment</th><th style="width:28%">Persona</th><th style="width:28%">Pain/Need</th><th style="width:20%">Current workaround</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+      <h3>Early Adopter Criteria</h3>
+      <div class="note s"></div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Market Sizing</h2><span class="desc">TAM • SAM • SOM (₹)</span></div>
+      <table>
+        <thead><tr><th style="width:28%">TAM</th><th style="width:28%">SAM</th><th style="width:28%">SOM (Year 3)</th><th style="width:16%">Assumptions</th></tr></thead>
+        <tbody>
+          <tr><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Competitive Landscape</h2><span class="desc">Alternatives vs our edge</span></div>
+      <table>
+        <thead><tr><th style="width:28%">Competitor</th><th style="width:32%">Strengths</th><th style="width:24%">Weaknesses</th><th style="width:16%">Our edge</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Clarity first — problem, customer, value</span>
+    <span>Page 1 of 4</span>
+  </div>
+</section>
+
+<!-- PAGE 2: Model & Economics -->
+<section class="page">
+  <h1>Business Model • Pricing • Unit Economics</h1>
+  <div class="bar"></div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Business Model</h2><span class="desc">How we make money</span></div>
+      <table>
+        <thead><tr><th style="width:28%">Revenue Stream</th><th style="width:24%">Price / Unit</th><th style="width:24%">Frequency</th><th style="width:24%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Subscription (SaaS)</td><td class="amount"></td><td>Monthly/Annual</td><td></td></tr>
+          <tr><td>Services (IT/Cloud)</td><td class="amount"></td><td>Project/Retainer</td><td></td></tr>
+          <tr><td>Implementation / Training</td><td class="amount"></td><td>One‑time</td><td></td></tr>
+        </tbody>
+      </table>
+      <h3>Pricing Tiers</h3>
+      <table>
+        <thead><tr><th style="width:18%">Tier</th><th style="width:18%">Price ₹</th><th style="width:26%">Target customer</th><th>Key features</th></tr></thead>
+        <tbody>
+          <tr><td>Basic</td><td class="amount"></td><td></td><td></td></tr>
+          <tr><td>Pro</td><td class="amount"></td><td></td><td></td></tr>
+          <tr><td>Enterprise</td><td class="amount"></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Unit Economics (Month)</h2><span class="desc">Track viability</span></div>
+      <table>
+        <thead><tr><th style="width:38%">Metric</th><th style="width:24%">Target</th><th style="width:38%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>ARPU (₹/customer)</td><td class="amount"></td><td></td></tr>
+          <tr><td>Gross margin %</td><td class="amount"></td><td></td></tr>
+          <tr><td>CAC (₹)</td><td class="amount"></td><td></td></tr>
+          <tr><td>Payback period (months)</td><td class="amount"></td><td></td></tr>
+          <tr><td>LTV (₹) & LTV/CAC</td><td class="amount"></td><td></td></tr>
+          <tr><td>Churn % (logo / revenue)</td><td class="amount"></td><td></td></tr>
+        </tbody>
+      </table>
+      <h3>Costs & Burn (Monthly)</h3>
+      <table>
+        <thead><tr><th style="width:30%">Category</th><th style="width:20%">Budget ₹</th><th style="width:30%">Assumption</th><th style="width:20%">Owner</th></tr></thead>
+        <tbody>
+          <tr><td>Team</td><td class="amount"></td><td></td><td></td></tr>
+          <tr><td>Cloud/Infra</td><td class="amount"></td><td></td><td></td></tr>
+          <tr><td>Marketing/Sales</td><td class="amount"></td><td></td><td></td></tr>
+          <tr><td>Ops/Legal/Admin</td><td class="amount"></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Price for value • Watch CAC • Build margin</span>
+    <span>Page 2 of 4</span>
+  </div>
+</section>
+
+<!-- PAGE 3: GTM • Product • Team -->
+<section class="page">
+  <h1>Go‑to‑Market • Product Plan • Team</h1>
+  <div class="bar"></div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>GTM Channels & Experiments</h2><span class="desc">Hypothesis → test → metric → budget</span></div>
+      <table>
+        <thead><tr><th style="width:28%">Channel</th><th style="width:26%">Experiment</th><th style="width:18%">Budget ₹</th><th style="width:14%">KPI</th><th style="width:14%">Owner</th></tr></thead>
+        <tbody>
+          <tr><td>Outbound</td><td></td><td class="amount"></td><td></td><td></td></tr>
+          <tr><td>Content/SEO</td><td></td><td class="amount"></td><td></td><td></td></tr>
+          <tr><td>Partnerships</td><td></td><td class="amount"></td><td></td><td></td></tr>
+          <tr><td>Paid Ads</td><td></td><td class="amount"></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+      <h3>Sales Pipeline (This Quarter)</h3>
+      <table>
+        <thead><tr><th style="width:26%">Account</th><th style="width:18%">Stage</th><th style="width:16%">Deal ₹</th><th style="width:16%">Close %</th><th style="width:24%">Next step / owner</th></tr></thead>
+        <tbody>
+          <tr><td></td><td>Lead/Qual/Pilot/Close</td><td class="amount"></td><td class="amount"></td><td></td></tr>
+          <tr><td></td><td>Lead/Qual/Pilot/Close</td><td class="amount"></td><td class="amount"></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Product Roadmap</h2><span class="desc">V0 → V1 → V2 features</span></div>
+      <table>
+        <thead><tr><th style="width:10%">#</th><th style="width:30%">Feature</th><th style="width:20%">Release</th><th style="width:20%">Metric</th><th style="width:20%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td></td><td>V0</td><td></td><td></td></tr>
+          <tr><td>2</td><td></td><td>V1</td><td></td><td></td></tr>
+          <tr><td>3</td><td></td><td>V2</td><td></td><td></td></tr>
+        </tbody>
+      </table>
+      <h3>Tech Stack</h3>
+      <table>
+        <thead><tr><th style="width:28%">Layer</th><th>Choice</th><th style="width:28%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Frontend</td><td></td><td></td></tr>
+          <tr><td>Backend</td><td></td><td></td></tr>
+          <tr><td>DB/Storage</td><td></td><td></td></tr>
+          <tr><td>Infra/Cloud</td><td></td><td></td></tr>
+          <tr><td>Security/Compliance</td><td></td><td></td></tr>
+          <tr><td>Analytics</td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Team & Hiring Plan</h2><span class="desc">Who does what; when to hire</span></div>
+      <table>
+        <thead><tr><th style="width:18%">Role</th><th style="width:22%">Owner / Hire</th><th style="width:18%">When</th><th style="width:18%">Cost ₹/mo</th><th style="width:24%">Top 3 outcomes</th></tr></thead>
+        <tbody>
+          <tr><td>CEO/Founder</td><td></td><td></td><td class="amount"></td><td></td></tr>
+          <tr><td>CTO/Lead Eng</td><td></td><td></td><td class="amount"></td><td></td></tr>
+          <tr><td>PM</td><td></td><td></td><td class="amount"></td><td></td></tr>
+          <tr><td>AE/SDR</td><td></td><td></td><td class="amount"></td><td></td></tr>
+        </tbody>
+      </table>
+      <h3>Advisors / Partners</h3>
+      <div class="note s"></div>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Operating Cadence</h2><span class="desc">Rituals & dashboards</span></div>
+      <table>
+        <thead><tr><th style="width:30%">Ritual</th><th style="width:24%">Owner</th><th style="width:20%">Frequency</th><th style="width:26%">Artifact</th></tr></thead>
+        <tbody>
+          <tr><td>Weekly exec</td><td></td><td>Weekly</td><td>Scorecard/OKRs</td></tr>
+          <tr><td>Sprint planning</td><td></td><td>Bi‑weekly</td><td>Board</td></tr>
+          <tr><td>Customer calls</td><td></td><td>Weekly</td><td>Notes/insights</td></tr>
+        </tbody>
+      </table>
+      <h3>Legal & Compliance</h3>
+      <table>
+        <thead><tr><th style="width:28%">Item</th><th>Status</th><th style="width:28%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Entity/Tax</td><td></td><td></td></tr>
+          <tr><td>Contracts/MSA/SLA</td><td></td><td></td></tr>
+          <tr><td>Data privacy (e.g., GDPR/DPDP)</td><td></td><td></td></tr>
+          <tr><td>IP/Assignments</td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Ship value early • Talk to customers weekly</span>
+    <span>Page 3 of 4</span>
+  </div>
+</section>
+
+<!-- PAGE 4: Finance • OKRs • Risks • Milestones -->
+<section class="page">
+  <h1>Finance • OKRs • Risks • Milestones</h1>
+  <div class="bar"></div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>12‑Month Budget (₹)</h2><span class="desc">Simple view</span></div>
+      <table>
+        <thead><tr><th style="width:22%">Month</th><th style="width:18%">Revenue</th><th style="width:18%">COGS</th><th style="width:18%">Opex</th><th style="width:24%">Net burn / Profit</th></tr></thead>
+        <tbody>
+          <tr><td>M1</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr><tr><td>M2</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr><tr><td>M3</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr><tr><td>M4</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr><tr><td>M5</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr><tr><td>M6</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr><tr><td>M7</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr><tr><td>M8</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr><tr><td>M9</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr><tr><td>M10</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr><tr><td>M11</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr><tr><td>M12</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+        </tbody>
+      </table>
+      <h3>Runway Calculator</h3>
+      <table>
+        <thead><tr><th style="width:34%">Starting cash ₹</th><th style="width:22%">Monthly burn ₹</th><th style="width:22%">Runway (mo)</th><th style="width:22%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Company OKRs (Quarter)</h2><span class="desc">Objectives & key results</span></div>
+      <table>
+        <thead><tr><th style="width:30%">Objective</th><th style="width:50%">Key Results</th><th style="width:20%">Owner</th></tr></thead>
+        <tbody>
+          <tr><td></td><td>KR1: ____ • KR2: ____ • KR3: ____</td><td></td></tr>
+          <tr><td></td><td>KR1: ____ • KR2: ____ • KR3: ____</td><td></td></tr>
+        </tbody>
+      </table>
+      <h3>Core KPIs (Weekly)</h3>
+      <table>
+        <thead><tr><th style="width:36%">Metric</th><th style="width:16%">Target</th><th style="width:16%">Week 1</th><th style="width:16%">Week 2</th><th style="width:16%">Week 3</th></tr></thead>
+        <tbody>
+          <tr><td>Leads → Qualified</td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr>
+          <tr><td>Demos/Pilots</td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr>
+          <tr><td>New MRR ₹</td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr>
+          <tr><td>Churn %</td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Risk Register</h2><span class="desc">Top 5 risks • trigger • mitigation</span></div>
+      <table>
+        <thead><tr><th style="width:30%">Risk</th><th style="width:24%">Trigger</th><th style="width:26%">Mitigation</th><th style="width:20%">Owner</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Milestones (12 Months)</h2><span class="desc">Make progress visible</span></div>
+      <table>
+        <thead><tr><th style="width:16%">Month</th><th style="width:50%">Milestone</th><th style="width:18%">Metric</th><th style="width:16%">Owner</th></tr></thead>
+        <tbody>
+          <tr><td>M1</td><td></td><td></td><td></td></tr><tr><td>M2</td><td></td><td></td><td></td></tr><tr><td>M3</td><td></td><td></td><td></td></tr><tr><td>M4</td><td></td><td></td><td></td></tr><tr><td>M5</td><td></td><td></td><td></td></tr><tr><td>M6</td><td></td><td></td><td></td></tr><tr><td>M7</td><td></td><td></td><td></td></tr><tr><td>M8</td><td></td><td></td><td></td></tr><tr><td>M9</td><td></td><td></td><td></td></tr><tr><td>M10</td><td></td><td></td><td></td></tr><tr><td>M11</td><td></td><td></td><td></td></tr><tr><td>M12</td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Focus on outcomes • Review weekly • Adjust fast</span>
+    <span>Page 4 of 4</span>
+  </div>
+</section>
+
+</body>
+</html>

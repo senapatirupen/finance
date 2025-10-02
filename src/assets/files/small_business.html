@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Small Business Control Pad — A4 Notepad (Blank)</title><style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif; color:var(--ink); line-height:1.2; }
+  h1 { font-size:22px; margin:0 0 8px; }
+  h2 { font-size:16px; margin:0 0 6px; }
+  h3 { font-size:13px; margin:6px 0 4px; color:var(--muted); }
+  .bar { height:4px; background:#000; margin:8px 0 10px; }
+  .meta { display:grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap:8px; margin-bottom:8px; }
+  .field { border:1px solid var(--rule); padding:6px 8px; height:34px; display:flex; align-items:center; font-size:12px; }
+  .label { color:var(--muted); margin-right:8px; }
+  .section { break-inside: avoid; margin-bottom:10px; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .three { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; }
+  table { width:100%; border-collapse:collapse; table-layout:fixed; }
+  th, td { border:1px solid var(--rule); padding:6px; font-size:12px; height:22px; vertical-align:top; }
+  th { background:#f2f2f2; text-align:left; }
+  .note { border:1px solid var(--rule); background: repeating-linear-gradient(180deg,#fff,#fff 21px,#000 22px); height:120px; white-space:pre-line; padding:6px; }
+  .note.l { height:340px; }
+  .footer { display:flex; justify-content:space-between; font-size:11px; color:var(--muted); margin-top:6px; }
+  .page { page-break-after: always; padding-bottom:6px; }
+  .right { text-align:right; }
+</style></head>
+<body>
+
+<section class="page">
+  <h1>Daily Ops & Cash Control</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">Date:</span> ____________</div>
+    <div class="field"><span class="label">Branch / Store:</span> ____________</div>
+    <div class="field"><span class="label">Prepared by:</span> ____________</div>
+    <div class="field"><span class="label">Manager sign:</span> ____________</div>
+  </div>
+
+  <div class="two">
+    <div class="section">
+      <h2>Open Checklist</h2>
+      <table>
+        <thead><tr><th style="width:6%">✓</th><th>Item</th><th style="width:24%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>☐</td><td>Shutters / Lights / AC</td><td></td></tr>
+          <tr><td>☐</td><td>POS / QR working</td><td></td></tr>
+          <tr><td>☐</td><td>Float cash counted</td><td></td></tr>
+          <tr><td>☐</td><td>Cleanliness check</td><td></td></tr>
+          <tr><td>☐</td><td>Inventory spot-check</td><td></td></tr>
+        </tbody>
+      </table>
+      <h3>Announcements / Targets</h3>
+      <div class="note"></div>
+    </div>
+    <div class="section">
+      <h2>End-of-Day Checklist</h2>
+      <table>
+        <thead><tr><th style="width:6%">✓</th><th>Item</th><th style="width:24%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>☐</td><td>Cash counted & tallied</td><td></td></tr>
+          <tr><td>☐</td><td>UPI / Card settlements</td><td></td></tr>
+          <tr><td>☐</td><td>Refunds verified</td><td></td></tr>
+          <tr><td>☐</td><td>Bank deposit prepared</td><td></td></tr>
+          <tr><td>☐</td><td>Close POS / AC / Lights</td><td></td></tr>
+        </tbody>
+      </table>
+      <h3>Notes</h3>
+      <div class="note"></div>
+    </div>
+  </div>
+
+  <div class="three">
+    <div class="section">
+      <h2>Cash Register</h2>
+      <table>
+        <thead><tr><th>Opening Float ₹</th><th>Cash Sales ₹</th><th>Cash Expenses ₹</th><th>Expected Cash ₹</th><th>Counted Cash ₹</th><th>Over / Short ₹</th></tr></thead>
+        <tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Payment Modes Tally</h2>
+      <table>
+        <thead><tr><th>Mode</th><th class="right">₹ Amount</th><th>Txn Count</th></tr></thead>
+        <tbody>
+          <tr><td>UPI</td><td class="right"></td><td></td></tr>
+          <tr><td>Card</td><td class="right"></td><td></td></tr>
+          <tr><td>Wallet</td><td class="right"></td><td></td></tr>
+          <tr><td>Other</td><td class="right"></td><td></td></tr>
+          <tr><th>Total Digital</th><th class="right"></th><th></th></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Sales Summary</h2>
+      <table>
+        <thead><tr><th>Gross Sales ₹</th><th>Discounts ₹</th><th>Returns ₹</th><th>Net Sales ₹</th></tr></thead>
+        <tbody><tr><td></td><td></td><td></td><td></td></tr></tbody>
+      </table>
+      <h3>Bank Deposit</h3>
+      <table>
+        <thead><tr><th>Cash to Bank ₹</th><th>By (name)</th><th>Slip/UTR</th></tr></thead>
+        <tbody><tr><td></td><td></td><td></td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer"><span>Control Pad • Daily discipline = fewer surprises</span><span>Page 1 of 6</span></div>
+</section>
+
+<section class="page">
+  <h1>Sales & Expense Ledger (Day)</h1>
+  <div class="bar"></div>
+  <h2>Sales</h2>
+  <table>
+    <thead>
+      <tr><th style="width:10%">Time</th><th style="width:14%">Invoice #</th><th>Customer</th><th style="width:9%">Items</th><th style="width:12%">Subtotal ₹</th><th style="width:12%">Tax ₹</th><th style="width:12%">Discount ₹</th><th style="width:12%">Total ₹</th><th style="width:10%">Mode</th></tr>
+    </thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <h2>Expenses (Petty / Operating)</h2>
+  <table>
+    <thead>
+      <tr><th style="width:10%">Time</th><th>Vendor / Purpose</th><th style="width:16%">Category</th><th style="width:14%">Amount ₹</th><th style="width:14%">Mode</th><th>Note</th></tr>
+    </thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="footer"><span>Record as you go • Don’t rely on memory</span><span>Page 2 of 6</span></div>
+</section>
+
+<section class="page">
+  <h1>Purchases & Inventory Reorder</h1>
+  <div class="bar"></div>
+  <h2>Purchase Orders / Goods In</h2>
+  <table>
+    <thead>
+      <tr><th style="width:12%">PO #</th><th>Vendor</th><th>Item / SKU</th><th style="width:10%">Qty</th><th style="width:12%">Unit ₹</th><th style="width:12%">Total ₹</th><th style="width:12%">Received?</th><th style="width:16%">Due Date</th></tr>
+    </thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>☐</td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>☐</td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>☐</td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>☐</td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>☐</td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>☐</td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>☐</td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>☐</td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>☐</td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>☐</td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>☐</td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>☐</td><td></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Reorder Tracker</h2>
+  <table>
+    <thead>
+      <tr><th>Item</th><th style="width:14%">SKU</th><th style="width:12%">On Hand</th><th style="width:12%">Min</th><th style="width:12%">Reorder Qty</th><th>Supplier</th><th style="width:14%">Last Cost ₹</th></tr>
+    </thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="footer"><span>Never stock out • Buy smart • Track commitments</span><span>Page 3 of 6</span></div>
+</section>
+
+<section class="page">
+  <h1>Receivables • Payables • Deposits</h1>
+  <div class="bar"></div>
+  <h2>Accounts Receivable (Aging)</h2>
+  <table>
+    <thead>
+      <tr><th>Customer</th><th style="width:14%">Invoice #</th><th style="width:12%">Date</th><th style="width:12%">Total ₹</th><th style="width:12%">Received ₹</th><th style="width:12%">Balance ₹</th><th style="width:9%">0–7</th><th style="width:9%">8–15</th><th style="width:9%">16–30</th><th style="width:9%">31+</th></tr>
+    </thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accounts Payable</h2>
+  <table>
+    <thead>
+      <tr><th>Vendor</th><th style="width:14%">Bill #</th><th style="width:12%">Date</th><th style="width:12%">Total ₹</th><th style="width:12%">Paid ₹</th><th style="width:12%">Balance ₹</th><th style="width:16%">Due Date</th><th style="width:10%">Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Bank Deposit Log</h2>
+  <table>
+    <thead><tr><th style="width:16%">Date</th><th style="width:24%">From (Cash / Settlement)</th><th style="width:18%">Bank</th><th style="width:18%">Amount ₹</th><th>Slip / UTR</th></tr></thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="footer"><span>Collect faster than you spend • Know your runway</span><span>Page 4 of 6</span></div>
+</section>
+
+<section class="page">
+  <h1>Staff • Timesheet • Payroll</h1>
+  <div class="bar"></div>
+  <h2>Roster / Timesheet</h2>
+  <table>
+    <thead>
+      <tr><th>Name</th><th style="width:14%">Role</th><th style="width:12%">In</th><th style="width:12%">Out</th><th style="width:12%">Hours</th><th style="width:12%">OT</th><th style="width:14%">Wage/Day ₹</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Advances / Reimbursements</h2>
+  <table>
+    <thead><tr><th style="width:18%">Date</th><th>Name</th><th style="width:24%">Type</th><th style="width:16%">Amount ₹</th><th>Reason</th></tr></thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="footer"><span>Team on time • Wages accurate • Zero surprises</span><span>Page 5 of 6</span></div>
+</section>
+
+<section class="page">
+  <h1>Marketing • Leads • Weekly KPIs</h1>
+  <div class="bar"></div>
+  <div class="two">
+    <div class="section">
+      <h2>Leads Pipeline</h2>
+      <table>
+        <thead><tr><th style="width:14%">Date</th><th>Name / Company</th><th style="width:16%">Source</th><th>Need</th><th style="width:16%">Next Step</th><th style="width:14%">Value ₹</th><th style="width:10%">Prob %</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Campaign Tracker</h2>
+      <table>
+        <thead><tr><th>Channel</th><th style="width:20%">Campaign</th><th style="width:14%">Budget ₹</th><th style="width:14%">Spend ₹</th><th style="width:12%">Leads</th><th style="width:12%">Sales</th><th class="right" style="width:14%">ROI %</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td><td class='right'></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td class='right'></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td class='right'></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td class='right'></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td class='right'></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td class='right'></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td class='right'></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td class='right'></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h2>Weekly KPIs (Week ending: ________)</h2>
+  <table>
+    <thead><tr><th>KPI</th><th style="width:18%">Target</th><th style="width:18%">Actual</th><th style="width:26%">Comment</th></tr></thead>
+    <tbody>
+      <tr><td>Net Sales ₹</td><td></td><td></td><td></td></tr>
+      <tr><td>Gross Margin %</td><td></td><td></td><td></td></tr>
+      <tr><td>Operating Expenses ₹</td><td></td><td></td><td></td></tr>
+      <tr><td>Net Profit ₹</td><td></td><td></td><td></td></tr>
+      <tr><td>Average Order Value ₹</td><td></td><td></td><td></td></tr>
+      <tr><td>Footfall / Inquiries</td><td></td><td></td><td></td></tr>
+      <tr><td>Repeat Customers %</td><td></td><td></td><td></td></tr>
+      <tr><td>Inventory Days</td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <div class="footer"><span>What gets measured gets managed</span><span>Page 6 of 6</span></div>
+</section>
+
+</body></html>

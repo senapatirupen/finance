@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fitness & Diet Planner — A4 Printable</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,"Noto Sans","Helvetica Neue",Arial,sans-serif; color:var(--ink); line-height:1.2; }
+  h1 { font-size:22px; margin:0 0 8px; letter-spacing:.2px; }
+  h2 { font-size:16px; margin:0 0 6px; }
+  h3 { font-size:13px; margin:6px 0 4px; color:var(--muted); }
+  .meta { display:grid; grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr; gap:8px; margin-bottom:8px; }
+  .field { border:1px solid var(--rule); padding:6px 8px; height:34px; display:flex; align-items:center; }
+  .label { font-size:12px; color:var(--muted); margin-right:8px; }
+  .bar { height:4px; background:#000; margin: 8px 0 10px; }
+  .section { break-inside: avoid; margin-bottom: 10px; }
+  .section .head { display:flex; justify-content:space-between; align-items:baseline; }
+  .section .desc { font-size: 11px; color: var(--muted); }
+  table { width:100%; border-collapse: collapse; table-layout: fixed; }
+  th, td { border: 1px solid var(--rule); padding: 6px 6px; font-size: 12px; height: 22px; vertical-align: top; }
+  th { background:#f2f2f2; text-align:left; }
+  td.amount { text-align:right; }
+  .two-col { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .note { border:1px solid var(--rule); margin-top: 4px; background: repeating-linear-gradient(180deg,#fff,#fff 21px,#000 22px); white-space: pre-line; }
+  .note.s { height: 120px; } .note.m { height: 220px; } .note.l { height: 420px; }
+  .footer { display:flex; justify-content:space-between; font-size:11px; margin-top:6px; color:var(--muted); }
+  .page { page-break-after: always; }
+  .mini { font-size:11px; color:var(--muted); }
+</style>
+</head>
+<body>
+
+<section class="page">
+  <h1>Fitness & Diet Planner — Daily Tracker</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">Name:</span> __________________</div>
+    <div class="field"><span class="label">Date:</span> ____________</div>
+    <div class="field"><span class="label">Bodyweight (kg):</span> ____</div>
+    <div class="field"><span class="label">Sleep (hrs):</span> ____</div>
+    <div class="field"><span class="label">Energy:</span> ☐ Low ☐ Med ☐ High</div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Macro Targets</h2><span class="desc">Calories & macros for the day</span></div>
+      <table>
+        <thead><tr><th style="width:16%">Calories</th><th style="width:16%">Protein (g)</th><th style="width:16%">Carbs (g)</th><th style="width:16%">Fat (g)</th><th style="width:18%">Water (glasses)</th><th style="width:18%">Steps</th></tr></thead>
+        <tbody>
+          <tr><td class="amount">____</td><td class="amount">____</td><td class="amount">____</td><td class="amount">____</td><td>☐☐☐☐☐☐☐☐</td><td class="amount">____</td></tr>
+        </tbody>
+      </table>
+      <h3>Meals & Macros</h3>
+      <table>
+        <thead><tr><th style="width:14%">Meal</th><th>Food / Recipe</th><th style="width:12%">Cal</th><th style="width:12%">P</th><th style="width:12%">C</th><th style="width:12%">F</th></tr></thead>
+        <tbody>
+          <tr><td>Breakfast</td><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr>
+          <tr><td>Snack</td><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr>
+          <tr><td>Lunch</td><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr>
+          <tr><td>Snack</td><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr>
+          <tr><td>Dinner</td><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr>
+          <tr><th>Total</th><th></th><th class="amount">__</th><th class="amount">__</th><th class="amount">__</th><th class="amount">__</th></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Workout Log</h2><span class="desc">Strength & cardio</span></div>
+      <table>
+        <thead><tr><th style="width:26%">Exercise</th><th style="width:12%">Sets</th><th style="width:12%">Reps</th><th style="width:12%">Weight</th><th style="width:12%">RPE</th><th style="width:26%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr>
+          <tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr>
+          <tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr>
+          <tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr>
+        </tbody>
+      </table>
+      <h3>Cardio / Mobility</h3>
+      <table>
+        <thead><tr><th style="width:32%">Type</th><th style="width:16%">Time</th><th style="width:16%">Intensity</th><th style="width:18%">Distance</th><th style="width:18%">Done?</th></tr></thead>
+        <tbody>
+          <tr><td></td><td class="amount"></td><td></td><td class="amount"></td><td>☐</td></tr>
+          <tr><td></td><td class="amount"></td><td></td><td class="amount"></td><td>☐</td></tr>
+        </tbody>
+      </table>
+      <h3>Supplements / Notes</h3>
+      <div class="note s"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Protein each meal • Hydrate • Progressive overload • Sleep</span>
+    <span>Page 1 of 3</span>
+  </div>
+</section>
+
+<section class="page">
+  <h1>Weekly Plan • Meal Prep</h1>
+  <div class="bar"></div>
+
+  <div class="section">
+    <div class="head"><h2>Weekly Training Plan</h2><span class="desc">Plan sessions across the week</span></div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:12%">Day</th><th style="width:20%">Session</th><th style="width:22%">Focus</th><th style="width:22%">Accessory / Mobility</th><th style="width:24%">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Mon</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Tue</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Wed</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Thu</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Fri</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Sat</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Sun</td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Meal Plan (Mon–Sun)</h2><span class="desc">Sketch dishes for each meal</span></div>
+      <table>
+        <thead><tr><th style="width:14%">Day</th><th>Breakfast</th><th>Lunch</th><th>Dinner</th><th style="width:16%">Snack(s)</th></tr></thead>
+        <tbody>
+          <tr><td>Mon</td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Tue</td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Wed</td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Thu</td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Fri</td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Sat</td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Sun</td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Grocery List</h2><span class="desc">By category</span></div>
+      <table>
+        <thead><tr><th style="width:24%">Category</th><th>Items</th></tr></thead>
+        <tbody>
+          <tr><td>Protein</td><td></td></tr>
+          <tr><td>Produce</td><td></td></tr>
+          <tr><td>Carbs/Grains</td><td></td></tr>
+          <tr><td>Dairy/Alt</td><td></td></tr>
+          <tr><td>Fats/Seeds</td><td></td></tr>
+          <tr><td>Other</td><td></td></tr>
+        </tbody>
+      </table>
+      <h3>Meal Prep Notes</h3>
+      <div class="note s"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="head"><h2>Weekly Habit Tracker</h2><span class="desc">Small wins compound</span></div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:34%">Habit</th>
+          <th style="width:9%">Mon</th><th style="width:9%">Tue</th><th style="width:9%">Wed</th>
+          <th style="width:9%">Thu</th><th style="width:9%">Fri</th><th style="width:9%">Sat</th><th style="width:9%">Sun</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>7+ hrs sleep</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+        <tr><td>8k+ steps</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+        <tr><td>Protein at each meal</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+        <tr><td>5+ servings fruit/veg</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+        <tr><td>10 min mobility</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+        <tr><td>Mindfulness 5 min</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Plan training • Plan meals • Shop once • Prep twice</span>
+    <span>Page 2 of 3</span>
+  </div>
+</section>
+
+<section class="page">
+  <h1>Progress & Check‑Ins</h1>
+  <div class="bar"></div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Body Metrics (Weekly)</h2><span class="desc">Track trends, not days</span></div>
+      <table>
+        <thead><tr><th style="width:18%">Date</th><th style="width:14%">Weight</th><th style="width:14%">Waist</th><th style="width:14%">Hips</th><th style="width:14%">Chest</th><th style="width:14%">Thigh</th><th style="width:12%">Arm</th></tr></thead>
+        <tbody>
+          <tr><td>____-__-__</td><td class="amount">__ kg</td><td class="amount">__ cm</td><td class="amount">__ cm</td><td class="amount">__ cm</td><td class="amount">__ cm</td><td class="amount">__ cm</td></tr>
+          <tr><td>____-__-__</td><td class="amount">__ kg</td><td class="amount">__ cm</td><td class="amount">__ cm</td><td class="amount">__ cm</td><td class="amount">__ cm</td><td class="amount">__ cm</td></tr>
+          <tr><td>____-__-__</td><td class="amount">__ kg</td><td class="amount">__ cm</td><td class="amount">__ cm</td><td class="amount">__ cm</td><td class="amount">__ cm</td><td class="amount">__ cm</td></tr>
+        </tbody>
+      </table>
+      <h3>Non‑Scale Victories (NSV)</h3>
+      <div class="note s"></div>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>PRs & Performance</h2><span class="desc">Celebrate strength & pace</span></div>
+      <table>
+        <thead><tr><th style="width:30%">Exercise</th><th style="width:22%">Prev Best</th><th style="width:22%">New Best</th><th style="width:26%">Date</th></tr></thead>
+        <tbody>
+          <tr><td></td><td class="amount"></td><td class="amount"></td><td></td></tr>
+          <tr><td></td><td class="amount"></td><td class="amount"></td><td></td></tr>
+          <tr><td></td><td class="amount"></td><td class="amount"></td><td></td></tr>
+        </tbody>
+      </table>
+      <h3>Recovery & Readiness (Daily)</h3>
+      <table>
+        <thead><tr><th style="width:20%">Date</th><th style="width:16%">Resting HR</th><th style="width:16%">Soreness (0‑10)</th><th style="width:16%">Stress (0‑10)</th><th style="width:16%">HRV/Notes</th><th style="width:16%">Ready?</th></tr></thead>
+        <tbody>
+          <tr><td>____-__-__</td><td class="amount">__</td><td class="amount">__</td><td class="amount">__</td><td></td><td>☐</td></tr>
+          <tr><td>____-__-__</td><td class="amount">__</td><td class="amount">__</td><td class="amount">__</td><td></td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="head"><h2>Macro Planner (Optional)</h2><span class="desc">Sketch targets; confirm with a professional if needed</span></div>
+    <table>
+      <thead><tr><th style="width:14%">BW (kg)</th><th style="width:16%">Protein g/kg</th><th style="width:16%">Protein g</th><th style="width:16%">Carbs g</th><th style="width:16%">Fat g</th><th style="width:22%">Cals (4P+4C+9F)</th></tr></thead>
+      <tbody>
+        <tr><td class="amount">__</td><td class="amount">1.6–2.2</td><td class="amount">__</td><td class="amount">__</td><td class="amount">__</td><td class="amount">__</td></tr>
+      </tbody>
+    </table>
+    <p class="mini">General information only — not medical advice.</p>
+  </div>
+
+  <div class="footer">
+    <span>Consistency beats intensity — track, adjust, repeat</span>
+    <span>Page 3 of 3</span>
+  </div>
+</section>
+
+</body>
+</html>

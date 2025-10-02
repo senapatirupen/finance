@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Monthly Money Notepad (A4 Printable)</title>
+<style>
+  @page { size: A4; margin: 14mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,"Noto Sans","Helvetica Neue",Arial,sans-serif;color:var(--ink);line-height:1.25}
+  h1{font-size:22px;margin:0 0 8px;letter-spacing:.3px}
+  h2{font-size:16px;margin:0 0 6px}
+  .meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px}
+  .meta .field{border:1px solid var(--rule);padding:6px 8px;height:34px;display:flex;align-items:center}
+  .meta .label{font-size:12px;color:var(--muted);margin-right:8px}
+  .bar{height:4px;background:#000;margin:8px 0 12px}
+  .section{break-inside:avoid;margin-bottom:12px}
+  .section .head{display:flex;justify-content:space-between;align-items:baseline}
+  .section .desc{font-size:11px;color:var(--muted)}
+  table{width:100%;border-collapse:collapse;table-layout:fixed}
+  th,td{border:1px solid var(--rule);padding:6px 6px;font-size:12px;height:24px}
+  th{background:#f3f3f3;text-align:left}
+  td.amount{text-align:right}
+  .sumrow td{font-weight:bold}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .note{border:1px solid var(--rule);height:220px;margin-top:4px;background:repeating-linear-gradient(180deg,#fff,#fff 22px,#000 23px)}
+  .footer{display:flex;justify-content:space-between;font-size:11px;margin-top:8px;color:var(--muted)}
+  .small{font-size:11px;color:var(--muted)}
+  .page{page-break-after:always}
+  .totals{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:6px 0 10px}
+  .totals .box{border:1px solid var(--rule);padding:6px 8px;height:38px}
+  .totals .label{font-size:11px;color:var(--muted);display:block}
+  .checkbox{display:inline-block;width:13px;height:13px;border:1px solid #000;margin-right:6px;vertical-align:middle}
+  .year-grid{width:100%;border:1px solid var(--rule);margin-top:4px}
+  .year-grid th,.year-grid td{font-size:11px;text-align:center;border:1px solid var(--rule);padding:4px;height:18px}
+  .sigline{border-bottom:1px solid #000;width:220px;height:18px;display:inline-block}
+</style>
+</head>
+<body>
+
+<section class="page">
+  <h1>Monthly Money Notepad</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">Month / Year:</span> ____________________________</div>
+    <div class="field"><span class="label">Prepared By:</span> ____________________________</div>
+    <div class="field"><span class="label">Reviewed By:</span> ____________________________</div>
+  </div>
+
+  <div class="totals">
+    <div class="box"><span class="label">Opening Cash / Bank (₹)</span></div>
+    <div class="box"><span class="label">Total Income / Inflows (₹)</span></div>
+    <div class="box"><span class="label">Total Expenses (₹)</span></div>
+    <div class="box"><span class="label">Investments (EMI/SIP/Lumpsum) (₹)</span></div>
+    <div class="box"><span class="label">Closing Balance (₹)</span></div>
+  </div>
+
+  <div class="section">
+    <div class="head">
+      <h2>Monthly Expenses</h2>
+      <span class="desc">Groceries, utilities, fuel, kids, subscriptions, fees, etc.</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:4%"></th>
+          <th style="width:36%">Item</th>
+          <th style="width:18%">Date</th>
+          <th style="width:22%">Notes</th>
+          <th style="width:20%">Amount (₹)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 16 blank lines -->
+        <tr><td><span class='checkbox'></span></td><td></td><td></td><td></td><td class='amount'></td></tr>
+<tr><td><span class='checkbox'></span></td><td></td><td></td><td></td><td class='amount'></td></tr>
+<tr><td><span class='checkbox'></span></td><td></td><td></td><td></td><td class='amount'></td></tr>
+<tr><td><span class='checkbox'></span></td><td></td><td></td><td></td><td class='amount'></td></tr>
+<tr><td><span class='checkbox'></span></td><td></td><td></td><td></td><td class='amount'></td></tr>
+<tr><td><span class='checkbox'></span></td><td></td><td></td><td></td><td class='amount'></td></tr>
+<tr><td><span class='checkbox'></span></td><td></td><td></td><td></td><td class='amount'></td></tr>
+<tr><td><span class='checkbox'></span></td><td></td><td></td><td></td><td class='amount'></td></tr>
+<tr><td><span class='checkbox'></span></td><td></td><td></td><td></td><td class='amount'></td></tr>
+<tr><td><span class='checkbox'></span></td><td></td><td></td><td></td><td class='amount'></td></tr>
+<tr><td><span class='checkbox'></span></td><td></td><td></td><td></td><td class='amount'></td></tr>
+<tr><td><span class='checkbox'></span></td><td></td><td></td><td></td><td class='amount'></td></tr>
+<tr><td><span class='checkbox'></span></td><td></td><td></td><td></td><td class='amount'></td></tr>
+<tr><td><span class='checkbox'></span></td><td></td><td></td><td></td><td class='amount'></td></tr>
+<tr><td><span class='checkbox'></span></td><td></td><td></td><td></td><td class='amount'></td></tr>
+<tr><td><span class='checkbox'></span></td><td></td><td></td><td></td><td class='amount'></td></tr>
+        <tr class="sumrow"><td></td><td colspan="3">Total Monthly Expenses</td><td class="amount"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Signature: <span class="sigline"></span></span>
+    <span>Date: ______ / ______ / __________</span>
+  </div>
+</section>
+
+<section class="page">
+  <div class="section">
+    <div class="head">
+      <h2>Existing Loans & EMIs</h2>
+      <span class="desc">Record EMI schedule & prepayments.</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:22%">Loan / Lender</th>
+          <th style="width:14%">Type</th>
+          <th style="width:10%">Rate (%)</th>
+          <th style="width:12%">EMI (₹)</th>
+          <th style="width:12%">EMI Date</th>
+          <th style="width:14%">Outstanding (₹)</th>
+          <th style="width:16%">Prepayment (₹) / Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td></td><td></td><td></td><td class='amount'></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td></td><td class='amount'></td><td></td></tr>
+        <tr class="sumrow"><td colspan="3">Total Monthly EMI Outflow (₹)</td><td class="amount"></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="head">
+      <h2>EMI / Loan Payment Log</h2>
+      <span class="desc">Tick when paid. Note transaction ID.</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:28%">Loan / Lender</th>
+          <th style="width:14%">Due Date</th>
+          <th style="width:14%">Paid Date</th>
+          <th style="width:14%">Txn ID</th>
+          <th style="width:14%">Amount (₹)</th>
+          <th style="width:16%">Signature</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="page">
+  <div class="section">
+    <div class="head">
+      <h2>SIPs (Systematic Investment Plans)</h2>
+      <span class="desc">Mutual funds, NPS, recurring deposits, etc.</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:30%">Scheme / Broker</th>
+          <th style="width:12%">SIP Date</th>
+          <th style="width:16%">SIP Amount (₹)</th>
+          <th style="width:12%">Status</th>
+          <th style="width:30%">Notes / Goal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+        <tr class="sumrow"><td colspan="2">Total SIP Outflow (₹)</td><td class="amount"></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="head">
+      <h2>Lumpsum Investments</h2>
+      <span class="desc">Stocks, gold, MFs, bonds, FDs, REITs, etc.</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:28%">Instrument</th>
+          <th style="width:16%">Date</th>
+          <th style="width:18%">Amount (₹)</th>
+          <th style="width:18%">Current Value (₹)</th>
+          <th style="width:20%">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+        <tr class="sumrow"><td colspan="2">Total Lumpsum Outflow (₹)</td><td class="amount"></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head">
+        <h2>Future / Planned Expenses</h2>
+        <span class="desc">Education, travel, insurance renewals, appliances, events, taxes.</span>
+      </div>
+      <table>
+        <thead><tr>
+          <th style="width:34%">Item</th>
+          <th style="width:18%">Due Month</th>
+          <th style="width:18%">Estimated (₹)</th>
+          <th style="width:30%">Notes</th>
+        </tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+          <tr class="sumrow"><td colspan="2">Total Planned Expenses (₹)</td><td class="amount"></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head">
+        <h2>Income & Other Inflows</h2>
+        <span class="desc">Salary, rent, dividends, interest, side income, refunds.</span>
+      </div>
+      <table>
+        <thead><tr>
+          <th style="width:34%">Source</th>
+          <th style="width:18%">Date</th>
+          <th style="width:18%">Amount (₹)</th>
+          <th style="width:30%">Notes</th>
+        </tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td></tr>
+          <tr class="sumrow"><td colspan="2">Total Inflows (₹)</td><td class="amount"></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head">
+        <h2>Payables to Friends / Relatives</h2>
+        <span class="desc">Money you owe to others.</span>
+      </div>
+      <table>
+        <thead><tr>
+          <th style="width:30%">Name</th>
+          <th style="width:16%">Date</th>
+          <th style="width:18%">Amount (₹)</th>
+          <th style="width:18%">Due By</th>
+          <th style="width:18%">Notes</th>
+        </tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+          <tr class="sumrow"><td colspan="2">Total Payables (₹)</td><td class="amount"></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head">
+        <h2>Receivables from Friends / Relatives</h2>
+        <span class="desc">Money they owe you.</span>
+      </div>
+      <table>
+        <thead><tr>
+          <th style="width:30%">Name</th>
+          <th style="width:16%">Date</th>
+          <th style="width:18%">Amount (₹)</th>
+          <th style="width:18%">Expected By</th>
+          <th style="width:18%">Notes</th>
+        </tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+          <tr class="sumrow"><td colspan="2">Total Receivables (₹)</td><td class="amount"></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="section">
+    <div class="head">
+      <h2>Notes</h2>
+      <span class="desc">Important reminders, renewals, policy numbers, bank references.</span>
+    </div>
+    <div class="note"></div>
+  </div>
+
+  <div class="section">
+    <div class="head">
+      <h2>Yearly Overview — Month-wise Summary</h2>
+      <span class="desc">Inflows, Expenses, Investments, Net, Closing Bal.</span>
+    </div>
+    <table class="year-grid">
+      <thead><tr>
+        <th>Month</th><th>Inflows (₹)</th><th>Expenses (₹)</th><th>EMI+SIP+Lump (₹)</th><th>Net (₹)</th><th>Closing Bal (₹)</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Jan</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Feb</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Mar</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Apr</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>May</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Jun</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Jul</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Aug</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Sep</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Oct</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Nov</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Dec</td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Designed for print — keep one set per month.</span>
+    <span>Page ______ of ______</span>
+  </div>
+</section>
+
+</body>
+</html>

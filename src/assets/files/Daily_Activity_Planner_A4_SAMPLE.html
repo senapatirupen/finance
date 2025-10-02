@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Daily Activity Planner (Sample Filled) — A4 Printable</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,"Noto Sans","Helvetica Neue",Arial,sans-serif; color:var(--ink); line-height:1.2; }
+  h1 { font-size:22px; margin:0 0 8px; letter-spacing:.2px; }
+  h2 { font-size:16px; margin:0 0 6px; }
+  h3 { font-size:13px; margin:6px 0 4px; color:var(--muted); }
+  .meta { display:grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap:8px; margin-bottom:8px; }
+  .field { border:1px solid var(--rule); padding:6px 8px; height:34px; display:flex; align-items:center; }
+  .label { font-size:12px; color:var(--muted); margin-right:8px; }
+  .bar { height:4px; background:#000; margin: 8px 0 10px; }
+  .section { break-inside: avoid; margin-bottom: 10px; }
+  .section .head { display:flex; justify-content:space-between; align-items:baseline; }
+  .section .desc { font-size: 11px; color: var(--muted); }
+  table { width:100%; border-collapse: collapse; table-layout: fixed; }
+  th, td { border: 1px solid var(--rule); padding: 6px 6px; font-size: 12px; height: 22px; vertical-align: top; }
+  th { background:#f2f2f2; text-align:left; }
+  td.amount { text-align:right; }
+  .two-col { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .note { border:1px solid var(--rule); margin-top: 4px; background: repeating-linear-gradient(180deg,#fff,#fff 21px,#000 22px); white-space: pre-line; }
+  .note.s { height: 120px; } .note.m { height: 220px; } .note.l { height: 420px; }
+  .footer { display:flex; justify-content:space-between; font-size:11px; margin-top:6px; color:var(--muted); }
+  .page { page-break-after: always; }
+  .ticks td { height: 26px; }
+  .mini { font-size:11px; color:var(--muted); }
+</style>
+</head>
+<body>
+<section class="page">
+  <h1>Daily Activity Planner — Morning • Day Work • Night (Sample)</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">Date:</span> 2025-09-14</div>
+    <div class="field"><span class="label">Day:</span> Sunday</div>
+    <div class="field"><span class="label">Focus word:</span> Deep</div>
+    <div class="field"><span class="label">Sleep (hrs):</span> 7.5 / Wake: 05:30</div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Top 3 MITs (Most Important Tasks)</h2><span class="desc">Do before noon if possible</span></div>
+      <table class="ticks">
+        <thead><tr><th>✓</th><th>Task</th><th>Outcome/Notes</th></tr></thead>
+        <tbody>
+          <tr><td>☐</td><td>Finish project brief v1</td><td>Share by 12:00</td></tr>
+          <tr><td>☐</td><td>Call vendor about contract</td><td>Negotiate 10% off</td></tr>
+          <tr><td>☐</td><td>Review team PRs</td><td>Block 45 min</td></tr>
+        </tbody>
+      </table>
+      <h3>Quick Plan</h3>
+      <div class="note s">DW1 (9:00–11:00): project brief. Meetings 11:30–1:00. DW2 (2:30–4:00): PRs. Admin 4:30–5:30.</div>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Morning Routine (05:00–09:00)</h2><span class="desc">Set the tone</span></div>
+      <table class="ticks">
+        <thead><tr><th>✓</th><th>Activity</th><th>Start</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>☑</td><td>Hydrate (500ml)</td><td>05:30</td><td>Lemon water</td></tr>
+          <tr><td>☑</td><td>Prayer/Breathwork (10–15 min)</td><td>05:40</td><td>4‑7‑8 x5</td></tr>
+          <tr><td>☑</td><td>Workout/Walk</td><td>06:00</td><td>5km walk — 6,800 steps</td></tr>
+          <tr><td>☑</td><td>Plan day + calendar scan</td><td>07:15</td><td>MITs set</td></tr>
+          <tr><td>☐</td><td>Read/Skill (20 min)</td><td>07:30</td><td>Atomic Habits p.42–58</td></tr>
+          <tr><td>☑</td><td>Breakfast</td><td>08:00</td><td>Oats + eggs</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Workday Blocks (09:00–18:00)</h2><span class="desc">Protect deep work • Batch meetings</span></div>
+      <table>
+        <thead><tr><th>Block</th><th>Time</th><th>Focus / Task</th><th>Pomodoros</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td>Deep Work 1</td><td>09:00–11:00</td><td>Project brief v1</td><td class="amount">▣▣▣▢</td><td></td></tr>
+          <tr><td>Meetings</td><td>11:30–13:00</td><td>Sync + client call</td><td class="amount">—</td><td></td></tr>
+          <tr><td>Deep Work 2</td><td>14:30–16:00</td><td>Code review & PRs</td><td class="amount">▣▣▢▢</td><td></td></tr>
+          <tr><td>Admin/Email</td><td>16:30–17:30</td><td>Inbox zero, bills</td><td class="amount">—</td><td></td></tr>
+        </tbody>
+      </table>
+      <h3>Meetings (Essentials only)</h3>
+      <table>
+        <thead><tr><th>Time</th><th>Agenda</th><th>Prep</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>11:30</td><td>Team stand‑up</td><td>Blockers list</td><td></td></tr>
+          <tr><td>12:00</td><td>Client call</td><td>Deck & pricing</td><td></td></tr>
+          <tr><td>12:40</td><td>1:1 with Sam</td><td>Feedback points</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Habits • Health • Essentials</h2><span class="desc">Keep the body & mind on track</span></div>
+      <table>
+        <thead><tr><th>Item</th><th>Target</th><th>Track</th><th>Done</th></tr></thead>
+        <tbody>
+          <tr><td>Water</td><td>8 glasses</td><td>☑ ☐ ☐ ☐ ☐ ☐ ☐ ☐</td><td>☐</td></tr>
+          <tr><td>Steps</td><td>8–10k</td><td>6,800</td><td>☐</td></tr>
+          <tr><td>Protein</td><td>≥ 100g</td><td>Breakfast: 35g</td><td>☐</td></tr>
+          <tr><td>Screen breaks</td><td>per hour</td><td>☐ ☐ ☐ ☐ ☐ ☐ ☐ ☐</td><td>☐</td></tr>
+          <tr><td>Sunlight</td><td>10–15 min</td><td>Morning walk</td><td>☑</td></tr>
+        </tbody>
+      </table>
+      <h3>Quick Notes</h3>
+      <div class="note m">Remember to email finance about invoice #458. Pick up dry cleaning after 6:30 pm.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Win the morning • Protect deep work • Close the day</span>
+    <span>Page 1 of 2</span>
+  </div>
+</section>
+
+<section class="page">
+  <h1>Evening Wind‑down • Before Bed (Sample)</h1>
+  <div class="bar"></div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Evening Routine (18:00–21:00)</h2><span class="desc">Unplug • Recharge</span></div>
+      <table class="ticks">
+        <thead><tr><th>✓</th><th>Activity</th><th>Time</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>☐</td><td>Exercise / Walk / Play</td><td>18:30</td><td>Park with kids</td></tr>
+          <tr><td>☐</td><td>Dinner (light, early)</td><td>19:45</td><td>Paneer + salad</td></tr>
+          <tr><td>☐</td><td>Family / Hobby / Learn</td><td>20:15</td><td>Guitar practice</td></tr>
+          <tr><td>☐</td><td>Plan tomorrow (Top 3)</td><td>20:50</td><td>Write in planner</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Gratitude • Wins • Lessons</h3>
+      <table>
+        <thead><tr><th>Prompt</th><th>Write</th></tr></thead>
+        <tbody>
+          <tr><td>3 things I’m grateful for</td><td>Morning weather, teammate help, healthy lunch</td></tr>
+          <tr><td>1 win I’m proud of</td><td>Finished brief ahead of time</td></tr>
+          <tr><td>1 lesson to improve</td><td>Batch Slack checking</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Before Bed (21:00–22:30)</h2><span class="desc">Shutdown • Sleep hygiene</span></div>
+      <table class="ticks">
+        <thead><tr><th>✓</th><th>Checklist</th><th>Time</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>☐</td><td>Digital sunset (no screens)</td><td>21:00</td><td>Phone in hall</td></tr>
+          <tr><td>☐</td><td>Journal 5 lines</td><td>21:10</td><td>Wins + plan</td></tr>
+          <tr><td>☐</td><td>Stretching / Mobility (10 min)</td><td>21:20</td><td>Lower back</td></tr>
+          <tr><td>☐</td><td>Prep clothes / pack bag</td><td>21:35</td><td>Gym kit</td></tr>
+          <tr><td>☐</td><td>Room: dark • cool • quiet</td><td>21:45</td><td>AC 24°C</td></tr>
+          <tr><td>☐</td><td>Lights out by: 22:15</td><td>22:15</td><td>Alarm 05:30</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Tomorrow — First Task at (time)</h3>
+      <div class="note s">08:30 — Draft outline for Q4 roadmap.</div>
+
+      <h3>Expenses / To‑dos to carry over</h3>
+      <table>
+        <thead><tr><th>₹</th><th>Item</th><th>Carry to</th></tr></thead>
+        <tbody>
+          <tr><td class="amount">850</td><td>Groceries</td><td>Budget sheet</td></tr>
+          <tr><td class="amount">1,200</td><td>Dry cleaning (monthly)</td><td>Calendar 28th</td></tr>
+          <tr><td class="amount">2,500</td><td>Online course</td><td>Recurring exp</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Reflect • Reset • Sleep</span>
+    <span>Page 2 of 2</span>
+  </div>
+</section>
+</body>
+</html>

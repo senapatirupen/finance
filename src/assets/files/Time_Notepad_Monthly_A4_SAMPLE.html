@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Monthly Planner Notepad — SAMPLE</title><style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif; color:var(--ink); line-height:1.2; }
+  h1 { font-size:22px; margin:0 0 6px; }
+  h2 { font-size:15px; margin:0 0 4px; color:var(--ink); }
+  h3 { font-size:12px; margin:4px 0; color:var(--muted); }
+  .bar { height:4px; background:#000; margin:8px 0 10px; }
+  .meta { display:grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap:8px; margin-bottom:8px; }
+  .field { border:1px solid var(--rule); padding:6px 8px; height:34px; display:flex; align-items:center; font-size:12px; }
+  .label { color:var(--muted); margin-right:8px; }
+  .section { break-inside: avoid; margin-bottom:10px; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .three { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; }
+  table { width:100%; border-collapse:collapse; table-layout:fixed; }
+  th, td { border:1px solid var(--rule); padding:6px; font-size:12px; height:22px; vertical-align:top; }
+  th { background:#f2f2f2; text-align:left; }
+  .lines { border:1px solid var(--rule); background: repeating-linear-gradient(180deg,#fff,#fff 21px,#000 22px); height:130px; white-space:pre-line; padding:6px; }
+  .lines.l { height: 340px; }
+  .grid { width:100%; border:1px solid var(--rule); display:grid; gap:0; }
+  .grid.week { grid-template-columns: repeat(7, 1fr); }
+  .cell { border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); min-height:100px; padding:6px; }
+  .cell h4 { margin:0 0 4px; font-size:12px; color:var(--muted); }
+  .footer { display:flex; justify-content:space-between; font-size:11px; color:var(--muted); margin-top:6px; }
+  .page { page-break-after: always; padding-bottom:6px; }
+</style></head>
+<body>
+<section class="page">
+  <h1>Monthly Planner (Sample — October 2025)</h1>
+  <div class="bar"></div>
+
+  <div class="meta">
+    <div class="field"><span class="label">Month / Year:</span> October 2025</div>
+    <div class="field"><span class="label">Focus:</span> Ship v1.2</div>
+    <div class="field"><span class="label">Top Goals:</span> Close Q4 plan • 3 customer visits • Hire PM</div>
+    <div class="field"><span class="label">Notes:</span> Block 2 deep-work mornings/week</div>
+  </div>
+
+  <div class="grid week" style="grid-template-rows: repeat(1, 32px) repeat(6, 1fr); min-height: 680px;">
+    <div class='cell' style='min-height:32px; font-weight:bold; background:#f2f2f2'>Mon</div><div class='cell' style='min-height:32px; font-weight:bold; background:#f2f2f2'>Tue</div><div class='cell' style='min-height:32px; font-weight:bold; background:#f2f2f2'>Wed</div><div class='cell' style='min-height:32px; font-weight:bold; background:#f2f2f2'>Thu</div><div class='cell' style='min-height:32px; font-weight:bold; background:#f2f2f2'>Fri</div><div class='cell' style='min-height:32px; font-weight:bold; background:#f2f2f2'>Sat</div><div class='cell' style='min-height:32px; font-weight:bold; background:#f2f2f2'>Sun</div>
+    <div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'> </div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'> </div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 1</div>Rent due</div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 2</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 3</div>Release v1.2</div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 4</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 5</div>Doctor 17:30</div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 6</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 7</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 8</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 9</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 10</div>Team offsite</div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 11</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 12</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 13</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 14</div>Parents' anniv</div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 15</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 16</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 17</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 18</div>Tax payment</div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 19</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 20</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 21</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 22</div>Workshop 10–12</div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 23</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 24</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 25</div>Pay CC bill</div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 26</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 27</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 28</div>Client demo</div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 29</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 30</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'>Date: 31</div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'> </div></div><div class='cell' style='min-height:110px;'><div style='height:18px; font-size:11px; color:#666;'> </div></div>
+  </div>
+
+  <div class="footer">
+    <span>See the month • Block milestones • Track progress</span><span>Monthly Pad — A4</span>
+  </div>
+</section>
+</body></html>

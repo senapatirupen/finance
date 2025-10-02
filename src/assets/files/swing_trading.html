@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Swing Trading Notepad — 10 Stocks (2% grid, 4 layers) — A4 Printable</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,"Noto Sans","Helvetica Neue",Arial,sans-serif; color:var(--ink); line-height:1.2; }
+  h1 { font-size:22px; margin:0 0 8px; letter-spacing:.2px; }
+  h2 { font-size:16px; margin:0 0 6px; }
+  h3 { font-size:13px; margin:6px 0 4px; color:var(--muted); }
+  .meta { display:grid; grid-template-columns: 2fr 1fr 1fr; gap:8px; margin-bottom:8px; }
+  .field { border:1px solid var(--rule); padding:6px 8px; height:34px; display:flex; align-items:center; }
+  .label { font-size:12px; color:var(--muted); margin-right:8px; }
+  .bar { height:4px; background:#000; margin: 8px 0 10px; }
+  .section { break-inside: avoid; margin-bottom: 10px; }
+  .section .head { display:flex; justify-content:space-between; align-items:baseline; }
+  .section .desc { font-size: 11px; color: var(--muted); }
+  table { width:100%; border-collapse: collapse; table-layout: fixed; }
+  th, td { border: 1px solid var(--rule); padding: 6px 6px; font-size: 12px; height: 22px; }
+  th { background:#f2f2f2; text-align:left; }
+  td.amount { text-align:right; }
+  .sumrow td { font-weight:bold; }
+  .two-col { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .three-col { display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .note { border:1px solid var(--rule); height: 160px; margin-top: 4px; background: repeating-linear-gradient(180deg,#fff,#fff 21px,#000 22px); }
+  .footer { display:flex; justify-content:space-between; font-size:11px; margin-top:6px; color:var(--muted); }
+  .page { page-break-after: always; }
+  .checkbox { display:inline-block; width:12px; height:12px; border:1px solid #000; margin-right:6px; vertical-align:middle; }
+  .sigline { border-bottom:1px solid #000; width:220px; height:16px; display:inline-block; }
+  .badge { border:1px solid #000; font-size:11px; padding:2px 6px; border-radius:8px; }
+  .card { border:1px solid var(--rule); padding:8px; }
+  .mini { font-size:11px; color:var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: Strategy Overview & Rules -->
+<section class="page">
+  <h1>Swing Trading Notepad — 10 Stocks</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">Capital (₹):</span> _______________________________</div>
+    <div class="field"><span class="label">Per-Stock Budget (₹):</span> __________</div>
+    <div class="field"><span class="label">Date Range:</span> __________ → __________</div>
+  </div>
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Core Rules</h2><span class="badge">Paper Log</span></div>
+      <table>
+        <thead><tr><th style="width:62%">Rule</th><th style="width:18%">Value</th><th style="width:20%">Tick</th></tr></thead>
+        <tbody>
+          <tr><td>Grid Step (down from Anchor)</td><td>2% per layer</td><td>☐</td></tr>
+          <tr><td>Max Averaging Layers</td><td>4 layers (Base + L1..L4)</td><td>☐</td></tr>
+          <tr><td>Profit Tiers (from Avg Cost)</td><td>+4%, +8%, +12%, +16%</td><td>☐</td></tr>
+          <tr><td>Position Size</td><td>Round to whole shares</td><td>☐</td></tr>
+          <tr><td>Capital Guard (per stock)</td><td>₹ __________</td><td>☐</td></tr>
+          <tr><td>Risk Stop (price breach)</td><td>Anchor − ______%</td><td>☐</td></tr>
+          <tr><td>News / Results / Events</td><td>Avoid averaging on event day</td><td>☐</td></tr>
+        </tbody>
+      </table>
+      <h3>Notes</h3>
+      <div class="note"></div>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Portfolio Allocation</h2><span class="desc">10 parallel tickers</span></div>
+      <table>
+        <thead><tr><th style="width:6%">#</th><th style="width:20%">Ticker</th><th style="width:20%">Sector</th><th style="width:18%">Per-Stock Budget (₹)</th><th style="width:18%">Cap Guard (₹)</th><th style="width:18%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>2</td><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>3</td><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>4</td><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>5</td><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>6</td><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>7</td><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>8</td><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>9</td><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>10</td><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="footer"><span>Prepared by: <span class="sigline"></span></span><span>Reviewed by: <span class="sigline"></span></span></div>
+</section>
+
+<!-- PAGE 2: Quick Reference (Math Cheats) & Weights -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>2% Grid Cheats (write & compute)</h2><span class="desc">No fractions — round shares.</span></div>
+      <table>
+        <thead><tr><th style="width:18%">Anchor ₹</th><th>Base</th><th>L1 (−2%)</th><th>L2 (−4%)</th><th>L3 (−6%)</th><th>L4 (−8%)</th></tr></thead>
+        <tbody>
+          <tr><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+        </tbody>
+      </table>
+      <p class="mini">Tip: Multiply Anchor by 0.98, 0.98², 0.98³, 0.98⁴ to compute L1..L4.</p>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Layer Weights</h2><span class="desc">Allocate per layer</span></div>
+      <table>
+        <thead><tr><th style="width:24%">Layer</th><th style="width:24%">Weight %</th><th style="width:26%">Funds (₹)</th><th style="width:26%">Qty (Shares)</th></tr></thead>
+        <tbody>
+          <tr><td>Base</td><td class="amount">30%</td><td class="amount"></td><td class="amount"></td></tr>
+          <tr><td>L1</td><td class="amount">25%</td><td class="amount"></td><td class="amount"></td></tr>
+          <tr><td>L2</td><td class="amount">20%</td><td class="amount"></td><td class="amount"></td></tr>
+          <tr><td>L3</td><td class="amount">15%</td><td class="amount"></td><td class="amount"></td></tr>
+          <tr><td>L4</td><td class="amount">10%</td><td class="amount"></td><td class="amount"></td></tr>
+          <tr class="sumrow"><td>Total</td><td class="amount">100%</td><td class="amount"></td><td class="amount"></td></tr>
+        </tbody>
+      </table>
+      <h3>Qty rounding rule</h3>
+      <p class="mini">Qty = ROUNDDOWN(Funds ÷ Buy Price, 0). If Qty = 0, carry funds to next layer or adjust budget.</p>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="two-col">
+    
+    <div class="card section">
+      <div class="head"><h2>Stock 1 — Grid Planner</h2><span class="badge">No fractional shares</span></div>
+      <table>
+        <thead><tr><th style="width:18%">Ticker</th><th style="width:18%">Anchor ₹</th><th style="width:16%">Lot</th><th style="width:24%">Per-Stock Budget ₹</th><th style="width:24%">Cap Guard ₹</th></tr></thead>
+        <tbody><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr></tbody>
+      </table>
+      <h3>Buy Plan (2% steps down)</h3>
+      <table>
+        <thead><tr><th style="width:16%">Layer</th><th style="width:18%">Buy @ ₹</th><th style="width:16%">Weight %</th><th style="width:16%">Funds ₹</th><th style="width:16%">Qty</th><th style="width:18%">Status</th></tr></thead>
+        <tbody>
+          <tr><td>Base</td><td class="amount"></td><td class="amount">30%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L1 (−2%)</td><td class="amount"></td><td class="amount">25%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L2 (−4%)</td><td class="amount"></td><td class="amount">20%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L3 (−6%)</td><td class="amount"></td><td class="amount">15%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L4 (−8%)</td><td class="amount"></td><td class="amount">10%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+        </tbody>
+      </table>
+      <div class="two-col">
+        <div class="section">
+          <div class="head"><h3>Average Cost & Targets</h3><span class="desc">Targets from Avg Cost</span></div>
+          <table>
+            <thead><tr><th style="width:24%">Metric</th><th style="width:22%">Value</th><th style="width:54%">Notes</th></tr></thead>
+            <tbody>
+              <tr><td>Total Exec Qty</td><td class="amount"></td><td></td></tr>
+              <tr><td>Total Exec Cost ₹</td><td class="amount"></td><td></td></tr>
+              <tr><td>Avg Cost ₹</td><td class="amount"></td><td></td></tr>
+            </tbody>
+          </table>
+          <table>
+            <thead><tr><th style="width:22%">Tier</th><th style="width:28%">Sell @ ₹</th><th style="width:22%">Qty</th><th style="width:28%">Status</th></tr></thead>
+            <tbody>
+              <tr><td>T1 (+4%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T2 (+8%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T3 (+12%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T4 (+16%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="section">
+          <div class="head"><h3>Trade Log (Stock 1)</h3><span class="desc">One row per fill</span></div>
+          <table>
+            <thead><tr><th style="width:18%">Date</th><th style="width:16%">Side</th><th style="width:18%">Price ₹</th><th style="width:16%">Qty</th><th style="width:16%">Fees ₹</th><th style="width:16%">Notes</th></tr></thead>
+            <tbody>
+              <tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="card section">
+      <div class="head"><h2>Stock 2 — Grid Planner</h2><span class="badge">No fractional shares</span></div>
+      <table>
+        <thead><tr><th style="width:18%">Ticker</th><th style="width:18%">Anchor ₹</th><th style="width:16%">Lot</th><th style="width:24%">Per-Stock Budget ₹</th><th style="width:24%">Cap Guard ₹</th></tr></thead>
+        <tbody><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr></tbody>
+      </table>
+      <h3>Buy Plan (2% steps down)</h3>
+      <table>
+        <thead><tr><th style="width:16%">Layer</th><th style="width:18%">Buy @ ₹</th><th style="width:16%">Weight %</th><th style="width:16%">Funds ₹</th><th style="width:16%">Qty</th><th style="width:18%">Status</th></tr></thead>
+        <tbody>
+          <tr><td>Base</td><td class="amount"></td><td class="amount">30%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L1 (−2%)</td><td class="amount"></td><td class="amount">25%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L2 (−4%)</td><td class="amount"></td><td class="amount">20%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L3 (−6%)</td><td class="amount"></td><td class="amount">15%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L4 (−8%)</td><td class="amount"></td><td class="amount">10%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+        </tbody>
+      </table>
+      <div class="two-col">
+        <div class="section">
+          <div class="head"><h3>Average Cost & Targets</h3><span class="desc">Targets from Avg Cost</span></div>
+          <table>
+            <thead><tr><th style="width:24%">Metric</th><th style="width:22%">Value</th><th style="width:54%">Notes</th></tr></thead>
+            <tbody>
+              <tr><td>Total Exec Qty</td><td class="amount"></td><td></td></tr>
+              <tr><td>Total Exec Cost ₹</td><td class="amount"></td><td></td></tr>
+              <tr><td>Avg Cost ₹</td><td class="amount"></td><td></td></tr>
+            </tbody>
+          </table>
+          <table>
+            <thead><tr><th style="width:22%">Tier</th><th style="width:28%">Sell @ ₹</th><th style="width:22%">Qty</th><th style="width:28%">Status</th></tr></thead>
+            <tbody>
+              <tr><td>T1 (+4%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T2 (+8%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T3 (+12%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T4 (+16%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="section">
+          <div class="head"><h3>Trade Log (Stock 2)</h3><span class="desc">One row per fill</span></div>
+          <table>
+            <thead><tr><th style="width:18%">Date</th><th style="width:16%">Side</th><th style="width:18%">Price ₹</th><th style="width:16%">Qty</th><th style="width:16%">Fees ₹</th><th style="width:16%">Notes</th></tr></thead>
+            <tbody>
+              <tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="page">
+  <div class="two-col">
+    
+    <div class="card section">
+      <div class="head"><h2>Stock 3 — Grid Planner</h2><span class="badge">No fractional shares</span></div>
+      <table>
+        <thead><tr><th style="width:18%">Ticker</th><th style="width:18%">Anchor ₹</th><th style="width:16%">Lot</th><th style="width:24%">Per-Stock Budget ₹</th><th style="width:24%">Cap Guard ₹</th></tr></thead>
+        <tbody><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr></tbody>
+      </table>
+      <h3>Buy Plan (2% steps down)</h3>
+      <table>
+        <thead><tr><th style="width:16%">Layer</th><th style="width:18%">Buy @ ₹</th><th style="width:16%">Weight %</th><th style="width:16%">Funds ₹</th><th style="width:16%">Qty</th><th style="width:18%">Status</th></tr></thead>
+        <tbody>
+          <tr><td>Base</td><td class="amount"></td><td class="amount">30%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L1 (−2%)</td><td class="amount"></td><td class="amount">25%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L2 (−4%)</td><td class="amount"></td><td class="amount">20%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L3 (−6%)</td><td class="amount"></td><td class="amount">15%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L4 (−8%)</td><td class="amount"></td><td class="amount">10%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+        </tbody>
+      </table>
+      <div class="two-col">
+        <div class="section">
+          <div class="head"><h3>Average Cost & Targets</h3><span class="desc">Targets from Avg Cost</span></div>
+          <table>
+            <thead><tr><th style="width:24%">Metric</th><th style="width:22%">Value</th><th style="width:54%">Notes</th></tr></thead>
+            <tbody>
+              <tr><td>Total Exec Qty</td><td class="amount"></td><td></td></tr>
+              <tr><td>Total Exec Cost ₹</td><td class="amount"></td><td></td></tr>
+              <tr><td>Avg Cost ₹</td><td class="amount"></td><td></td></tr>
+            </tbody>
+          </table>
+          <table>
+            <thead><tr><th style="width:22%">Tier</th><th style="width:28%">Sell @ ₹</th><th style="width:22%">Qty</th><th style="width:28%">Status</th></tr></thead>
+            <tbody>
+              <tr><td>T1 (+4%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T2 (+8%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T3 (+12%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T4 (+16%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="section">
+          <div class="head"><h3>Trade Log (Stock 3)</h3><span class="desc">One row per fill</span></div>
+          <table>
+            <thead><tr><th style="width:18%">Date</th><th style="width:16%">Side</th><th style="width:18%">Price ₹</th><th style="width:16%">Qty</th><th style="width:16%">Fees ₹</th><th style="width:16%">Notes</th></tr></thead>
+            <tbody>
+              <tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="card section">
+      <div class="head"><h2>Stock 4 — Grid Planner</h2><span class="badge">No fractional shares</span></div>
+      <table>
+        <thead><tr><th style="width:18%">Ticker</th><th style="width:18%">Anchor ₹</th><th style="width:16%">Lot</th><th style="width:24%">Per-Stock Budget ₹</th><th style="width:24%">Cap Guard ₹</th></tr></thead>
+        <tbody><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr></tbody>
+      </table>
+      <h3>Buy Plan (2% steps down)</h3>
+      <table>
+        <thead><tr><th style="width:16%">Layer</th><th style="width:18%">Buy @ ₹</th><th style="width:16%">Weight %</th><th style="width:16%">Funds ₹</th><th style="width:16%">Qty</th><th style="width:18%">Status</th></tr></thead>
+        <tbody>
+          <tr><td>Base</td><td class="amount"></td><td class="amount">30%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L1 (−2%)</td><td class="amount"></td><td class="amount">25%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L2 (−4%)</td><td class="amount"></td><td class="amount">20%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L3 (−6%)</td><td class="amount"></td><td class="amount">15%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L4 (−8%)</td><td class="amount"></td><td class="amount">10%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+        </tbody>
+      </table>
+      <div class="two-col">
+        <div class="section">
+          <div class="head"><h3>Average Cost & Targets</h3><span class="desc">Targets from Avg Cost</span></div>
+          <table>
+            <thead><tr><th style="width:24%">Metric</th><th style="width:22%">Value</th><th style="width:54%">Notes</th></tr></thead>
+            <tbody>
+              <tr><td>Total Exec Qty</td><td class="amount"></td><td></td></tr>
+              <tr><td>Total Exec Cost ₹</td><td class="amount"></td><td></td></tr>
+              <tr><td>Avg Cost ₹</td><td class="amount"></td><td></td></tr>
+            </tbody>
+          </table>
+          <table>
+            <thead><tr><th style="width:22%">Tier</th><th style="width:28%">Sell @ ₹</th><th style="width:22%">Qty</th><th style="width:28%">Status</th></tr></thead>
+            <tbody>
+              <tr><td>T1 (+4%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T2 (+8%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T3 (+12%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T4 (+16%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="section">
+          <div class="head"><h3>Trade Log (Stock 4)</h3><span class="desc">One row per fill</span></div>
+          <table>
+            <thead><tr><th style="width:18%">Date</th><th style="width:16%">Side</th><th style="width:18%">Price ₹</th><th style="width:16%">Qty</th><th style="width:16%">Fees ₹</th><th style="width:16%">Notes</th></tr></thead>
+            <tbody>
+              <tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="page">
+  <div class="two-col">
+    
+    <div class="card section">
+      <div class="head"><h2>Stock 5 — Grid Planner</h2><span class="badge">No fractional shares</span></div>
+      <table>
+        <thead><tr><th style="width:18%">Ticker</th><th style="width:18%">Anchor ₹</th><th style="width:16%">Lot</th><th style="width:24%">Per-Stock Budget ₹</th><th style="width:24%">Cap Guard ₹</th></tr></thead>
+        <tbody><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr></tbody>
+      </table>
+      <h3>Buy Plan (2% steps down)</h3>
+      <table>
+        <thead><tr><th style="width:16%">Layer</th><th style="width:18%">Buy @ ₹</th><th style="width:16%">Weight %</th><th style="width:16%">Funds ₹</th><th style="width:16%">Qty</th><th style="width:18%">Status</th></tr></thead>
+        <tbody>
+          <tr><td>Base</td><td class="amount"></td><td class="amount">30%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L1 (−2%)</td><td class="amount"></td><td class="amount">25%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L2 (−4%)</td><td class="amount"></td><td class="amount">20%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L3 (−6%)</td><td class="amount"></td><td class="amount">15%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L4 (−8%)</td><td class="amount"></td><td class="amount">10%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+        </tbody>
+      </table>
+      <div class="two-col">
+        <div class="section">
+          <div class="head"><h3>Average Cost & Targets</h3><span class="desc">Targets from Avg Cost</span></div>
+          <table>
+            <thead><tr><th style="width:24%">Metric</th><th style="width:22%">Value</th><th style="width:54%">Notes</th></tr></thead>
+            <tbody>
+              <tr><td>Total Exec Qty</td><td class="amount"></td><td></td></tr>
+              <tr><td>Total Exec Cost ₹</td><td class="amount"></td><td></td></tr>
+              <tr><td>Avg Cost ₹</td><td class="amount"></td><td></td></tr>
+            </tbody>
+          </table>
+          <table>
+            <thead><tr><th style="width:22%">Tier</th><th style="width:28%">Sell @ ₹</th><th style="width:22%">Qty</th><th style="width:28%">Status</th></tr></thead>
+            <tbody>
+              <tr><td>T1 (+4%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T2 (+8%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T3 (+12%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T4 (+16%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="section">
+          <div class="head"><h3>Trade Log (Stock 5)</h3><span class="desc">One row per fill</span></div>
+          <table>
+            <thead><tr><th style="width:18%">Date</th><th style="width:16%">Side</th><th style="width:18%">Price ₹</th><th style="width:16%">Qty</th><th style="width:16%">Fees ₹</th><th style="width:16%">Notes</th></tr></thead>
+            <tbody>
+              <tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="card section">
+      <div class="head"><h2>Stock 6 — Grid Planner</h2><span class="badge">No fractional shares</span></div>
+      <table>
+        <thead><tr><th style="width:18%">Ticker</th><th style="width:18%">Anchor ₹</th><th style="width:16%">Lot</th><th style="width:24%">Per-Stock Budget ₹</th><th style="width:24%">Cap Guard ₹</th></tr></thead>
+        <tbody><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr></tbody>
+      </table>
+      <h3>Buy Plan (2% steps down)</h3>
+      <table>
+        <thead><tr><th style="width:16%">Layer</th><th style="width:18%">Buy @ ₹</th><th style="width:16%">Weight %</th><th style="width:16%">Funds ₹</th><th style="width:16%">Qty</th><th style="width:18%">Status</th></tr></thead>
+        <tbody>
+          <tr><td>Base</td><td class="amount"></td><td class="amount">30%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L1 (−2%)</td><td class="amount"></td><td class="amount">25%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L2 (−4%)</td><td class="amount"></td><td class="amount">20%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L3 (−6%)</td><td class="amount"></td><td class="amount">15%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L4 (−8%)</td><td class="amount"></td><td class="amount">10%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+        </tbody>
+      </table>
+      <div class="two-col">
+        <div class="section">
+          <div class="head"><h3>Average Cost & Targets</h3><span class="desc">Targets from Avg Cost</span></div>
+          <table>
+            <thead><tr><th style="width:24%">Metric</th><th style="width:22%">Value</th><th style="width:54%">Notes</th></tr></thead>
+            <tbody>
+              <tr><td>Total Exec Qty</td><td class="amount"></td><td></td></tr>
+              <tr><td>Total Exec Cost ₹</td><td class="amount"></td><td></td></tr>
+              <tr><td>Avg Cost ₹</td><td class="amount"></td><td></td></tr>
+            </tbody>
+          </table>
+          <table>
+            <thead><tr><th style="width:22%">Tier</th><th style="width:28%">Sell @ ₹</th><th style="width:22%">Qty</th><th style="width:28%">Status</th></tr></thead>
+            <tbody>
+              <tr><td>T1 (+4%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T2 (+8%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T3 (+12%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T4 (+16%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="section">
+          <div class="head"><h3>Trade Log (Stock 6)</h3><span class="desc">One row per fill</span></div>
+          <table>
+            <thead><tr><th style="width:18%">Date</th><th style="width:16%">Side</th><th style="width:18%">Price ₹</th><th style="width:16%">Qty</th><th style="width:16%">Fees ₹</th><th style="width:16%">Notes</th></tr></thead>
+            <tbody>
+              <tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="page">
+  <div class="two-col">
+    
+    <div class="card section">
+      <div class="head"><h2>Stock 7 — Grid Planner</h2><span class="badge">No fractional shares</span></div>
+      <table>
+        <thead><tr><th style="width:18%">Ticker</th><th style="width:18%">Anchor ₹</th><th style="width:16%">Lot</th><th style="width:24%">Per-Stock Budget ₹</th><th style="width:24%">Cap Guard ₹</th></tr></thead>
+        <tbody><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr></tbody>
+      </table>
+      <h3>Buy Plan (2% steps down)</h3>
+      <table>
+        <thead><tr><th style="width:16%">Layer</th><th style="width:18%">Buy @ ₹</th><th style="width:16%">Weight %</th><th style="width:16%">Funds ₹</th><th style="width:16%">Qty</th><th style="width:18%">Status</th></tr></thead>
+        <tbody>
+          <tr><td>Base</td><td class="amount"></td><td class="amount">30%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L1 (−2%)</td><td class="amount"></td><td class="amount">25%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L2 (−4%)</td><td class="amount"></td><td class="amount">20%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L3 (−6%)</td><td class="amount"></td><td class="amount">15%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L4 (−8%)</td><td class="amount"></td><td class="amount">10%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+        </tbody>
+      </table>
+      <div class="two-col">
+        <div class="section">
+          <div class="head"><h3>Average Cost & Targets</h3><span class="desc">Targets from Avg Cost</span></div>
+          <table>
+            <thead><tr><th style="width:24%">Metric</th><th style="width:22%">Value</th><th style="width:54%">Notes</th></tr></thead>
+            <tbody>
+              <tr><td>Total Exec Qty</td><td class="amount"></td><td></td></tr>
+              <tr><td>Total Exec Cost ₹</td><td class="amount"></td><td></td></tr>
+              <tr><td>Avg Cost ₹</td><td class="amount"></td><td></td></tr>
+            </tbody>
+          </table>
+          <table>
+            <thead><tr><th style="width:22%">Tier</th><th style="width:28%">Sell @ ₹</th><th style="width:22%">Qty</th><th style="width:28%">Status</th></tr></thead>
+            <tbody>
+              <tr><td>T1 (+4%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T2 (+8%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T3 (+12%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T4 (+16%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="section">
+          <div class="head"><h3>Trade Log (Stock 7)</h3><span class="desc">One row per fill</span></div>
+          <table>
+            <thead><tr><th style="width:18%">Date</th><th style="width:16%">Side</th><th style="width:18%">Price ₹</th><th style="width:16%">Qty</th><th style="width:16%">Fees ₹</th><th style="width:16%">Notes</th></tr></thead>
+            <tbody>
+              <tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="card section">
+      <div class="head"><h2>Stock 8 — Grid Planner</h2><span class="badge">No fractional shares</span></div>
+      <table>
+        <thead><tr><th style="width:18%">Ticker</th><th style="width:18%">Anchor ₹</th><th style="width:16%">Lot</th><th style="width:24%">Per-Stock Budget ₹</th><th style="width:24%">Cap Guard ₹</th></tr></thead>
+        <tbody><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr></tbody>
+      </table>
+      <h3>Buy Plan (2% steps down)</h3>
+      <table>
+        <thead><tr><th style="width:16%">Layer</th><th style="width:18%">Buy @ ₹</th><th style="width:16%">Weight %</th><th style="width:16%">Funds ₹</th><th style="width:16%">Qty</th><th style="width:18%">Status</th></tr></thead>
+        <tbody>
+          <tr><td>Base</td><td class="amount"></td><td class="amount">30%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L1 (−2%)</td><td class="amount"></td><td class="amount">25%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L2 (−4%)</td><td class="amount"></td><td class="amount">20%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L3 (−6%)</td><td class="amount"></td><td class="amount">15%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L4 (−8%)</td><td class="amount"></td><td class="amount">10%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+        </tbody>
+      </table>
+      <div class="two-col">
+        <div class="section">
+          <div class="head"><h3>Average Cost & Targets</h3><span class="desc">Targets from Avg Cost</span></div>
+          <table>
+            <thead><tr><th style="width:24%">Metric</th><th style="width:22%">Value</th><th style="width:54%">Notes</th></tr></thead>
+            <tbody>
+              <tr><td>Total Exec Qty</td><td class="amount"></td><td></td></tr>
+              <tr><td>Total Exec Cost ₹</td><td class="amount"></td><td></td></tr>
+              <tr><td>Avg Cost ₹</td><td class="amount"></td><td></td></tr>
+            </tbody>
+          </table>
+          <table>
+            <thead><tr><th style="width:22%">Tier</th><th style="width:28%">Sell @ ₹</th><th style="width:22%">Qty</th><th style="width:28%">Status</th></tr></thead>
+            <tbody>
+              <tr><td>T1 (+4%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T2 (+8%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T3 (+12%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T4 (+16%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="section">
+          <div class="head"><h3>Trade Log (Stock 8)</h3><span class="desc">One row per fill</span></div>
+          <table>
+            <thead><tr><th style="width:18%">Date</th><th style="width:16%">Side</th><th style="width:18%">Price ₹</th><th style="width:16%">Qty</th><th style="width:16%">Fees ₹</th><th style="width:16%">Notes</th></tr></thead>
+            <tbody>
+              <tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="page">
+  <div class="two-col">
+    
+    <div class="card section">
+      <div class="head"><h2>Stock 9 — Grid Planner</h2><span class="badge">No fractional shares</span></div>
+      <table>
+        <thead><tr><th style="width:18%">Ticker</th><th style="width:18%">Anchor ₹</th><th style="width:16%">Lot</th><th style="width:24%">Per-Stock Budget ₹</th><th style="width:24%">Cap Guard ₹</th></tr></thead>
+        <tbody><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr></tbody>
+      </table>
+      <h3>Buy Plan (2% steps down)</h3>
+      <table>
+        <thead><tr><th style="width:16%">Layer</th><th style="width:18%">Buy @ ₹</th><th style="width:16%">Weight %</th><th style="width:16%">Funds ₹</th><th style="width:16%">Qty</th><th style="width:18%">Status</th></tr></thead>
+        <tbody>
+          <tr><td>Base</td><td class="amount"></td><td class="amount">30%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L1 (−2%)</td><td class="amount"></td><td class="amount">25%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L2 (−4%)</td><td class="amount"></td><td class="amount">20%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L3 (−6%)</td><td class="amount"></td><td class="amount">15%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L4 (−8%)</td><td class="amount"></td><td class="amount">10%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+        </tbody>
+      </table>
+      <div class="two-col">
+        <div class="section">
+          <div class="head"><h3>Average Cost & Targets</h3><span class="desc">Targets from Avg Cost</span></div>
+          <table>
+            <thead><tr><th style="width:24%">Metric</th><th style="width:22%">Value</th><th style="width:54%">Notes</th></tr></thead>
+            <tbody>
+              <tr><td>Total Exec Qty</td><td class="amount"></td><td></td></tr>
+              <tr><td>Total Exec Cost ₹</td><td class="amount"></td><td></td></tr>
+              <tr><td>Avg Cost ₹</td><td class="amount"></td><td></td></tr>
+            </tbody>
+          </table>
+          <table>
+            <thead><tr><th style="width:22%">Tier</th><th style="width:28%">Sell @ ₹</th><th style="width:22%">Qty</th><th style="width:28%">Status</th></tr></thead>
+            <tbody>
+              <tr><td>T1 (+4%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T2 (+8%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T3 (+12%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T4 (+16%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="section">
+          <div class="head"><h3>Trade Log (Stock 9)</h3><span class="desc">One row per fill</span></div>
+          <table>
+            <thead><tr><th style="width:18%">Date</th><th style="width:16%">Side</th><th style="width:18%">Price ₹</th><th style="width:16%">Qty</th><th style="width:16%">Fees ₹</th><th style="width:16%">Notes</th></tr></thead>
+            <tbody>
+              <tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="card section">
+      <div class="head"><h2>Stock 10 — Grid Planner</h2><span class="badge">No fractional shares</span></div>
+      <table>
+        <thead><tr><th style="width:18%">Ticker</th><th style="width:18%">Anchor ₹</th><th style="width:16%">Lot</th><th style="width:24%">Per-Stock Budget ₹</th><th style="width:24%">Cap Guard ₹</th></tr></thead>
+        <tbody><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr></tbody>
+      </table>
+      <h3>Buy Plan (2% steps down)</h3>
+      <table>
+        <thead><tr><th style="width:16%">Layer</th><th style="width:18%">Buy @ ₹</th><th style="width:16%">Weight %</th><th style="width:16%">Funds ₹</th><th style="width:16%">Qty</th><th style="width:18%">Status</th></tr></thead>
+        <tbody>
+          <tr><td>Base</td><td class="amount"></td><td class="amount">30%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L1 (−2%)</td><td class="amount"></td><td class="amount">25%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L2 (−4%)</td><td class="amount"></td><td class="amount">20%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L3 (−6%)</td><td class="amount"></td><td class="amount">15%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+          <tr><td>L4 (−8%)</td><td class="amount"></td><td class="amount">10%</td><td class="amount"></td><td class="amount"></td><td>☐ Planned ☐ Filled</td></tr>
+        </tbody>
+      </table>
+      <div class="two-col">
+        <div class="section">
+          <div class="head"><h3>Average Cost & Targets</h3><span class="desc">Targets from Avg Cost</span></div>
+          <table>
+            <thead><tr><th style="width:24%">Metric</th><th style="width:22%">Value</th><th style="width:54%">Notes</th></tr></thead>
+            <tbody>
+              <tr><td>Total Exec Qty</td><td class="amount"></td><td></td></tr>
+              <tr><td>Total Exec Cost ₹</td><td class="amount"></td><td></td></tr>
+              <tr><td>Avg Cost ₹</td><td class="amount"></td><td></td></tr>
+            </tbody>
+          </table>
+          <table>
+            <thead><tr><th style="width:22%">Tier</th><th style="width:28%">Sell @ ₹</th><th style="width:22%">Qty</th><th style="width:28%">Status</th></tr></thead>
+            <tbody>
+              <tr><td>T1 (+4%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T2 (+8%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T3 (+12%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+              <tr><td>T4 (+16%)</td><td class="amount"></td><td class="amount"></td><td>☐ Placed ☐ Filled</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="section">
+          <div class="head"><h3>Trade Log (Stock 10)</h3><span class="desc">One row per fill</span></div>
+          <table>
+            <thead><tr><th style="width:18%">Date</th><th style="width:16%">Side</th><th style="width:18%">Price ₹</th><th style="width:16%">Qty</th><th style="width:16%">Fees ₹</th><th style="width:16%">Notes</th></tr></thead>
+            <tbody>
+              <tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- PAGE: Daily Trade Blotter (All Stocks) -->
+<section class="page">
+  <div class="section">
+    <div class="head"><h2>Daily Trade Blotter (All 10 Stocks)</h2><span class="desc">Orders & executions</span></div>
+    <table>
+      <thead><tr><th style="width:8%">#</th><th style="width:14%">Date/Time</th><th style="width:12%">Ticker</th><th style="width:10%">Side</th><th style="width:12%">Price ₹</th><th style="width:10%">Qty</th><th style="width:10%">Fees ₹</th><th style="width:24%">Notes</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td></td><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>2</td><td></td><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>3</td><td></td><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>4</td><td></td><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>5</td><td></td><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>6</td><td></td><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>7</td><td></td><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>8</td><td></td><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>9</td><td></td><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>10</td><td></td><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>11</td><td></td><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>12</td><td></td><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>13</td><td></td><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>14</td><td></td><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>15</td><td></td><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>16</td><td></td><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>17</td><td></td><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>18</td><td></td><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>19</td><td></td><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td>20</td><td></td><td></td><td>Buy/Sell</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PAGE: Cash & Ledger -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Cash Ledger</h2><span class="desc">Deposits, withdrawals, fees</span></div>
+      <table>
+        <thead><tr><th style="width:18%">Date</th><th style="width:26%">Description</th><th style="width:18%">In ₹</th><th style="width:18%">Out ₹</th><th style="width:20%">Balance ₹</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+        </tbody>
+      </table>
+      <h3>Brokerage / Taxes</h3>
+      <table>
+        <thead><tr><th>Item</th><th style="width:24%">Rate</th><th style="width:24%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Brokerage</td><td class="amount"></td><td></td></tr>
+          <tr><td>STT / Exchange / GST</td><td class="amount"></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Open Positions Snapshot</h2><span class="desc">Manual mark-to-market</span></div>
+      <table>
+        <thead><tr><th style="width:18%">Ticker</th><th style="width:16%">Avg Cost ₹</th><th style="width:16%">Qty</th><th style="width:16%">Last ₹</th><th style="width:16%">P/L ₹</th><th style="width:18%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE: P&L Summary -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Closed Trades — P&L</h2><span class="desc">Summarize realized results</span></div>
+      <table>
+        <thead><tr><th style="width:16%">Date</th><th style="width:18%">Ticker</th><th style="width:18%">Buy Avg ₹</th><th style="width:18%">Sell Avg ₹</th><th style="width:14%">Qty</th><th style="width:16%">P/L ₹</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Performance Summary</h2><span class="desc">At a glance</span></div>
+      <table>
+        <thead><tr><th style="width:50%">Metric</th><th style="width:50%">Value</th></tr></thead>
+        <tbody>
+          <tr><td>Total Capital (Start)</td><td class="amount"></td></tr>
+          <tr><td>Net Deposits / Withdrawals</td><td class="amount"></td></tr>
+          <tr><td>Realized P&L</td><td class="amount"></td></tr>
+          <tr><td>Unrealized P&L (Open)</td><td class="amount"></td></tr>
+          <tr><td>Win Rate (%)</td><td class="amount"></td></tr>
+          <tr><td>Avg Gain / Avg Loss</td><td class="amount"></td></tr>
+          <tr><td>Max Drawdown (note)</td><td class="amount"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE: Weekly Review & Notes -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Weekly Review</h2><span class="desc">What worked, what to tune</span></div>
+      <table>
+        <thead><tr><th style="width:40%">Topic</th><th style="width:60%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Stock Selection / Rotation</td><td></td></tr>
+          <tr><td>Anchor Picking Method</td><td></td></tr>
+          <tr><td>Layer Fills vs Plan</td><td></td></tr>
+          <tr><td>Profit Taking Discipline</td><td></td></tr>
+          <tr><td>Risk Stops / Event Days</td><td></td></tr>
+          <tr><td>Improvements Next Week</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Free Notes / Watchouts</h2><span class="desc">Earnings, macro, newsflow</span></div>
+      <div class="note" style="height:360px;"></div>
+    </div>
+  </div>
+  <div class="footer"><span>2% grid • 4 averaging layers • 4 profit tiers from +4%</span><span>Page ______ of ______</span></div>
+</section>
+
+</body>
+</html>

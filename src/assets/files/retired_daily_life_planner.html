@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Retired Person — Ideal Daily Life Planner (A4 Printable)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,"Noto Sans","Helvetica Neue",Arial,sans-serif; color:var(--ink); line-height:1.2; }
+  h1 { font-size:22px; margin:0 0 8px; letter-spacing:.2px; }
+  h2 { font-size:16px; margin:0 0 6px; }
+  h3 { font-size:13px; margin:6px 0 4px; color:var(--muted); }
+  .meta { display:grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap:8px; margin-bottom:8px; }
+  .field { border:1px solid var(--rule); padding:6px 8px; height:34px; display:flex; align-items:center; }
+  .label { font-size:12px; color:var(--muted); margin-right:8px; }
+  .bar { height:4px; background:#000; margin: 8px 0 10px; }
+  .section { break-inside: avoid; margin-bottom: 10px; }
+  .section .head { display:flex; justify-content:space-between; align-items:baseline; }
+  .section .desc { font-size: 11px; color: var(--muted); }
+  table { width:100%; border-collapse: collapse; table-layout: fixed; }
+  th, td { border: 1px solid var(--rule); padding: 6px 6px; font-size: 12px; height: 22px; vertical-align: top; }
+  th { background:#f2f2f2; text-align:left; }
+  td.amount { text-align:right; }
+  .two-col { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .three-col { display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .note { border:1px solid var(--rule); margin-top: 4px; background: repeating-linear-gradient(180deg,#fff,#fff 21px,#000 22px); }
+  .note.s { height: 120px; } .note.m { height: 220px; } .note.l { height: 420px; }
+  .footer { display:flex; justify-content:space-between; font-size:11px; margin-top:6px; color:var(--muted); }
+  .page { page-break-after: always; }
+  .mini { font-size:11px; color:var(--muted); }
+</style>
+</head>
+<body>
+
+<section class="page">
+  <h1>Retired Person — Ideal Daily Life Planner</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">Name:</span> _______________________________</div>
+    <div class="field"><span class="label">Date:</span> ____________</div>
+    <div class="field"><span class="label">Sleep last night (hrs):</span> ____</div>
+    <div class="field"><span class="label">Mood:</span> ☐ Calm ☐ Content ☐ Energetic ☐ Low</div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Morning (06:00–10:00)</h2><span class="desc">Gentle start • health • joy</span></div>
+      <table>
+        <thead><tr><th style="width:64%">Activity</th><th style="width:18%">Time</th><th style="width:18%">Done?</th></tr></thead>
+        <tbody>
+          <tr><td>Hydrate • light stretch • sunlight</td><td>10–15 min</td><td>☐</td></tr>
+          <tr><td>Medication(s) — see schedule</td><td>__</td><td>☐</td></tr>
+          <tr><td>Walk / yoga / physio</td><td>20–40 min</td><td>☐</td></tr>
+          <tr><td>Breakfast (protein + fruit)</td><td>__</td><td>☐</td></tr>
+          <tr><td>Daily plan: 3 priorities</td><td>10 min</td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Day (10:00–18:00)</h2><span class="desc">Hobbies • purpose • errands</span></div>
+      <table>
+        <thead><tr><th style="width:64%">Activity</th><th style="width:18%">Time</th><th style="width:18%">Done?</th></tr></thead>
+        <tbody>
+          <tr><td>Hobby / learning project</td><td>45–90 min</td><td>☐</td></tr>
+          <tr><td>Social connection (call/meet)</td><td>15–60 min</td><td>☐</td></tr>
+          <tr><td>Lunch + short walk</td><td>__</td><td>☐</td></tr>
+          <tr><td>Errand / appointment</td><td>__</td><td>☐</td></tr>
+          <tr><td>Quiet time / reading</td><td>20–40 min</td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Evening (18:00–21:00)</h2><span class="desc">Family • gratitude • unwind</span></div>
+      <table>
+        <thead><tr><th style="width:64%">Activity</th><th style="width:18%">Time</th><th style="width:18%">Done?</th></tr></thead>
+        <tbody>
+          <tr><td>Family time / community activity</td><td>30–90 min</td><td>☐</td></tr>
+          <tr><td>Dinner (light, early)</td><td>__</td><td>☐</td></tr>
+          <tr><td>Finance micro-habit (log spends/pay bill)</td><td>5–10 min</td><td>☐</td></tr>
+          <tr><td>Prepare for tomorrow (clothes, list)</td><td>5–10 min</td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Before Bed (21:00–22:30)</h2><span class="desc">Sleep routine</span></div>
+      <table>
+        <thead><tr><th style="width:64%">Activity</th><th style="width:18%">Time</th><th style="width:18%">Done?</th></tr></thead>
+        <tbody>
+          <tr><td>Wind-down: light stretch / breath</td><td>5–10 min</td><td>☐</td></tr>
+          <tr><td>Gratitude journal (3) / read</td><td>10–20 min</td><td>☐</td></tr>
+          <tr><td>Lights out by</td><td>____:____</td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Today’s Top 3 Priorities</h2><span class="desc">Keep it simple</span></div>
+      <table>
+        <thead><tr><th style="width:8%">#</th><th>Priority</th><th style="width:24%">Why</th><th style="width:18%">Done?</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td></td><td></td><td>☐</td></tr>
+          <tr><td>2</td><td></td><td></td><td>☐</td></tr>
+          <tr><td>3</td><td></td><td></td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Appointments & Errands</h2><span class="desc">Time • place • notes</span></div>
+      <table>
+        <thead><tr><th style="width:24%">Time</th><th style="width:34%">What</th><th style="width:24%">Where</th><th style="width:18%">Done?</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td>☐</td></tr>
+          <tr><td></td><td></td><td></td><td>☐</td></tr>
+          <tr><td></td><td></td><td></td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Meals & Hydration</h2><span class="desc">Gentle nutrition</span></div>
+      <table>
+        <thead><tr><th style="width:22%">Meal</th><th>Plan</th><th style="width:22%">Water</th><th style="width:18%">Done?</th></tr></thead>
+        <tbody>
+          <tr><td>Breakfast</td><td></td><td>☐☐☐</td><td>☐</td></tr>
+          <tr><td>Lunch</td><td></td><td>☐☐☐</td><td>☐</td></tr>
+          <tr><td>Dinner</td><td></td><td>☐☐☐</td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Gratitude / Notes</h2><span class="desc">Memories, ideas, reflections</span></div>
+      <div class="note m"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Move daily • Connect with people • Enjoy hobbies • Sleep well</span>
+    <span>Page 1 of 3</span>
+  </div>
+</section>
+
+<section class="page">
+  <h1>Health & Medications</h1>
+  <div class="bar"></div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Medication Schedule</h2><span class="desc">Dosage • time • tick</span></div>
+      <table>
+        <thead><tr><th style="width:32%">Medicine</th><th style="width:16%">Dose</th><th style="width:16%">Morning</th><th style="width:16%">Afternoon</th><th style="width:16%">Evening</th><th style="width:16%">Bed</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+          <tr><td></td><td></td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+          <tr><td></td><td></td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+          <tr><td></td><td></td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+        </tbody>
+      </table>
+      <p class="mini">Tip: Keep emergency medications separate and labelled.</p>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Doctor / Clinic Contacts</h2><span class="desc">Name • phone • location</span></div>
+      <table>
+        <thead><tr><th style="width:30%">Doctor / Clinic</th><th style="width:24%">Phone</th><th style="width:28%">Location</th><th style="width:18%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Vital Signs Log</h2><span class="desc">BP • pulse • sugar • weight</span></div>
+      <table>
+        <thead><tr><th style="width:18%">Date</th><th style="width:18%">BP (mmHg)</th><th style="width:14%">Pulse</th><th style="width:16%">Sugar</th><th style="width:16%">Weight</th><th style="width:18%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>____-__-__</td><td>__/__</td><td>__</td><td>F__:__/PP__:__</td><td>__ kg</td><td></td></tr>
+          <tr><td>____-__-__</td><td>__/__</td><td>__</td><td>F__:__/PP__:__</td><td>__ kg</td><td></td></tr>
+          <tr><td>____-__-__</td><td>__/__</td><td>__</td><td>F__:__/PP__:__</td><td>__ kg</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Symptoms & Pain Log</h2><span class="desc">Notice • action • relief</span></div>
+      <table>
+        <thead><tr><th style="width:26%">Area / Issue</th><th style="width:18%">Severity (0–10)</th><th style="width:30%">Action Taken</th><th style="width:26%">Better?</th></tr></thead>
+        <tbody>
+          <tr><td></td><td>__</td><td></td><td>☐</td></tr>
+          <tr><td></td><td>__</td><td></td><td>☐</td></tr>
+          <tr><td></td><td>__</td><td></td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="head"><h2>7‑Day Health Habit Tracker</h2><span class="desc">Small steps daily</span></div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:30%">Habit</th>
+          <th style="width:10%">Mon</th><th style="width:10%">Tue</th><th style="width:10%">Wed</th>
+          <th style="width:10%">Thu</th><th style="width:10%">Fri</th><th style="width:10%">Sat</th><th style="width:10%">Sun</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Morning meds taken</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+        <tr><td>Evening meds taken</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+        <tr><td>Walk / movement</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+        <tr><td>Hydration (6–8 glasses)</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+        <tr><td>Sleep on time</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Take meds • Move daily • Track vitals • Call your people</span>
+    <span>Page 2 of 3</span>
+  </div>
+</section>
+
+<section class="page">
+  <h1>Social • Purpose • Home & Money</h1>
+  <div class="bar"></div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Social Connections</h2><span class="desc">People to call/meet</span></div>
+      <table>
+        <thead><tr><th style="width:30%">Person</th><th style="width:28%">How (Call/Visit)</th><th style="width:24%">When</th><th style="width:18%">Done?</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td>☐</td></tr>
+          <tr><td></td><td></td><td></td><td>☐</td></tr>
+          <tr><td></td><td></td><td></td><td>☐</td></tr>
+          <tr><td></td><td></td><td></td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Hobbies & Learning</h2><span class="desc">Joy, creativity, skills</span></div>
+      <table>
+        <thead><tr><th style="width:36%">Project</th><th style="width:26%">Today’s Target</th><th style="width:20%">Time</th><th style="width:18%">Done?</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td>__ min</td><td>☐</td></tr>
+          <tr><td></td><td></td><td>__ min</td><td>☐</td></tr>
+          <tr><td></td><td></td><td>__ min</td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Volunteering / Community</h2><span class="desc">Give back</span></div>
+      <table>
+        <thead><tr><th style="width:36%">Activity</th><th style="width:26%">Where</th><th style="width:20%">Time</th><th style="width:18%">Done?</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td>☐</td></tr>
+          <tr><td></td><td></td><td></td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Home & Safety</h2><span class="desc">Simple checks</span></div>
+      <table>
+        <thead><tr><th style="width:44%">Task</th><th style="width:22%">When</th><th style="width:16%">Done?</th><th style="width:18%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Gas / stove off • doors locked</td><td>Night</td><td>☐</td><td></td></tr>
+          <tr><td>Charging phone / emergency contacts</td><td>Night</td><td>☐</td><td></td></tr>
+          <tr><td>Housekeeping / laundry</td><td>__</td><td>☐</td><td></td></tr>
+          <tr><td>Groceries / essentials list</td><td>__</td><td>☐</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Simple Expense Log</h2><span class="desc">Keep it light</span></div>
+      <table>
+        <thead><tr><th style="width:18%">Date</th><th style="width:44%">Item / Purpose</th><th style="width:18%">Category</th><th style="width:20%">Amount ₹</th></tr></thead>
+        <tbody>
+          <tr><td>____-__-__</td><td></td><td>Food/Health/Travel/Other</td><td class="amount">__</td></tr>
+          <tr><td>____-__-__</td><td></td><td>Food/Health/Travel/Other</td><td class="amount">__</td></tr>
+          <tr><td>____-__-__</td><td></td><td>Food/Health/Travel/Other</td><td class="amount">__</td></tr>
+        </tbody>
+      </table>
+      <p class="mini">Tip: Snapshot receipts; review totals weekly.</p>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Shopping / To‑Do</h2><span class="desc">Errands & reminders</span></div>
+      <table>
+        <thead><tr><th style="width:64%">Item</th><th style="width:18%">When</th><th style="width:18%">Done?</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td>☐</td></tr>
+          <tr><td></td><td></td><td>☐</td></tr>
+          <tr><td></td><td></td><td>☐</td></tr>
+          <tr><td></td><td></td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>People • Purpose • Peace — a little every day</span>
+    <span>Page 3 of 3</span>
+  </div>
+</section>
+
+</body>
+</html>

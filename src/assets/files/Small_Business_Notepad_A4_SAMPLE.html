@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Small Business Control Pad — A4 Notepad (Sample)</title><style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif; color:var(--ink); line-height:1.2; }
+  h1 { font-size:22px; margin:0 0 8px; }
+  h2 { font-size:16px; margin:0 0 6px; }
+  h3 { font-size:13px; margin:6px 0 4px; color:var(--muted); }
+  .bar { height:4px; background:#000; margin:8px 0 10px; }
+  .meta { display:grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap:8px; margin-bottom:8px; }
+  .field { border:1px solid var(--rule); padding:6px 8px; height:34px; display:flex; align-items:center; font-size:12px; }
+  .label { color:var(--muted); margin-right:8px; }
+  .section { break-inside: avoid; margin-bottom:10px; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .three { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; }
+  table { width:100%; border-collapse:collapse; table-layout:fixed; }
+  th, td { border:1px solid var(--rule); padding:6px; font-size:12px; height:22px; vertical-align:top; }
+  th { background:#f2f2f2; text-align:left; }
+  .note { border:1px solid var(--rule); background: repeating-linear-gradient(180deg,#fff,#fff 21px,#000 22px); height:120px; white-space:pre-line; padding:6px; }
+  .note.l { height:340px; }
+  .footer { display:flex; justify-content:space-between; font-size:11px; color:var(--muted); margin-top:6px; }
+  .page { page-break-after: always; padding-bottom:6px; }
+  .right { text-align:right; }
+</style></head>
+<body>
+
+<section class="page">
+  <h1>Daily Ops & Cash Control (Sample)</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">Date:</span> 2025-09-23</div>
+    <div class="field"><span class="label">Branch / Store:</span> MG Road</div>
+    <div class="field"><span class="label">Prepared by:</span> A. Kumar</div>
+    <div class="field"><span class="label">Manager sign:</span> ________</div>
+  </div>
+
+  <div class="two">
+    <div class="section">
+      <h2>Open Checklist</h2>
+      <table>
+        <thead><tr><th style="width:6%">✓</th><th>Item</th><th style="width:24%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>☑</td><td>Shutters / Lights / AC</td><td>AC 24°C</td></tr>
+          <tr><td>☑</td><td>POS / QR working</td><td>Test ₹1 UPI</td></tr>
+          <tr><td>☑</td><td>Float cash counted</td><td>₹3,000</td></tr>
+          <tr><td>☑</td><td>Cleanliness check</td><td>OK</td></tr>
+          <tr><td>☐</td><td>Inventory spot-check</td><td>Pending</td></tr>
+        </tbody>
+      </table>
+      <h3>Announcements / Targets</h3>
+      <div class="note">Target Net Sales: ₹85,000
+Push combo offer on Item A + B</div>
+    </div>
+    <div class="section">
+      <h2>End-of-Day Checklist</h2>
+      <table>
+        <thead><tr><th style="width:6%">✓</th><th>Item</th><th style="width:24%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>☐</td><td>Cash counted & tallied</td><td></td></tr>
+          <tr><td>☐</td><td>UPI / Card settlements</td><td></td></tr>
+          <tr><td>☐</td><td>Refunds verified</td><td></td></tr>
+          <tr><td>☐</td><td>Bank deposit prepared</td><td></td></tr>
+          <tr><td>☐</td><td>Close POS / AC / Lights</td><td></td></tr>
+        </tbody>
+      </table>
+      <h3>Notes</h3>
+      <div class="note">Expect courier at 5pm</div>
+    </div>
+  </div>
+
+  <div class="three">
+    <div class="section">
+      <h2>Cash Register</h2>
+      <table>
+        <thead><tr><th>Opening Float ₹</th><th>Cash Sales ₹</th><th>Cash Expenses ₹</th><th>Expected Cash ₹</th><th>Counted Cash ₹</th><th>Over / Short ₹</th></tr></thead>
+        <tbody><tr><td>3,000</td><td>28,200</td><td>1,050</td><td>30,150</td><td></td><td></td></tr></tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Payment Modes Tally</h2>
+      <table>
+        <thead><tr><th>Mode</th><th class="right">₹ Amount</th><th>Txn Count</th></tr></thead>
+        <tbody>
+          <tr><td>UPI</td><td class="right">41,350</td><td>63</td></tr>
+          <tr><td>Card</td><td class="right">19,880</td><td>21</td></tr>
+          <tr><td>Wallet</td><td class="right">2,450</td><td>7</td></tr>
+          <tr><td>Other</td><td class="right">0</td><td>0</td></tr>
+          <tr><th>Total Digital</th><th class="right">63,680</th><th>91</th></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Sales Summary</h2>
+      <table>
+        <thead><tr><th>Gross Sales ₹</th><th>Discounts ₹</th><th>Returns ₹</th><th>Net Sales ₹</th></tr></thead>
+        <tbody><tr><td>95,680</td><td>5,200</td><td>1,000</td><td>89,480</td></tr></tbody>
+      </table>
+      <h3>Bank Deposit</h3>
+      <table>
+        <thead><tr><th>Cash to Bank ₹</th><th>By (name)</th><th>Slip/UTR</th></tr></thead>
+        <tbody><tr><td>25,000</td><td>R. Mehta</td><td>UTR 1289XX</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer"><span>Control Pad • Daily discipline = fewer surprises</span><span>Page 1 of 6</span></div>
+</section>
+
+<section class="page">
+  <h1>Sales & Expense Ledger (Day) — Sample</h1>
+  <div class="bar"></div>
+  <h2>Sales</h2>
+  <table>
+    <thead>
+      <tr><th>Time</th><th>Invoice #</th><th>Customer</th><th>Items</th><th>Subtotal ₹</th><th>Tax ₹</th><th>Discount ₹</th><th>Total ₹</th><th>Mode</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>10:12</td><td>INV-1012</td><td>Walk-in</td><td>3</td><td>1,950</td><td>351</td><td>100</td><td>2,201</td><td>UPI</td></tr>
+      <tr><td>11:05</td><td>INV-1013</td><td>J. Patel</td><td>2</td><td>1,100</td><td>198</td><td>0</td><td>1,298</td><td>Card</td></tr>
+      <tr><td>12:32</td><td>INV-1014</td><td>Walk-in</td><td>1</td><td>499</td><td>90</td><td>0</td><td>589</td><td>Cash</td></tr>
+      <tr><td>15:44</td><td>INV-1015</td><td>A. Singh</td><td>4</td><td>3,850</td><td>693</td><td>300</td><td>4,243</td><td>UPI</td></tr>
+    </tbody>
+  </table>
+  <h2>Expenses (Petty / Operating)</h2>
+  <table>
+    <thead>
+      <tr><th>Time</th><th>Vendor / Purpose</th><th>Category</th><th>Amount ₹</th><th>Mode</th><th>Note</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>09:30</td><td>PackPro — bags</td><td>Supplies</td><td>650</td><td>UPI</td><td>50 pcs</td></tr>
+      <tr><td>13:15</td><td>Food — team lunch</td><td>Staff</td><td>400</td><td>Cash</td><td>2 ppl</td></tr>
+    </tbody>
+  </table>
+  <div class="footer"><span>Record as you go • Don’t rely on memory</span><span>Page 2 of 6</span></div>
+</section>
+
+<section class="page">
+  <h1>Purchases & Inventory Reorder — Sample</h1>
+  <div class="bar"></div>
+  <h2>Purchase Orders / Goods In</h2>
+  <table>
+    <thead>
+      <tr><th>PO #</th><th>Vendor</th><th>Item / SKU</th><th>Qty</th><th>Unit ₹</th><th>Total ₹</th><th>Received?</th><th>Due Date</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>PO-2201</td><td>ABC Traders</td><td>Item A / A001</td><td>50</td><td>180</td><td>9,000</td><td>☐</td><td>2025-09-25</td></tr>
+      <tr><td>PO-2202</td><td>XYZ Supply</td><td>Item B / B009</td><td>30</td><td>230</td><td>6,900</td><td>☑</td><td>2025-09-22</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Reorder Tracker</h2>
+  <table>
+    <thead>
+      <tr><th>Item</th><th>SKU</th><th>On Hand</th><th>Min</th><th>Reorder Qty</th><th>Supplier</th><th>Last Cost ₹</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Item A</td><td>A001</td><td>18</td><td>25</td><td>50</td><td>ABC Traders</td><td>180</td></tr>
+      <tr><td>Item B</td><td>B009</td><td>45</td><td>30</td><td>30</td><td>XYZ Supply</td><td>230</td></tr>
+      <tr><td>Item C</td><td>C010</td><td>12</td><td>20</td><td>40</td><td>LMN & Co</td><td>150</td></tr>
+    </tbody>
+  </table>
+  <div class="footer"><span>Never stock out • Buy smart • Track commitments</span><span>Page 3 of 6</span></div>
+</section>
+
+<section class="page">
+  <h1>Receivables • Payables • Deposits — Sample</h1>
+  <div class="bar"></div>
+  <h2>Accounts Receivable (Aging)</h2>
+  <table>
+    <thead>
+      <tr><th>Customer</th><th>Invoice #</th><th>Date</th><th>Total ₹</th><th>Received ₹</th><th>Balance ₹</th><th>0–7</th><th>8–15</th><th>16–30</th><th>31+</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Sunshine Cafe</td><td>INV-1001</td><td>2025-09-20</td><td>12,800</td><td>5,000</td><td>7,800</td><td>7,800</td><td></td><td></td><td></td></tr>
+      <tr><td>Neo Fitness</td><td>INV-0998</td><td>2025-09-06</td><td>9,600</td><td>0</td><td>9,600</td><td></td><td></td><td>9,600</td><td></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accounts Payable</h2>
+  <table>
+    <thead>
+      <tr><th>Vendor</th><th>Bill #</th><th>Date</th><th>Total ₹</th><th>Paid ₹</th><th>Balance ₹</th><th>Due Date</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ABC Traders</td><td>B-771</td><td>2025-09-18</td><td>15,400</td><td>7,000</td><td>8,400</td><td>2025-09-25</td><td>Part-paid</td></tr>
+      <tr><td>XYZ Supply</td><td>B-772</td><td>2025-09-21</td><td>6,900</td><td>0</td><td>6,900</td><td>2025-09-30</td><td>Open</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Bank Deposit Log</h2>
+  <table>
+    <thead><tr><th>Date</th><th>From (Cash / Settlement)</th><th>Bank</th><th>Amount ₹</th><th>Slip / UTR</th></tr></thead>
+    <tbody>
+      <tr><td>2025-09-23</td><td>Cash</td><td>SBI</td><td>25,000</td><td>UTR 1289XX</td></tr>
+      <tr><td>2025-09-23</td><td>UPI Settlement</td><td>HDFC</td><td>41,350</td><td>SET 9931</td></tr>
+    </tbody>
+  </table>
+  <div class="footer"><span>Collect faster than you spend • Know your runway</span><span>Page 4 of 6</span></div>
+</section>
+
+<section class="page">
+  <h1>Staff • Timesheet • Payroll — Sample</h1>
+  <div class="bar"></div>
+  <h2>Roster / Timesheet</h2>
+  <table>
+    <thead>
+      <tr><th>Name</th><th>Role</th><th>In</th><th>Out</th><th>Hours</th><th>OT</th><th>Wage/Day ₹</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Ravi</td><td>Sales</td><td>10:00</td><td>19:00</td><td>9</td><td>1</td><td>900</td><td>Handled display</td></tr>
+      <tr><td>Meera</td><td>Cashier</td><td>10:00</td><td>18:00</td><td>8</td><td>0</td><td>850</td><td>UPI settlement</td></tr>
+      <tr><td>Arun</td><td>Helper</td><td>12:00</td><td>21:00</td><td>9</td><td>1</td><td>700</td><td>Loading</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Advances / Reimbursements</h2>
+  <table>
+    <thead><tr><th>Date</th><th>Name</th><th>Type</th><th>Amount ₹</th><th>Reason</th></tr></thead>
+    <tbody>
+      <tr><td>2025-09-22</td><td>Ravi</td><td>Advance</td><td>1,500</td><td>Family</td></tr>
+      <tr><td>2025-09-21</td><td>Meera</td><td>Reimburse</td><td>320</td><td>Courier</td></tr>
+    </tbody>
+  </table>
+  <div class="footer"><span>Team on time • Wages accurate • Zero surprises</span><span>Page 5 of 6</span></div>
+</section>
+
+<section class="page">
+  <h1>Marketing • Leads • Weekly KPIs — Sample</h1>
+  <div class="bar"></div>
+  <div class="two">
+    <div class="section">
+      <h2>Leads Pipeline</h2>
+      <table>
+        <thead><tr><th>Date</th><th>Name / Company</th><th>Source</th><th>Need</th><th>Next Step</th><th>Value ₹</th><th>Prob %</th></tr></thead>
+        <tbody>
+          <tr><td>2025-09-22</td><td>Om Traders</td><td>Referral</td><td>Bulk Item A</td><td>Send quote</td><td>55,000</td><td>60</td></tr>
+          <tr><td>2025-09-23</td><td>Green Cafe</td><td>Instagram</td><td>Monthly supply</td><td>Site visit</td><td>38,000</td><td>40</td></tr>
+          <tr><td>2025-09-24</td><td>Sun Shine Mart</td><td>Walk-in</td><td>Trial order</td><td>Follow-up</td><td>22,000</td><td>50</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Campaign Tracker</h2>
+      <table>
+        <thead><tr><th>Channel</th><th>Campaign</th><th>Budget ₹</th><th>Spend ₹</th><th>Leads</th><th>Sales</th><th class="right">ROI %</th></tr></thead>
+        <tbody>
+          <tr><td>Meta Ads</td><td>Festive 10%</td><td>8,000</td><td>5,200</td><td>62</td><td>14</td><td class="right">48</td></tr>
+          <tr><td>WhatsApp</td><td>Loyalty Push</td><td>2,000</td><td>600</td><td>35</td><td>9</td><td class="right">75</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h2>Weekly KPIs (Week ending: 2025-09-28)</h2>
+  <table>
+    <thead><tr><th>KPI</th><th>Target</th><th>Actual</th><th>Comment</th></tr></thead>
+    <tbody>
+      <tr><td>Net Sales ₹</td><td>5,50,000</td><td>5,12,300</td><td>Rain slowed Wed</td></tr>
+      <tr><td>Gross Margin %</td><td>32%</td><td>31%</td><td>Combo promos</td></tr>
+      <tr><td>Operating Expenses ₹</td><td>2,10,000</td><td>2,02,000</td><td>Tamed packing costs</td></tr>
+      <tr><td>Net Profit ₹</td><td>90,000</td><td>82,700</td><td>In line</td></tr>
+      <tr><td>Average Order Value ₹</td><td>1,450</td><td>1,390</td><td>Upsell push next week</td></tr>
+      <tr><td>Footfall / Inquiries</td><td>1,100</td><td>1,045</td><td>Weekend strong</td></tr>
+      <tr><td>Repeat Customers %</td><td>32%</td><td>29%</td><td>Revive loyalty SMS</td></tr>
+      <tr><td>Inventory Days</td><td>28</td><td>31</td><td>Fast-track Item A PO</td></tr>
+    </tbody>
+  </table>
+
+  <div class="footer"><span>What gets measured gets managed</span><span>Page 6 of 6</span></div>
+</section>
+
+</body></html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Billionaire Portfolio Operating Notepad — A4 (Sample)</title><style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif; color:var(--ink); line-height:1.2; }
+  h1 { font-size:22px; margin:0 0 8px; }
+  h2 { font-size:16px; margin:8px 0 6px; }
+  h3 { font-size:13px; margin:6px 0 4px; color:var(--muted); }
+  .bar { height:4px; background:#000; margin:8px 0 10px; }
+  .meta { display:grid; grid-template-columns: repeat(4, 1fr); gap:8px; margin-bottom:8px; }
+  .field { border:1px solid var(--rule); padding:6px 8px; height:34px; display:flex; align-items:center; font-size:12px; }
+  .label { color:var(--muted); margin-right:8px; }
+  .section { break-inside: avoid; margin-bottom:10px; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .three { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; }
+  table { width:100%; border-collapse:collapse; table-layout:fixed; }
+  th, td { border:1px solid var(--rule); padding:6px; font-size:12px; height:22px; vertical-align:top; }
+  th { background:#f2f2f2; text-align:left; }
+  .note { border:1px solid var(--rule); background: repeating-linear-gradient(180deg,#fff,#fff 21px,#000 22px); height:120px; white-space:pre-line; padding:6px; }
+  .note.l { height:340px; }
+  .foot { display:flex; justify-content:space-between; font-size:11px; color:var(--muted); margin-top:6px; }
+  .page { page-break-after: always; padding-bottom:6px; }
+  .right { text-align:right; }
+  .rag { font-weight:bold; }
+</style></head>
+<body>
+
+<section class="page">
+  <h1>Family Office Snapshot & IPS (Sample)</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">Date:</span> 2025-09-23</div>
+    <div class="field"><span class="label">CIO:</span> A. Mehta</div>
+    <div class="field"><span class="label">FO Structure:</span> Single</div>
+    <div class="field"><span class="label">Custodians:</span> Global Custodian • HDFC</div>
+  </div>
+  <div class="two">
+    <div class="section">
+      <h2>Investment Policy — Guardrails</h2>
+      <table>
+        <thead><tr><th>Policy Item</th><th>Limit / Rule</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Max Equity %</td><td>≤ 55%</td><td>Incl. public + PE</td></tr>
+          <tr><td>Min Liquidity (≤ 12m)</td><td>≥ $80M</td><td>Cap calls + taxes</td></tr>
+          <tr><td>Leverage (LTV)</td><td>≤ 35%</td><td>Asset‑level only</td></tr>
+          <tr><td>Single Issuer Limit</td><td>≤ 7%</td><td>Ex‑Treasuries</td></tr>
+          <tr><td>Hedge Ratio (FX)</td><td>40–60% USD/INR</td><td>3‑month rolling</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Governance</h2>
+      <table>
+        <thead><tr><th>Body</th><th>Cadence</th><th>Members</th><th>Decision Rights</th></tr></thead>
+        <tbody>
+          <tr><td>Investment Committee</td><td>Monthly</td><td>Patriarch, CIO, Risk</td><td>All capital alloc</td></tr>
+          <tr><td>Risk Committee</td><td>Quarterly</td><td>CIO, CRO, Counsel</td><td>Limits, hedging</td></tr>
+          <tr><td>Philanthropy Board</td><td>Biannual</td><td>Family + CEO</td><td>Grant slate</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><span>Start with principles • Enforce guardrails</span><span>Page 1 of 10</span></div>
+</section>
+
+<section class="page">
+  <h1>Strategic Asset Allocation & Rebalance (Sample)</h1>
+  <div class="bar"></div>
+  <table>
+    <thead><tr><th>Asset Class</th><th>Target %</th><th>Band ±%</th><th>Current %</th><th>Drift %</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr><td>Global Equities (ex‑India)</td><td>35</td><td>3</td><td>37.8</td><td>2.8</td><td>Hold</td></tr>
+<tr><td>India Equities</td><td>15</td><td>3</td><td>14.2</td><td>-0.8</td><td>Hold</td></tr>
+<tr><td>Fixed Income (IG)</td><td>20</td><td>2</td><td>18.1</td><td>-1.9</td><td>Hold</td></tr>
+<tr><td>Private Equity</td><td>12</td><td>3</td><td>11.0</td><td>-1.0</td><td>Hold</td></tr>
+<tr><td>Venture Capital</td><td>5</td><td>2</td><td>5.6</td><td>0.6</td><td>Hold</td></tr>
+<tr><td>Real Estate</td><td>8</td><td>2</td><td>7.1</td><td>-0.9</td><td>Hold</td></tr>
+<tr><td>Hedge Funds</td><td>3</td><td>1</td><td>3.0</td><td>0.0</td><td>Hold</td></tr>
+<tr><td>Cash & T‑Bills</td><td>2</td><td>1</td><td>3.2</td><td>1.2</td><td>Trim to target</td></tr>
+    </tbody>
+  </table>
+  <h2>Policy Notes</h2>
+  <div class="note">Trim Global Equities (−2.8%) across ETFs; add IG Bonds (+1.9%) and India Equities (+0.8%). Use fresh inflows to avoid tax where possible.</div>
+  <div class="foot"><span>Let allocation do the heavy lifting</span><span>Page 2 of 10</span></div>
+</section>
+
+<section class="page">
+  <h1>Liquidity Ladder & 12‑Month Cash Plan (Sample)</h1>
+  <div class="bar"></div>
+  <div class="two">
+    <div class="section">
+      <h2>Liquidity Buckets</h2>
+      <table>
+        <thead><tr><th>Bucket</th><th>Horizon</th><th>Target ₹/USD</th><th>Actual ₹/USD</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Operating Cash</td><td>0–12m</td><td>$80M</td><td>$86M</td><td>Overfunded for tax</td></tr>
+          <tr><td>Safety (T‑Bills)</td><td>0–24m</td><td>$120M</td><td>$114M</td><td>Rolling ladder</td></tr>
+          <tr><td>Core (IG Bonds)</td><td>1–5y</td><td>$250M</td><td>$226M</td><td>To top‑up</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>12‑Month Cashflows</h2>
+      <table>
+        <thead><tr><th>Month</th><th>Inflows</th><th>Outflows</th><th>Capital Calls</th><th>Taxes</th><th>Net</th></tr></thead>
+        <tbody>
+          <tr><td>Sep 2025</td><td>$4.8M</td><td>$2.1M</td><td>$400.0K</td><td>$0</td><td>$2.3M</td></tr>
+<tr><td>Oct 2025</td><td>$3.2M</td><td>$2.6M</td><td>$0</td><td>$0</td><td>$600.0K</td></tr>
+<tr><td>Nov 2025</td><td>$6.0M</td><td>$2.8M</td><td>$1.2M</td><td>$0</td><td>$2.0M</td></tr>
+<tr><td>Dec 2025</td><td>$5.1M</td><td>$3.0M</td><td>$0</td><td>$0</td><td>$2.1M</td></tr>
+<tr><td>Jan 2026</td><td>$3.4M</td><td>$2.5M</td><td>$800.0K</td><td>$0</td><td>$100.0K</td></tr>
+<tr><td>Feb 2026</td><td>$4.0M</td><td>$2.3M</td><td>$0</td><td>$6.0M</td><td>$-4.3M</td></tr>
+<tr><td>Mar 2026</td><td>$3.8M</td><td>$2.7M</td><td>$600.0K</td><td>$0</td><td>$500.0K</td></tr>
+<tr><td>Apr 2026</td><td>$6.2M</td><td>$2.6M</td><td>$0</td><td>$0</td><td>$3.6M</td></tr>
+<tr><td>May 2026</td><td>$3.1M</td><td>$2.9M</td><td>$0</td><td>$0</td><td>$200.0K</td></tr>
+<tr><td>Jun 2026</td><td>$5.5M</td><td>$3.2M</td><td>$700.0K</td><td>$0</td><td>$1.6M</td></tr>
+<tr><td>Jul 2026</td><td>$4.4M</td><td>$2.5M</td><td>$0</td><td>$0</td><td>$1.9M</td></tr>
+<tr><td>Aug 2026</td><td>$3.9M</td><td>$2.4M</td><td>$500.0K</td><td>$4.0M</td><td>$-3.0M</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><span>Cash is oxygen • Plan capital calls</span><span>Page 3 of 10</span></div>
+</section>
+
+<section class="page">
+  <h1>Public Markets — Equities (Sample)</h1>
+  <div class="bar"></div>
+  <div class="two">
+    <div class="section">
+      <h2>Top Holdings</h2>
+      <table>
+        <thead><tr><th>Ticker / Name</th><th>Market</th><th>Value</th><th>% Port</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>S&P 500 ETF</td><td>US</td><td>$420.0M</td><td>33.6</td><td>Core beta</td></tr>
+<tr><td>Nifty 50 ETF</td><td>IN</td><td>$160.0M</td><td>12.8</td><td>India exposure</td></tr>
+<tr><td>Reliance Industries</td><td>IN</td><td>$60.0M</td><td>4.8</td><td>Strategic</td></tr>
+<tr><td>Infosys</td><td>IN</td><td>$40.0M</td><td>3.2</td><td>Quality IT</td></tr>
+<tr><td>MSCI World MinVol ETF</td><td>US</td><td>$80.0M</td><td>6.4</td><td>Defensive</td></tr>
+<tr><td>US Treasury 3‑mo (ladder)</td><td>US</td><td>$40.0M</td><td>3.2</td><td>Liquidity</td></tr>
+<tr><td>NASDAQ 100 ETF</td><td>US</td><td>$75.0M</td><td>6.0</td><td>Growth tilt</td></tr>
+<tr><td>ITC Ltd</td><td>IN</td><td>$25.0M</td><td>2.0</td><td>Staples</td></tr>
+<tr><td>HDFC Bank</td><td>IN</td><td>$35.0M</td><td>2.8</td><td>Financials</td></tr>
+<tr><td>Energy ETF</td><td>US</td><td>$30.0M</td><td>2.4</td><td>Inflation hedge</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Exposures</h2>
+      <table>
+        <thead><tr><th>Category</th><th>Weight %</th><th>Comment</th></tr></thead>
+        <tbody>
+          <tr><td>Country — India</td><td>21</td><td>Home bias ok</td></tr>
+          <tr><td>Country — US</td><td>59</td><td>Global leadership</td></tr>
+          <tr><td>Sector — Tech</td><td>33</td><td>Within limits</td></tr>
+          <tr><td>Factor — Growth</td><td>17</td><td>Balance w/ MinVol</td></tr>
+        </tbody>
+      </table>
+      <h2>Blacklists / Concentration Checks</h2>
+      <div class="note">No sanctions exposure. Largest single issuer at 4.8% (within 7%).</div>
+    </div>
+  </div>
+  <div class="foot"><span>Own quality • Mind concentration</span><span>Page 4 of 10</span></div>
+</section>
+
+<section class="page">
+  <h1>Fixed Income & Credit (Sample)</h1>
+  <div class="bar"></div>
+  <table>
+    <thead><tr><th>Segment</th><th>Duration</th><th>Yield %</th><th>Credit</th><th>Value</th><th>% Port</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>UST 1‑3Y</td><td>1.8</td><td>4.9</td><td>AA+</td><td>$120M</td><td>9.6</td><td>Ladder</td></tr>
+<tr><td>India T‑Bills 182d</td><td>0.5</td><td>6.9</td><td>Sov</td><td>$28M</td><td>2.2</td><td>Roll</td></tr>
+<tr><td>IG Corp USD</td><td>5.7</td><td>5.6</td><td>A</td><td>$84M</td><td>6.7</td><td>Barbell</td></tr>
+<tr><td>Munis (AA)</td><td>7.2</td><td>3.8</td><td>AA</td><td>$35M</td><td>2.8</td><td>Tax alpha</td></tr>
+    </tbody>
+  </table>
+  <h2>Lines / Collateral</h2>
+  <table>
+    <thead><tr><th>Facility</th><th>Limit</th><th>Drawn</th><th>Rate</th><th>Collateral</th></tr></thead>
+    <tbody>
+      <tr><td>Lombard — Global Custodian</td><td>$150M</td><td>$40M</td><td>32</td><td>Govies + ETFs</td></tr>
+<tr><td>RE Term Loan — INR</td><td>₹600 Cr</td><td>₹280 Cr</td><td>55</td><td>BKC + Pune assets</td></tr>
+    </tbody>
+  </table>
+  <div class="foot"><span>Yield with safety • Respect liquidity</span><span>Page 5 of 10</span></div>
+</section>
+
+<section class="page">
+  <h1>Private Markets — Commitments Tracker (Sample)</h1>
+  <div class="bar"></div>
+  <table>
+    <thead><tr><th>Fund / Vintage</th><th>Commit</th><th>Called %</th><th>NAV</th><th>DPI</th><th>TVPI</th><th>Next Call / Dist</th></tr></thead>
+    <tbody>
+      <tr><td>PE Buyout Fund IV (2019)</td><td>$120M</td><td>88%</td><td>$145M</td><td>0.35x</td><td>1.55x</td><td>Call $5M Oct</td></tr>
+<tr><td>VC Opportunity II (2021)</td><td>$60M</td><td>52%</td><td>$48M</td><td>0.05x</td><td>1.12x</td><td>Call $3M Nov</td></tr>
+<tr><td>Growth Equity 2020</td><td>$80M</td><td>70%</td><td>$96M</td><td>0.20x</td><td>1.40x</td><td>Dist $6M Dec</td></tr>
+    </tbody>
+  </table>
+  <h2>Secondaries / Co‑Invest</h2>
+  <div class="note">Evaluate selling 25% of 2017 vintage at 1.4x; co‑invest alongside Fund IV in logistics roll‑up.</div>
+  <div class="foot"><span>Track vintage exposure • J‑curve awareness</span><span>Page 6 of 10</span></div>
+</section>
+
+<section class="page">
+  <h1>Real Assets • Specialty (Sample)</h1>
+  <div class="bar"></div>
+  <table>
+    <thead><tr><th>Asset</th><th>Location</th><th>Value</th><th>Debt</th><th>Net</th><th>Yield %</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Office — BKC, Mumbai</td><td>IN</td><td>$95M</td><td>$30M</td><td>$65M</td><td>7.8</td><td>Lease roll 2026</td></tr>
+<tr><td>Logistics Park — Pune</td><td>IN</td><td>$120M</td><td>$50M</td><td>$70M</td><td>9.1</td><td>Phase‑2 capex</td></tr>
+<tr><td>Luxury Apt — NYC</td><td>US</td><td>$42M</td><td>$0</td><td>$42M</td><td>2.0</td><td>Personal use</td></tr>
+<tr><td>Art — Modern Collection</td><td>—</td><td>$28M</td><td>$0</td><td>$28M</td><td>—</td><td>Appraisal 2024</td></tr>
+    </tbody>
+  </table>
+  <h2>Insurance / Appraisals</h2>
+  <table>
+    <thead><tr><th>Asset</th><th>Coverage</th><th>Insurer</th><th>Renewal</th></tr></thead>
+    <tbody>
+      <tr><td>BKC Office</td><td>$65M</td><td>Global Insure</td><td>2026-06-30</td></tr>
+      <tr><td>Pune Logistics</td><td>$70M</td><td>India Insure</td><td>2026-04-01</td></tr>
+    </tbody>
+  </table>
+  <div class="foot"><span>Protect and document</span><span>Page 7 of 10</span></div>
+</section>
+
+<section class="page">
+  <h1>Risk • FX • Hedging Overlay (Sample)</h1>
+  <div class="bar"></div>
+  <div class="two">
+    <div class="section">
+      <h2>Risk Dashboard</h2>
+      <table>
+        <thead><tr><th>Metric</th><th>Value</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>1‑Day VaR (95%)</td><td>$18.5M</td><td>Within limit $25M</td></tr>
+          <tr><td>Max Drawdown</td><td>‑13.2%</td><td>Since 2020</td></tr>
+          <tr><td>Beta vs Global Equities</td><td>0.62</td><td>Target 0.6–0.7</td></tr>
+          <tr><td>Rate Duration (yrs)</td><td>3.1</td><td>Within 2.5–3.5</td></tr>
+        </tbody>
+      </table>
+      <h2>Stress Tests</h2>
+      <table>
+        <thead><tr><th>Scenario</th><th>P&L Impact</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td>Equities −20%</td><td>$-210.0M</td><td>Buy index puts / stagger rebalance</td></tr>
+<tr><td>Rates +200 bps</td><td>$-35.0M</td><td>Short duration; receive swaps</td></tr>
+<tr><td>USDINR +5%</td><td>$18.0M</td><td>Hedge 50% via forwards</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>FX & Hedging</h2>
+      <table>
+        <thead><tr><th>Currency</th><th>Net Exp.</th><th>Hedge %</th><th>Instruments</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>USD</td><td>$820.0M</td><td>50%</td><td>Forwards / Swaps</td><td>Match USD expenses</td></tr>
+<tr><td>INR</td><td>$310.0M</td><td>40%</td><td>NDFs</td><td>Hedge when USD strong</td></tr>
+<tr><td>EUR</td><td>$60.0M</td><td>30%</td><td>Forwards</td><td>Rolling 3‑m</td></tr>
+        </tbody>
+      </table>
+      <h2>Leverage & Margin</h2>
+      <table>
+        <thead><tr><th>Facility</th><th>Limit</th><th>Used</th><th>LTV %</th><th>Haircut / Terms</th></tr></thead>
+        <tbody>
+          <tr><td>Lombard — Global Custodian</td><td>$150M</td><td>$40M</td><td>32</td><td>Govies + ETFs</td></tr>
+<tr><td>RE Term Loan — INR</td><td>₹600 Cr</td><td>₹280 Cr</td><td>55</td><td>BKC + Pune assets</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><span>Survive any weather • Hedge what hurts</span><span>Page 8 of 10</span></div>
+</section>
+
+<section class="page">
+  <h1>Philanthropy • Impact (Sample)</h1>
+  <div class="bar"></div>
+  <div class="two">
+    <div class="section">
+      <h2>Foundation / DAF</h2>
+      <table>
+        <thead><tr><th>Vehicle</th><th>Assets</th><th>Annual Payout</th><th>Focus Areas</th></tr></thead>
+        <tbody>
+          <tr><td>Mehta Foundation</td><td>$180M</td><td>$9M (5%)</td><td>Air quality • Health • STEM</td></tr>
+        </tbody>
+      </table>
+      <h2>Grants Pipeline</h2>
+      <table>
+        <thead><tr><th>Org</th><th>Amount</th><th>Timing</th><th>Impact Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Clean Air Initiative</td><td>$5.0M</td><td>Q1</td><td>AQI drop KPI</td></tr>
+<tr><td>STEM Scholarships</td><td>$3.0M</td><td>Q2</td><td>500 students</td></tr>
+<tr><td>Rural Health Clinics</td><td>$7.0M</td><td>Q4</td><td>3 clinics</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Impact / ESG Lens</h2>
+      <table>
+        <thead><tr><th>Theme</th><th>Allocation %</th><th>KPIs</th></tr></thead>
+        <tbody>
+          <tr><td>Climate / Energy</td><td>6</td><td>tCO₂e avoided</td></tr>
+          <tr><td>Healthcare</td><td>4</td><td>Patients served</td></tr>
+          <tr><td>Education</td><td>3</td><td>Scholarships</td></tr>
+        </tbody>
+      </table>
+      <h2>Reputation / Press</h2>
+      <div class="note">Coordinate announcement schedule with IR; avoid conflict around earnings.</div>
+    </div>
+  </div>
+  <div class="foot"><span>Purpose fuels patience</span><span>Page 9 of 10</span></div>
+</section>
+
+<section class="page">
+  <h1>Advisors • Service Providers • IC Minutes (Sample)</h1>
+  <div class="bar"></div>
+  <div class="two">
+    <div class="section">
+      <h2>Key Relationships</h2>
+      <table>
+        <thead><tr><th>Firm</th><th>Role</th><th>Lead</th><th>Phone/Email</th><th>Mandate Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Global Custodian</td><td>Prime / Custody</td><td>S. Patel</td><td>+1‑212‑555‑0182</td><td>Multi‑jurisdiction</td></tr>
+<tr><td>Tax Counsel</td><td>International Tax</td><td>R. Iyer</td><td>+91‑22‑5550‑2233</td><td>Structuring & GAAR</td></tr>
+<tr><td>Estate Counsel</td><td>Trusts & Estate</td><td>L. Brown</td><td>+1‑650‑555‑3399</td><td>US/IN trusts</td></tr>
+<tr><td>Private Bank</td><td>Credit Lines</td><td>M. Singh</td><td>+91‑22‑5551‑7711</td><td>Lombard + RE</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>IC Agenda / Decisions</h2>
+      <table>
+        <thead><tr><th>Date</th><th>Topic</th><th>Decision</th><th>Owner</th><th>ETA</th></tr></thead>
+        <tbody>
+          <tr><td>2025-09-30</td><td>Trim US equities</td><td>Reduce 2.5%</td><td>CIO</td><td>2025-10-03</td></tr>
+          <tr><td>2025-09-30</td><td>Add IG bonds</td><td>+1.5% via ETF</td><td>PM FI</td><td>2025-10-05</td></tr>
+          <tr><td>2025-10-23</td><td>Review PE pacing</td><td>Maintain $120M/y</td><td>CIO</td><td>2025-10-28</td></tr>
+        </tbody>
+      </table>
+      <h2>Action Tracker</h2>
+      <table>
+        <thead><tr><th>Action</th><th>Owner</th><th>Due</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Hedge 20% USDINR</td><td>Treasury</td><td>2025-09-28</td><td>Open</td></tr>
+          <tr><td>Update IPS leverage limits</td><td>Risk</td><td>2025-10-13</td><td>In review</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><span>Great decisions leave a paper trail</span><span>Page 10 of 10</span></div>
+</section>
+
+</body></html>

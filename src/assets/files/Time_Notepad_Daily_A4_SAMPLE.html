@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Daily Time Management Notepad — SAMPLE</title><style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif; color:var(--ink); line-height:1.2; }
+  h1 { font-size:22px; margin:0 0 6px; }
+  h2 { font-size:15px; margin:0 0 4px; color:var(--ink); }
+  h3 { font-size:12px; margin:4px 0; color:var(--muted); }
+  .bar { height:4px; background:#000; margin:8px 0 10px; }
+  .meta { display:grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap:8px; margin-bottom:8px; }
+  .field { border:1px solid var(--rule); padding:6px 8px; height:34px; display:flex; align-items:center; font-size:12px; }
+  .label { color:var(--muted); margin-right:8px; }
+  .section { break-inside: avoid; margin-bottom:10px; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .three { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; }
+  table { width:100%; border-collapse:collapse; table-layout:fixed; }
+  th, td { border:1px solid var(--rule); padding:6px; font-size:12px; height:22px; vertical-align:top; }
+  th { background:#f2f2f2; text-align:left; }
+  .lines { border:1px solid var(--rule); background: repeating-linear-gradient(180deg,#fff,#fff 21px,#000 22px); height:130px; white-space:pre-line; padding:6px; }
+  .lines.l { height: 340px; }
+  .grid { width:100%; border:1px solid var(--rule); display:grid; gap:0; }
+  .grid.week { grid-template-columns: repeat(7, 1fr); }
+  .cell { border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); min-height:100px; padding:6px; }
+  .cell h4 { margin:0 0 4px; font-size:12px; color:var(--muted); }
+  .footer { display:flex; justify-content:space-between; font-size:11px; color:var(--muted); margin-top:6px; }
+  .page { page-break-after: always; padding-bottom:6px; }
+</style></head>
+<body>
+<section class="page">
+  <h1>Daily Time Management Notepad (Sample)</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">Date:</span> 2025-09-23</div>
+    <div class="field"><span class="label">Day:</span> Tuesday</div>
+    <div class="field"><span class="label">Focus word:</span> Deep</div>
+    <div class="field"><span class="label">Energy (1–5):</span> 4</div>
+  </div>
+
+  <div class="two">
+    <div class="section">
+      <h2>Top 3 MITs (Most Important Tasks)</h2>
+      <table>
+        <thead><tr><th style="width:6%">✓</th><th>Task</th><th style="width:22%">When</th><th style="width:22%">Outcome</th></tr></thead>
+        <tbody>
+          <tr><td>☐</td><td>Finish proposal v1</td><td>09:00–11:00</td><td>Send to client</td></tr>
+          <tr><td>☐</td><td>Client pricing call</td><td>12:00–12:30</td><td>Agree 8% cut</td></tr>
+          <tr><td>☐</td><td>Review PRs</td><td>14:30–16:00</td><td>Merge 3 PRs</td></tr>
+        </tbody>
+      </table>
+      <h3>Notes</h3>
+      <div class="lines">Block Slack during Deep Work
+Prepare slides for demo tomorrow
+Carry forward: vendor contract redlines</div>
+    </div>
+
+    <div class="section">
+      <h2>Tasks • Calls • Errands</h2>
+      <table>
+        <thead><tr><th style="width:6%">✓</th><th>Item</th><th style="width:26%">When</th></tr></thead>
+        <tbody>
+          <tr><td>☐</td><td>Pay electricity bill</td><td>16:00</td></tr>
+<tr><td>☐</td><td>Email vendor: PO update</td><td>11:30</td></tr>
+<tr><td>☐</td><td>Pick up dry cleaning</td><td>18:30</td></tr>
+<tr><td>☐</td><td>Book Friday doctor appt</td><td>10:45</td></tr>
+<tr><td>☐</td><td>Reply to finance thread</td><td>11:45</td></tr>
+<tr><td>☐</td><td>Schedule sprint retro</td><td>15:30</td></tr>
+<tr><td>☐</td><td>Buy gift for Sam</td><td>19:30</td></tr>
+<tr><td>☐</td><td>Refill groceries (online)</td><td>20:45</td></tr>
+        </tbody>
+      </table>
+      <h3>Quick Doodles</h3>
+      <div class="lines">Header options: minimal / bold
+CTA button → “Download”</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Timeline (05:00–22:30)</h2>
+    <table>
+      <thead><tr><th>Time</th><th>Plan</th><th>Actual / Notes</th></tr></thead>
+      <tbody><tr><td style='width:12%'>05:00</td><td></td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>05:30</td><td>Hydrate + light stretch</td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>06:00</td><td>Walk 30m</td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>06:30</td><td>Shower / get ready</td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>07:00</td><td>Breakfast</td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>07:30</td><td>Plan day • MITs</td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>08:00</td><td></td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>08:30</td><td></td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>09:00</td><td>Deep Work — Proposal v1</td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>09:30</td><td>Deep Work — Proposal v1</td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>10:00</td><td>Deep Work — Proposal v1</td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>10:30</td><td>Deep Work — Proposal v1</td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>11:00</td><td></td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>11:30</td><td>Emails batch</td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>12:00</td><td>Client call</td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>12:30</td><td>Client call</td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>13:00</td><td>Lunch</td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>13:30</td><td></td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>14:00</td><td></td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>14:30</td><td>Code Review</td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>15:00</td><td>Code Review</td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>15:30</td><td></td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>16:00</td><td>Admin / Bills</td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>16:30</td><td></td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>17:00</td><td></td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>17:30</td><td>Gym</td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>18:00</td><td></td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>18:30</td><td></td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>19:00</td><td>Dinner</td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>19:30</td><td></td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>20:00</td><td>Family / Read</td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>20:30</td><td></td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>21:00</td><td></td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>21:30</td><td>Plan tomorrow</td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>22:00</td><td></td><td style='width:32%'></td></tr>
+<tr><td style='width:12%'>22:30</td><td></td><td style='width:32%'></td></tr></tbody>
+    </table>
+  </div>
+
+  <div class="two">
+    <div class="section">
+      <h2>Eisenhower Matrix</h2>
+      <div class="two" style="gap:6px;">
+        <div class="lines"><b>Urgent • Important</b>
+Proposal v1
+Client call</div>
+        <div class="lines"><b>Not Urgent • Important</b>
+Read 20 pages
+Strategy draft</div>
+        <div class="lines"><b>Urgent • Not Important</b>
+Courier pickup</div>
+        <div class="lines"><b>Not Urgent • Not Important</b>
+Random scrolling</div>
+      </div>
+    </div>
+    <div class="section">
+      <h2>End of Day Review</h2>
+      <table>
+        <thead><tr><th style="width:36%">Prompt</th><th>Write</th></tr></thead>
+        <tbody>
+          <tr><td>1 win</td><td>Proposal delivered</td></tr>
+          <tr><td>1 obstacle</td><td>Context switching at noon</td></tr>
+          <tr><td>1 improvement for tomorrow</td><td>Batch chat apps twice/day</td></tr>
+        </tbody>
+      </table>
+      <div class="lines"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Time-block • Focus • Review</span><span>Daily Pad — A4</span>
+  </div>
+</section>
+</body></html>

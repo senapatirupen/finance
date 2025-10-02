@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wedding Planner Notepad (A4 Printable)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Noto Sans", "Helvetica Neue", Arial, sans-serif; color: var(--ink); line-height: 1.2; }
+  h1 { font-size: 22px; margin: 0 0 8px; letter-spacing: .3px; }
+  h2 { font-size: 16px; margin: 0 0 6px; }
+  h3 { font-size: 13px; margin: 6px 0 4px; color: var(--muted); }
+  .meta { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+  .meta .field { border: 1px solid var(--rule); padding: 6px 8px; height: 34px; display: flex; align-items: center; }
+  .meta .label { font-size: 12px; color: var(--muted); margin-right: 8px; }
+  .bar { height: 4px; background: #000; margin: 8px 0 10px; }
+  .section { break-inside: avoid; margin-bottom: 10px; }
+  .section .head { display: flex; justify-content: space-between; align-items: baseline; }
+  .section .desc { font-size: 11px; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  th, td { border: 1px solid var(--rule); padding: 6px 6px; font-size: 12px; height: 22px; }
+  th { background: #f2f2f2; text-align: left; }
+  td.amount { text-align: right; }
+  .sumrow td { font-weight: bold; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .note { border: 1px solid var(--rule); height: 180px; margin-top: 4px; background: repeating-linear-gradient(180deg, #fff, #fff 21px, #000 22px); }
+  .footer { display: flex; justify-content: space-between; font-size: 11px; margin-top: 6px; color: var(--muted); }
+  .page { page-break-after: always; }
+  .checkbox { display:inline-block; width:12px; height:12px; border:1px solid #000; margin-right:6px; vertical-align:middle; }
+  .sigline { border-bottom: 1px solid #000; width: 220px; height: 16px; display:inline-block; }
+  .pill { border:1px solid #000; padding:2px 6px; font-size:11px; border-radius:10px; }
+  .tiny { font-size: 10px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: Header + Wedding Overview -->
+<section class="page">
+  <h1>Wedding Planner Notepad</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">Couple Names:</span> ____________________________________</div>
+    <div class="field"><span class="label">Month / Year:</span> __________</div>
+    <div class="field"><span class="label">City:</span> __________________</div>
+  </div>
+  <div class="meta">
+    <div class="field"><span class="label">Primary Contact:</span> __________________</div>
+    <div class="field"><span class="label">Phone:</span> __________________</div>
+    <div class="field"><span class="label">Email:</span> __________________</div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head">
+        <h2>Key Events & Dates</h2>
+        <span class="desc">Haldi • Mehendi • Sangeet • Wedding • Reception (add others).</span>
+      </div>
+      <table>
+        <thead><tr><th style="width:22%">Event</th><th style="width:22%">Date</th><th style="width:22%">Start–End</th><th style="width:34%">Venue / Address</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head">
+        <h2>Budget Summary</h2>
+        <span class="desc">Plan vs Actual vs Paid vs Balance.</span>
+      </div>
+      <table>
+        <thead><tr><th style="width:30%">Category</th><th style="width:17%">Planned</th><th style="width:17%">Actual</th><th style="width:18%">Paid</th><th style="width:18%">Balance</th></tr></thead>
+        <tbody>
+          <tr><td>Venue</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td>Catering</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td>Decor/Flowers</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td>Photography/Video</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td>Outfits/Jewellery</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td>Makeup/Grooming</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td>Music/DJ</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td>Puja/Pandit</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td>Invites/Stationery</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td>Gifts/Return Gifts</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td>Transport</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td>Accommodation</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td>Misc/Contingency</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+          <tr class="sumrow"><td>Total</td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Prepared By: <span class="sigline"></span></span>
+    <span>Reviewed By: <span class="sigline"></span></span>
+  </div>
+</section>
+
+<!-- PAGE 2: Planning Timeline Checklist -->
+<section class="page">
+  <div class="section">
+    <div class="head">
+      <h2>Planning Timeline — Checklist</h2>
+      <span class="desc">Tick as you go from 6+ months to post-wedding.</span>
+    </div>
+    <table>
+      <thead><tr><th style="width:18%">When</th><th style="width:64%">Task</th><th style="width:18%">Owner</th></tr></thead>
+      <tbody>
+        <tr><td>6+ months</td><td><span class='checkbox'></span></td><td></td></tr>
+<tr><td>5 months</td><td><span class='checkbox'></span></td><td></td></tr>
+<tr><td>4 months</td><td><span class='checkbox'></span></td><td></td></tr>
+<tr><td>3 months</td><td><span class='checkbox'></span></td><td></td></tr>
+<tr><td>2 months</td><td><span class='checkbox'></span></td><td></td></tr>
+<tr><td>1 month</td><td><span class='checkbox'></span></td><td></td></tr>
+<tr><td>2 weeks</td><td><span class='checkbox'></span></td><td></td></tr>
+<tr><td>1 week</td><td><span class='checkbox'></span></td><td></td></tr>
+<tr><td>3 days</td><td><span class='checkbox'></span></td><td></td></tr>
+<tr><td>Day Before</td><td><span class='checkbox'></span></td><td></td></tr>
+<tr><td>Wedding Day (AM)</td><td><span class='checkbox'></span></td><td></td></tr>
+<tr><td>Wedding Day (PM)</td><td><span class='checkbox'></span></td><td></td></tr>
+<tr><td>Reception Day</td><td><span class='checkbox'></span></td><td></td></tr>
+<tr><td>Week After</td><td><span class='checkbox'></span></td><td></td></tr>
+<tr><td>Post-Wedding</td><td><span class='checkbox'></span></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="height:220px;"></div>
+</section>
+
+<!-- PAGE 3: Vendor Shortlist & Comparison -->
+<section class="page">
+  <div class="section">
+    <div class="head"><h2>Vendor Shortlist & Comparison</h2><span class="desc">Compare 3 options per category.</span></div>
+    <table>
+      <thead><tr><th style="width:16%">Category</th><th style="width:26%">Vendor / Contact</th><th style="width:14%">Quote (₹)</th><th style="width:12%">Includes</th><th style="width:12%">Hold/Booked</th><th style="width:20%">Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Venue</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td>Venue</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td>Venue</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+        <tr><td>Catering</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td>Catering</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td>Catering</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+        <tr><td>Decor/Flowers</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td>Decor/Flowers</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td>Decor/Flowers</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+        <tr><td>Photography/Video</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td>Photography/Video</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td>Photography/Video</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+        <tr><td>Music/DJ</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td>Music/DJ</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td>Music/DJ</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+        <tr><td>Makeup/Grooming</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td>Makeup/Grooming</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td>Makeup/Grooming</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+        <tr><td>Transport</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td>Transport</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td>Transport</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+        <tr><td>Accommodation</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td>Accommodation</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td>Accommodation</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+        <tr><td>Invites/Stationery</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td>Invites/Stationery</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td>Invites/Stationery</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+        <tr><td>Gifts/Return Gifts</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td>Gifts/Return Gifts</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td>Gifts/Return Gifts</td><td></td><td class='amount'></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PAGE 4: Vendor Bookings & Payments -->
+<section class="page">
+  <div class="section">
+    <div class="head"><h2>Vendor Bookings & Payment Schedule</h2><span class="desc">Track advances, milestones, and balances.</span></div>
+    <table>
+      <thead><tr><th style="width:20%">Vendor</th><th style="width:13%">Contact</th><th style="width:12%">Total (₹)</th><th style="width:12%">Advance (₹)</th><th style="width:12%">Milestone (₹)</th><th style="width:12%">Balance (₹)</th><th style="width:19%">Due Dates / Notes</th></tr></thead>
+      <tbody>
+        <tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+        <tr class="sumrow"><td colspan="2">Totals</td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PAGE 5: Guest List & RSVP -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Guest List Summary</h2><span class="desc">Counts by side & event.</span></div>
+      <table>
+        <thead><tr><th style="width:40%">Category</th><th style="width:20%">Planned</th><th style="width:20%">Confirmed</th><th style="width:20%">Attended</th></tr></thead>
+        <tbody>
+          <tr><td>Bride Side</td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td>Groom Side</td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td>Friends</td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td>Colleagues</td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td>VIP</td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td>Kids</td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+          <tr class="sumrow"><td>Total</td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+        </tbody>
+      </table>
+      <h3>Invites / RSVP</h3>
+      <table>
+        <thead><tr><th style="width:30%">Name</th><th style="width:16%">Side</th><th style="width:16%">Phone</th><th style="width:18%">Invite Sent</th><th style="width:20%">RSVP / Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td>B/G</td><td></td><td>Card/WhatsApp</td><td></td></tr>
+<tr><td></td><td>B/G</td><td></td><td>Card/WhatsApp</td><td></td></tr>
+<tr><td></td><td>B/G</td><td></td><td>Card/WhatsApp</td><td></td></tr>
+<tr><td></td><td>B/G</td><td></td><td>Card/WhatsApp</td><td></td></tr>
+<tr><td></td><td>B/G</td><td></td><td>Card/WhatsApp</td><td></td></tr>
+<tr><td></td><td>B/G</td><td></td><td>Card/WhatsApp</td><td></td></tr>
+<tr><td></td><td>B/G</td><td></td><td>Card/WhatsApp</td><td></td></tr>
+<tr><td></td><td>B/G</td><td></td><td>Card/WhatsApp</td><td></td></tr>
+<tr><td></td><td>B/G</td><td></td><td>Card/WhatsApp</td><td></td></tr>
+<tr><td></td><td>B/G</td><td></td><td>Card/WhatsApp</td><td></td></tr>
+<tr><td></td><td>B/G</td><td></td><td>Card/WhatsApp</td><td></td></tr>
+<tr><td></td><td>B/G</td><td></td><td>Card/WhatsApp</td><td></td></tr>
+<tr><td></td><td>B/G</td><td></td><td>Card/WhatsApp</td><td></td></tr>
+<tr><td></td><td>B/G</td><td></td><td>Card/WhatsApp</td><td></td></tr>
+<tr><td></td><td>B/G</td><td></td><td>Card/WhatsApp</td><td></td></tr>
+<tr><td></td><td>B/G</td><td></td><td>Card/WhatsApp</td><td></td></tr>
+<tr><td></td><td>B/G</td><td></td><td>Card/WhatsApp</td><td></td></tr>
+<tr><td></td><td>B/G</td><td></td><td>Card/WhatsApp</td><td></td></tr>
+<tr><td></td><td>B/G</td><td></td><td>Card/WhatsApp</td><td></td></tr>
+<tr><td></td><td>B/G</td><td></td><td>Card/WhatsApp</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Seating Plan</h2><span class="desc">Table / row mapping for reception.</span></div>
+      <table>
+        <thead><tr><th style="width:16%">Table/Row</th><th style="width:28%">Names</th><th style="width:18%">Side</th><th style="width:18%">Special Needs</th><th style="width:20%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 6: Accommodation & Travel -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Accommodation Planner</h2><span class="desc">Guests, rooms, check-in/out.</span></div>
+      <table>
+        <thead><tr><th style="width:26%">Hotel / Address</th><th style="width:12%">Room</th><th style="width:20%">Guests</th><th style="width:14%">Check-in</th><th style="width:14%">Check-out</th><th style="width:14%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Travel Planner</h2><span class="desc">Airport/rail pickups, buses, VIP cars.</span></div>
+      <table>
+        <thead><tr><th style="width:16%">Date</th><th style="width:20%">Guest / Group</th><th style="width:20%">From → To</th><th style="width:18%">Mode</th><th style="width:26%">Driver / Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td>Flight/Train/Bus/Car</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Flight/Train/Bus/Car</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Flight/Train/Bus/Car</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Flight/Train/Bus/Car</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Flight/Train/Bus/Car</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Flight/Train/Bus/Car</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Flight/Train/Bus/Car</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Flight/Train/Bus/Car</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Flight/Train/Bus/Car</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Flight/Train/Bus/Car</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Flight/Train/Bus/Car</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Flight/Train/Bus/Car</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Flight/Train/Bus/Car</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Flight/Train/Bus/Car</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Flight/Train/Bus/Car</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Flight/Train/Bus/Car</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Flight/Train/Bus/Car</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Flight/Train/Bus/Car</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 7: Outfits, Beauty & Ritual Items -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Outfits & Jewellery</h2><span class="desc">Bride, Groom, family; trials & fittings.</span></div>
+      <table>
+        <thead><tr><th style="width:20%">Person</th><th style="width:26%">Event / Outfit</th><th style="width:16%">Fitting</th><th style="width:18%">Pickup Date</th><th style="width:20%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Makeup, Hair & Grooming</h2><span class="desc">Slots for bride/groom & family.</span></div>
+      <table>
+        <thead><tr><th style="width:26%">Person</th><th style="width:18%">Event</th><th style="width:18%">Time</th><th style="width:18%">Artist</th><th style="width:20%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+      <h3>Ritual / Puja Items Checklist</h3>
+      <table>
+        <thead><tr><th style="width:40%">Item</th><th style="width:20%">Qty</th><th style="width:20%">Procured?</th><th style="width:20%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td class='amount'></td><td>Yes/No</td><td></td></tr>
+<tr><td></td><td class='amount'></td><td>Yes/No</td><td></td></tr>
+<tr><td></td><td class='amount'></td><td>Yes/No</td><td></td></tr>
+<tr><td></td><td class='amount'></td><td>Yes/No</td><td></td></tr>
+<tr><td></td><td class='amount'></td><td>Yes/No</td><td></td></tr>
+<tr><td></td><td class='amount'></td><td>Yes/No</td><td></td></tr>
+<tr><td></td><td class='amount'></td><td>Yes/No</td><td></td></tr>
+<tr><td></td><td class='amount'></td><td>Yes/No</td><td></td></tr>
+<tr><td></td><td class='amount'></td><td>Yes/No</td><td></td></tr>
+<tr><td></td><td class='amount'></td><td>Yes/No</td><td></td></tr>
+<tr><td></td><td class='amount'></td><td>Yes/No</td><td></td></tr>
+<tr><td></td><td class='amount'></td><td>Yes/No</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 8: Photography, Music & Program Flow -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Photography & Video — Shot List</h2><span class="desc">Must-have shots by event.</span></div>
+      <table>
+        <thead><tr><th style="width:30%">Event</th><th style="width:40%">Shot / People</th><th style="width:30%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Haldi</td><td></td><td></td></tr>
+<tr><td>Haldi</td><td></td><td></td></tr>
+<tr><td>Haldi</td><td></td><td></td></tr>
+<tr><td>Haldi</td><td></td><td></td></tr>
+          <tr><td>Mehendi</td><td></td><td></td></tr>
+<tr><td>Mehendi</td><td></td><td></td></tr>
+<tr><td>Mehendi</td><td></td><td></td></tr>
+<tr><td>Mehendi</td><td></td><td></td></tr>
+          <tr><td>Sangeet</td><td></td><td></td></tr>
+<tr><td>Sangeet</td><td></td><td></td></tr>
+<tr><td>Sangeet</td><td></td><td></td></tr>
+<tr><td>Sangeet</td><td></td><td></td></tr>
+          <tr><td>Wedding</td><td></td><td></td></tr>
+<tr><td>Wedding</td><td></td><td></td></tr>
+<tr><td>Wedding</td><td></td><td></td></tr>
+<tr><td>Wedding</td><td></td><td></td></tr>
+<tr><td>Wedding</td><td></td><td></td></tr>
+<tr><td>Wedding</td><td></td><td></td></tr>
+<tr><td>Wedding</td><td></td><td></td></tr>
+<tr><td>Wedding</td><td></td><td></td></tr>
+          <tr><td>Reception</td><td></td><td></td></tr>
+<tr><td>Reception</td><td></td><td></td></tr>
+<tr><td>Reception</td><td></td><td></td></tr>
+<tr><td>Reception</td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Music / DJ Playlist</h2><span class="desc">Entry songs, crowd pleasers, slow dance, bidaai.</span></div>
+      <table>
+        <thead><tr><th style="width:40%">Song / Track</th><th style="width:20%">Event</th><th style="width:20%">Cue / Timing</th><th style="width:20%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+      <h3>Program Flow (Run Sheet)</h3>
+      <table>
+        <thead><tr><th style="width:18%">Time</th><th style="width:32%">Activity</th><th style="width:20%">Location</th><th style="width:30%">Owner / Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 9: Menu & Tastings -->
+<section class="page">
+  <div class="section">
+    <div class="head"><h2>Menu Planner & Tasting Notes</h2><span class="desc">By event — veg/non-veg, counters, live stations.</span></div>
+    <table>
+      <thead><tr><th style="width:16%">Event</th><th style="width:28%">Starters</th><th style="width:28%">Mains</th><th style="width:14%">Desserts</th><th style="width:14%">Drinks</th></tr></thead>
+      <tbody>
+        <tr><td>Haldi</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Mehendi</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Sangeet</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Wedding</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Reception</td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+    <h3>Tasting Feedback</h3>
+    <table>
+      <thead><tr><th style="width:36%">Dish / Counter</th><th style="width:20%">Rating</th><th style="width:44%">Notes</th></tr></thead>
+      <tbody>
+        <tr><td></td><td>★ ★ ★ ★ ★</td><td></td></tr>
+<tr><td></td><td>★ ★ ★ ★ ★</td><td></td></tr>
+<tr><td></td><td>★ ★ ★ ★ ★</td><td></td></tr>
+<tr><td></td><td>★ ★ ★ ★ ★</td><td></td></tr>
+<tr><td></td><td>★ ★ ★ ★ ★</td><td></td></tr>
+<tr><td></td><td>★ ★ ★ ★ ★</td><td></td></tr>
+<tr><td></td><td>★ ★ ★ ★ ★</td><td></td></tr>
+<tr><td></td><td>★ ★ ★ ★ ★</td><td></td></tr>
+<tr><td></td><td>★ ★ ★ ★ ★</td><td></td></tr>
+<tr><td></td><td>★ ★ ★ ★ ★</td><td></td></tr>
+<tr><td></td><td>★ ★ ★ ★ ★</td><td></td></tr>
+<tr><td></td><td>★ ★ ★ ★ ★</td><td></td></tr>
+<tr><td></td><td>★ ★ ★ ★ ★</td><td></td></tr>
+<tr><td></td><td>★ ★ ★ ★ ★</td><td></td></tr>
+<tr><td></td><td>★ ★ ★ ★ ★</td><td></td></tr>
+<tr><td></td><td>★ ★ ★ ★ ★</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PAGE 10: Gifts & Stationery -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Gifts & Return Gifts</h2><span class="desc">Budget, vendors, labels.</span></div>
+      <table>
+        <thead><tr><th style="width:30%">Item</th><th style="width:16%">Qty</th><th style="width:18%">Budget (₹)</th><th style="width:18%">Spent (₹)</th><th style="width:18%">Vendor / Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Invites & Stationery</h2><span class="desc">Cards, e-invites, signages, thank-you notes.</span></div>
+      <table>
+        <thead><tr><th style="width:36%">Item</th><th style="width:20%">Qty</th><th style="width:24%">Vendor</th><th style="width:20%">Status</th></tr></thead>
+        <tbody>
+          <tr><td></td><td class='amount'></td><td></td><td>Design/Print/Delivered</td></tr>
+<tr><td></td><td class='amount'></td><td></td><td>Design/Print/Delivered</td></tr>
+<tr><td></td><td class='amount'></td><td></td><td>Design/Print/Delivered</td></tr>
+<tr><td></td><td class='amount'></td><td></td><td>Design/Print/Delivered</td></tr>
+<tr><td></td><td class='amount'></td><td></td><td>Design/Print/Delivered</td></tr>
+<tr><td></td><td class='amount'></td><td></td><td>Design/Print/Delivered</td></tr>
+<tr><td></td><td class='amount'></td><td></td><td>Design/Print/Delivered</td></tr>
+<tr><td></td><td class='amount'></td><td></td><td>Design/Print/Delivered</td></tr>
+<tr><td></td><td class='amount'></td><td></td><td>Design/Print/Delivered</td></tr>
+<tr><td></td><td class='amount'></td><td></td><td>Design/Print/Delivered</td></tr>
+<tr><td></td><td class='amount'></td><td></td><td>Design/Print/Delivered</td></tr>
+<tr><td></td><td class='amount'></td><td></td><td>Design/Print/Delivered</td></tr>
+<tr><td></td><td class='amount'></td><td></td><td>Design/Print/Delivered</td></tr>
+<tr><td></td><td class='amount'></td><td></td><td>Design/Print/Delivered</td></tr>
+<tr><td></td><td class='amount'></td><td></td><td>Design/Print/Delivered</td></tr>
+<tr><td></td><td class='amount'></td><td></td><td>Design/Print/Delivered</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 11: Emergency Contacts & Medical -->
+<section class="page">
+  <div class="section">
+    <div class="head"><h2>Emergency & Important Contacts</h2><span class="desc">Share with core team.</span></div>
+    <table>
+      <thead><tr><th style="width:26%">Contact</th><th style="width:16%">Role</th><th style="width:18%">Phone</th><th style="width:20%">Alt Phone</th><th style="width:20%">Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Planner / Coordinator</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Venue Manager</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Caterer Lead</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Decorator Lead</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Photographer</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>MC / DJ</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Makeup / Hair</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Drivers / Transport</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Pandit / Priest</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Security / Bouncers</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Family Focal (Bride)</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Family Focal (Groom)</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Nearest Hospital</td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+    <h3>Medical & Safety Notes</h3>
+    <div class="note" style="height:220px;"></div>
+  </div>
+</section>
+
+<!-- PAGE 12: Day-Of Run Sheet & Post-Wedding -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Day-Of Run Sheet</h2><span class="desc">Minute-by-minute timeline & responsibilities.</span></div>
+      <table>
+        <thead><tr><th style="width:16%">Time</th><th style="width:28%">What</th><th style="width:20%">Where</th><th style="width:20%">Owner</th><th style="width:16%">Done?</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Post-Wedding Tasks</h2><span class="desc">Thank-you notes, returns, settlements.</span></div>
+      <table>
+        <thead><tr><th style="width:40%">Task</th><th style="width:20%">Owner</th><th style="width:24%">Due</th><th style="width:16%">Done?</th></tr></thead>
+        <tbody>
+          <tr><td>Thank-you notes / Messages</td><td></td><td></td><td>☐</td></tr>
+          <tr><td>Vendor Feedback / Reviews</td><td></td><td></td><td>☐</td></tr>
+          <tr><td>Return Rentals / Deposits</td><td></td><td></td><td>☐</td></tr>
+          <tr><td>Settle Balances / Tips</td><td></td><td></td><td>☐</td></tr>
+          <tr><td>Photo/Video Delivery & Backup</td><td></td><td></td><td>☐</td></tr>
+          <tr><td>Name/Address Updates</td><td></td><td></td><td>☐</td></tr>
+          <tr><td>Gift Registry & Returns</td><td></td><td></td><td>☐</td></tr>
+          <tr><td>Honeymoon Planning / Forex</td><td></td><td></td><td>☐</td></tr>
+          <tr><td>Thank Vendors / Team</td><td></td><td></td><td>☐</td></tr>
+          <tr><td>Archive Files / Drive</td><td></td><td></td><td>☐</td></tr>
+          <tr><td>Other</td><td></td><td></td><td>☐</td></tr>
+<tr><td>Other</td><td></td><td></td><td>☐</td></tr>
+<tr><td>Other</td><td></td><td></td><td>☐</td></tr>
+<tr><td>Other</td><td></td><td></td><td>☐</td></tr>
+<tr><td>Other</td><td></td><td></td><td>☐</td></tr>
+<tr><td>Other</td><td></td><td></td><td>☐</td></tr>
+<tr><td>Other</td><td></td><td></td><td>☐</td></tr>
+<tr><td>Other</td><td></td><td></td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="footer">
+    <span>Designed for multi-event Indian weddings — print & keep with the coordinator.</span>
+    <span>Page ______ of ______</span>
+  </div>
+</section>
+
+</body>
+</html>

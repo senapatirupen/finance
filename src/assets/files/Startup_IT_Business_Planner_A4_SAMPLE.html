@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Startup IT Business Planner (Sample Filled) — A4 Printable</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,"Noto Sans","Helvetica Neue",Arial,sans-serif; color:var(--ink); line-height:1.2; }
+  h1 { font-size:22px; margin:0 0 8px; letter-spacing:.2px; }
+  h2 { font-size:16px; margin:0 0 6px; }
+  h3 { font-size:13px; margin:6px 0 4px; color:var(--muted); }
+  .meta { display:grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap:8px; margin-bottom:8px; }
+  .field { border:1px solid var(--rule); padding:6px 8px; height:34px; display:flex; align-items:center; }
+  .label { font-size:12px; color:var(--muted); margin-right:8px; }
+  .bar { height:4px; background:#000; margin: 8px 0 10px; }
+  .section { break-inside: avoid; margin-bottom: 10px; }
+  .section .head { display:flex; justify-content:space-between; align-items:baseline; }
+  .section .desc { font-size: 11px; color: var(--muted); }
+  table { width:100%; border-collapse: collapse; table-layout: fixed; }
+  th, td { border: 1px solid var(--rule); padding: 6px 6px; font-size: 12px; height: 22px; vertical-align: top; }
+  th { background:#f2f2f2; text-align:left; }
+  td.amount { text-align:right; }
+  .two-col { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .three-col { display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .note { border:1px solid var(--rule); margin-top: 4px; background: repeating-linear-gradient(180deg,#fff,#fff 21px,#000 22px); white-space: pre-line; }
+  .note.s { height: 120px; } .note.m { height: 220px; } .note.l { height: 420px; }
+  .footer { display:flex; justify-content:space-between; font-size:11px; margin-top:6px; color:var(--muted); }
+  .page { page-break-after: always; }
+  .mini { font-size:11px; color:var(--muted); }
+</style>
+</head>
+<body>
+
+<section class="page">
+  <h1>Startup IT Business Planner — Venture Snapshot (Sample)</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">Venture / Project:</span> StackSprint Technologies</div>
+    <div class="field"><span class="label">Owner:</span> Priya Nair (CEO)</div>
+    <div class="field"><span class="label">Date:</span> 2025-09-13</div>
+    <div class="field"><span class="label">Version:</span> v1.0</div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Vision • One‑liner</h2><span class="desc">What value, for whom, by how</span></div>
+      <div class="note s">We help Indian SMBs deploy, monitor, and secure cloud apps in days (not months) with a managed DevOps service and a lightweight monitoring SaaS.</div>
+      <h3>Problem → Solution → UVP</h3>
+      <table>
+        <thead><tr><th>Problem (Top 3)</th><th>Solution</th><th>Unique Value Proposition</th></tr></thead>
+        <tbody>
+          <tr><td>Cloud setup is slow/expensive</td><td>Fixed‑scope launch kits (AWS/Azure)</td><td>Launch in 7 days with transparent pricing</td></tr>
+          <tr><td>Poor visibility & on‑call chaos</td><td>SaaS monitoring + playbooks</td><td>Single pane + auto‑playbook alerts</td></tr>
+          <tr><td>Security & compliance gaps</td><td>Managed updates & CIS benchmarks</td><td>“Secure by default” templates</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Customer Segments & Personas</h2><span class="desc">Who pays; who uses</span></div>
+      <table>
+        <thead><tr><th>Segment</th><th>Persona</th><th>Pain/Need</th><th>Current workaround</th></tr></thead>
+        <tbody>
+          <tr><td>SMB SaaS (India)</td><td>CTO w/ 5‑10 eng</td><td>Faster, reliable releases</td><td>Freelancers; ad‑hoc scripts</td></tr>
+          <tr><td>Fintech/Edtech mid‑market</td><td>Head of Eng</td><td>Compliance, uptime</td><td>Patchwork tools; manual checks</td></tr>
+          <tr><td>Agencies</td><td>Founder/PM</td><td>Repeatable infra for clients</td><td>Project‑wise reinventing wheel</td></tr>
+        </tbody>
+      </table>
+      <h3>Early Adopter Criteria</h3>
+      <div class="note s">• India‑based SMBs on AWS/Azure • Willing to standardize on our templates • Urgent need: go live in &lt; 30 days</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Market Sizing</h2><span class="desc">TAM • SAM • SOM (₹)</span></div>
+      <table>
+        <thead><tr><th>TAM</th><th>SAM</th><th>SOM (Year 3)</th><th>Assumptions</th></tr></thead>
+        <tbody>
+          <tr><td class="amount">₹2,000 Cr</td><td class="amount">₹200 Cr</td><td class="amount">₹12 Cr</td><td>Target 600 SMBs; 1–3L ACV</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Competitive Landscape</h2><span class="desc">Alternatives vs our edge</span></div>
+      <table>
+        <thead><tr><th>Competitor</th><th>Strengths</th><th>Weaknesses</th><th>Our edge</th></tr></thead>
+        <tbody>
+          <tr><td>Global MSPs</td><td>Scale, brand</td><td>Expensive, slow</td><td>SMB‑focused, fixed price</td></tr>
+          <tr><td>Freelancers</td><td>Low cost</td><td>Inconsistent quality</td><td>Templates + SLAs</td></tr>
+          <tr><td>DIY Tooling</td><td>Flexible</td><td>Time‑consuming</td><td>Done‑for‑you + SaaS</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Clarity first — problem, customer, value</span>
+    <span>Page 1 of 4</span>
+  </div>
+</section>
+
+<section class="page">
+  <h1>Business Model • Pricing • Unit Economics (Sample)</h1>
+  <div class="bar"></div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Business Model</h2><span class="desc">How we make money</span></div>
+      <table>
+        <thead><tr><th>Revenue Stream</th><th>Price / Unit</th><th>Frequency</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>SaaS Monitoring</td><td class="amount">₹6,000 / acct / mo</td><td>Monthly</td><td>₹60k/yr with annual</td></tr>
+          <tr><td>Managed DevOps</td><td class="amount">₹1.5–3.0 L / mo</td><td>Retainer</td><td>Tiered SLOs</td></tr>
+          <tr><td>Launch Kit</td><td class="amount">₹2.0 L</td><td>One‑time</td><td>7‑day setup</td></tr>
+        </tbody>
+      </table>
+      <h3>Pricing Tiers</h3>
+      <table>
+        <thead><tr><th>Tier</th><th>Price ₹</th><th>Target customer</th><th>Key features</th></tr></thead>
+        <tbody>
+          <tr><td>Basic</td><td class="amount">₹6k/mo</td><td>Seed SMB</td><td>Uptime + alerts</td></tr>
+          <tr><td>Pro</td><td class="amount">₹12k/mo</td><td>Growing SMB</td><td>APM + SLOs + playbooks</td></tr>
+          <tr><td>Enterprise</td><td class="amount">₹30k/mo</td><td>Mid‑market</td><td>Multi‑acct + SSO + audit</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Unit Economics (Month)</h2><span class="desc">Track viability</span></div>
+      <table>
+        <thead><tr><th>Metric</th><th>Target</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>ARPU</td><td class="amount">₹12,000</td><td>Blend of SaaS + services</td></tr>
+          <tr><td>Gross margin %</td><td class="amount">65%</td><td>SaaS 80%, services 50%</td></tr>
+          <tr><td>CAC</td><td class="amount">₹30,000</td><td>Outbound + founder‑led</td></tr>
+          <tr><td>Payback period</td><td class="amount">&lt; 3 mo</td><td>Annual prepay target</td></tr>
+          <tr><td>LTV & LTV/CAC</td><td class="amount">₹3.6 L / 12x</td><td>ARPU × 3 yrs × margin</td></tr>
+          <tr><td>Churn %</td><td class="amount">&lt; 2%/mo</td><td>Design for stickiness</td></tr>
+        </tbody>
+      </table>
+      <h3>Costs & Burn (Monthly)</h3>
+      <table>
+        <thead><tr><th>Category</th><th>Budget ₹</th><th>Assumption</th><th>Owner</th></tr></thead>
+        <tbody>
+          <tr><td>Team</td><td class="amount">₹8.5 L</td><td>6 FTE</td><td>CEO</td></tr>
+          <tr><td>Cloud/Infra</td><td class="amount">₹1.2 L</td><td>Dev + prod</td><td>CTO</td></tr>
+          <tr><td>Marketing/Sales</td><td class="amount">₹2.0 L</td><td>Outbound + content</td><td>Head GTM</td></tr>
+          <tr><td>Ops/Legal/Admin</td><td class="amount">₹0.6 L</td><td>Rent + tools</td><td>COO</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Price for value • Watch CAC • Build margin</span>
+    <span>Page 2 of 4</span>
+  </div>
+</section>
+
+<section class="page">
+  <h1>Go‑to‑Market • Product Plan • Team (Sample)</h1>
+  <div class="bar"></div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>GTM Channels & Experiments</h2><span class="desc">Hypothesis → test → metric → budget</span></div>
+      <table>
+        <thead><tr><th>Channel</th><th>Experiment</th><th>Budget ₹</th><th>KPI</th><th>Owner</th></tr></thead>
+        <tbody>
+          <tr><td>Outbound</td><td>100 ICP emails/wk</td><td class="amount">₹30k</td><td>5 demos/wk</td><td>SDR</td></tr>
+          <tr><td>Content/SEO</td><td>4 posts/mo + 2 case studies</td><td class="amount">₹50k</td><td>1,500 organic visits/mo</td><td>Marketing</td></tr>
+          <tr><td>Partnerships</td><td>AWS & SI partners</td><td class="amount">₹20k</td><td>2 referrals/mo</td><td>CEO</td></tr>
+          <tr><td>Paid Ads</td><td>Brand + retarget</td><td class="amount">₹40k</td><td>₹2k CPL</td><td>Marketing</td></tr>
+        </tbody>
+      </table>
+      <h3>Sales Pipeline (This Quarter)</h3>
+      <table>
+        <thead><tr><th>Account</th><th>Stage</th><th>Deal ₹</th><th>Close %</th><th>Next step / owner</th></tr></thead>
+        <tbody>
+          <tr><td>FinEdge</td><td>Pilot</td><td class="amount">₹18 L</td><td class="amount">40%</td><td>Security review — CTO</td></tr>
+          <tr><td>EduSpark</td><td>Qual</td><td class="amount">₹9 L</td><td class="amount">30%</td><td>Pilot SOW — CEO</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Product Roadmap</h2><span class="desc">V0 → V1 → V2 features</span></div>
+      <table>
+        <thead><tr><th>#</th><th>Feature</th><th>Release</th><th>Metric</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Agentless infra monitor</td><td>V0</td><td>TTD &lt; 5m</td><td>AWS first</td></tr>
+          <tr><td>2</td><td>Runbook playbooks</td><td>V1</td><td>MTTR ↓ 30%</td><td>Slack/Teams</td></tr>
+          <tr><td>3</td><td>Compliance bench</td><td>V2</td><td>Score &gt; 80%</td><td>CIS AWS</td></tr>
+        </tbody>
+      </table>
+      <h3>Tech Stack</h3>
+      <table>
+        <thead><tr><th>Layer</th><th>Choice</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Frontend</td><td>React + TS</td><td>Shadcn UI</td></tr>
+          <tr><td>Backend</td><td>Node (NestJS)</td><td>Python workers</td></tr>
+          <tr><td>DB/Storage</td><td>Postgres + S3</td><td>RDS</td></tr>
+          <tr><td>Infra/Cloud</td><td>AWS (EKS)</td><td>IaC: Terraform</td></tr>
+          <tr><td>Security/Compliance</td><td>OIDC, CIS</td><td>DPDP prep</td></tr>
+          <tr><td>Analytics</td><td>Metabase</td><td>Product metrics</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Team & Hiring Plan</h2><span class="desc">Who does what; when to hire</span></div>
+      <table>
+        <thead><tr><th>Role</th><th>Owner / Hire</th><th>When</th><th>Cost ₹/mo</th><th>Top 3 outcomes</th></tr></thead>
+        <tbody>
+          <tr><td>CEO/Founder</td><td>Priya</td><td>Now</td><td class="amount">—</td><td>Revenue, GTM, Fundraise</td></tr>
+          <tr><td>CTO/Lead Eng</td><td>Arun</td><td>Now</td><td class="amount">—</td><td>Architecture, quality, security</td></tr>
+          <tr><td>PM</td><td>Hire</td><td>M3</td><td class="amount">₹2.0 L</td><td>Roadmap, feedback, outcomes</td></tr>
+          <tr><td>AE/SDR</td><td>Hire</td><td>M2</td><td class="amount">₹1.5 L</td><td>Pipeline, demos, closes</td></tr>
+        </tbody>
+      </table>
+      <h3>Advisors / Partners</h3>
+      <div class="note s">• AWS Startup team contact • Legal advisor (DPDP)</div>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Operating Cadence</h2><span class="desc">Rituals & dashboards</span></div>
+      <table>
+        <thead><tr><th>Ritual</th><th>Owner</th><th>Frequency</th><th>Artifact</th></tr></thead>
+        <tbody>
+          <tr><td>Weekly exec</td><td>CEO</td><td>Fri</td><td>Scorecard, blockers</td></tr>
+          <tr><td>Sprint planning</td><td>CTO</td><td>Alternate Mon</td><td>Board</td></tr>
+          <tr><td>Customer calls</td><td>CEO</td><td>2×/wk</td><td>Notes in CRM</td></tr>
+        </tbody>
+      </table>
+      <h3>Legal & Compliance</h3>
+      <table>
+        <thead><tr><th>Item</th><th>Status</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Entity/Tax</td><td>Incorporated</td><td>Delaware + India subsidiary later</td></tr>
+          <tr><td>Contracts/MSA/SLA</td><td>Drafted</td><td>Standard SLOs</td></tr>
+          <tr><td>Data privacy (DPDP)</td><td>Planned</td><td>Policy by M2</td></tr>
+          <tr><td>IP/Assignments</td><td>Signed</td><td>All employees</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Ship value early • Talk to customers weekly</span>
+    <span>Page 3 of 4</span>
+  </div>
+</section>
+
+<section class="page">
+  <h1>Finance • OKRs • Risks • Milestones (Sample)</h1>
+  <div class="bar"></div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>12‑Month Budget (₹)</h2><span class="desc">Simple view</span></div>
+      <table>
+        <thead><tr><th>Month</th><th>Revenue</th><th>COGS</th><th>Opex</th><th>Net burn / Profit</th></tr></thead>
+        <tbody>
+          <tr><td>M1</td><td class="amount">₹4.0 L</td><td class="amount">₹1.2 L</td><td class="amount">₹10.3 L</td><td class="amount">‑₹7.5 L</td></tr>
+          <tr><td>M2</td><td class="amount">₹6.0 L</td><td class="amount">₹1.4 L</td><td class="amount">₹10.8 L</td><td class="amount">‑₹6.2 L</td></tr>
+          <tr><td>M3</td><td class="amount">₹8.0 L</td><td class="amount">₹1.6 L</td><td class="amount">₹11.0 L</td><td class="amount">‑₹4.6 L</td></tr>
+          <tr><td>M4</td><td class="amount">₹10.0 L</td><td class="amount">₹1.8 L</td><td class="amount">₹11.2 L</td><td class="amount">‑₹3.0 L</td></tr>
+          <tr><td>M5</td><td class="amount">₹12.0 L</td><td class="amount">₹2.0 L</td><td class="amount">₹11.6 L</td><td class="amount">‑₹1.6 L</td></tr>
+          <tr><td>M6</td><td class="amount">₹14.0 L</td><td class="amount">₹2.2 L</td><td class="amount">₹12.0 L</td><td class="amount">‑₹0.2 L</td></tr>
+          <tr><td>M7</td><td class="amount">₹16.0 L</td><td class="amount">₹2.5 L</td><td class="amount">₹12.3 L</td><td class="amount">₹1.2 L</td></tr>
+          <tr><td>M8</td><td class="amount">₹18.0 L</td><td class="amount">₹2.8 L</td><td class="amount">₹12.6 L</td><td class="amount">₹2.6 L</td></tr>
+          <tr><td>M9</td><td class="amount">₹20.0 L</td><td class="amount">₹3.0 L</td><td class="amount">₹13.0 L</td><td class="amount">₹4.0 L</td></tr>
+          <tr><td>M10</td><td class="amount">₹22.0 L</td><td class="amount">₹3.2 L</td><td class="amount">₹13.4 L</td><td class="amount">₹5.4 L</td></tr>
+          <tr><td>M11</td><td class="amount">₹24.0 L</td><td class="amount">₹3.4 L</td><td class="amount">₹13.6 L</td><td class="amount">₹7.0 L</td></tr>
+          <tr><td>M12</td><td class="amount">₹26.0 L</td><td class="amount">₹3.6 L</td><td class="amount">₹14.0 L</td><td class="amount">₹8.4 L</td></tr>
+        </tbody>
+      </table>
+      <h3>Runway Calculator</h3>
+      <table>
+        <thead><tr><th>Starting cash ₹</th><th>Monthly burn ₹</th><th>Runway (mo)</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td class="amount">₹1.0 Cr</td><td class="amount">₹6.0 L → breakeven M6</td><td class="amount">~16</td><td>Raise seed in M5–M6</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Company OKRs (Quarter)</h2><span class="desc">Objectives & key results</span></div>
+      <table>
+        <thead><tr><th>Objective</th><th>Key Results</th><th>Owner</th></tr></thead>
+        <tbody>
+          <tr><td>Become the fastest SMB cloud launch partner</td><td>KR1: 10 launch kits • KR2: NPS ≥ 60 • KR3: Avg go‑live 7 days</td><td>CEO</td></tr>
+          <tr><td>Prove SaaS PMF</td><td>KR1: 25 logos • KR2: DAU/MAU ≥ 30% • KR3: Churn &lt; 3%</td><td>CTO/PM</td></tr>
+        </tbody>
+      </table>
+      <h3>Core KPIs (Weekly)</h3>
+      <table>
+        <thead><tr><th>Metric</th><th>Target</th><th>Week 1</th><th>Week 2</th><th>Week 3</th></tr></thead>
+        <tbody>
+          <tr><td>Leads → Qualified</td><td class="amount">25 → 10</td><td class="amount">22 → 8</td><td class="amount">27 → 11</td><td class="amount">26 → 10</td></tr>
+          <tr><td>Demos/Pilots</td><td class="amount">8 / 4</td><td class="amount">6 / 3</td><td class="amount">7 / 3</td><td class="amount">9 / 4</td></tr>
+          <tr><td>New MRR ₹</td><td class="amount">₹1.0 L</td><td class="amount">₹0.6 L</td><td class="amount">₹0.8 L</td><td class="amount">₹1.2 L</td></tr>
+          <tr><td>Churn %</td><td class="amount">&lt; 2%</td><td class="amount">0.8%</td><td class="amount">1.5%</td><td class="amount">1.2%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Risk Register</h2><span class="desc">Top 5 risks • trigger • mitigation</span></div>
+      <table>
+        <thead><tr><th>Risk</th><th>Trigger</th><th>Mitigation</th><th>Owner</th></tr></thead>
+        <tbody>
+          <tr><td>Founder bandwidth</td><td>Sales + delivery overlap</td><td>Hire PM + SDR by M3</td><td>CEO</td></tr>
+          <tr><td>Cloud costs</td><td>High ingestion</td><td>Sampling + budgets</td><td>CTO</td></tr>
+          <tr><td>Compliance delays</td><td>DPDP doubts</td><td>Legal advisor signed</td><td>COO</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Milestones (12 Months)</h2><span class="desc">Make progress visible</span></div>
+      <table>
+        <thead><tr><th>Month</th><th>Milestone</th><th>Metric</th><th>Owner</th></tr></thead>
+        <tbody>
+          <tr><td>M1</td><td>V0 live; 3 pilot customers</td><td>3 pilots</td><td>CTO</td></tr>
+          <tr><td>M3</td><td>First 10 paying logos</td><td>MRR ₹3 L</td><td>CEO</td></tr>
+          <tr><td>M6</td><td>Breakeven</td><td>Net ≥ 0</td><td>CEO</td></tr>
+          <tr><td>M9</td><td>Pro tier launched</td><td>ARPU ≥ ₹12k</td><td>PM</td></tr>
+          <tr><td>M12</td><td>50 SaaS logos • 20 retainers</td><td>MRR ₹12 L</td><td>CEO/CTO</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Focus on outcomes • Review weekly • Adjust fast</span>
+    <span>Page 4 of 4</span>
+  </div>
+</section>
+
+</body>
+</html>

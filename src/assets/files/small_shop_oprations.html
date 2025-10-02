@@ -1,0 +1,783 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Small Shop Operations Notepad (A4 Printable)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#131313; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Noto Sans", "Helvetica Neue", Arial, sans-serif; color: var(--ink); line-height: 1.2; }
+  h1 { font-size: 22px; margin: 0 0 8px; letter-spacing: .3px; }
+  h2 { font-size: 16px; margin: 0 0 6px; }
+  h3 { font-size: 13px; margin: 6px 0 4px; color: var(--muted); }
+  .meta { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+  .meta .field { border: 1px solid var(--rule); padding: 6px 8px; height: 34px; display: flex; align-items: center; }
+  .meta .label { font-size: 12px; color: var(--muted); margin-right: 8px; }
+  .bar { height: 4px; background: #000; margin: 8px 0 10px; }
+  .section { break-inside: avoid; margin-bottom: 10px; }
+  .section .head { display: flex; justify-content: space-between; align-items: baseline; }
+  .section .desc { font-size: 11px; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  th, td { border: 1px solid var(--rule); padding: 6px 6px; font-size: 12px; height: 22px; }
+  th { background: #f2f2f2; text-align: left; }
+  td.amount { text-align: right; }
+  .sumrow td { font-weight: bold; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .note { border: 1px solid var(--rule); height: 200px; margin-top: 4px; background: repeating-linear-gradient(180deg, #fff, #fff 21px, #000 22px); }
+  .footer { display: flex; justify-content: space-between; font-size: 11px; margin-top: 6px; color: var(--muted); }
+  .page { page-break-after: always; }
+  .checkbox { display:inline-block; width:12px; height:12px; border:1px solid #000; margin-right:6px; vertical-align:middle; }
+  .sigline { border-bottom: 1px solid #000; width: 220px; height: 16px; display:inline-block; }
+  .pill { border:1px solid #000; padding: 2px 6px; font-size: 11px; border-radius: 10px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<section class="page">
+  <h1>Small Shop Operations Notepad</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">Shop Name / Address:</span> ______________________________________</div>
+    <div class="field"><span class="label">Month / Year:</span> __________________</div>
+    <div class="field"><span class="label">Proprietor:</span> __________________</div>
+  </div>
+  <div class="meta">
+    <div class="field"><span class="label">GSTIN:</span> __________________________</div>
+    <div class="field"><span class="label">Phone:</span> __________________________</div>
+    <div class="field"><span class="label">UPI ID:</span> __________________________</div>
+  </div>
+
+  <!-- Daily Cash Book -->
+  <div class="section">
+    <div class="head">
+      <h2>Daily Cash Book</h2>
+      <span class="desc">Record daily opening/closing cash & all receipts/payments. Modes: Cash / UPI / Card.</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:7%">Date</th>
+          <th style="width:9%">Opening Cash</th>
+          <th style="width:8%">Cash Sales</th>
+          <th style="width:8%">UPI Sales</th>
+          <th style="width:8%">Card Sales</th>
+          <th style="width:9%">Other Receipts</th>
+          <th style="width:9%">Purchases (Cash)</th>
+          <th style="width:9%">Expenses</th>
+          <th style="width:9%">Bank Deposit</th>
+          <th style="width:8%">Owner Draw.</th>
+          <th style="width:8%">Other Pay</th>
+          <th style="width:8%">Closing Cash</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 31 days -->
+        <tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+        <tr class="sumrow"><td>Total</td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Cashier Signature: <span class="sigline"></span></span>
+    <span>Verified By: <span class="sigline"></span></span>
+  </div>
+</section>
+
+<!-- SALES REGISTER -->
+<section class="page">
+  <div class="section">
+    <div class="head">
+      <h2>Sales Register</h2>
+      <span class="desc">Tax invoice details with GST split (CGST/SGST).</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:8%">Inv #</th>
+          <th style="width:9%">Date</th>
+          <th style="width:17%">Customer / Phone</th>
+          <th style="width:17%">Item / HSN</th>
+          <th style="width:6%">Qty</th>
+          <th style="width:8%">Rate</th>
+          <th style="width:6%">Disc%</th>
+          <th style="width:6%">GST%</th>
+          <th style="width:8%">Taxable</th>
+          <th style="width:7%">CGST</th>
+          <th style="width:7%">SGST</th>
+          <th style="width:8%">Total</th>
+          <th style="width:7%">Mode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+        <tr class="sumrow"><td colspan="8">Monthly Sales Totals</td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PURCHASE REGISTER -->
+<section class="page">
+  <div class="section">
+    <div class="head">
+      <h2>Purchase Register</h2>
+      <span class="desc">Supplier bills with input tax credit (ITC) tracking.</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:9%">Bill #</th>
+          <th style="width:9%">Date</th>
+          <th style="width:20%">Supplier / GSTIN</th>
+          <th style="width:16%">Item / HSN</th>
+          <th style="width:6%">Qty</th>
+          <th style="width:8%">Rate</th>
+          <th style="width:6%">Disc%</th>
+          <th style="width:6%">GST%</th>
+          <th style="width:8%">Taxable</th>
+          <th style="width:6%">CGST</th>
+          <th style="width:6%">SGST</th>
+          <th style="width:8%">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td class='amount'></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+        <tr class="sumrow"><td colspan="8">Monthly Purchase Totals</td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- KHATA LEDGERS -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head">
+        <h2>Customer Khata (Receivables)</h2>
+        <span class="desc">Track credit sales & collections.</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:22%">Customer / Phone</th>
+            <th style="width:12%">Opening</th>
+            <th style="width:12%">Sales</th>
+            <th style="width:12%">Returns</th>
+            <th style="width:12%">Received</th>
+            <th style="width:12%">Balance</th>
+            <th style="width:18%">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head">
+        <h2>Supplier Khata (Payables)</h2>
+        <span class="desc">Track credit purchases & payments.</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:22%">Supplier / GSTIN</th>
+            <th style="width:12%">Opening</th>
+            <th style="width:12%">Purchases</th>
+            <th style="width:12%">Returns</th>
+            <th style="width:12%">Paid</th>
+            <th style="width:12%">Balance</th>
+            <th style="width:18%">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- INVENTORY OVERVIEW -->
+<section class="page">
+  <div class="section">
+    <div class="head">
+      <h2>Inventory Overview</h2>
+      <span class="desc">Maintain stock levels and reorder planning.</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:10%">SKU</th>
+          <th style="width:20%">Item</th>
+          <th style="width:7%">Unit</th>
+          <th style="width:8%">Open</th>
+          <th style="width:8%">Purchase</th>
+          <th style="width:8%">Sales</th>
+          <th style="width:8%">Damage</th>
+          <th style="width:8%">Closing</th>
+          <th style="width:10%">Reorder Lvl</th>
+          <th style="width:13%">Supplier</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- STOCK CARDS -->
+<section class="page">
+  <div class="section">
+    <div class="head">
+      <h2>Stock Cards (per Item)</h2>
+      <span class="desc">Cut & keep with shelf/bin. One card per item.</span>
+    </div>
+    <div class="three-col">
+      
+        <div style="border:1px solid #000; padding:6px; min-height:180px;">
+          <div><strong>Item / SKU:</strong> __________________________</div>
+          <div><strong>Unit:</strong> ____ &nbsp; <strong>Reorder Level:</strong> ____ &nbsp; <strong>Supplier:</strong> __________</div>
+          <table style="margin-top:6px;">
+            <thead>
+              <tr><th style="width:20%">Date</th><th style="width:20%">In</th><th style="width:20%">Out</th><th style="width:20%">Balance</th><th style="width:20%">Sign</th></tr>
+            </thead>
+            <tbody>
+              <tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+        
+
+        <div style="border:1px solid #000; padding:6px; min-height:180px;">
+          <div><strong>Item / SKU:</strong> __________________________</div>
+          <div><strong>Unit:</strong> ____ &nbsp; <strong>Reorder Level:</strong> ____ &nbsp; <strong>Supplier:</strong> __________</div>
+          <table style="margin-top:6px;">
+            <thead>
+              <tr><th style="width:20%">Date</th><th style="width:20%">In</th><th style="width:20%">Out</th><th style="width:20%">Balance</th><th style="width:20%">Sign</th></tr>
+            </thead>
+            <tbody>
+              <tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+        
+
+        <div style="border:1px solid #000; padding:6px; min-height:180px;">
+          <div><strong>Item / SKU:</strong> __________________________</div>
+          <div><strong>Unit:</strong> ____ &nbsp; <strong>Reorder Level:</strong> ____ &nbsp; <strong>Supplier:</strong> __________</div>
+          <table style="margin-top:6px;">
+            <thead>
+              <tr><th style="width:20%">Date</th><th style="width:20%">In</th><th style="width:20%">Out</th><th style="width:20%">Balance</th><th style="width:20%">Sign</th></tr>
+            </thead>
+            <tbody>
+              <tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+        
+
+        <div style="border:1px solid #000; padding:6px; min-height:180px;">
+          <div><strong>Item / SKU:</strong> __________________________</div>
+          <div><strong>Unit:</strong> ____ &nbsp; <strong>Reorder Level:</strong> ____ &nbsp; <strong>Supplier:</strong> __________</div>
+          <table style="margin-top:6px;">
+            <thead>
+              <tr><th style="width:20%">Date</th><th style="width:20%">In</th><th style="width:20%">Out</th><th style="width:20%">Balance</th><th style="width:20%">Sign</th></tr>
+            </thead>
+            <tbody>
+              <tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+        
+
+        <div style="border:1px solid #000; padding:6px; min-height:180px;">
+          <div><strong>Item / SKU:</strong> __________________________</div>
+          <div><strong>Unit:</strong> ____ &nbsp; <strong>Reorder Level:</strong> ____ &nbsp; <strong>Supplier:</strong> __________</div>
+          <table style="margin-top:6px;">
+            <thead>
+              <tr><th style="width:20%">Date</th><th style="width:20%">In</th><th style="width:20%">Out</th><th style="width:20%">Balance</th><th style="width:20%">Sign</th></tr>
+            </thead>
+            <tbody>
+              <tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+        
+
+        <div style="border:1px solid #000; padding:6px; min-height:180px;">
+          <div><strong>Item / SKU:</strong> __________________________</div>
+          <div><strong>Unit:</strong> ____ &nbsp; <strong>Reorder Level:</strong> ____ &nbsp; <strong>Supplier:</strong> __________</div>
+          <table style="margin-top:6px;">
+            <thead>
+              <tr><th style="width:20%">Date</th><th style="width:20%">In</th><th style="width:20%">Out</th><th style="width:20%">Balance</th><th style="width:20%">Sign</th></tr>
+            </thead>
+            <tbody>
+              <tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr><tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+        
+    </div>
+  </div>
+</section>
+
+<!-- REORDER & PRICE LIST -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head">
+        <h2>Reorder Planner</h2>
+        <span class="desc">Items below minimum stock.</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:26%">Item / SKU</th>
+            <th style="width:10%">Closing</th>
+            <th style="width:12%">Reorder Lvl</th>
+            <th style="width:12%">Qty to Order</th>
+            <th style="width:20%">Supplier</th>
+            <th style="width:20%">Lead Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head">
+        <h2>Price List</h2>
+        <span class="desc">MRP, selling price & tax rate.</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30%">Item / HSN</th>
+            <th style="width:14%">MRP (₹)</th>
+            <th style="width:14%">Sell Price (₹)</th>
+            <th style="width:10%">GST %</th>
+            <th style="width:16%">Last Update</th>
+            <th style="width:16%">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SETTLEMENT SUMMARY -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head">
+        <h2>UPI Settlement Summary</h2>
+        <span class="desc">Daily UPI collections & settlement.</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:16%">Date</th>
+            <th style="width:22%">UPI App / VPA</th>
+            <th style="width:18%">Amount (₹)</th>
+            <th style="width:22%">Ref / Txn ID</th>
+            <th style="width:22%">Settled On / Charges</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="head">
+        <h2>Card Settlement Summary</h2>
+        <span class="desc">POS sales & bank credits.</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:16%">Date</th>
+            <th style="width:22%">POS / Acquirer</th>
+            <th style="width:18%">Amount (₹)</th>
+            <th style="width:22%">Batch #</th>
+            <th style="width:22%">Settled On / MDR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- GST MONTHLY SUMMARY -->
+<section class="page">
+  <div class="section">
+    <div class="head">
+      <h2>GST Monthly Summary</h2>
+      <span class="desc">For GSTR-1 / GSTR-3B preparation.</span>
+    </div>
+    <div class="two-col">
+      <table>
+        <thead><tr><th>Particulars</th><th>Amount (₹)</th></tr></thead>
+        <tbody>
+          <tr><td>Taxable Outward Supplies (B2C)</td><td class="amount"></td></tr>
+          <tr><td>Taxable Outward Supplies (B2B)</td><td class="amount"></td></tr>
+          <tr><td>Exempt / Nil Rated Sales</td><td class="amount"></td></tr>
+          <tr><td>Output CGST</td><td class="amount"></td></tr>
+          <tr><td>Output SGST</td><td class="amount"></td></tr>
+          <tr><td>Output IGST</td><td class="amount"></td></tr>
+          <tr class="sumrow"><td>Total Output Tax</td><td class="amount"></td></tr>
+        </tbody>
+      </table>
+      <table>
+        <thead><tr><th>Particulars</th><th>Amount (₹)</th></tr></thead>
+        <tbody>
+          <tr><td>Taxable Purchases (ITC Eligible)</td><td class="amount"></td></tr>
+          <tr><td>Input CGST (ITC)</td><td class="amount"></td></tr>
+          <tr><td>Input SGST (ITC)</td><td class="amount"></td></tr>
+          <tr><td>Input IGST (ITC)</td><td class="amount"></td></tr>
+          <tr class="sumrow"><td>Total Input Tax Credit</td><td class="amount"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>HSN Summary</h3>
+    <table>
+      <thead><tr><th style="width:16%">HSN</th><th style="width:24%">Description</th><th style="width:10%">UQC</th><th style="width:10%">Qty</th><th style="width:10%">Taxable (₹)</th><th style="width:10%">CGST</th><th style="width:10%">SGST</th><th style="width:10%">IGST</th></tr></thead>
+      <tbody>
+        <tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+<tr><td></td><td></td><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- P&L SNAPSHOT -->
+<section class="page">
+  <div class="section">
+    <div class="head">
+      <h2>Monthly Profit & Loss Snapshot</h2>
+      <span class="desc">Use opening stock + purchases − closing stock for COGS.</span>
+    </div>
+    <table>
+      <thead><tr><th>Particulars</th><th>Amount (₹)</th></tr></thead>
+      <tbody>
+        <tr><td>Sales (incl. tax)</td><td class="amount"></td></tr>
+        <tr><td>Less: GST Collected</td><td class="amount"></td></tr>
+        <tr class="sumrow"><td>Net Sales (excl. tax)</td><td class="amount"></td></tr>
+        <tr><td>Opening Stock</td><td class="amount"></td></tr>
+        <tr><td>Add: Purchases</td><td class="amount"></td></tr>
+        <tr><td>Less: Closing Stock</td><td class="amount"></td></tr>
+        <tr class="sumrow"><td>Cost of Goods Sold (COGS)</td><td class="amount"></td></tr>
+        <tr class="sumrow"><td>Gross Profit (Net Sales − COGS)</td><td class="amount"></td></tr>
+        <tr><td>Expenses: Rent</td><td class="amount"></td></tr>
+        <tr><td>Expenses: Wages</td><td class="amount"></td></tr>
+        <tr><td>Expenses: Electricity / Water</td><td class="amount"></td></tr>
+        <tr><td>Expenses: Transport</td><td class="amount"></td></tr>
+        <tr><td>Expenses: Bank / POS Charges</td><td class="amount"></td></tr>
+        <tr><td>Expenses: Others</td><td class="amount"></td></tr>
+        <tr class="sumrow"><td>Total Expenses</td><td class="amount"></td></tr>
+        <tr class="sumrow"><td>Net Profit (Gross − Expenses)</td><td class="amount"></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- RETURNS / DAMAGE & STAFF / ORDERS -->
+<section class="page">
+  <div class="two-col">
+    <div class="section">
+      <div class="head">
+        <h2>Returns & Damage Log</h2>
+        <span class="desc">Customer returns, expired/damaged goods.</span>
+      </div>
+      <table>
+        <thead><tr><th style="width:18%">Date</th><th style="width:30%">Item / Reason</th><th style="width:10%">Qty</th><th style="width:14%">Amount (₹)</th><th style="width:14%">Supplier/Customer</th><th style="width:14%">Action</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+<tr><td></td><td></td><td class='amount'></td><td class='amount'></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head">
+        <h2>Staff Attendance & Payments</h2>
+        <span class="desc">Track days, wages, advances.</span>
+      </div>
+      <table>
+        <thead><tr><th style="width:22%">Name</th><th style="width:12%">Days</th><th style="width:12%">Rate/Day</th><th style="width:14%">Payable (₹)</th><th style="width:14%">Paid (₹)</th><th style="width:14%">Balance (₹)</th><th style="width:12%">Sign</th></tr></thead>
+        <tbody>
+          <tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="section">
+    <div class="head">
+      <h2>Order / Delivery Book</h2>
+      <span class="desc">Customer orders & local deliveries.</span>
+    </div>
+    <table>
+      <thead><tr><th style="width:10%">Date</th><th style="width:20%">Customer / Phone</th><th style="width:30%">Items / Qty</th><th style="width:14%">Due Date</th><th style="width:12%">Amount (₹)</th><th style="width:14%">Status</th></tr></thead>
+      <tbody>
+        <tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class='amount'></td><td></td></tr>
+      </tbody>
+    </table>
+    <h3>Notes</h3>
+    <div class="note"></div>
+  </div>
+
+  <div class="footer">
+    <span>Designed for Indian small shops — print & keep in file.</span>
+    <span>Page ______ of ______</span>
+  </div>
+</section>
+
+</body>
+</html>

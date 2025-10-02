@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Fortune 500 Operating System — A4 Notepad (Sample)</title><style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif; color:var(--ink); line-height:1.2; }
+  h1 { font-size:22px; margin:0 0 8px; }
+  h2 { font-size:16px; margin:8px 0 6px; }
+  h3 { font-size:13px; margin:6px 0 4px; color:var(--muted); }
+  .bar { height:4px; background:#000; margin:8px 0 10px; }
+  .meta { display:grid; grid-template-columns: repeat(4, 1fr); gap:8px; margin-bottom:8px; }
+  .field { border:1px solid var(--rule); padding:6px 8px; height:34px; display:flex; align-items:center; font-size:12px; }
+  .label { color:var(--muted); margin-right:8px; }
+  .section { break-inside: avoid; margin-bottom:10px; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .three { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; }
+  table { width:100%; border-collapse:collapse; table-layout:fixed; }
+  th, td { border:1px solid var(--rule); padding:6px; font-size:12px; height:22px; vertical-align:top; }
+  th { background:#f2f2f2; text-align:left; }
+  .note { border:1px solid var(--rule); background: repeating-linear-gradient(180deg,#fff,#fff 21px,#000 22px); height:120px; white-space:pre-line; padding:6px; }
+  .note.l { height:320px; }
+  .foot { display:flex; justify-content:space-between; font-size:11px; color:var(--muted); margin-top:6px; }
+  .page { page-break-after: always; padding-bottom:6px; }
+  .right { text-align:right; }
+  .rag { font-weight:bold; }
+</style></head>
+<body>
+
+<section class="page">
+  <h1>Strategy & OKR Cascade (Sample)</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">FY:</span> FY2025-26</div>
+    <div class="field"><span class="label">Quarter:</span> Q2</div>
+    <div class="field"><span class="label">Prepared by:</span> Corp Strat</div>
+    <div class="field"><span class="label">CEO Signoff:</span> ________</div>
+  </div>
+  <h2>Corporate OKRs</h2>
+  <table>
+    <thead><tr><th>#</th><th>Objective</th><th>Key Results (metrics)</th><th>Owner</th><th>Due</th><th>RAG</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Accelerate profitable growth</td><td>Revenue ₹ 48,000 Cr; GM% 33+</td><td>CRO</td><td>Q4</td><td class='rag'>🟡</td></tr>
+      <tr><td>2</td><td>Modernize supply chain</td><td>OTIF 96%; Inv Days 28</td><td>COO</td><td>Q3</td><td class='rag'>🟡</td></tr>
+      <tr><td>3</td><td>Delight customers</td><td>NPS 60; Churn &lt; 3%</td><td>CCO</td><td>Q4</td><td class='rag'>🟢</td></tr>
+      <tr><td>4</td><td>AI-first operations</td><td>20% ticket auto‑solve; 4 AI pilots to prod</td><td>CTO</td><td>Q3</td><td class='rag'>🔴</td></tr>
+      <tr><td>5</td><td>People & culture</td><td>eNPS 45; Attrition &lt; 12%</td><td>CHRO</td><td>Q4</td><td class='rag'>🟢</td></tr>
+    </tbody>
+  </table>
+  <div class="two">
+    <div class="section">
+      <h2>BU / Region OKRs</h2>
+      <table>
+        <thead><tr><th>BU / Region</th><th>Objective</th><th>Key Results</th><th>Owner</th><th>RAG</th></tr></thead>
+        <tbody>
+          <tr><td>India</td><td>Grow core 18%</td><td>Rev ₹ 8,600 Cr; AOV ₹1,420</td><td>GM India</td><td class='rag'>🟢</td></tr>
+          <tr><td>US</td><td>Enterprise push</td><td>10 Tier‑1 wins; CAC −12%</td><td>GM US</td><td class='rag'>🟡</td></tr>
+          <tr><td>EU</td><td>Stabilize margins</td><td>GM% 31; FX hedge 80%</td><td>GM EU</td><td class='rag'>🟡</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Functional OKRs</h2>
+      <table>
+        <thead><tr><th>Function</th><th>Objective</th><th>Key Results</th><th>Owner</th><th>RAG</th></tr></thead>
+        <tbody>
+          <tr><td>Ops</td><td>Lean roll‑out</td><td>Yield +150 bps</td><td>SVP Ops</td><td class='rag'>🟢</td></tr>
+          <tr><td>Tech</td><td>Platform reliability</td><td>SLA 99.95%</td><td>VP SRE</td><td class='rag'>🟢</td></tr>
+          <tr><td>Finance</td><td>Close faster</td><td>Day‑5 close</td><td>Controller</td><td class='rag'>🟡</td></tr>
+          <tr><td>HR</td><td>Leadership bench</td><td>Succession 2‑deep</td><td>CHRO</td><td class='rag'>🟢</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><span>Strategy to execution</span><span>Page 1 of 10</span></div>
+</section>
+
+<section class="page">
+  <h1>Monthly Business Review — Scorecard (Sample)</h1>
+  <div class="bar"></div>
+  <table>
+    <thead><tr><th>KPI</th><th>Target</th><th>Actual</th><th>Δ vs Target</th><th>Δ vs LY</th><th>RAG</th><th>Comment / Action</th></tr></thead>
+    <tbody>
+      <tr><td>Revenue ₹ Cr</td><td>3,950</td><td>3,820</td><td>‑130</td><td>+210</td><td class='rag'>🟡</td><td>FX headwinds; accelerate Q4 promos</td></tr>
+      <tr><td>Gross Margin %</td><td>33.0</td><td>32.4</td><td>‑0.6</td><td>+0.4</td><td class='rag'>🟡</td><td>Freight costs ↑; renegotiate lanes</td></tr>
+      <tr><td>Opex ₹ Cr</td><td>1,140</td><td>1,110</td><td>+30</td><td>‑20</td><td class='rag'>🟢</td><td>Hiring pause in G&A</td></tr>
+      <tr><td>EBITDA ₹ Cr</td><td>750</td><td>710</td><td>‑40</td><td>+55</td><td class='rag'>🟡</td><td>Mix shift to SMB</td></tr>
+      <tr><td>Free Cash Flow ₹ Cr</td><td>520</td><td>498</td><td>‑22</td><td>+40</td><td class='rag'>🟡</td><td>WC build for festive</td></tr>
+      <tr><td>NPS</td><td>60</td><td>58</td><td>‑2</td><td>+4</td><td class='rag'>🟡</td><td>Shipping SLAs in North</td></tr>
+      <tr><td>Churn %</td><td>3.0</td><td>2.7</td><td>+0.3</td><td>‑0.4</td><td class='rag'>🟢</td><td>Win‑back campaign</td></tr>
+    </tbody>
+  </table>
+  <div class="two">
+    <div class="section">
+      <h2>Top Wins</h2>
+      <div class="note l">• Tier‑1 logo signed (US)
+• AI deflection 17% (↑3 pts)
+• OTIF hit 95% (best in 6m)</div>
+    </div>
+    <div class="section">
+      <h2>Top Risks / Actions</h2>
+      <div class="note l">• Port congestion — dual source lanes
+• Cyber posture gaps — MFA rollout by 2025-09-28
+• Mid‑market softness — adjust pricing fences</div>
+    </div>
+  </div>
+  <div class="foot"><span>Relentless review cadence</span><span>Page 2 of 10</span></div>
+</section>
+
+<section class="page">
+  <h1>Financials & Capital Allocation (Sample)</h1>
+  <div class="bar"></div>
+  <div class="two">
+    <div class="section">
+      <h2>P&L Snapshot</h2>
+      <table>
+        <thead><tr><th>Line</th><th>Plan</th><th>Actual</th><th>Variance</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Revenue ₹ Cr</td><td>3,950</td><td>3,820</td><td>‑130</td><td>FX −70; volume −60</td></tr>
+          <tr><td>COGS ₹ Cr</td><td>2,645</td><td>2,586</td><td>+59</td><td>Freight savings</td></tr>
+          <tr><td>GM %</td><td>33.0</td><td>32.4</td><td>‑0.6</td><td>Mix</td></tr>
+          <tr><td>Opex ₹ Cr</td><td>1,140</td><td>1,110</td><td>+30</td><td>T&E discipline</td></tr>
+          <tr><td>EBITDA ₹ Cr</td><td>750</td><td>710</td><td>‑40</td><td>See above</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Cash Flow & Leverage</h2>
+      <table>
+        <thead><tr><th>Metric</th><th>Plan</th><th>Actual</th><th>Variance</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Operating CF ₹ Cr</td><td>620</td><td>605</td><td>‑15</td><td>Receivables ↑</td></tr>
+          <tr><td>Capex ₹ Cr</td><td>120</td><td>107</td><td>+13</td><td>Data center delay</td></tr>
+          <tr><td>Net Debt ₹ Cr</td><td>1,480</td><td>1,520</td><td>‑40</td><td>Buybacks timing</td></tr>
+          <tr><td>Net Debt/EBITDA</td><td>2.0</td><td>2.1</td><td>‑0.1</td><td>Within covenant</td></tr>
+        </tbody>
+      </table>
+      <h2>Capital Allocation</h2>
+      <table>
+        <thead><tr><th>Bucket</th><th>Budget</th><th>YTD</th><th>Balance</th><th>Comment</th></tr></thead>
+        <tbody>
+          <tr><td>Growth Capex</td><td>300</td><td>180</td><td>120</td><td>New line in Pune</td></tr>
+          <tr><td>Maintenance Capex</td><td>150</td><td>98</td><td>52</td><td>Plant upkeep</td></tr>
+          <tr><td>M&A</td><td>400</td><td>210</td><td>190</td><td>2 active deals</td></tr>
+          <tr><td>Buybacks / Dividends</td><td>500</td><td>260</td><td>240</td><td>Program running</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><span>Allocate capital with a moat mindset</span><span>Page 3 of 10</span></div>
+</section>
+
+<section class="page">
+  <h1>Enterprise Risk Register (Sample)</h1>
+  <div class="bar"></div>
+  <table>
+    <thead><tr><th>#</th><th>Risk</th><th>Owner</th><th>Impact</th><th>Likelihood</th><th>Score</th><th>Mitigation</th><th>RAG</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Supplier insolvency</td><td>COO</td><td>5</td><td>3</td><td>15</td><td>Dual‑source</td><td class='rag'>🟡</td><td>Alt vendor in eval</td></tr>
+      <tr><td>2</td><td>Cyber breach</td><td>CISO</td><td>5</td><td>2</td><td>10</td><td>MFA+EDR</td><td class='rag'>🟡</td><td>Phishing spikes</td></tr>
+      <tr><td>3</td><td>FX volatility</td><td>Treasury</td><td>3</td><td>4</td><td>12</td><td>Hedge 80%</td><td class='rag'>🟢</td><td>Policy in place</td></tr>
+    </tbody>
+  </table>
+  <div class="two">
+    <div class="section">
+      <h2>Emerging Risks</h2>
+      <div class="note l">• Policy change — data localization
+• Port congestion South‑East Asia</div>
+    </div>
+    <div class="section">
+      <h2>Issues / Incidents Log</h2>
+      <table>
+        <thead><tr><th>Date</th><th>Incident</th><th>Impact</th><th>Root Cause</th><th>Action / Owner</th></tr></thead>
+        <tbody>
+          <tr><td>2025-09-23</td><td>Cloud outage 23m</td><td>Minor</td><td>Config drift</td><td>Rollback; SRE — 24h RCA</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><span>See around corners</span><span>Page 4 of 10</span></div>
+</section>
+
+<section class="page">
+  <h1>Enterprise PMO — Portfolio (Sample)</h1>
+  <div class="bar"></div>
+  <table>
+    <thead><tr><th>Program</th><th>Budget ₹ Cr</th><th>Spent ₹ Cr</th><th>% Done</th><th>RAG</th><th>Next Milestone / Date</th><th>Critical Dependencies</th></tr></thead>
+    <tbody>
+      <tr><td>SCM Digitization</td><td>120</td><td>66</td><td>55</td><td class='rag'>🟡</td><td>WMS go‑live / 2025-10-23</td><td>Vendor SSO; DC slots</td></tr>
+      <tr><td>Customer 360</td><td>85</td><td>48</td><td>62</td><td class='rag'>🟢</td><td>CDP rollout / 2025-11-07</td><td>Data contracts</td></tr>
+      <tr><td>Plant Automation</td><td>200</td><td>74</td><td>41</td><td class='rag'>🔴</td><td>Robotics pilot / 2025-11-22</td><td>Capex customs clearance</td></tr>
+    </tbody>
+  </table>
+  <h2>Change Requests</h2>
+  <table>
+    <thead><tr><th>ID</th><th>Title</th><th>Scope/Cost/Schedule Impact</th><th>Status</th><th>Decision</th></tr></thead>
+    <tbody>
+      <tr><td>CR‑014</td><td>Add supplier portal</td><td>+₹4 Cr / +4w</td><td>Pending</td><td>—</td></tr>
+    </tbody>
+  </table>
+  <div class="foot"><span>Deliver outcomes, not activity</span><span>Page 5 of 10</span></div>
+</section>
+
+<section class="page">
+  <h1>Talent & Org Health (Sample)</h1>
+  <div class="bar"></div>
+  <div class="two">
+    <div class="section">
+      <h2>Headcount / Hiring / Attrition</h2>
+      <table>
+        <thead><tr><th>Function</th><th>HC</th><th>Open Reqs</th><th>New Hires</th><th>Attrition %</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Sales</td><td>820</td><td>24</td><td>12</td><td>10.8</td><td>Ramp mid‑market</td></tr>
+          <tr><td>Ops</td><td>1,540</td><td>15</td><td>18</td><td>11.2</td><td>Shift diff. pay</td></tr>
+          <tr><td>Tech</td><td>960</td><td>28</td><td>9</td><td>9.4</td><td>Data eng. hot</td></tr>
+        </tbody>
+      </table>
+      <h2>Diversity & Inclusion</h2>
+      <table>
+        <thead><tr><th>Metric</th><th>Target</th><th>Actual</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Women in Leadership %</td><td>32</td><td>29</td><td>Mentor prog Q3</td></tr>
+          <tr><td>Hiring Slate Diversity %</td><td>70</td><td>64</td><td>Expand partners</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Succession — 9‑Box Snapshot</h2>
+      <table>
+        <thead><tr><th>High Potential</th><th>Medium</th><th>Low</th></tr></thead>
+        <tbody>
+          <tr><td>VP Sales (A)</td><td></td><td></td></tr>
+          <tr><td></td><td>Plant Manager (B)</td><td></td></tr>
+          <tr><td></td><td></td><td>Dir Ops (C)</td></tr>
+        </tbody>
+      </table>
+      <h2>Top Talent / Retention Watchlist</h2>
+      <table>
+        <thead><tr><th>Name</th><th>Role</th><th>Risk</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td>R. Shah</td><td>Chief Architect</td><td>Medium</td><td>Equity refresh</td></tr>
+          <tr><td>M. Rao</td><td>Plant Lead</td><td>High</td><td>Rotation + bonus</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><span>Right people, right seats</span><span>Page 6 of 10</span></div>
+</section>
+
+<section class="page">
+  <h1>Customer & Product Portfolio (Sample)</h1>
+  <div class="bar"></div>
+  <div class="two">
+    <div class="section">
+      <h2>Customer Health</h2>
+      <table>
+        <thead><tr><th>Metric</th><th>Target</th><th>Actual</th><th>RAG</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>NPS</td><td>60</td><td>58</td><td class='rag'>🟡</td><td>Delivery SLAs</td></tr>
+          <tr><td>Churn %</td><td>3.0</td><td>2.7</td><td class='rag'>🟢</td><td>Win‑backs</td></tr>
+          <tr><td>On‑Time Delivery %</td><td>96</td><td>95</td><td class='rag'>🟡</td><td>North hub</td></tr>
+        </tbody>
+      </table>
+      <h2>Top Accounts — QBR Notes</h2>
+      <table>
+        <thead><tr><th>Account</th><th>Owner</th><th>Opportunity</th><th>Risk</th><th>Next Action / Date</th></tr></thead>
+        <tbody>
+          <tr><td>Alpha Retail</td><td>SM</td><td>Cross‑sell CX suite</td><td>Price pressure</td><td>Exec meet / 2025-10-03</td></tr>
+          <tr><td>Zen Logistics</td><td>RM</td><td>Global roll‑out</td><td>Competing RFP</td><td>Ref case / 2025-10-07</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Product / Unit Economics</h2>
+      <table>
+        <thead><tr><th>Product</th><th>Price ₹</th><th>COGS ₹</th><th>GM %</th><th>AOV ₹</th><th>CAC ₹</th><th>Payback (mo)</th></tr></thead>
+        <tbody>
+          <tr><td>Core Suite</td><td>1,900</td><td>1,180</td><td>38</td><td>12,400</td><td>3,800</td><td>6.0</td></tr>
+          <tr><td>Pro Add‑on</td><td>790</td><td>420</td><td>47</td><td>2,600</td><td>1,200</td><td>4.5</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><span>Delight customers • Grow profitable products</span><span>Page 7 of 10</span></div>
+</section>
+
+<section class="page">
+  <h1>Operations & Supply Chain (Sample)</h1>
+  <div class="bar"></div>
+  <table>
+    <thead><tr><th>Plant / Node</th><th>Capacity %</th><th>Utilization %</th><th>Yield %</th><th>OTIF %</th><th>Inv Days</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Pune DC</td><td>100</td><td>82</td><td>98.5</td><td>96</td><td>27</td><td>Ramp festive</td></tr>
+      <tr><td>Chennai Plant</td><td>100</td><td>74</td><td>97.1</td><td>95</td><td>31</td><td>Line 2 maint</td></tr>
+      <tr><td>Delhi Hub</td><td>100</td><td>68</td><td>—</td><td>93</td><td>29</td><td>Carrier change</td></tr>
+    </tbody>
+  </table>
+  <h2>Supplier Performance</h2>
+  <table>
+    <thead><tr><th>Supplier</th><th>OTD %</th><th>Quality PPM</th><th>Lead Time</th><th>Cost Δ%</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr><td>ABC Plastics</td><td>92</td><td>230</td><td>14d</td><td>‑1.8</td><td>Increase share</td></tr>
+      <tr><td>Zen Metals</td><td>86</td><td>480</td><td>21d</td><td>+2.4</td><td>Corrective plan</td></tr>
+    </tbody>
+  </table>
+  <div class="foot"><span>Flow > Firefighting</span><span>Page 8 of 10</span></div>
+</section>
+
+<section class="page">
+  <h1>ESG • Compliance • Security (Sample)</h1>
+  <div class="bar"></div>
+  <div class="two">
+    <div class="section">
+      <h2>ESG Dashboard</h2>
+      <table>
+        <thead><tr><th>Metric</th><th>Target</th><th>Actual</th><th>RAG</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Scope 1+2 Emissions</td><td>‑8% YoY</td><td>‑6.2%</td><td class='rag'>🟡</td><td>RECs delayed</td></tr>
+          <tr><td>TRIR</td><td>&lt; 0.35</td><td>0.31</td><td class='rag'>🟢</td><td>Safety blitz</td></tr>
+          <tr><td>Waste/Recycling %</td><td>65</td><td>61</td><td class='rag'>🟡</td><td>Vendor change</td></tr>
+        </tbody>
+      </table>
+      <h2>Compliance & Audit</h2>
+      <table>
+        <thead><tr><th>Area</th><th>Last Audit</th><th>Findings</th><th>Remediation / ETA</th></tr></thead>
+        <tbody>
+          <tr><td>Sox ITGC</td><td>2025-09-03</td><td>2 Minor</td><td>Fix by 2025-10-08</td></tr>
+          <tr><td>Plant EHS</td><td>2025-09-11</td><td>None</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Cybersecurity & Privacy</h2>
+      <table>
+        <thead><tr><th>Control</th><th>Status</th><th>Gap</th><th>Action / Owner</th><th>ETA</th></tr></thead>
+        <tbody>
+          <tr><td>MFA</td><td>80%</td><td>Legacy apps</td><td>IdP upgrade / CISO</td><td>2025-10-23</td></tr>
+          <tr><td>EDR Coverage</td><td>92%</td><td>Linux fleet</td><td>Agent roll‑out / SecOps</td><td>2025-10-14</td></tr>
+        </tbody>
+      </table>
+      <h2>Incidents</h2>
+      <table>
+        <thead><tr><th>Date</th><th>Type</th><th>Severity</th><th>Containment</th><th>Postmortem</th></tr></thead>
+        <tbody>
+          <tr><td>2025-09-18</td><td>Phishing</td><td>Low</td><td>Reset creds</td><td>RCA filed</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><span>Earn trust • Stay compliant • Be secure</span><span>Page 9 of 10</span></div>
+</section>
+
+<section class="page">
+  <h1>Board & Investor Relations (Sample)</h1>
+  <div class="bar"></div>
+  <div class="two">
+    <div class="section">
+      <h2>Board Agenda / Minutes</h2>
+      <table>
+        <thead><tr><th>Topic</th><th>Presenter</th><th>Time</th><th>Decision / Action</th><th>Owner</th><th>ETA</th></tr></thead>
+        <tbody>
+          <tr><td>Q2 Results</td><td>CFO</td><td>30m</td><td>Approve guidance</td><td>CFO</td><td>2025-09-25</td></tr>
+          <tr><td>Capex — Pune line</td><td>COO</td><td>20m</td><td>Proceed ₹120 Cr</td><td>COO</td><td>2025-11-22</td></tr>
+          <tr><td>Cyber posture</td><td>CISO</td><td>15m</td><td>MFA by EOM</td><td>CISO</td><td>2025-10-23</td></tr>
+        </tbody>
+      </table>
+      <h2>Decisions Register</h2>
+      <table>
+        <thead><tr><th>ID</th><th>Decision</th><th>Date</th><th>Owner</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>D‑102</td><td>Buyback ₹500 Cr</td><td>2025-09-13</td><td>CFO</td><td>In progress</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h2>IR Calendar & Guidance</h2>
+      <table>
+        <thead><tr><th>Date</th><th>Event</th><th>Message Pillars</th><th>Guidance / KPIs</th></tr></thead>
+        <tbody>
+          <tr><td>2025-09-30</td><td>Investor Day</td><td>Profitable growth • AI ops • Supply resilience</td><td>FY Rev 12–14%; GM 33–34%</td></tr>
+          <tr><td>2025-10-18</td><td>Sell‑side calls</td><td>Execution cadence • Mix</td><td>Q3 Rev 8–10%</td></tr>
+        </tbody>
+      </table>
+      <h2>Media / Crisis Comms</h2>
+      <table>
+        <thead><tr><th>Scenario</th><th>Spokesperson</th><th>Key Message</th><th>Holding Statement Link</th></tr></thead>
+        <tbody>
+          <tr><td>Data incident</td><td>CISO</td><td>Containment; customer trust</td><td>bit.ly/holding‑data</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><span>Clarity with the Board • Consistency with markets</span><span>Page 10 of 10</span></div>
+</section>
+
+</body></html>

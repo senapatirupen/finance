@@ -5842,3 +5842,632 @@ If you want, tell me your repo’s folder layout (or share a gist of your curren
 
 
 design e-commerce app using spring boot rest api, java, maven, oracle. you can start from writing table structure first. then spring entities, controller layer, service layer, repository layer, user authentication. 
+
+I'll provide a comprehensive implementation for user authentication and profile management in an e-commerce application using Spring Boot and Angular.
+
+## Backend (Spring Boot)
+
+### 1. Dependencies (pom.xml)
+```xml
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-mail</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-api</artifactId>
+        <version>0.11.5</version>
+    </dependency>
+    <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-impl</artifactId>
+        <version>0.11.5</version>
+        <scope>runtime</scope>
+    </dependency>
+    <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-jackson</artifactId>
+        <version>0.11.5</version>
+        <scope>runtime</scope>
+    </dependency>
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <scope>runtime</scope>
+    </dependency>
+</dependencies>
+```
+
+### 2. User Entity
+```java
+@Entity
+@Table(name = "users")
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @Column(unique = true, nullable = false)
+    private String email;
+    
+    @Column(nullable = false)
+    private String password;
+    
+    private String firstName;
+    private String lastName;
+    private String phone;
+    private String address;
+    private String city;
+    private String zipCode;
+    private boolean enabled;
+    private String verificationToken;
+    private String resetToken;
+    private LocalDateTime resetTokenExpiry;
+    
+    // Getters and Setters
+}
+```
+
+### 3. JWT Utility Class
+```java
+@Component
+public class JwtUtil {
+    @Value("${jwt.secret}")
+    private String secret;
+    
+    @Value("${jwt.expiration}")
+    private Long expiration;
+    
+    public String generateToken(String email) {
+        return Jwts.builder()
+                .setSubject(email)
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + expiration))
+                .signWith(SignatureAlgorithm.HS512, secret)
+                .compact();
+    }
+    
+    public String extractEmail(String token) {
+        return Jwts.parser()
+                .setSigningKey(secret)
+                .parseClaimsJws(token)
+                .getBody()
+                .getSubject();
+    }
+    
+    public boolean validateToken(String token) {
+        try {
+            Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+}
+```
+
+### 4. Authentication Controller
+```java
+@RestController
+@RequestMapping("/api/auth")
+@CrossOrigin(origins = "http://localhost:4200")
+public class AuthController {
+    
+    @Autowired
+    private UserService userService;
+    
+    @Autowired
+    private JwtUtil jwtUtil;
+    
+    @Autowired
+    private EmailService emailService;
+    
+    @PostMapping("/register")
+    public ResponseEntity<?> register(@RequestBody User user) {
+        try {
+            User registeredUser = userService.register(user);
+            
+            // Send verification email
+            emailService.sendVerificationEmail(registeredUser);
+            
+            return ResponseEntity.ok("User registered successfully. Please check your email for verification.");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+    
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
+        try {
+            User user = userService.authenticate(loginRequest.getEmail(), loginRequest.getPassword());
+            
+            if (!user.isEnabled()) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body("Account not verified. Please check your email.");
+            }
+            
+            String token = jwtUtil.generateToken(user.getEmail());
+            
+            Map<String, Object> response = new HashMap<>();
+            response.put("token", token);
+            response.put("user", user);
+            
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
+        }
+    }
+    
+    @PostMapping("/forgot-password")
+    public ResponseEntity<?> forgotPassword(@RequestParam String email) {
+        try {
+            userService.initiatePasswordReset(email);
+            return ResponseEntity.ok("Password reset instructions sent to your email.");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+    
+    @PostMapping("/reset-password")
+    public ResponseEntity<?> resetPassword(@RequestBody ResetPasswordRequest request) {
+        try {
+            userService.resetPassword(request.getToken(), request.getNewPassword());
+            return ResponseEntity.ok("Password reset successfully.");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+    
+    @GetMapping("/verify")
+    public ResponseEntity<?> verifyAccount(@RequestParam String token) {
+        try {
+            userService.verifyAccount(token);
+            return ResponseEntity.ok("Account verified successfully.");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+}
+```
+
+### 5. User Profile Controller
+```java
+@RestController
+@RequestMapping("/api/user")
+@CrossOrigin(origins = "http://localhost:4200")
+public class UserController {
+    
+    @Autowired
+    private UserService userService;
+    
+    @GetMapping("/profile")
+    public ResponseEntity<User> getProfile(@RequestHeader("Authorization") String token) {
+        String email = jwtUtil.extractEmail(token.substring(7));
+        User user = userService.findByEmail(email);
+        return ResponseEntity.ok(user);
+    }
+    
+    @PutMapping("/profile")
+    public ResponseEntity<?> updateProfile(@RequestHeader("Authorization") String token, 
+                                         @RequestBody User userDetails) {
+        try {
+            String email = jwtUtil.extractEmail(token.substring(7));
+            User updatedUser = userService.updateProfile(email, userDetails);
+            return ResponseEntity.ok(updatedUser);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+    
+    @PutMapping("/change-password")
+    public ResponseEntity<?> changePassword(@RequestHeader("Authorization") String token,
+                                          @RequestBody ChangePasswordRequest request) {
+        try {
+            String email = jwtUtil.extractEmail(token.substring(7));
+            userService.changePassword(email, request.getCurrentPassword(), request.getNewPassword());
+            return ResponseEntity.ok("Password changed successfully.");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+}
+```
+
+## Frontend (Angular)
+
+### 1. Auth Service
+```typescript
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+  private currentUserSubject: BehaviorSubject<any>;
+  public currentUser: Observable<any>;
+  private apiUrl = 'http://localhost:8080/api/auth';
+
+  constructor(private http: HttpClient) {
+    this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser') || '{}'));
+    this.currentUser = this.currentUserSubject.asObservable();
+  }
+
+  public get currentUserValue(): any {
+    return this.currentUserSubject.value;
+  }
+
+  login(email: string, password: string) {
+    return this.http.post<any>(`${this.apiUrl}/login`, { email, password })
+      .pipe(map(response => {
+        if (response && response.token) {
+          localStorage.setItem('currentUser', JSON.stringify(response));
+          this.currentUserSubject.next(response);
+        }
+        return response;
+      }));
+  }
+
+  register(user: any) {
+    return this.http.post(`${this.apiUrl}/register`, user);
+  }
+
+  forgotPassword(email: string) {
+    return this.http.post(`${this.apiUrl}/forgot-password`, null, { 
+      params: { email } 
+    });
+  }
+
+  resetPassword(token: string, newPassword: string) {
+    return this.http.post(`${this.apiUrl}/reset-password`, { token, newPassword });
+  }
+
+  logout() {
+    localStorage.removeItem('currentUser');
+    this.currentUserSubject.next(null);
+  }
+}
+```
+
+### 2. Auth Guard
+```typescript
+import { Injectable } from '@angular/core';
+import { CanActivate, Router } from '@angular/router';
+import { AuthService } from './auth.service';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthGuard implements CanActivate {
+  constructor(private authService: AuthService, private router: Router) {}
+
+  canActivate(): boolean {
+    if (this.authService.currentUserValue && this.authService.currentUserValue.token) {
+      return true;
+    }
+    this.router.navigate(['/login']);
+    return false;
+  }
+}
+```
+
+### 3. Login Component
+```typescript
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent {
+  email: string = '';
+  password: string = '';
+  errorMessage: string = '';
+
+  constructor(private authService: AuthService, private router: Router) {}
+
+  onSubmit() {
+    this.authService.login(this.email, this.password).subscribe({
+      next: () => this.router.navigate(['/']),
+      error: (error) => this.errorMessage = error.error
+    });
+  }
+}
+```
+
+### 4. Login Component HTML (Bootstrap)
+```html
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Login</h3>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" [(ngModel)]="email" name="email" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" [(ngModel)]="password" name="password" required>
+            </div>
+            <div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+          </form>
+          <div class="mt-3 text-center">
+            <a routerLink="/forgot-password">Forgot Password?</a>
+          </div>
+          <div class="mt-2 text-center">
+            <span>Don't have an account? </span>
+            <a routerLink="/register">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+### 5. Register Component
+```typescript
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+
+@Component({
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
+})
+export class RegisterComponent {
+  user = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    phone: '',
+    address: '',
+    city: '',
+    zipCode: ''
+  };
+  successMessage: string = '';
+  errorMessage: string = '';
+
+  constructor(private authService: AuthService, private router: Router) {}
+
+  onSubmit() {
+    if (this.user.password !== this.user.confirmPassword) {
+      this.errorMessage = 'Passwords do not match';
+      return;
+    }
+
+    this.authService.register(this.user).subscribe({
+      next: () => {
+        this.successMessage = 'Registration successful! Please check your email for verification.';
+        setTimeout(() => this.router.navigate(['/login']), 3000);
+      },
+      error: (error) => this.errorMessage = error.error
+    });
+  }
+}
+```
+
+### 6. Profile Component
+```typescript
+import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
+
+@Component({
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
+})
+export class ProfileComponent implements OnInit {
+  user: any = {};
+  successMessage: string = '';
+  errorMessage: string = '';
+
+  constructor(private userService: UserService) {}
+
+  ngOnInit() {
+    this.userService.getProfile().subscribe({
+      next: (user) => this.user = user,
+      error: (error) => this.errorMessage = error.error
+    });
+  }
+
+  updateProfile() {
+    this.userService.updateProfile(this.user).subscribe({
+      next: (updatedUser) => {
+        this.user = updatedUser;
+        this.successMessage = 'Profile updated successfully!';
+      },
+      error: (error) => this.errorMessage = error.error
+    });
+  }
+}
+```
+
+### 7. HTTP Interceptor for JWT
+```typescript
+import { Injectable } from '@angular/core';
+import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { AuthService } from './auth.service';
+
+@Injectable()
+export class JwtInterceptor implements HttpInterceptor {
+  constructor(private authService: AuthService) {}
+
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const currentUser = this.authService.currentUserValue;
+    if (currentUser && currentUser.token) {
+      request = request.clone({
+        setHeaders: {
+          Authorization: `Bearer ${currentUser.token}`
+        }
+      });
+    }
+    return next.handle(request);
+  }
+}
+```
+
+### 8. App Module Configuration
+```typescript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { JwtInterceptor } from './interceptors/jwt.interceptor';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+## Security Configuration (Spring Boot)
+```java
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+    
+    @Autowired
+    private JwtUtil jwtUtil;
+    
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http.csrf().disable()
+            .authorizeRequests()
+            .antMatchers("/api/auth/**").permitAll()
+            .antMatchers("/api/user/**").authenticated()
+            .anyRequest().permitAll()
+            .and()
+            .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        
+        http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+        
+        return http.build();
+    }
+    
+    @Bean
+    public JwtAuthenticationFilter jwtAuthenticationFilter() {
+        return new JwtAuthenticationFilter(jwtUtil);
+    }
+    
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+}
+```
+
+## JWT Authentication Filter
+```java
+public class JwtAuthenticationFilter extends OncePerRequestFilter {
+    
+    private final JwtUtil jwtUtil;
+    
+    public JwtAuthenticationFilter(JwtUtil jwtUtil) {
+        this.jwtUtil = jwtUtil;
+    }
+    
+    @Override
+    protected void doFilterInternal(HttpServletRequest request, 
+                                  HttpServletResponse response, 
+                                  FilterChain filterChain) throws ServletException, IOException {
+        
+        String header = request.getHeader("Authorization");
+        
+        if (header != null && header.startsWith("Bearer ")) {
+            String token = header.substring(7);
+            
+            if (jwtUtil.validateToken(token)) {
+                String email = jwtUtil.extractEmail(token);
+                
+                UsernamePasswordAuthenticationToken authentication = 
+                    new UsernamePasswordAuthenticationToken(email, null, new ArrayList<>());
+                
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+            }
+        }
+        
+        filterChain.doFilter(request, response);
+    }
+}
+```
+
+This implementation provides a complete user authentication system with:
+- User registration with email verification
+- JWT-based login/logout
+- Password reset functionality
+- User profile management
+- CORS configuration for Angular frontend
+- Bootstrap-styled Angular components
+- Secure REST API endpoints
+
+Remember to configure your database connection and email settings in `application.properties`:
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce
+spring.datasource.username=root
+spring.datasource.password=password
+
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=your-email@gmail.com
+spring.mail.password=your-app-password
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+
+jwt.secret=your-secret-key
+jwt.expiration=86400000
+```
+
+ask
+
+user login, sign up, forget password, user authentication, profile management like a ecommerce site. communication between spring rest and angular, boot strap. provide code.

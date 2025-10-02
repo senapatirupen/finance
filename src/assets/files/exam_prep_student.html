@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Student Exam Prep Notepad — Daily & Weekly Planner (A4 Printable)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,"Noto Sans","Helvetica Neue",Arial,sans-serif; color:var(--ink); line-height:1.2; }
+  h1 { font-size:22px; margin:0 0 8px; letter-spacing:.2px; }
+  h2 { font-size:16px; margin:0 0 6px; }
+  h3 { font-size:13px; margin:6px 0 4px; color:var(--muted); }
+  .meta { display:grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr; gap:8px; margin-bottom:8px; }
+  .field { border:1px solid var(--rule); padding:6px 8px; height:34px; display:flex; align-items:center; }
+  .label { font-size:12px; color:var(--muted); margin-right:8px; }
+  .bar { height:4px; background:#000; margin: 8px 0 10px; }
+  .section { break-inside: avoid; margin-bottom: 10px; }
+  .section .head { display:flex; justify-content:space-between; align-items:baseline; }
+  .section .desc { font-size: 11px; color: var(--muted); }
+  table { width:100%; border-collapse: collapse; table-layout: fixed; }
+  th, td { border: 1px solid var(--rule); padding: 6px 6px; font-size: 12px; height: 22px; vertical-align: top; }
+  th { background:#f2f2f2; text-align:left; }
+  td.amount { text-align:right; }
+  .two-col { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .three-col { display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .note { border:1px solid var(--rule); margin-top: 4px; background: repeating-linear-gradient(180deg,#fff,#fff 21px,#000 22px); }
+  .note.s { height: 120px; } .note.m { height: 220px; } .note.l { height: 420px; }
+  .footer { display:flex; justify-content:space-between; font-size:11px; margin-top:6px; color:var(--muted); }
+  .page { page-break-after: always; }
+  .mini { font-size:11px; color:var(--muted); }
+  .pill { border:1px solid #000; padding:2px 6px; font-size:11px; border-radius:10px; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: Daily Study Planner -->
+<section class="page">
+  <h1>Student Exam Prep Notepad — Daily Planner</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">Name:</span> __________________________</div>
+    <div class="field"><span class="label">Exam:</span> ___________________</div>
+    <div class="field"><span class="label">Days Left:</span> ______</div>
+    <div class="field"><span class="label">Sleep (hrs):</span> ____ / 8</div>
+    <div class="field"><span class="label">Energy:</span> ☐ Low ☐ Med ☐ High</div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Top 3 Outcomes Today</h2><span class="desc">Specific & measurable</span></div>
+      <table>
+        <thead><tr><th style="width:8%">#</th><th>Outcome</th><th style="width:24%">Why it matters</th><th style="width:18%">Done?</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td></td><td></td><td>☐</td></tr>
+          <tr><td>2</td><td></td><td></td><td>☐</td></tr>
+          <tr><td>3</td><td></td><td></td><td>☐</td></tr>
+        </tbody>
+      </table>
+
+      <div class="head" style="margin-top:6px;"><h2>Pomodoro Plan</h2><span class="desc">25–50 min focus blocks</span></div>
+      <table>
+        <thead><tr><th style="width:22%">Block</th><th style="width:38%">Focus Topic</th><th style="width:20%">Length</th><th style="width:20%">Tick</th></tr></thead>
+        <tbody>
+          <tr><td>P1</td><td></td><td>__ min</td><td>☐</td></tr>
+          <tr><td>P2</td><td></td><td>__ min</td><td>☐</td></tr>
+          <tr><td>P3</td><td></td><td>__ min</td><td>☐</td></tr>
+          <tr><td>P4</td><td></td><td>__ min</td><td>☐</td></tr>
+          <tr><td>P5</td><td></td><td>__ min</td><td>☐</td></tr>
+          <tr><td>P6</td><td></td><td>__ min</td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Timebox Schedule</h2><span class="desc">Plan vs Actual</span></div>
+      <table>
+        <thead><tr><th style="width:18%">Time</th><th>Plan</th><th style="width:20%">Actual</th></tr></thead>
+        <tbody>
+          <tr><td>05:00</td><td></td><td></td></tr>
+          <tr><td>06:00</td><td></td><td></td></tr>
+          <tr><td>07:00</td><td></td><td></td></tr>
+          <tr><td>08:00</td><td></td><td></td></tr>
+          <tr><td>09:00</td><td></td><td></td></tr>
+          <tr><td>10:00</td><td></td><td></td></tr>
+          <tr><td>11:00</td><td></td><td></td></tr>
+          <tr><td>12:00</td><td></td><td></td></tr>
+          <tr><td>13:00</td><td></td><td></td></tr>
+          <tr><td>14:00</td><td></td><td></td></tr>
+          <tr><td>15:00</td><td></td><td></td></tr>
+          <tr><td>16:00</td><td></td><td></td></tr>
+          <tr><td>17:00</td><td></td><td></td></tr>
+          <tr><td>18:00</td><td></td><td></td></tr>
+          <tr><td>19:00</td><td></td><td></td></tr>
+          <tr><td>20:00</td><td></td><td></td></tr>
+          <tr><td>21:00</td><td></td><td></td></tr>
+          <tr><td>22:00</td><td></td><td></td></tr>
+        </tbody>
+      </table>
+
+      <div class="head" style="margin-top:6px;"><h2>Warm‑Up & Wind‑Down</h2><span class="desc">Bookend your day</span></div>
+      <table>
+        <thead><tr><th>Action</th><th style="width:22%">Time</th><th style="width:18%">Done?</th></tr></thead>
+        <tbody>
+          <tr><td>Warm‑up: hydrate, plan Top 3, skim flashcards</td><td>10–15 min</td><td>☐</td></tr>
+          <tr><td>Wind‑down: reflect win/lesson, tomorrow’s first block</td><td>10 min</td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Active Recall Sheet</h2><span class="desc">Question → Answer → Confidence</span></div>
+      <table>
+        <thead><tr><th style="width:44%">Question / Prompt</th><th style="width:32%">Answer (from memory)</th><th style="width:12%">Conf</th><th style="width:12%">Tick</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td>__/10</td><td>☐</td></tr>
+          <tr><td></td><td></td><td>__/10</td><td>☐</td></tr>
+          <tr><td></td><td></td><td>__/10</td><td>☐</td></tr>
+          <tr><td></td><td></td><td>__/10</td><td>☐</td></tr>
+          <tr><td></td><td></td><td>__/10</td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Distraction Log</h2><span class="desc">Notice → Fix</span></div>
+      <table>
+        <thead><tr><th style="width:36%">Trigger</th><th style="width:36%">What I’ll do</th><th style="width:14%">Time</th><th style="width:14%">Tick</th></tr></thead>
+        <tbody>
+          <tr><td>Phone pings</td><td>Focus mode / turn over</td><td>__</td><td>☐</td></tr>
+          <tr><td>Social media urge</td><td>30s breath • back to task</td><td>__</td><td>☐</td></tr>
+          <tr><td>Low energy</td><td>Water • 10 squats • sun</td><td>__</td><td>☐</td></tr>
+          <tr><td>Worry spiral</td><td>Write worry → action step</td><td>__</td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Plan blocks • Recall from memory • Practice questions • Review mistakes</span>
+    <span>Page 1 of 3</span>
+  </div>
+</section>
+
+<!-- PAGE 2: Subject Plan & Spaced Repetition -->
+<section class="page">
+  <h1>Subject Plan & Spaced Repetition</h1>
+  <div class="bar"></div>
+
+  <div class="section">
+    <div class="head"><h2>Subject Progress</h2><span class="desc">Chapters • Weightage • Difficulty • Next Review</span></div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:16%">Subject</th>
+          <th style="width:30%">Chapter / Unit</th>
+          <th style="width:10%">Weight</th>
+          <th style="width:12%">Difficulty</th>
+          <th style="width:14%">Last Study</th>
+          <th style="width:18%">Next Review (1d/3d/7d/14d)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td></td><td></td><td>__%</td><td>E/M/H</td><td>____-__-__</td><td>____-__-__</td></tr>
+        <tr><td></td><td></td><td>__%</td><td>E/M/H</td><td>____-__-__</td><td>____-__-__</td></tr>
+        <tr><td></td><td></td><td>__%</td><td>E/M/H</td><td>____-__-__</td><td>____-__-__</td></tr>
+        <tr><td></td><td></td><td>__%</td><td>E/M/H</td><td>____-__-__</td><td>____-__-__</td></tr>
+        <tr><td></td><td></td><td>__%</td><td>E/M/H</td><td>____-__-__</td><td>____-__-__</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>SRS (Flashcards / Notes Queue)</h2><span class="desc">Space reviews to remember</span></div>
+      <table>
+        <thead><tr><th style="width:38%">Item</th><th style="width:18%">Start</th><th style="width:10%">R1</th><th style="width:10%">R2</th><th style="width:10%">R3</th><th style="width:14%">Next Due</th></tr></thead>
+        <tbody>
+          <tr><td></td><td>____-__-__</td><td>☐</td><td>☐</td><td>☐</td><td>____-__-__</td></tr>
+          <tr><td></td><td>____-__-__</td><td>☐</td><td>☐</td><td>☐</td><td>____-__-__</td></tr>
+          <tr><td></td><td>____-__-__</td><td>☐</td><td>☐</td><td>☐</td><td>____-__-__</td></tr>
+          <tr><td></td><td>____-__-__</td><td>☐</td><td>☐</td><td>☐</td><td>____-__-__</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Resources to Use</h2><span class="desc">Books • Videos • Websites</span></div>
+      <table>
+        <thead><tr><th style="width:44%">Resource</th><th style="width:24%">Type</th><th style="width:14%">Pages / Time</th><th style="width:18%">Status</th></tr></thead>
+        <tbody>
+          <tr><td></td><td>Book/Course/Video</td><td>p. __–__ / __ min</td><td>Planned / Doing / Done</td></tr>
+          <tr><td></td><td>Book/Course/Video</td><td>p. __–__ / __ min</td><td>Planned / Doing / Done</td></tr>
+          <tr><td></td><td>Book/Course/Video</td><td>p. __–__ / __ min</td><td>Planned / Doing / Done</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="head"><h2>Weekly Habit Tracker (7 days)</h2><span class="desc">Small wins compound</span></div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:30%">Habit</th>
+          <th style="width:10%">Mon</th><th style="width:10%">Tue</th><th style="width:10%">Wed</th>
+          <th style="width:10%">Thu</th><th style="width:10%">Fri</th><th style="width:10%">Sat</th><th style="width:10%">Sun</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Wake at ____</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+        <tr><td>2 focus blocks AM</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+        <tr><td>Practice questions</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+        <tr><td>Active recall review</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+        <tr><td>Sleep on time</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Study smart: active recall • spaced repetition • deliberate practice</span>
+    <span>Page 2 of 3</span>
+  </div>
+</section>
+
+<!-- PAGE 3: Practice, Mocks & Error Log -->
+<section class="page">
+  <h1>Practice, Mock Exams & Error Log</h1>
+  <div class="bar"></div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Practice Question Log</h2><span class="desc">Track accuracy & speed</span></div>
+      <table>
+        <thead><tr><th style="width:18%">Date</th><th style="width:26%">Source / Topic</th><th style="width:14%">Attempted</th><th style="width:12%">Correct</th><th style="width:12%">Time</th><th style="width:18%">Accuracy %</th></tr></thead>
+        <tbody>
+          <tr><td>____-__-__</td><td></td><td class="amount">__</td><td class="amount">__</td><td class="amount">__ min</td><td class="amount">__%</td></tr>
+          <tr><td>____-__-__</td><td></td><td class="amount">__</td><td class="amount">__</td><td class="amount">__ min</td><td class="amount">__%</td></tr>
+          <tr><td>____-__-__</td><td></td><td class="amount">__</td><td class="amount">__</td><td class="amount">__ min</td><td class="amount">__%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Mock Exam Planner</h2><span class="desc">Past papers & full-length tests</span></div>
+      <table>
+        <thead><tr><th style="width:22%">Date</th><th style="width:24%">Paper / Set</th><th style="width:16%">Score</th><th style="width:18%">Target</th><th style="width:20%">Analysis done?</th></tr></thead>
+        <tbody>
+          <tr><td>____-__-__</td><td></td><td class="amount">__/100</td><td class="amount">__/100</td><td>☐</td></tr>
+          <tr><td>____-__-__</td><td></td><td class="amount">__/100</td><td class="amount">__/100</td><td>☐</td></tr>
+          <tr><td>____-__-__</td><td></td><td class="amount">__/100</td><td class="amount">__/100</td><td>☐</td></tr>
+        </tbody>
+      </table>
+      <p class="mini">Tip: Always schedule a 30–60 min analysis block after each mock.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="head"><h2>Error / Mistake Log</h2><span class="desc">Turn errors into points</span></div>
+    <table>
+      <thead><tr><th style="width:18%">Subject</th><th style="width:24%">Concept / Chapter</th><th style="width:18%">Error Type</th><th style="width:24%">Fix / Rule</th><th style="width:16%">Re‑tested?</th></tr></thead>
+      <tbody>
+        <tr><td></td><td></td><td>Concept / Calc / Careless</td><td></td><td>☐</td></tr>
+        <tr><td></td><td></td><td>Concept / Calc / Careless</td><td></td><td>☐</td></tr>
+        <tr><td></td><td></td><td>Concept / Calc / Careless</td><td></td><td>☐</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Formulae / Key Concepts (Quick Sheet)</h2><span class="desc">Write it, don’t just read it</span></div>
+      <div class="note l"></div>
+    </div>
+    <div class="section">
+      <div class="head"><h2>Countdown & Milestones</h2><span class="desc">Keep eyes on the date</span></div>
+      <table>
+        <thead><tr><th style="width:44%">Milestone</th><th style="width:22%">Date</th><th style="width:16%">Done?</th><th style="width:18%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Finish 1st pass of syllabus</td><td>____-__-__</td><td>☐</td><td></td></tr>
+          <tr><td>Complete 3 past papers</td><td>____-__-__</td><td>☐</td><td></td></tr>
+          <tr><td>Memorise formulae deck</td><td>____-__-__</td><td>☐</td><td></td></tr>
+          <tr><td>Final revision week</td><td>____-__-__</td><td>☐</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Practice with feedback • Fix mistakes • Schedule spaced reviews</span>
+    <span>Page 3 of 3</span>
+  </div>
+</section>
+
+</body>
+</html>

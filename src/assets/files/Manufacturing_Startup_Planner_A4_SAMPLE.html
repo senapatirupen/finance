@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Manufacturing Startup Planner (Sample Filled) — A4 Printable</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,"Noto Sans","Helvetica Neue",Arial,sans-serif; color:var(--ink); line-height:1.2; }
+  h1 { font-size:22px; margin:0 0 8px; letter-spacing:.2px; }
+  h2 { font-size:16px; margin:0 0 6px; }
+  h3 { font-size:13px; margin:6px 0 4px; color:var(--muted); }
+  .meta { display:grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap:8px; margin-bottom:8px; }
+  .field { border:1px solid var(--rule); padding:6px 8px; height:34px; display:flex; align-items:center; }
+  .label { font-size:12px; color:var(--muted); margin-right:8px; }
+  .bar { height:4px; background:#000; margin: 8px 0 10px; }
+  .section { break-inside: avoid; margin-bottom: 10px; }
+  .section .head { display:flex; justify-content:space-between; align-items:baseline; }
+  .section .desc { font-size: 11px; color: var(--muted); }
+  table { width:100%; border-collapse: collapse; table-layout: fixed; }
+  th, td { border: 1px solid var(--rule); padding: 6px 6px; font-size: 12px; height: 22px; vertical-align: top; }
+  th { background:#f2f2f2; text-align:left; }
+  td.amount { text-align:right; }
+  .two-col { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .note { border:1px solid var(--rule); margin-top: 4px; background: repeating-linear-gradient(180deg,#fff,#fff 21px,#000 22px); white-space: pre-line; }
+  .note.s { height: 120px; } .note.m { height: 220px; } .note.l { height: 420px; }
+  .footer { display:flex; justify-content:space-between; font-size:11px; margin-top:6px; color:var(--muted); }
+  .page { page-break-after: always; }
+  .mini { font-size:11px; color:var(--muted); }
+</style>
+</head>
+<body>
+
+<section class="page">
+  <h1>Manufacturing Startup Planner — Venture Snapshot (Sample)</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">Company / Project:</span> NovaPlast Components Pvt Ltd</div>
+    <div class="field"><span class="label">Founders:</span> Arjun Rao (CEO), Meera Iyer (COO)</div>
+    <div class="field"><span class="label">Date:</span> 2025-09-13</div>
+    <div class="field"><span class="label">Version:</span> v1.0</div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>What we make • For whom • Why us</h2><span class="desc">Product family, end customer, key advantage</span></div>
+      <div class="note s">Injection‑moulded plastic components for EV two‑wheelers & appliances.
+Why us: fast tooling turnaround, PPAP‑ready, 70% OEE, price‑lock for 12 months.</div>
+      <h3>Products & Use‑cases</h3>
+      <table>
+        <thead><tr><th>Product</th><th>Customer/Segment</th><th>Key spec/requirement</th></tr></thead>
+        <tbody>
+          <tr><td>EV scooter side panel (SKU A)</td><td>Tier‑1 to OEMs</td><td>PP‑T20, texture MT‑11010, ΔE&lt;1</td></tr>
+          <tr><td>Battery tray cover (SKU B)</td><td>EV startups</td><td>PC‑ABS, UL94 V‑0</td></tr>
+          <tr><td>Knob & fascia (SKU C)</td><td>Appliance OEMs</td><td>ABS, gloss 85 GU, no sink</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Demand & Market</h2><span class="desc">TAM • SAM • SOM, top 5 target accounts</span></div>
+      <table>
+        <thead><tr><th>TAM ₹</th><th>SAM ₹</th><th>SOM (Yr3) ₹</th><th>Assumptions</th></tr></thead>
+        <tbody><tr><td class="amount">₹1,200 Cr</td><td class="amount">₹120 Cr</td><td class="amount">₹9 Cr</td><td>600 buyers × ₹15L/yr avg</td></tr></tbody>
+      </table>
+      <h3>Top Prospects</h3>
+      <table>
+        <thead><tr><th>Account</th><th>Contact</th><th>Est. qty/mo</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>VoltScoot</td><td>CTO</td><td class="amount">20,000</td><td>RFQ sent</td></tr>
+          <tr><td>ElectraRide</td><td>Supply head</td><td class="amount">12,000</td><td>Sample approved</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Certifications & Compliance</h2><span class="desc">ISO/QMS, safety, regulatory</span></div>
+      <table>
+        <thead><tr><th>Item</th><th>Needed?</th><th>Status</th><th>Owner</th></tr></thead>
+        <tbody>
+          <tr><td>Factory license</td><td>Yes</td><td>Applied</td><td>COO</td></tr>
+          <tr><td>Pollution control (CTE/CTO)</td><td>Yes</td><td>CTE received</td><td>EHS lead</td></tr>
+          <tr><td>Fire NOC</td><td>Yes</td><td>Audit M+1</td><td>Admin</td></tr>
+          <tr><td>ISO 9001 / 14001</td><td>Yes</td><td>9001 in progress</td><td>QA mgr</td></tr>
+          <tr><td>EHS (PPE, training)</td><td>Yes</td><td>Monthly</td><td>EHS lead</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Competitor Landscape</h2><span class="desc">Alternatives vs our edge</span></div>
+      <table>
+        <thead><tr><th>Competitor</th><th>Strengths</th><th>Weaknesses</th><th>Our edge</th></tr></thead>
+        <tbody>
+          <tr><td>ABC Plastics</td><td>Scale, QA lab</td><td>Slow NPI</td><td>Faster PPAP</td></tr>
+          <tr><td>Local job shops</td><td>Low price</td><td>Quality swings</td><td>SPC + traceability</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Start with the customer need • Design around constraints</span>
+    <span>Page 1 of 4</span>
+  </div>
+</section>
+
+<section class="page">
+  <h1>Operations • Supply Chain • Quality (Sample)</h1>
+  <div class="bar"></div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>BOM — SKU A (Side Panel)</h2><span class="desc">Top cost drivers</span></div>
+      <table>
+        <thead><tr><th>Item</th><th>UoM</th><th>Qty/Unit</th><th>Rate ₹</th><th>Cost ₹</th></tr></thead>
+        <tbody>
+          <tr><td>PP‑T20 resin</td><td>kg</td><td class="amount">0.126</td><td class="amount">140</td><td class="amount">17.64</td></tr>
+          <tr><td>Masterbatch</td><td>kg</td><td class="amount">0.003</td><td class="amount">320</td><td class="amount">0.96</td></tr>
+          <tr><td>Carton + polybag</td><td>set</td><td class="amount">1</td><td class="amount">1.20</td><td class="amount">1.20</td></tr>
+          <tr><th>Total</th><th></th><th class="amount">0.129</th><th></th><th class="amount">19.80</th></tr>
+        </tbody>
+      </table>
+      <h3>Routing & Cycle Times</h3>
+      <table>
+        <thead><tr><th>Process</th><th>Setup (min)</th><th>Cycle (sec)</th><th>Machines</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Injection moulding</td><td class="amount">30</td><td class="amount">35</td><td>280T, 2‑cavity</td><td>Robot pick</td></tr>
+          <tr><td>Trimming/inspection</td><td class="amount">0</td><td class="amount">15</td><td>Bench</td><td>Visual + gauge</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Capacity Plan</h2><span class="desc">Machines • Shifts • OEE</span></div>
+      <table>
+        <thead><tr><th>Machine</th><th>Qty</th><th>Shifts</th><th>OEE %</th><th>Rated/hr</th><th>Cap/day</th></tr></thead>
+        <tbody>
+          <tr><td>IMM 280T</td><td class="amount">2</td><td class="amount">2</td><td class="amount">70</td><td class="amount">205 pcs</td><td class="amount">4,600</td></tr>
+          <tr><td>IMM 180T</td><td class="amount">2</td><td class="amount">2</td><td class="amount">70</td><td class="amount">260 pcs</td><td class="amount">5,840</td></tr>
+        </tbody>
+      </table>
+      <h3>Quality Plan</h3>
+      <table>
+        <thead><tr><th>Checkpoint</th><th>Method/AQL</th><th>Frequency</th><th>Owner</th></tr></thead>
+        <tbody>
+          <tr><td>Incoming QC</td><td>Resin MFI, COA check</td><td>Each lot</td><td>IQC</td></tr>
+          <tr><td>In‑process</td><td>SPC on weight, dimensions</td><td>Hourly</td><td>Operator + QA</td></tr>
+          <tr><td>Final QC</td><td>AQL 1.5%, visual + gauge</td><td>Each batch</td><td>FQC</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Suppliers & Lead Times</h2><span class="desc">Primary & secondary vendors</span></div>
+      <table>
+        <thead><tr><th>Item</th><th>Vendor</th><th>Lead time (d)</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>PP‑T20 resin</td><td>Reliance, Haldia</td><td class="amount">7</td><td>Safety stock 10 days</td></tr>
+          <tr><td>Masterbatch</td><td>Avient</td><td class="amount">10</td><td>Shade locked</td></tr>
+          <tr><td>Cartons</td><td>Local</td><td class="amount">5</td><td>Dual source</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Inventory Policy</h2><span class="desc">EOQ • Safety Stock • Reorder point</span></div>
+      <table>
+        <thead><tr><th>Parameter</th><th>Formula / Target</th></tr></thead>
+        <tbody>
+          <tr><td>EOQ</td><td>= √(2DS/H) — resin EOQ ≈ 1,200 kg</td></tr>
+          <tr><td>Safety stock</td><td>= Z × σ × √LT — Z=1.65, σ=400/mo, LT=0.33 → ~380 pcs</td></tr>
+          <tr><td>Reorder point</td><td>= daily demand × LT + SS — ~1,900 pcs</td></tr>
+        </tbody>
+      </table>
+      <div class="note s">Count cycle daily; visual Kanban for cartons; barcode WIP.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Right‑first‑time • Protect takt • Dual‑source critical items</span>
+    <span>Page 2 of 4</span>
+  </div>
+</section>
+
+<section class="page">
+  <h1>Unit Economics • CapEx • Working Capital (Sample)</h1>
+  <div class="bar"></div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Unit Cost — SKU A</h2><span class="desc">Material + Conversion + OH</span></div>
+      <table>
+        <thead><tr><th>Cost Element</th><th>Rate/Assumption</th><th>₹/Unit</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Material</td><td>0.129 kg @ ₹153/kg avg</td><td class="amount">19.80</td><td>Incl scrap & MB</td></tr>
+          <tr><td>Energy</td><td>0.058 kWh @ ₹9</td><td class="amount">0.52</td><td>IMM 12 kW avg</td></tr>
+          <tr><td>Direct Labour</td><td>1 op / 2 machines</td><td class="amount">1.50</td><td>Allocated</td></tr>
+          <tr><td>Quality & Packing</td><td>AQL 1.5% + carton</td><td class="amount">1.20</td><td>Per unit</td></tr>
+          <tr><td>Factory OH (alloc)</td><td>Rent, utilities</td><td class="amount">1.80</td><td>Per unit</td></tr>
+          <tr><td>Tooling depreciation</td><td>₹18L / 3,00,000</td><td class="amount">6.00</td><td>Per unit</td></tr>
+          <tr><th>Total unit cost</th><th></th><th class="amount">30.82</th><th></th></tr>
+          <tr><td>Selling price (ex‑factory)</td><td>Target margin 25%</td><td class="amount">39.00</td><td>Quote rounded</td></tr>
+          <tr><td>Contribution margin / unit</td><td>Excl fixed OH/dep</td><td class="amount">17.13</td><td>39 − (19.8+0.52+1.5+1.2+1.0)</td></tr>
+        </tbody>
+      </table>
+      <h3>Breakeven</h3>
+      <table>
+        <thead><tr><th>Fixed costs / month ₹</th><th>CM / unit ₹</th><th>BEP units/mo</th><th>Notes</th></tr></thead>
+        <tbody><tr><td class="amount">8,00,000</td><td class="amount">17.13</td><td class="amount">46,700</td><td>At mix 70%A,20%B,10%C</td></tr></tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>CapEx Plan</h2><span class="desc">Machines • Molds • Utilities</span></div>
+      <table>
+        <thead><tr><th>Item</th><th>Qty</th><th>Unit ₹</th><th>Total ₹</th><th>When</th></tr></thead>
+        <tbody>
+          <tr><td>IMM 280T</td><td class="amount">2</td><td class="amount">45,00,000</td><td class="amount">90,00,000</td><td>M0</td></tr>
+          <tr><td>IMM 180T</td><td class="amount">2</td><td class="amount">28,00,000</td><td class="amount">56,00,000</td><td>M0</td></tr>
+          <tr><td>Chiller, dryer, compressor</td><td class="amount">1 set</td><td class="amount">22,00,000</td><td class="amount">22,00,000</td><td>M0</td></tr>
+          <tr><td>QA lab & gauges</td><td class="amount">1 set</td><td class="amount">6,00,000</td><td class="amount">6,00,000</td><td>M1</td></tr>
+          <tr><td>Erection, electricals</td><td class="amount">—</td><td class="amount">12,00,000</td><td class="amount">12,00,000</td><td>M0</td></tr>
+          <tr><td>Moulds (3 SKUs)</td><td class="amount">3</td><td class="amount">18,00,000</td><td class="amount">54,00,000</td><td>M0‑M2</td></tr>
+          <tr><th>Total</th><th></th><th></th><th class="amount">2,40,00,000</th><th></th></tr>
+        </tbody>
+      </table>
+      <h3>Working Capital & CCC</h3>
+      <table>
+        <thead><tr><th>Metric</th><th>Days</th><th>Assumption</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>DSO (receivables)</td><td class="amount">45</td><td>Net‑45 terms</td><td>Prefer advances for tools</td></tr>
+          <tr><td>DIO (inventory)</td><td class="amount">30</td><td>Resin + WIP + FG</td><td>Resin SS 10 days</td></tr>
+          <tr><td>DPO (payables)</td><td class="amount">30</td><td>Vendors</td><td>Negotiate 45</td></tr>
+          <tr><td>CCC</td><td class="amount">45</td><td>45+30−30</td><td>Need WC ≈ 1.5× monthly COGS</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Quote with margin • Guard cash cycle • Stage CapEx</span>
+    <span>Page 3 of 4</span>
+  </div>
+</section>
+
+<section class="page">
+  <h1>Production Plan • Maintenance • Risks • KPIs (Sample)</h1>
+  <div class="bar"></div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Master Production Schedule (12 weeks)</h2><span class="desc">Units / week</span></div>
+      <table>
+        <thead><tr><th>Wk</th><th>SKU A</th><th>SKU B</th><th>SKU C</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td class="amount">10,000</td><td class="amount">2,000</td><td class="amount">1,000</td><td>Pilots</td></tr>
+          <tr><td>2</td><td class="amount">12,000</td><td class="amount">2,400</td><td class="amount">1,200</td><td>Ramp</td></tr>
+          <tr><td>3</td><td class="amount">14,000</td><td class="amount">2,800</td><td class="amount">1,400</td><td></td></tr>
+          <tr><td>4</td><td class="amount">16,000</td><td class="amount">3,200</td><td class="amount">1,600</td><td></td></tr>
+          <tr><td>5</td><td class="amount">18,000</td><td class="amount">3,600</td><td class="amount">1,800</td><td>2nd shift add</td></tr>
+          <tr><td>6</td><td class="amount">20,000</td><td class="amount">4,000</td><td class="amount">2,000</td><td></td></tr>
+          <tr><td>7</td><td class="amount">22,000</td><td class="amount">4,400</td><td class="amount">2,200</td><td></td></tr>
+          <tr><td>8</td><td class="amount">22,000</td><td class="amount">4,400</td><td class="amount">2,200</td><td>Hold for QA</td></tr>
+          <tr><td>9</td><td class="amount">24,000</td><td class="amount">4,800</td><td class="amount">2,400</td><td></td></tr>
+          <tr><td>10</td><td class="amount">24,000</td><td class="amount">4,800</td><td class="amount">2,400</td><td></td></tr>
+          <tr><td>11</td><td class="amount">25,000</td><td class="amount">5,000</td><td class="amount">2,500</td><td>Peak</td></tr>
+          <tr><td>12</td><td class="amount">25,000</td><td class="amount">5,000</td><td class="amount">2,500</td><td></td></tr>
+        </tbody>
+      </table>
+      <h3>Preventive Maintenance (TPM)</h3>
+      <table>
+        <thead><tr><th>Asset</th><th>Freq</th><th>Task</th><th>Owner</th></tr></thead>
+        <tbody>
+          <tr><td>IMM 280T</td><td>Weekly</td><td>Hydraulic, screw wear, oil leaks</td><td>Maint.</td></tr>
+          <tr><td>Chiller</td><td>Monthly</td><td>Clean condenser, check gas</td><td>Maint.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Risk Register</h2><span class="desc">Top 5 risks • trigger • mitigation</span></div>
+      <table>
+        <thead><tr><th>Risk</th><th>Trigger</th><th>Mitigation</th><th>Owner</th></tr></thead>
+        <tbody>
+          <tr><td>Resin price spike</td><td>Crude ↑</td><td>Price‑variation clause + buffer stock</td><td>CEO</td></tr>
+          <tr><td>Tool breakdown</td><td>Flash/short shots</td><td>AMC + spare inserts</td><td>COO</td></tr>
+          <tr><td>Quality drift</td><td>Weight variance</td><td>SPC + auto reject</td><td>QA</td></tr>
+          <tr><td>Payment delay</td><td>DSO &gt; 60</td><td>Credit limits + advances</td><td>Finance</td></tr>
+          <tr><td>Power outage</td><td>Grid trip</td><td>Dg set + UPS for PLC</td><td>Ops</td></tr>
+        </tbody>
+      </table>
+      <h3>Core KPIs (Weekly)</h3>
+      <table>
+        <thead><tr><th>Metric</th><th>Target</th><th>Week 1</th><th>Week 2</th><th>Week 3</th></tr></thead>
+        <tbody>
+          <tr><td>OEE %</td><td class="amount">≥ 70%</td><td class="amount">66%</td><td class="amount">69%</td><td class="amount">71%</td></tr>
+          <tr><td>Yield % / Scrap %</td><td class="amount">≥ 98% / ≤ 2%</td><td class="amount">97.6% / 2.4%</td><td class="amount">98.1% / 1.9%</td><td class="amount">98.2% / 1.8%</td></tr>
+          <tr><td>On‑time delivery %</td><td class="amount">≥ 95%</td><td class="amount">92%</td><td class="amount">94%</td><td class="amount">96%</td></tr>
+          <tr><td>Customer complaints</td><td class="amount">0</td><td class="amount">1</td><td class="amount">0</td><td class="amount">0</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Make flow visible • Review KPIs weekly • Fix the constraint</span>
+    <span>Page 4 of 4</span>
+  </div>
+</section>
+
+</body>
+</html>

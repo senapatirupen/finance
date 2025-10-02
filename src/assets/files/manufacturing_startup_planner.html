@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Manufacturing Startup Planner — A4 Printable</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,"Noto Sans","Helvetica Neue",Arial,sans-serif; color:var(--ink); line-height:1.2; }
+  h1 { font-size:22px; margin:0 0 8px; letter-spacing:.2px; }
+  h2 { font-size:16px; margin:0 0 6px; }
+  h3 { font-size:13px; margin:6px 0 4px; color:var(--muted); }
+  .meta { display:grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap:8px; margin-bottom:8px; }
+  .field { border:1px solid var(--rule); padding:6px 8px; height:34px; display:flex; align-items:center; }
+  .label { font-size:12px; color:var(--muted); margin-right:8px; }
+  .bar { height:4px; background:#000; margin: 8px 0 10px; }
+  .section { break-inside: avoid; margin-bottom: 10px; }
+  .section .head { display:flex; justify-content:space-between; align-items:baseline; }
+  .section .desc { font-size: 11px; color: var(--muted); }
+  table { width:100%; border-collapse: collapse; table-layout: fixed; }
+  th, td { border: 1px solid var(--rule); padding: 6px 6px; font-size: 12px; height: 22px; vertical-align: top; }
+  th { background:#f2f2f2; text-align:left; }
+  td.amount { text-align:right; }
+  .two-col { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .note { border:1px solid var(--rule); margin-top: 4px; background: repeating-linear-gradient(180deg,#fff,#fff 21px,#000 22px); white-space: pre-line; }
+  .note.s { height: 120px; } .note.m { height: 220px; } .note.l { height: 420px; }
+  .footer { display:flex; justify-content:space-between; font-size:11px; margin-top:6px; color:var(--muted); }
+  .page { page-break-after: always; }
+  .mini { font-size:11px; color:var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: Venture Snapshot -->
+<section class="page">
+  <h1>Manufacturing Startup Planner — Venture Snapshot</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">Company / Project:</span> __________________</div>
+    <div class="field"><span class="label">Founders:</span> ____________</div>
+    <div class="field"><span class="label">Date:</span> ____________</div>
+    <div class="field"><span class="label">Version:</span> v__</div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>What we make • For whom • Why us</h2><span class="desc">Product family, end customer, key advantage</span></div>
+      <div class="note s"></div>
+      <h3>Products & Use‑cases</h3>
+      <table>
+        <thead><tr><th style="width:36%">Product</th><th style="width:28%">Customer/Segment</th><th>Key spec/requirement</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Demand & Market</h2><span class="desc">TAM • SAM • SOM, top 5 target accounts</span></div>
+      <table>
+        <thead><tr><th style="width:22%">TAM ₹</th><th style="width:22%">SAM ₹</th><th style="width:22%">SOM (Yr3) ₹</th><th>Assumptions</th></tr></thead>
+        <tbody><tr><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr></tbody>
+      </table>
+      <h3>Top Prospects</h3>
+      <table>
+        <thead><tr><th style="width:38%">Account</th><th style="width:22%">Contact</th><th style="width:18%">Est. qty/mo</th><th style="width:22%">Status</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td class="amount"></td><td></td></tr>
+          <tr><td></td><td></td><td class="amount"></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Certifications & Compliance</h2><span class="desc">ISO/QMS, safety, regulatory</span></div>
+      <table>
+        <thead><tr><th style="width:32%">Item</th><th style="width:20%">Needed?</th><th style="width:24%">Status</th><th style="width:24%">Owner</th></tr></thead>
+        <tbody>
+          <tr><td>Factory license</td><td>Yes/No</td><td></td><td></td></tr>
+          <tr><td>Pollution control (CTE/CTO)</td><td>Yes/No</td><td></td><td></td></tr>
+          <tr><td>Fire NOC</td><td>Yes/No</td><td></td><td></td></tr>
+          <tr><td>ISO 9001 / 14001</td><td>Yes/No</td><td></td><td></td></tr>
+          <tr><td>EHS (PPE, training)</td><td>Yes/No</td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Competitor Landscape</h2><span class="desc">Alternatives vs our edge</span></div>
+      <table>
+        <thead><tr><th style="width:26%">Competitor</th><th style="width:30%">Strengths</th><th style="width:26%">Weaknesses</th><th style="width:18%">Our edge</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Start with the customer need • Design around constraints</span>
+    <span>Page 1 of 4</span>
+  </div>
+</section>
+
+<!-- PAGE 2: Operations & Supply -->
+<section class="page">
+  <h1>Operations • Supply Chain • Quality</h1>
+  <div class="bar"></div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Bill of Materials (BOM) — Key SKU</h2><span class="desc">Top cost drivers</span></div>
+      <table>
+        <thead><tr><th style="width:36%">Item</th><th style="width:16%">UoM</th><th style="width:16%">Qty/Unit</th><th style="width:16%">Rate ₹</th><th style="width:16%">Cost ₹</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr>
+          <tr><td></td><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr>
+          <tr><th>Total</th><th></th><th class="amount"></th><th></th><th class="amount"></th></tr>
+        </tbody>
+      </table>
+      <h3>Routing & Cycle Times</h3>
+      <table>
+        <thead><tr><th style="width:30%">Process</th><th style="width:16%">Setup (min)</th><th style="width:16%">Cycle (sec)</th><th style="width:18%">Machines</th><th style="width:20%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td class="amount"></td><td class="amount"></td><td></td><td></td></tr>
+          <tr><td></td><td class="amount"></td><td class="amount"></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Capacity Plan</h2><span class="desc">Machines • Shifts • OEE</span></div>
+      <table>
+        <thead><tr><th style="width:26%">Machine</th><th style="width:14%">Qty</th><th style="width:14%">Shifts</th><th style="width:14%">OEE %</th><th style="width:16%">Rated/hr</th><th style="width:16%">Cap/day</th></tr></thead>
+        <tbody>
+          <tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr>
+          <tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr>
+        </tbody>
+      </table>
+      <h3>Quality Plan</h3>
+      <table>
+        <thead><tr><th style="width:30%">Checkpoint</th><th style="width:28%">Method/AQL</th><th style="width:22%">Frequency</th><th style="width:20%">Owner</th></tr></thead>
+        <tbody>
+          <tr><td>Incoming QC</td><td></td><td></td><td></td></tr>
+          <tr><td>In‑process</td><td></td><td></td><td></td></tr>
+          <tr><td>Final QC</td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Suppliers & Lead Times</h2><span class="desc">Primary & secondary vendors</span></div>
+      <table>
+        <thead><tr><th style="width:28%">Item</th><th style="width:28%">Vendor</th><th style="width:18%">Lead time (d)</th><th style="width:26%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td class="amount"></td><td></td></tr>
+          <tr><td></td><td></td><td class="amount"></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Inventory Policy</h2><span class="desc">EOQ • Safety Stock • Reorder point</span></div>
+      <table>
+        <thead><tr><th style="width:36%">Parameter</th><th>Formula / Target</th></tr></thead>
+        <tbody>
+          <tr><td>EOQ</td><td>= √(2DS/H)</td></tr>
+          <tr><td>Safety stock</td><td>= Z × σdemand × √LT</td></tr>
+          <tr><td>Reorder point</td><td>= Avg daily demand × LT + Safety stock</td></tr>
+        </tbody>
+      </table>
+      <div class="note s"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Right‑first‑time • Protect takt • Dual‑source critical items</span>
+    <span>Page 2 of 4</span>
+  </div>
+</section>
+
+<!-- PAGE 3: Finance & Economics -->
+<section class="page">
+  <h1>Unit Economics • CapEx • Working Capital</h1>
+  <div class="bar"></div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Unit Cost Breakdown — Key SKU</h2><span class="desc">Material + Conversion + OH</span></div>
+      <table>
+        <thead><tr><th style="width:40%">Cost Element</th><th style="width:22%">Rate/Assumption</th><th style="width:18%">₹/Unit</th><th style="width:20%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Material</td><td></td><td class="amount"></td><td></td></tr>
+          <tr><td>Energy</td><td></td><td class="amount"></td><td></td></tr>
+          <tr><td>Direct Labour</td><td></td><td class="amount"></td><td></td></tr>
+          <tr><td>Quality & Packing</td><td></td><td class="amount"></td><td></td></tr>
+          <tr><td>Factory OH (alloc)</td><td></td><td class="amount"></td><td></td></tr>
+          <tr><td>Tooling depreciation</td><td></td><td class="amount"></td><td></td></tr>
+          <tr><th>Total unit cost</th><th></th><th class="amount"></th><th></th></tr>
+          <tr><td>Selling price (ex‑factory)</td><td></td><td class="amount"></td><td></td></tr>
+          <tr><td>Contribution margin / unit</td><td></td><td class="amount"></td><td>Exclude fixed</td></tr>
+        </tbody>
+      </table>
+      <h3>Breakeven</h3>
+      <table>
+        <thead><tr><th style="width:40%">Fixed costs / month ₹</th><th style="width:20%">CM / unit ₹</th><th style="width:20%">BEP units/mo</th><th style="width:20%">Notes</th></tr></thead>
+        <tbody><tr><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr></tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>CapEx Plan</h2><span class="desc">Machines • Molds • Utilities</span></div>
+      <table>
+        <thead><tr><th style="width:28%">Item</th><th style="width:18%">Qty</th><th style="width:22%">Unit ₹</th><th style="width:20%">Total ₹</th><th style="width:12%">When</th></tr></thead>
+        <tbody>
+          <tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr>
+          <tr><td></td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td></td></tr>
+          <tr><th>Total</th><th></th><th></th><th class="amount"></th><th></th></tr>
+        </tbody>
+      </table>
+      <h3>Working Capital & CCC</h3>
+      <table>
+        <thead><tr><th style="width:24%">Metric</th><th style="width:24%">Days</th><th style="width:26%">Assumption</th><th style="width:26%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>DSO (receivables)</td><td class="amount"></td><td></td><td></td></tr>
+          <tr><td>DIO (inventory)</td><td class="amount"></td><td></td><td></td></tr>
+          <tr><td>DPO (payables)</td><td class="amount"></td><td></td><td></td></tr>
+          <tr><td>CCC (DSO + DIO − DPO)</td><td class="amount"></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Quote with margin • Guard cash cycle • Stage CapEx</span>
+    <span>Page 3 of 4</span>
+  </div>
+</section>
+
+<!-- PAGE 4: Planning & KPIs -->
+<section class="page">
+  <h1>Production Plan • Maintenance • Risks • KPIs</h1>
+  <div class="bar"></div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Master Production Schedule (12 weeks)</h2><span class="desc">Units / week</span></div>
+      <table>
+        <thead><tr><th style="width:10%">Wk</th><th style="width:22%">SKU A</th><th style="width:22%">SKU B</th><th style="width:22%">SKU C</th><th style="width:24%">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr><tr><td>2</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr><tr><td>3</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr><tr><td>4</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr><tr><td>5</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr><tr><td>6</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr><tr><td>7</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr><tr><td>8</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr><tr><td>9</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr><tr><td>10</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr><tr><td>11</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr><tr><td>12</td><td class='amount'></td><td class='amount'></td><td class='amount'></td><td></td></tr>
+        </tbody>
+      </table>
+      <h3>Preventive Maintenance (TPM)</h3>
+      <table>
+        <thead><tr><th style="width:32%">Asset</th><th style="width:18%">Freq</th><th style="width:28%">Task</th><th style="width:22%">Owner</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Risk Register</h2><span class="desc">Top 5 risks • trigger • mitigation</span></div>
+      <table>
+        <thead><tr><th style="width:30%">Risk</th><th style="width:24%">Trigger</th><th style="width:28%">Mitigation</th><th style="width:18%">Owner</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+      <h3>Core KPIs (Weekly)</h3>
+      <table>
+        <thead><tr><th style="width:30%">Metric</th><th style="width:18%">Target</th><th style="width:18%">Week 1</th><th style="width:18%">Week 2</th><th style="width:16%">Week 3</th></tr></thead>
+        <tbody>
+          <tr><td>OEE %</td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr>
+          <tr><td>Yield % / Scrap %</td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr>
+          <tr><td>On‑time delivery %</td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr>
+          <tr><td>Customer complaints</td><td class="amount"></td><td class="amount"></td><td class="amount"></td><td class="amount"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Make flow visible • Review KPIs weekly • Fix the constraint</span>
+    <span>Page 4 of 4</span>
+  </div>
+</section>
+
+</body>
+</html>

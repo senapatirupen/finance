@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Advanced To‑Do — A4 (Sample)</title><style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif; color:var(--ink); line-height:1.2; }
+  h1 { font-size:22px; margin:0 0 8px; }
+  h2 { font-size:16px; margin:8px 0 6px; }
+  h3 { font-size:13px; margin:6px 0 4px; color:var(--muted); }
+  .bar { height:4px; background:#000; margin:8px 0 10px; }
+  .meta { display:grid; grid-template-columns: repeat(4, 1fr); gap:8px; margin-bottom:8px; }
+  .field { border:1px solid var(--rule); padding:6px 8px; height:34px; display:flex; align-items:center; font-size:12px; }
+  .label { color:var(--muted); margin-right:8px; }
+  .section { break-inside: avoid; margin-bottom:10px; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .three { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; }
+  table { width:100%; border-collapse:collapse; table-layout:fixed; }
+  th, td { border:1px solid var(--rule); padding:6px; font-size:12px; height:22px; vertical-align:top; }
+  th { background:#f2f2f2; text-align:left; }
+  .note { border:1px solid var(--rule); background: repeating-linear-gradient(180deg,#fff,#fff 21px,#000 22px); height:120px; white-space:pre-line; padding:6px; }
+  .note.l { height:320px; }
+  .foot { display:flex; justify-content:space-between; font-size:11px; color:var(--muted); margin-top:6px; }
+  .page { page-break-after: always; padding-bottom:6px; }
+  .right { text-align:right; }
+  .pill { border:1px solid #000; padding:2px 6px; font-size:11px; border-radius:12px; display:inline-block; margin-right:6px; }
+  .mini { font-size:11px; color:var(--muted); }
+  .wip { font-weight:bold; }
+</style></head>
+<body>
+
+<section class="page">
+  <h1>Advanced To‑Do System — Capture & Triage (Sample)</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">Date:</span> 2025-09-23</div>
+    <div class="field"><span class="label">Owner:</span> Rohan</div>
+    <div class="field"><span class="label">Theme:</span> Delivery</div>
+    <div class="field"><span class="label">Energy Now:</span> Medium</div>
+  </div>
+
+  <div class="section">
+    <h2>INBOX — capture quickly (no formatting)</h2>
+    <table>
+      <thead><tr><th>✓</th><th>Task / Idea</th><th>Context</th><th>Energy</th><th>Est. (min)</th><th>Due / When</th></tr></thead>
+      <tbody><tr><td>☐</td><td>Draft ACME proposal rev‑2</td><td>@work</td><td>High</td><td>90</td><td>2025-09-25</td></tr>
+<tr><td>☐</td><td>Renew car insurance</td><td>@errand</td><td>Low</td><td>20</td><td>2025-10-03</td></tr>
+<tr><td>☐</td><td>Book dentist</td><td>@call</td><td>Low</td><td>10</td><td>2025-10-07</td></tr>
+<tr><td>☐</td><td>Fix prod bug #482</td><td>@work</td><td>High</td><td>60</td><td>2025-09-23</td></tr>
+<tr><td>☐</td><td>Buy birthday gift for Ria</td><td>@errand</td><td>Low</td><td>30</td><td>2025-09-28</td></tr>
+<tr><td>☐</td><td>Write blog outline: Focus habits</td><td>@deep</td><td>Medium</td><td>50</td><td>2025-09-30</td></tr>
+<tr><td>☐</td><td>Team 1:1 prep — Hari</td><td>@work</td><td>Medium</td><td>25</td><td>2025-09-24</td></tr>
+<tr><td>☐</td><td>Weekly groceries</td><td>@home</td><td>Low</td><td>45</td><td>2025-09-26</td></tr>
+<tr><td>☐</td><td>Study system design</td><td>@deep</td><td>High</td><td>60</td><td>2025-09-29</td></tr>
+<tr><td>☐</td><td>Plan Goa travel</td><td>@home</td><td>Low</td><td>40</td><td>2025-10-13</td></tr>
+<tr><td>☐</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>☐</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>☐</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>☐</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>☐</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>☐</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>☐</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>☐</td><td></td><td></td><td></td><td></td><td></td></tr></tbody>
+    </table>
+  </div>
+
+  <div class="two">
+    <div class="section">
+      <h2>Triage → Next Action</h2>
+      <table>
+        <thead><tr><th>✓</th><th>Clarified Next Action</th><th>Owner / Who</th><th>When</th><th>Context/Tags</th></tr></thead>
+        <tbody><tr><td>☐</td><td>Bug #482 — rollback and hotfix patch</td><td>You</td><td>2025-09-23</td><td>@work #bug #urgent</td></tr>
+<tr><td>☐</td><td>ACME: send proposal slots for review</td><td>You</td><td>2025-09-24</td><td>@work #sales</td></tr>
+<tr><td>☐</td><td>Dentist — call and book slot</td><td>You</td><td>2025-09-24</td><td>@call #health</td></tr>
+<tr><td>☐</td><td>Gift for Ria — order online</td><td>You</td><td>2025-09-25</td><td>@errand #personal</td></tr>
+<tr><td>☐</td><td>Groceries — order via app</td><td>You</td><td>2025-09-26</td><td>@home #chore</td></tr>
+<tr><td>☐</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>☐</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>☐</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>☐</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>☐</td><td></td><td></td><td></td><td></td></tr></tbody>
+      </table>
+      <p class="mini">Tip: If ≤2 min, do now. Else, delegate or schedule.</p>
+    </div>
+    <div class="section">
+      <h2>Notes</h2>
+      <div class="note l">• ACME wants pricing fences
+• Bug #482 root cause suspected: config drift</div>
+    </div>
+  </div>
+  <div class="foot"><span>Capture fast • Clarify ruthlessly</span><span>Page 1 of 4</span></div>
+</section>
+
+<section class="page">
+  <h1>Prioritize — Eisenhower + ICE (Sample)</h1>
+  <div class="bar"></div>
+  
+    <div class="two">
+      <div class="section">
+        <h2>Eisenhower Matrix</h2>
+        <table>
+          <thead><tr><th style="width:50%">Important & Urgent (Do)</th><th>Important, Not Urgent (Plan)</th></tr></thead>
+          <tbody>
+            <tr><td style="height:120px">• Bug #482 hotfix
+• ACME slots</td><td>• System design study plan
+• Blog outline</td></tr>
+          </tbody>
+        </table>
+        <table style="margin-top:6px">
+          <thead><tr><th style="width:50%">Not Important, Urgent (Delegate)</th><th>Not Important, Not Urgent (Delete)</th></tr></thead>
+          <tbody>
+            <tr><td style="height:120px">• Groceries app order</td><td>• Social scroll</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="section">
+        <h2>ICE Scoring (Impact × Confidence × Ease)</h2>
+        <table>
+          <thead><tr><th style="width:6%">✓</th><th>Task</th><th style="width:10%">Impact (1–10)</th><th style="width:12%">Confidence (0.1–1.0)</th><th style="width:10%">Ease (1–10)</th><th style="width:12%">ICE Score</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>☐</td><td>Fix prod bug #482</td><td>9</td><td>0.9</td><td>6</td><td>48.6</td><td></td></tr><tr><td>☐</td><td>ACME proposal rev‑2</td><td>8</td><td>0.8</td><td>5</td><td>32.0</td><td></td></tr><tr><td>☐</td><td>Write blog outline</td><td>6</td><td>0.7</td><td>7</td><td>29.4</td><td></td></tr><tr><td>☐</td><td>Study system design</td><td>7</td><td>0.6</td><td>5</td><td>21.0</td><td></td></tr><tr><td>☐</td><td>Plan Goa travel</td><td>4</td><td>0.8</td><td>8</td><td>25.6</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+  <div class="foot"><span>Do first • Decide later • Delegate • Delete</span><span>Page 2 of 4</span></div>
+</section>
+
+<section class="page">
+  <h1>Today Plan & Execution (Sample)</h1>
+  <div class="bar"></div>
+
+  <div class="two">
+    <div class="section">
+      <h2>MITs (Most Important Tasks) — max 5</h2>
+      <table>
+        <thead><tr><th>✓</th><th>Task</th><th>Start</th><th>Finish</th></tr></thead>
+        <tbody><tr><td>☐</td><td>Bug #482 — reproduce & patch</td><td>09:30</td><td>11:00</td></tr>
+<tr><td>☐</td><td>ACME proposal — exec summary</td><td>11:15</td><td>12:15</td></tr>
+<tr><td>☐</td><td>System design — caching notes</td><td>14:00</td><td>15:00</td></tr>
+<tr><td>☐</td><td>Blog outline — focus habits</td><td>16:00</td><td>16:45</td></tr>
+<tr><td>☐</td><td>Groceries — app order</td><td>18:30</td><td>18:45</td></tr></tbody>
+      </table>
+
+      <h2>Pomodoro / Focus Cycles</h2>
+      <table>
+        <thead><tr><th>◻︎</th><th>◻︎</th><th>◻︎</th><th>◻︎</th><th>◻︎</th><th>◻︎</th><th>◻︎</th><th>◻︎</th><th>◻︎</th><th>◻︎</th><th>◻︎</th><th>◻︎</th></tr></thead>
+        <tbody><tr><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+<tr><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+<tr><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></tbody>
+      </table>
+
+      <h2>Delegation Log</h2>
+      <table>
+        <thead><tr><th>Action</th><th>To</th><th>Due</th><th>Follow‑up Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Vendor API clarification</td><td>Neha</td><td>2025-09-24</td><td>Waiting email</td></tr>
+          <tr><td>QA on hotfix</td><td>Arun</td><td>2025-09-23</td><td>Run smoke tests</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Time‑Block Schedule (06:00–22:00)</h2>
+      <table>
+        <thead><tr><th>Time</th><th>Block</th><th>Notes</th></tr></thead>
+        <tbody><tr><td>06:00</td><td></td><td></td></tr>
+<tr><td>07:00</td><td></td><td></td></tr>
+<tr><td>08:00</td><td>Email triage</td><td></td></tr>
+<tr><td>09:00</td><td>Hotfix war‑room</td><td></td></tr>
+<tr><td>10:00</td><td>Dev work — patch</td><td></td></tr>
+<tr><td>11:00</td><td>ACME exec summary</td><td></td></tr>
+<tr><td>12:00</td><td>Lunch / walk</td><td></td></tr>
+<tr><td>13:00</td><td>Admin batch / inbox</td><td></td></tr>
+<tr><td>14:00</td><td>System design study</td><td></td></tr>
+<tr><td>15:00</td><td>Break</td><td></td></tr>
+<tr><td>16:00</td><td>Blog outline</td><td></td></tr>
+<tr><td>17:00</td><td>Wrap / review</td><td></td></tr>
+<tr><td>18:00</td><td>Groceries order</td><td></td></tr>
+<tr><td>19:00</td><td>Family / dinner</td><td></td></tr>
+<tr><td>20:00</td><td>Read 20 min</td><td></td></tr>
+<tr><td>21:00</td><td>Plan tomorrow</td><td></td></tr>
+<tr><td>22:00</td><td></td><td></td></tr></tbody>
+      </table>
+
+      <h2>Habit / Routine (Week)</h2>
+      <table>
+        <thead><tr><th>Habit</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead>
+        <tbody>
+          <tr><td>Exercise 30m</td><td>☑</td><td>☐</td><td>☑</td><td>☐</td><td>☑</td><td>☐</td><td>☐</td></tr>
+          <tr><td>Read 20m</td><td>☐</td><td>☑</td><td>☑</td><td>☐</td><td>☐</td><td>☑</td><td>☐</td></tr>
+          <tr><td>Inbox zero</td><td>☐</td><td>☑</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+          <tr><td>No sugar</td><td>☑</td><td>☐</td><td>☐</td><td>☑</td><td>☐</td><td>☐</td><td>☑</td></tr>
+          <tr><td>Sleep ≥7h</td><td>☑</td><td>☑</td><td>☐</td><td>☐</td><td>☑</td><td>☐</td><td>☐</td></tr>
+          <tr><td>Meditate 10m</td><td>☐</td><td>☑</td><td>☑</td><td>☐</td><td>☑</td><td>☐</td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="foot"><span>Limit WIP • Protect focus • Batch admin</span><span>Page 3 of 4</span></div>
+</section>
+
+<section class="page">
+  <h1>Kanban & Review (Sample)</h1>
+  <div class="bar"></div>
+
+  <div class="section">
+    <h2>Kanban (limit Doing ≤ 3)</h2>
+    <table>
+      <thead><tr><th>Backlog</th><th>Doing <span class='wip'>(WIP≤3)</span></th><th>Blocked</th><th>Done</th></tr></thead>
+      <tbody>
+        <tr><td style='height:80px; white-space:pre-line'>• Refactor billing cron
+• Dentist appointment
+• Travel planning
+• Update resume</td><td style='white-space:pre-line'>• Bug #482 patch
+• ACME exec summary</td><td style='white-space:pre-line'>• Vendor API change (waiting reply)</td><td style='white-space:pre-line'>• Team 1:1 prep
+• Weekly review</td></tr>
+<tr><td style='height:80px'></td><td style='height:80px'></td><td style='height:80px'></td><td style='height:80px'></td></tr>
+<tr><td style='height:80px'></td><td style='height:80px'></td><td style='height:80px'></td><td style='height:80px'></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="two">
+    <div class="section">
+      <h2>Blockers & Risks</h2>
+      <div class="note l">• Vendor API change; ETA unclear → escalate if no update by Thu
+• Laptop battery failing; order replacement</div>
+    </div>
+    <div class="section">
+      <h2>Daily / Weekly Review</h2>
+      <table>
+        <thead><tr><th>Prompt</th><th>Write</th></tr></thead>
+        <tbody>
+          <tr><td>Wins</td><td>Shipped hotfix; cleared 20 emails</td></tr>
+          <tr><td>What slowed me down</td><td>Context switches; meetings overran</td></tr>
+          <tr><td>What I’ll change next</td><td>Block deep work 2×90m; say no to ad‑hoc pings</td></tr>
+          <tr><td>Top 3 for tomorrow / next week</td><td>ACME full draft • Dentist booked • Resume update</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="foot"><span>Visualize flow • Inspect & adapt</span><span>Page 4 of 4</span></div>
+</section>
+
+</body></html>

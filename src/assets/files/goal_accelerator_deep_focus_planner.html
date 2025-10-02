@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Goal Accelerator — Deep Focus Planner (A4 Printable)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @page { size: A4; margin: 12mm; }
+  :root { --ink:#111; --muted:#666; --rule:#000; }
+  * { box-sizing: border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,"Noto Sans","Helvetica Neue",Arial,sans-serif; color:var(--ink); line-height:1.2; }
+  h1 { font-size:22px; margin:0 0 8px; letter-spacing:.2px; }
+  h2 { font-size:16px; margin:0 0 6px; }
+  h3 { font-size:13px; margin:6px 0 4px; color:var(--muted); }
+  .meta { display:grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; gap:8px; margin-bottom:8px; }
+  .field { border:1px solid var(--rule); padding:6px 8px; height:34px; display:flex; align-items:center; }
+  .label { font-size:12px; color:var(--muted); margin-right:8px; }
+  .bar { height:4px; background:#000; margin: 8px 0 10px; }
+  .section { break-inside: avoid; margin-bottom: 10px; }
+  .section .head { display:flex; justify-content:space-between; align-items:baseline; }
+  .section .desc { font-size: 11px; color: var(--muted); }
+  table { width:100%; border-collapse: collapse; table-layout: fixed; }
+  th, td { border: 1px solid var(--rule); padding: 6px 6px; font-size: 12px; height: 22px; vertical-align: top; }
+  th { background:#f2f2f2; text-align:left; }
+  td.amount { text-align:right; }
+  .two-col { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .three-col { display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .note { border:1px solid var(--rule); margin-top: 4px; background: repeating-linear-gradient(180deg,#fff,#fff 21px,#000 22px); white-space: pre-line; }
+  .note.s { height: 120px; } .note.m { height: 220px; } .note.l { height: 420px; }
+  .footer { display:flex; justify-content:space-between; font-size:11px; margin-top:6px; color:var(--muted); }
+  .page { page-break-after: always; }
+  .mini { font-size:11px; color:var(--muted); }
+  .score { display:grid; grid-template-columns: repeat(10, 1fr); gap:0; }
+  .score div { border:1px solid #000; height:18px; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: North Star • Lead Measures • Focus Protocol -->
+<section class="page">
+  <h1>Goal Accelerator — Deep Focus Planner</h1>
+  <div class="bar"></div>
+  <div class="meta">
+    <div class="field"><span class="label">Name:</span> ______________________</div>
+    <div class="field"><span class="label">Date:</span> ____________</div>
+    <div class="field"><span class="label">North Star (Lag Goal):</span> __________________</div>
+    <div class="field"><span class="label">12‑Week Target:</span> __________________</div>
+    <div class="field"><span class="label">Baseline:</span> ______</div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Lead Measures (inputs you control)</h2><span class="desc">Daily/Weekly targets drive the lag goal</span></div>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:36%">Lead Measure</th>
+            <th style="width:14%">Target</th>
+            <th style="width:8%">Mon</th><th style="width:8%">Tue</th><th style="width:8%">Wed</th>
+            <th style="width:8%">Thu</th><th style="width:8%">Fri</th><th style="width:8%">Sat</th><th style="width:8%">Sun</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Deep work hours</td><td>__ h</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+          <tr><td>Daily ship (visible output)</td><td>1 item</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+          <tr><td>Customer/mentor touches</td><td>__</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+          <tr><td>Skill practice (deliberate)</td><td>__ min</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Top 3 Outcomes Today</h2><span class="desc">Define success before you start</span></div>
+      <table>
+        <thead><tr><th style="width:8%">#</th><th>Outcome</th><th style="width:26%">Why it matters</th><th style="width:16%">Done?</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td></td><td></td><td>☐</td></tr>
+          <tr><td>2</td><td></td><td></td><td>☐</td></tr>
+          <tr><td>3</td><td></td><td></td><td>☐</td></tr>
+        </tbody>
+      </table>
+
+      <div class="head" style="margin-top:6px;"><h2>Focus Score (self‑rate)</h2><span class="desc">How focused were you today? 1–10</span></div>
+      <div class="score"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <p class="mini">Tick one box (1=low, 10=laser). Note major distraction(s): _____________</p>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Timebox & Focus Blocks</h2><span class="desc">Plan vs Actual (batch comms, protect deep work)</span></div>
+      <table>
+        <thead><tr><th style="width:16%">Time</th><th>Plan</th><th style="width:20%">Actual</th></tr></thead>
+        <tbody>
+          <tr><td>05:00</td><td></td><td></td></tr>
+          <tr><td>06:00</td><td></td><td></td></tr>
+          <tr><td>07:00</td><td></td><td></td></tr>
+          <tr><td>08:00</td><td></td><td></td></tr>
+          <tr><td>09:00</td><td></td><td></td></tr>
+          <tr><td>10:00</td><td></td><td></td></tr>
+          <tr><td>11:00</td><td></td><td></td></tr>
+          <tr><td>12:00</td><td></td><td></td></tr>
+          <tr><td>13:00</td><td></td><td></td></tr>
+          <tr><td>14:00</td><td></td><td></td></tr>
+          <tr><td>15:00</td><td></td><td></td></tr>
+          <tr><td>16:00</td><td></td><td></td></tr>
+          <tr><td>17:00</td><td></td><td></td></tr>
+          <tr><td>18:00</td><td></td><td></td></tr>
+          <tr><td>19:00</td><td></td><td></td></tr>
+          <tr><td>20:00</td><td></td><td></td></tr>
+          <tr><td>21:00</td><td></td><td></td></tr>
+          <tr><td>22:00</td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Focus Protocol (choose once, follow)</h2><span class="desc">Make distraction impossible</span></div>
+      <table>
+        <thead><tr><th style="width:62%">Step</th><th style="width:20%">Target</th><th style="width:18%">Tick</th></tr></thead>
+        <tbody>
+          <tr><td>Block length</td><td>25 / 50 / 90 min</td><td>☐</td></tr>
+          <tr><td>Break length</td><td>5 / 10 / 15 min</td><td>☐</td></tr>
+          <tr><td>Location & posture (desk / standing / library)</td><td>Preset</td><td>☐</td></tr>
+          <tr><td>Phone out of reach (another room)</td><td>Yes</td><td>☐</td></tr>
+          <tr><td>Do Not Disturb on (apps + OS)</td><td>On</td><td>☐</td></tr>
+          <tr><td>One‑tab rule (close all non‑task tabs)</td><td>On</td><td>☐</td></tr>
+          <tr><td>Pre‑commit: “I will ship ____ by ____”</td><td>Write</td><td>☐</td></tr>
+        </tbody>
+      </table>
+      <p class="mini">Interrupt shield: notify team • door sign • calendar blocked • noise‑cancel • timer visible.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Lead the inputs • Protect deep work • Ship daily</span>
+    <span>Page 1 of 3</span>
+  </div>
+</section>
+
+<!-- PAGE 2: Deep Work Sprints • Bottlenecks • Leverage -->
+<section class="page">
+  <h1>Deep Work Sprints & Leverage</h1>
+  <div class="bar"></div>
+
+  <div class="section">
+    <div class="head"><h2>Deep Work Sprints (today)</h2><span class="desc">Define intention • ship a deliverable • count distractions</span></div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:8%">#</th>
+          <th style="width:18%">Start–Stop</th>
+          <th style="width:32%">Intention (one sentence)</th>
+          <th style="width:24%">Deliverable</th>
+          <th style="width:9%">Distr.</th>
+          <th style="width:9%">Done?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>__:__–__:__</td><td></td><td></td><td class="amount">__</td><td>☐</td></tr>
+        <tr><td>2</td><td>__:__–__:__</td><td></td><td></td><td class="amount">__</td><td>☐</td></tr>
+        <tr><td>3</td><td>__:__–__:__</td><td></td><td></td><td class="amount">__</td><td>☐</td></tr>
+        <tr><td>4</td><td>__:__–__:__</td><td></td><td></td><td class="amount">__</td><td>☐</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Task Decomposition (2‑minute map)</h2><span class="desc">Break the big thing into tiny next steps</span></div>
+      <table>
+        <thead><tr><th style="width:50%">Big Task</th><th style="width:50%">Next 3 micro‑steps (≤2 min each)</th></tr></thead>
+        <tbody>
+          <tr><td></td><td>1) ____ • 2) ____ • 3) ____</td></tr>
+          <tr><td></td><td>1) ____ • 2) ____ • 3) ____</td></tr>
+          <tr><td></td><td>1) ____ • 2) ____ • 3) ____</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Bottleneck → One‑Move Fix</h2><span class="desc">Remove constraints before pushing harder</span></div>
+      <table>
+        <thead><tr><th style="width:46%">Current bottleneck</th><th style="width:36%">One action to remove it</th><th style="width:18%">Owner</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>80/20 Quick Picks</h2><span class="desc">Select the few high‑leverage tasks</span></div>
+      <table>
+        <thead><tr><th style="width:64%">Task</th><th style="width:18%">Impact</th><th style="width:18%">Do today?</th></tr></thead>
+        <tbody>
+          <tr><td></td><td>Low/Med/High</td><td>☐</td></tr>
+          <tr><td></td><td>Low/Med/High</td><td>☐</td></tr>
+          <tr><td></td><td>Low/Med/High</td><td>☐</td></tr>
+          <tr><td></td><td>Low/Med/High</td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Anti‑Busyness: Ditch / Delegate</h2><span class="desc">Say no to low‑value work</span></div>
+      <table>
+        <thead><tr><th style="width:44%">Task to drop / defer</th><th style="width:24%">Action</th><th style="width:14%">When</th><th style="width:18%">Owner</th></tr></thead>
+        <tbody>
+          <tr><td></td><td>Drop/Delegate/Automate</td><td></td><td></td></tr>
+          <tr><td></td><td>Drop/Delegate/Automate</td><td></td><td></td></tr>
+          <tr><td></td><td>Drop/Delegate/Automate</td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Energy & Rhythm</h2><span class="desc">Protect your peak hours</span></div>
+      <table>
+        <thead><tr><th style="width:24%">Item</th><th style="width:30%">Plan</th><th style="width:28%">Actual</th><th style="width:18%">Tick</th></tr></thead>
+        <tbody>
+          <tr><td>Sleep target</td><td>__ h, lights out __:__</td><td></td><td>☐</td></tr>
+          <tr><td>Movement</td><td>Walk/Workout __ min</td><td></td><td>☐</td></tr>
+          <tr><td>Sunlight & water</td><td>AM exposure + 500 ml</td><td></td><td>☐</td></tr>
+          <tr><td>Midday reset</td><td>10‑min walk / nap</td><td></td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Distraction Triggers → Counter‑moves</h2><span class="desc">Design the environment</span></div>
+      <table>
+        <thead><tr><th style="width:36%">Trigger</th><th style="width:44%">Counter‑move</th><th style="width:20%">Tick</th></tr></thead>
+        <tbody>
+          <tr><td>Phone pings</td><td>Focus mode + phone in other room</td><td>☐</td></tr>
+          <tr><td>Email pull</td><td>2 windows (12:30 & 16:30) only</td><td>☐</td></tr>
+          <tr><td>Noise / people</td><td>Headphones • door sign</td><td>☐</td></tr>
+          <tr><td>Multi‑tab drift</td><td>One‑tab rule + blocker</td><td>☐</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Sprint with intention • Remove bottlenecks • Favour leverage</span>
+    <span>Page 2 of 3</span>
+  </div>
+</section>
+
+<!-- PAGE 3: Weekly Review & Commitment -->
+<section class="page">
+  <h1>Weekly Accelerator & Commitment</h1>
+  <div class="bar"></div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="head"><h2>Scorecard (This Week)</h2><span class="desc">Measure what matters</span></div>
+      <table>
+        <thead><tr><th style="width:46%">Metric</th><th style="width:18%">Target</th><th style="width:18%">Actual</th><th style="width:18%">Hit?</th></tr></thead>
+        <tbody>
+          <tr><td>Deep work hours</td><td>__ h</td><td>__ h</td><td>☐</td></tr>
+          <tr><td>Outputs shipped</td><td>__</td><td>__</td><td>☐</td></tr>
+          <tr><td>Customer/mentor touches</td><td>__</td><td>__</td><td>☐</td></tr>
+          <tr><td>Skill practice minutes</td><td>__</td><td>__</td><td>☐</td></tr>
+        </tbody>
+      </table>
+
+      <div class="head" style="margin-top:6px;"><h2>Review & Reset</h2><span class="desc">Short reflections</span></div>
+      <table>
+        <thead><tr><th style="width:40%">Prompt</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Wins worth keeping</td><td></td></tr>
+          <tr><td>What drained time/energy?</td><td></td></tr>
+          <tr><td>What to automate/delegate/ditch?</td><td></td></tr>
+          <tr><td>System tweak for next week</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="head"><h2>Next Week Playbook</h2><span class="desc">Lock your plan before Monday</span></div>
+      <table>
+        <thead><tr><th style="width:8%">#</th><th>Outcome</th><th style="width:24%">Lead measure to hit it</th><th style="width:18%">Due</th><th style="width:12%">Owner</th><th style="width:14%">Done?</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td></td><td></td><td></td><td>Me</td><td>☐</td></tr>
+          <tr><td>2</td><td></td><td></td><td></td><td>Me</td><td>☐</td></tr>
+          <tr><td>3</td><td></td><td></td><td></td><td>Me</td><td>☐</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Accountability</h3>
+      <table>
+        <thead><tr><th style="width:34%">Partner / Group</th><th style="width:24%">Check‑in cadence</th><th style="width:24%">Channel</th><th style="width:18%">First check‑in</th></tr></thead>
+        <tbody>
+          <tr><td></td><td>Daily / 2×wk / Weekly</td><td>Call/WA/Email</td><td>____-__-__</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="head"><h2>Commitment Contract</h2><span class="desc">Make it real</span></div>
+    <table>
+      <thead><tr><th style="width:55%">I commit to</th><th style="width:25%">For (days)</th><th style="width:20%">Signature</th></tr></thead>
+      <tbody>
+        <tr><td>Protecting ____ deep work blocks/day and shipping one visible output.</td><td>__</td><td></td></tr>
+      </tbody>
+    </table>
+    <h3>Vision — why this matters</h3>
+    <div class="note l"></div>
+  </div>
+
+  <div class="footer">
+    <span>Clarity • Leverage • Consistency — speed with quality</span>
+    <span>Page 3 of 3</span>
+  </div>
+</section>
+
+</body>
+</html>
