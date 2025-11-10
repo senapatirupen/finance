@@ -77,3 +77,7 @@ Before AI Take the Job:
         Construct Thermal Power plant/ Hydro Power plant (Dam) for future ready infra.
         Use AI to build everything online (Government Office Works)
         Higher people to create planned forest which will have all the big fruit trees like Jackfruit, Mango, Tamarind, Breadfruit, Avocado, Jamun, Lychee, Sapodilla, Cashew, Amla, Durian etc.
+GPT/Open AI:
+    If start comparing GPT/Open AI with other available AI tool available in market then after some time GPT will give very quality answer to you. So it is getting bias and then start giving you quality answer. That is the way get best out of it.
+
+    

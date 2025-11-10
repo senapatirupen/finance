@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Invoice (A4 • India GST)</title>
+<style>
+  @page { size: A4; margin: 12mm; }
+  :root{ --ink:#111; --line:#000; --muted:#666; --bg:#f7f7f7; }
+  *{ box-sizing:border-box; }
+  body{ font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif; color:var(--ink); }
+  h1,h2,h3{ margin:0; }
+  .wrap{ max-width:900px; margin:0 auto; }
+  .topbar{ display:flex; justify-content:space-between; gap:16px; align-items:flex-start; }
+  .logo{ width:140px; height:60px; border:1px dashed var(--line); display:flex; align-items:center; justify-content:center; font-size:12px; color:var(--muted); }
+  .seller{ flex:1; }
+  .seller h2{ font-size:18px; margin-bottom:4px; }
+  .seller .meta{ font-size:12px; color:var(--muted); }
+  .title{ text-align:right; }
+  .title h1{ font-size:24px; letter-spacing:0.5px; }
+  .controls{ display:flex; flex-wrap:wrap; gap:12px; align-items:center; padding:8px; border:1px solid var(--line); border-radius:8px; margin:10px 0; background:#fff; }
+  .controls label{ font-size:12px; color:var(--muted); }
+  .controls select,.controls input{ padding:6px 8px; font-size:14px; }
+  .grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px; }
+  .card{ border:1px solid var(--line); border-radius:8px; padding:8px; background:#fff; }
+  .card h3{ font-size:14px; margin-bottom:6px; letter-spacing:0.3px; }
+  .row{ display:flex; gap:10px; flex-wrap:wrap; }
+  .row .f{ flex:1; min-width:160px; }
+  .label{ font-size:11px; color:var(--muted); margin-bottom:2px; }
+  .text{ font-size:13px; padding:6px 8px; border:1px solid var(--line); border-radius:6px; background:#fff; }
+  .text[contenteditable="true"]{ outline:none; }
+  table{ width:100%; border-collapse:collapse; margin-top:10px; }
+  th,td{ border:1px solid var(--line); padding:6px; font-size:12px; vertical-align:top; }
+  th{ background:#f2f2f2; text-align:left; }
+  th.r, td.r{ text-align:right; }
+  tfoot td{ border:none; }
+  .rightbox{ width:360px; margin-left:auto; }
+  .note{ font-size:11px; color:var(--muted); }
+  .sign{ height:64px; border:1px dashed var(--line); margin-top:6px; display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:12px; }
+  .actions{ display:flex; gap:8px; margin-top:10px; }
+  .btn{ padding:8px 12px; border:1px solid var(--line); background:#fff; border-radius:6px; cursor:pointer; }
+  .btn:hover{ background:#f6f6f6; }
+  .badge{ border:1px solid var(--line); padding:2px 6px; border-radius:999px; font-size:11px; }
+  .muted{ color:var(--muted); }
+  .totals td{ font-size:13px; }
+  .amount-words{ font-size:12px; font-weight:600; }
+  @media print{
+    .controls, .actions{ display:none; }
+    .text{ border:1px solid transparent; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="logo">Your Logo</div>
+    <div class="seller">
+      <h2 contenteditable="true">Acme Foods Private Limited</h2>
+      <div class="meta" contenteditable="true">
+        101, Millenium Park, Andheri East, Mumbai — 400059, Maharashtra, India<br>
+        GSTIN: 27ABCDE1234F1Z5 • CIN: U12345MH2020PTC000000 • PAN: ABCDE1234F<br>
+        Phone: +91‑22‑5555‑1111 • Email: billing@acmefoods.in
+      </div>
+    </div>
+    <div class="title">
+      <h1>INVOICE</h1>
+      <div class="badge" id="gstTypeLabel">Intra‑state (CGST/SGST)</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <label>GST Type
+      <select id="gstType">
+        <option value="intra" selected>Intra‑state (CGST/SGST)</option>
+        <option value="inter">Inter‑state (IGST)</option>
+      </select>
+    </label>
+    <label>Currency
+      <select id="currency">
+        <option value="INR" selected>INR (₹)</option>
+        <option value="USD">USD ($)</option>
+      </select>
+    </label>
+    <label>Round Total
+      <select id="rounding">
+        <option value="nearest" selected>Nearest ₹</option>
+        <option value="up">Round Up</option>
+        <option value="down">Round Down</option>
+        <option value="none">No Rounding</option>
+      </select>
+    </label>
+    <button class="btn" onclick="addRow()">Add Line</button>
+    <button class="btn" onclick="recalc()">Recalculate</button>
+    <button class="btn" onclick="window.print()">Print</button>
+    <span class="muted">Editable fields — click and type. Numbers auto‑sum.</span>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Bill To</h3>
+      <div class="row">
+        <div class="f">
+          <div class="label">Customer Name</div>
+          <div class="text" contenteditable="true">Sunrise Grocers</div>
+        </div>
+        <div class="f">
+          <div class="label">GSTIN</div>
+          <div class="text" contenteditable="true">27PQRSX9999Z1Z9</div>
+        </div>
+      </div>
+      <div class="label">Billing Address</div>
+      <div class="text" contenteditable="true">Shop 8, Link Road, Andheri West, Mumbai — 400053, Maharashtra, India</div>
+      <div class="row">
+        <div class="f">
+          <div class="label">Place of Supply</div>
+          <div class="text" contenteditable="true">Maharashtra (27)</div>
+        </div>
+        <div class="f">
+          <div class="label">Contact</div>
+          <div class="text" contenteditable="true">accounts@sunrisegrocers.in • +91‑22‑6000‑1234</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Invoice Details</h3>
+      <div class="row">
+        <div class="f">
+          <div class="label">Invoice No.</div>
+          <div class="text" contenteditable="true">INV‑2025‑0042</div>
+        </div>
+        <div class="f">
+          <div class="label">Invoice Date</div>
+          <div class="text" contenteditable="true" id="invDate">17 Oct 2025</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="f">
+          <div class="label">Due Date</div>
+          <div class="text" contenteditable="true">31 Oct 2025</div>
+        </div>
+        <div class="f">
+          <div class="label">PO / Reference</div>
+          <div class="text" contenteditable="true">PO‑7749</div>
+        </div>
+      </div>
+      <div class="label">Dispatch To / Ship To</div>
+      <div class="text" contenteditable="true">Warehouse 2, Saki Vihar, Mumbai — 400072, Maharashtra</div>
+    </div>
+  </div>
+
+  <table id="lines">
+    <thead>
+      <tr>
+        <th style="width:28%">Item Description<br><span class="muted">HSN/SAC</span></th>
+        <th style="width:6%" class="r">Qty</th>
+        <th style="width:8%" class="r">Unit</th>
+        <th style="width:10%" class="r">Rate</th>
+        <th style="width:8%" class="r">Disc %</th>
+        <th style="width:10%" class="r">Taxable</th>
+        <th style="width:8%" class="r">GST %</th>
+        <th style="width:8%" class="r cg">CGST</th>
+        <th style="width:8%" class="r sg">SGST</th>
+        <th style="width:8%" class="r ig" style="display:none">IGST</th>
+        <th style="width:10%" class="r">Line Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td contenteditable="true">Premium Coffee Beans 1kg<br><span class="muted">HSN 0901</span></td>
+        <td class="r"><input type="number" value="20" min="0" step="1" oninput="recalc()"></td>
+        <td class="r"><input type="text" value="kg" oninput="recalc()"></td>
+        <td class="r"><input type="number" value="450" min="0" step="0.01" oninput="recalc()"></td>
+        <td class="r"><input type="number" value="5" min="0" max="100" step="0.1" oninput="recalc()"></td>
+        <td class="r taxable">—</td>
+        <td class="r"><input type="number" value="5" min="0" max="28" step="0.1" oninput="recalc()"></td>
+        <td class="r cg">—</td>
+        <td class="r sg">—</td>
+        <td class="r ig" style="display:none">—</td>
+        <td class="r total">—</td>
+      </tr>
+      <tr>
+        <td contenteditable="true">Tea Assortment Box<br><span class="muted">HSN 0902</span></td>
+        <td class="r"><input type="number" value="50" min="0" step="1" oninput="recalc()"></td>
+        <td class="r"><input type="text" value="box" oninput="recalc()"></td>
+        <td class="r"><input type="number" value="200" min="0" step="0.01" oninput="recalc()"></td>
+        <td class="r"><input type="number" value="0" min="0" max="100" step="0.1" oninput="recalc()"></td>
+        <td class="r taxable">—</td>
+        <td class="r"><input type="number" value="5" min="0" max="28" step="0.1" oninput="recalc()"></td>
+        <td class="r cg">—</td>
+        <td class="r sg">—</td>
+        <td class="r ig" style="display:none">—</td>
+        <td class="r total">—</td>
+      </tr>
+      <tr>
+        <td contenteditable="true">Reusable Steel Bottle<br><span class="muted">HSN 7323</span></td>
+        <td class="r"><input type="number" value="30" min="0" step="1" oninput="recalc()"></td>
+        <td class="r"><input type="text" value="pcs" oninput="recalc()"></td>
+        <td class="r"><input type="number" value="180" min="0" step="0.01" oninput="recalc()"></td>
+        <td class="r"><input type="number" value="2" min="0" max="100" step="0.1" oninput="recalc()"></td>
+        <td class="r taxable">—</td>
+        <td class="r"><input type="number" value="12" min="0" max="28" step="0.1" oninput="recalc()"></td>
+        <td class="r cg">—</td>
+        <td class="r sg">—</td>
+        <td class="r ig" style="display:none">—</td>
+        <td class="r total">—</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="row" style="margin-top:10px; align-items:flex-start;">
+    <div class="card" style="flex:1; min-width:320px;">
+      <h3>Bank / UPI</h3>
+      <div class="text" contenteditable="true">
+        Account: ACME FOODS PRIVATE LIMITED<br>
+        Bank: HDFC Bank, Andheri East<br>
+        A/C No: 50100012345678 • IFSC: HDFC0000123<br>
+        UPI: acmefoods@hdfcbank
+      </div>
+      <h3 style="margin-top:8px;">Notes / Terms</h3>
+      <div class="text" contenteditable="true">
+        Goods once sold will not be taken back. Net 14 days. Interest @18% p.a. beyond due date.
+      </div>
+      <div class="note" style="margin-top:6px;">E.&O.E. • This is a computer-generated document.</div>
+    </div>
+
+    <div class="rightbox">
+      <table class="totals" style="width:100%;">
+        <tbody>
+          <tr><td>Subtotal</td><td class="r" id="subTotal">—</td></tr>
+          <tr class="intra"><td>CGST</td><td class="r" id="sumCGST">—</td></tr>
+          <tr class="intra"><td>SGST</td><td class="r" id="sumSGST">—</td></tr>
+          <tr class="inter" style="display:none"><td>IGST</td><td class="r" id="sumIGST">—</td></tr>
+          <tr><td>Taxable Value</td><td class="r" id="taxableValue">—</td></tr>
+          <tr><td>Grand Total</td><td class="r" id="grandTotal">—</td></tr>
+          <tr><td>Rounding</td><td class="r" id="roundingAdj">—</td></tr>
+          <tr><td><strong>Amount Payable</strong></td><td class="r" id="amountPay">—</td></tr>
+        </tbody>
+      </table>
+      <div class="amount-words" id="amountWords" style="margin-top:6px;">Amount in words: —</div>
+      <div class="sign">Authorised Signatory</div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn" onclick="download()">Download .html</button>
+  </div>
+</div>
+
+<script>
+  const gstTypeSel = document.getElementById('gstType');
+  const gstTypeLabel = document.getElementById('gstTypeLabel');
+  const INR = new Intl.NumberFormat('en-IN', { style:'currency', currency:'INR' });
+  function valNum(input){ const v=parseFloat(input.value); return isFinite(v)?v:0; }
+
+  function toggleGST(){
+    const intra = gstTypeSel.value === 'intra';
+    document.querySelectorAll('.cg,.sg,.intra').forEach(el=>el.style.display = intra?'' : 'none');
+    document.querySelectorAll('.ig,.inter').forEach(el=>el.style.display = intra?'none' : '');
+    gstTypeLabel.textContent = intra ? 'Intra‑state (CGST/SGST)' : 'Inter‑state (IGST)';
+  }
+
+  function recalc(){
+    toggleGST();
+    const intra = gstTypeSel.value === 'intra';
+    let subtotal=0, taxBase=0, sumCG=0, sumSG=0, sumIG=0;
+    document.querySelectorAll('#lines tbody tr').forEach(tr=>{
+      const qty = valNum(tr.cells[1].querySelector('input'));
+      const rate = valNum(tr.cells[3].querySelector('input'));
+      const disc = valNum(tr.cells[4].querySelector('input'));
+      const gstp = valNum(tr.cells[6].querySelector('input'));
+      const gross = qty * rate;
+      const discAmt = gross * (disc/100);
+      const taxable = Math.max(0, gross - discAmt);
+      tr.querySelector('.taxable').textContent = INR.format(taxable);
+      let cg=0, sg=0, ig=0;
+      if(intra){
+        cg = taxable * (gstp/100/2);
+        sg = taxable * (gstp/100/2);
+        tr.querySelector('.cg').textContent = INR.format(cg);
+        tr.querySelector('.sg').textContent = INR.format(sg);
+        tr.querySelector('.ig').textContent = '—';
+      }else{
+        ig = taxable * (gstp/100);
+        tr.querySelector('.ig').textContent = INR.format(ig);
+        tr.querySelector('.cg').textContent = '—';
+        tr.querySelector('.sg').textContent = '—';
+      }
+      const lineTotal = taxable + cg + sg + ig;
+      tr.querySelector('.total').textContent = INR.format(lineTotal);
+      subtotal += gross;
+      taxBase += taxable;
+      sumCG += cg; sumSG += sg; sumIG += ig;
+    });
+
+    document.getElementById('subTotal').textContent = INR.format(subtotal);
+    document.getElementById('taxableValue').textContent = INR.format(taxBase);
+    document.getElementById('sumCGST').textContent = INR.format(sumCG);
+    document.getElementById('sumSGST').textContent = INR.format(sumSG);
+    document.getElementById('sumIGST').textContent = INR.format(sumIG);
+
+    const rounding = document.getElementById('rounding').value;
+    let grand = taxBase + sumCG + sumSG + sumIG;
+    let rounded = grand;
+    if(rounding==='nearest'){ rounded = Math.round(grand); }
+    else if(rounding==='up'){ rounded = Math.ceil(grand); }
+    else if(rounding==='down'){ rounded = Math.floor(grand); }
+    const adj = rounded - grand;
+
+    document.getElementById('grandTotal').textContent = INR.format(grand);
+    document.getElementById('roundingAdj').textContent = INR.format(adj);
+    document.getElementById('amountPay').textContent = INR.format(rounded);
+    document.getElementById('amountWords').textContent = 'Amount in words: ' + toIndianWords(Math.round(rounded)) + ' only.';
+  }
+
+  function addRow(){
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td contenteditable="true">New Item<br><span class="muted">HSN/SAC</span></td>
+      <td class="r"><input type="number" value="1" min="0" step="1" oninput="recalc()"></td>
+      <td class="r"><input type="text" value="pcs" oninput="recalc()"></td>
+      <td class="r"><input type="number" value="100" min="0" step="0.01" oninput="recalc()"></td>
+      <td class="r"><input type="number" value="0" min="0" max="100" step="0.1" oninput="recalc()"></td>
+      <td class="r taxable">—</td>
+      <td class="r"><input type="number" value="18" min="0" max="28" step="0.1" oninput="recalc()"></td>
+      <td class="r cg">—</td>
+      <td class="r sg">—</td>
+      <td class="r ig" style="display:none">—</td>
+      <td class="r total">—</td>`;
+    document.querySelector('#lines tbody').appendChild(tr);
+    recalc();
+  }
+
+  function toIndianWords(num){
+    if(num===0) return 'zero rupees';
+    const a=['','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'];
+    const b=['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
+    function two(n){ return n<20?a[n]:b[Math.floor(n/10)] + (n%10?'-'+a[n%10]:''); }
+    function three(n){ return n<100?two(n):a[Math.floor(n/100)]+' hundred'+(n%100?' '+two(n%100):''); }
+    let str=''; let crore=Math.floor(num/10000000); num%=10000000;
+    let lakh=Math.floor(num/100000); num%=100000;
+    let thousand=Math.floor(num/1000); num%=1000;
+    let hundred=num;
+    if(crore) str += three(crore)+' crore ';
+    if(lakh) str += three(lakh)+' lakh ';
+    if(thousand) str += three(thousand)+' thousand ';
+    if(hundred) str += three(hundred);
+    return str.trim() + ' rupees';
+  }
+
+  function download(){
+    const blob = new Blob([document.documentElement.outerHTML], {type:'text/html'});
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'Invoice_A4_India.html'; a.click();
+    setTimeout(()=>URL.revokeObjectURL(a.href), 1000);
+  }
+
+  recalc();
+</script>
+</body>
+</html>

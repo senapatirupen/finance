@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shipping Label — Box Sticker (India)</title>
+<style>
+  :root {
+    --ink:#111; --muted:#666; --line:#000;
+  }
+  *{ box-sizing:border-box; }
+  body{ font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif; color:var(--ink); }
+  h1{ margin:0; font-size:18px; }
+  .controls{ display:flex; flex-wrap:wrap; gap:8px 14px; align-items: center; padding:10px; border:1px solid var(--line); border-radius:10px; margin:10px 0; }
+  .controls input,.controls select{ padding:6px 8px; font-size:14px; }
+  .btn{ padding:8px 12px; border:1px solid var(--line); background:#fff; border-radius:6px; cursor:pointer; }
+  .btn:hover{ background:#f6f6f6; }
+  .row{ display:flex; gap:10px; }
+  .label{ border:1px solid var(--line); border-radius:8px; padding:8px; display:grid; grid-template-columns:1.2fr 1fr; gap:8px; }
+  .left, .right{ border-left:1px dashed #0000; }
+  .hdr{ display:flex; justify-content:space-between; align-items:flex-start; gap:8px; }
+  .logo{ width:130px; height:40px; border:1px dashed var(--line); display:flex; align-items:center; justify-content:center; font-size:12px; color:#666; }
+  .badge{ font-size:12px; border:1px solid var(--line); border-radius:999px; padding:2px 8px; }
+  .cod{ background:#fee; }
+  .prepaid{ background:#eef; }
+  .sec{ border:1px solid var(--line); border-radius:6px; padding:6px; margin-top:6px; }
+  .sec h3{ font-size:12px; margin:0 0 4px; letter-spacing:0.3px; }
+  .meta{ font-size:12px; }
+  .big{ font-size:18px; font-weight:700; letter-spacing:0.5px; }
+  .pin{ font-size:28px; font-weight:800; }
+  .barcode{ width:100%; height:90px; border:1px dashed var(--line); display:flex; align-items:center; justify-content:center; color:#666; font-size:12px; }
+  .tiny{ font-size:11px; color:#444; }
+  .icons{ display:flex; gap:6px; font-size:11px; }
+  .icons span{ border:1px solid var(--line); padding:2px 6px; border-radius:4px; }
+  .right .sec{ height:calc(100% - 0px); display:flex; flex-direction:column; gap:6px; }
+  .rtab{ display:grid; grid-template-columns:1fr 1fr; gap:6px; }
+  .rtab .box{ border:1px solid var(--line); border-radius:6px; padding:6px; }
+  .rtab .box .k{ font-size:10px; color:#666; }
+  .rtab .box .v{ font-size:13px; font-weight:700; }
+  .wrap { max-width: 1100px; margin: 0 auto; }
+  .grid { display:grid; gap:10px; }
+  /* Page size toggles */
+  .a6 .label { width: 100mm; height: 150mm; } /* 4x6" */
+  .a5 .label { width: 148mm; height: 210mm; } /* A5 */
+  .a4 .grid { grid-template-columns: repeat(2, 1fr); } /* 2-up per row */
+  .a4 .label{ height: 140mm; } /* fit 2x on page */
+  @page { margin: 10mm; }
+  @media print {
+    .controls { display:none; }
+    .label { break-inside: avoid; }
+  }
+</style>
+</head>
+<body class="a6">
+<div class="wrap">
+  <h1>Shipping Label — Box Sticker</h1>
+  <div class="controls">
+    <label>Format
+      <select id="fmt" onchange="setFmt(this.value)">
+        <option value="a6" selected>A6 4×6″ (100×150mm)</option>
+        <option value="a5">A5</option>
+        <option value="a4">A4 (multi-up)</option>
+      </select>
+    </label>
+    <label>Payment
+      <select id="pay" onchange="updatePay()">
+        <option value="prepaid" selected>Prepaid</option>
+        <option value="cod">Cash on Delivery</option>
+      </select>
+    </label>
+    <label>Copies
+      <input type="number" id="copies" value="1" min="1" max="12" style="width:70px" oninput="renderGrid()"/>
+    </label>
+    <button class="btn" onclick="renderGrid()">Render</button>
+    <button class="btn" onclick="window.print()">Print</button>
+    <button class="btn" onclick="download()">Download .html</button>
+  </div>
+
+  <div class="controls">
+    <div class="tiny">Paste a barcode/QR image URL (tracking label from courier) — it will be embedded below:</div>
+    <input id="bcUrl" type="text" placeholder="https://.../barcode.png" style="width:420px" oninput="renderGrid()">
+  </div>
+
+  <div id="grid" class="grid">
+    <!-- labels injected here -->
+  </div>
+</div>
+
+<template id="tpl">
+  <div class="label">
+    <div class="left">
+      <div class="hdr">
+        <div class="logo" contenteditable="true">Your Logo</div>
+        <div>
+          <div class="badge prepaid" id="payBadge">PREPAID</div>
+          <div class="icons" style="margin-top:6px;">
+            <span>FRAGILE</span><span>KEEP DRY</span><span>THIS SIDE UP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec">
+        <h3>Ship To (Consignee)</h3>
+        <div class="meta" contenteditable="true">
+          <strong>Riya Sharma</strong><br>
+          Flat 603, Wing B, Green Heights, Sector 12,<br>
+          Kharghar, Navi Mumbai, Maharashtra<br>
+          <b>PIN:</b> <span class="pin">410210</span>
+        </div>
+      </div>
+
+      <div class="sec">
+        <h3>From (Seller)</h3>
+        <div class="meta" contenteditable="true">
+          Acme Retail Pvt Ltd<br>
+          Unit 101, Millenium Park, Andheri (E), Mumbai 400059<br>
+          Helpline: +91-22-5555-1111
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="sec">
+        <div class="rtab">
+          <div class="box">
+            <div class="k">Order ID</div>
+            <div class="v" contenteditable="true">OD1256-77492</div>
+          </div>
+          <div class="box">
+            <div class="k">Tracking ID</div>
+            <div class="v" contenteditable="true">SF-7845123099</div>
+          </div>
+          <div class="box">
+            <div class="k">Package</div>
+            <div class="v" contenteditable="true">1 of 1</div>
+          </div>
+          <div class="box">
+            <div class="k">Collected On</div>
+            <div class="v" contenteditable="true">17 Oct 2025</div>
+          </div>
+          <div class="box">
+            <div class="k">Weight</div>
+            <div class="v" contenteditable="true">1.20 kg</div>
+          </div>
+          <div class="box">
+            <div class="k">COD (₹)</div>
+            <div class="v codv" contenteditable="true">0</div>
+          </div>
+        </div>
+
+        <div class="sec" style="margin:6px 0 0 0; padding:6px;">
+          <div class="big">Destination PIN: <span class="pin">410210</span></div>
+        </div>
+
+        <div class="barcode" id="barcode">Barcode / QR here</div>
+        <div class="tiny">Tip: paste a PNG/JPG URL from your courier panel (e.g., Delhivery/BlueDart) in the box above. It will embed here and print crisp.</div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  function setFmt(v){
+    document.body.classList.remove('a4','a5','a6');
+    document.body.classList.add(v);
+    renderGrid();
+  }
+  function updatePay(){
+    const isCOD = document.getElementById('pay').value === 'cod';
+    document.querySelectorAll('#grid .label').forEach(L=>{
+      const badge = L.querySelector('#payBadge');
+      const codv = L.querySelector('.codv');
+      if(isCOD){
+        badge.textContent = 'COD — COLLECT ON DELIVERY';
+        badge.classList.remove('prepaid'); badge.classList.add('cod');
+        codv.textContent = codv.textContent==='0' ? '999' : codv.textContent;
+      }else{
+        badge.textContent = 'PREPAID';
+        badge.classList.remove('cod'); badge.classList.add('prepaid');
+        codv.textContent = '0';
+      }
+    });
+  }
+  function renderGrid(){
+    const n = Math.max(1, Math.min(12, parseInt(document.getElementById('copies').value||'1')));
+    const grid = document.getElementById('grid');
+    grid.innerHTML = '';
+    const url = (document.getElementById('bcUrl').value||'').trim();
+    for(let i=0;i<n;i++){
+      const clone = document.getElementById('tpl').content.cloneNode(true);
+      if(url){
+        const box = clone.querySelector('#barcode');
+        const img = new Image(); img.src = url; img.alt='Barcode/QR'; img.style.maxHeight='88px'; img.style.maxWidth='100%';
+        box.innerHTML=''; box.appendChild(img);
+      }
+      grid.appendChild(clone);
+    }
+    updatePay();
+  }
+  function download(){
+    const blob = new Blob([document.documentElement.outerHTML], {type:'text/html'});
+    const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='Shipping_Label_Box_Sticker.html'; a.click();
+    setTimeout(()=>URL.revokeObjectURL(a.href), 1000);
+  }
+  renderGrid();
+</script>
+</body>
+</html>

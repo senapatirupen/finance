@@ -6,6 +6,9 @@ import { User } from '../model/user.model';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
+    getToken() {
+        throw new Error('Method not implemented.');
+    }
     api = 'http://localhost:3000';
     private userSubject = new BehaviorSubject<User | null>(null);
     user$ = this.userSubject.asObservable();
